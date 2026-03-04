@@ -6,7 +6,6 @@ on:
     paths:
       - "articles/**"
       - "scripts/**"
-      - "sitemap.xml"
       - "robots.txt"
   workflow_dispatch:
 
@@ -39,6 +38,6 @@ jobs:
             exit 0
           fi
 
-          git add -A
+          git add articles/index.html sitemap.xml
           git commit -m "chore: auto-update sitemap & articles index [skip ci]"
           git push
