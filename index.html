@@ -1,32 +1,30 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<link rel="canonical" href="https://www.myboussole.fr/">
-<meta property="og:url" content="https://www.myboussole.fr/">
-<meta name="robots" content="index,follow">
-  <meta charset="utf-8" />
+<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Boussole — un suivi doux, des repères clairs</title>
-  <meta name="description" content="Boussole est un carnet de bord bienveillant : 4 repères simples, une tendance sur 14 jours, et un export PDF si vous le souhaitez. Vos données restent sur votre appareil, sans compte et sans tracking." />
+  
+  <link rel="canonical" href="https://www.myboussole.fr/" />
+  <meta property="og:url" content="https://www.myboussole.fr/" />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#06172D" />
+<title>Boussole — un suivi doux, des repères clairs</title>
+  <meta name="description" content="Boussole est un carnet de bord bienveillant : 4 repères simples, une tendance sur 14 jours, et un export PDF si vous le souhaitez. Vos données restent sur votre appareil, sans compte et sans tracking." />
+<meta name="theme-color" content="#06172D" />
 
-  <meta property="og:type" content="website" />
+    <meta name="color-scheme" content="light" />
+<meta property="og:type" content="website" />
   <meta property="og:title" content="Boussole — un suivi doux, des repères clairs" />
   <meta property="og:description" content="4 repères simples · tendance 14 jours · export PDF si vous le souhaitez. Données sur votre appareil · sans compte · sans tracking." />
-  <meta property="og:url" content="https://myboussole.fr/" />
-  <meta property="og:locale" content="fr_FR" />
+<meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Boussole" />
-  <meta property="og:image" content="https://myboussole.fr/assets/espace-zen_tech.jpg" />
+  <meta property="og:image" content="https://www.myboussole.fr/assets/espace-zen_tech.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Boussole — un suivi doux, des repères clairs" />
   <meta name="twitter:description" content="4 repères simples · tendance 14 jours · export PDF si vous le souhaitez. Données sur votre appareil · sans compte · sans tracking." />
-  <meta name="twitter:image" content="https://myboussole.fr/assets/espace-zen_tech.jpg" />
-
-  <link rel="canonical" href="https://myboussole.fr/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
+  <meta name="twitter:image" content="https://www.myboussole.fr/assets/espace-zen_tech.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
 
   <style>
     :root{
@@ -64,6 +62,7 @@
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior: auto; }
       *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .reveal{ opacity: 1 !important; transform: none !important; }
     }
 
     body{
@@ -558,12 +557,13 @@
           <a href="#partage">Export</a>
           <a href="#confiance">Confiance</a>
           <a href="#beta">Bêta</a>
+          <a href="/articles/">Articles</a>
           <a href="ecosysteme.html">Écosystème</a>
         </nav>
 
         <div class="actions">
           <a class="btn" href="rejoindre.html">Rejoindre</a>
-          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Essayer</a>
+          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
           <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
             Menu
           </button>
@@ -576,15 +576,16 @@
         <a href="#partage">Export</a>
         <a href="#confiance">Confiance</a>
         <a href="#beta">Bêta</a>
+        <a href="/articles/">Articles</a>
         <a href="ecosysteme.html">Écosystème</a>
         <div class="divider"></div>
         <a href="rejoindre.html">Rejoindre</a>
-        <a href="https://boussole.micronutriment.fr/">Essayer</a>
+        <a href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
       </nav>
     </div>
   </div>
 
-  <main id="contenu">
+  <main id="contenu" tabindex="-1">
     <header class="hero" role="banner">
       <div class="hero-media" aria-hidden="true">
         <picture class="hero-photo">
@@ -593,7 +594,7 @@
         </picture>
         <picture class="hero-texture">
           <source srcset="assets/hero.webp" type="image/webp" />
-          <img src="assets/hero.jpg" alt="" loading="eager" decoding="async" />
+          <img src="assets/hero.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1400" />
         </picture>
         <div class="hero-overlay"></div>
       </div>
@@ -746,7 +747,7 @@
         <div>
           <div class="eyebrow">Chapitre 4 · Confiance</div>
           <h2>Confiance, en clair. Vous gardez le contrôle.</h2>
-          <p class="lead">Le cadre est simple, assumé, et aligné avec le “privacy-first”.</p>
+          <p class="lead">Le cadre est simple, assumé, et aligné avec le la confidentialité d’abord.</p>
         </div>
       </div>
 
@@ -834,7 +835,7 @@
           </figure>
           <div class="divider"></div>
           <p style="margin:0;color:var(--muted);line-height:1.62">
-            Besoin de contexte ? Découvrez la carte d’ensemble : modules, parcours, et la logique “privacy-first” du projet.
+            Besoin de contexte ? Découvrez la carte d’ensemble : modules, parcours, et la logique la confidentialité d’abord du projet.
           </p>
           <p style="margin:12px 0 0"><a class="btn" href="ecosysteme.html">Découvrir l’écosystème</a></p>
         </div>
@@ -856,84 +857,115 @@
   </main>
 
   <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+// Year
+const y = document.getElementById("year");
+if (y) y.textContent = new Date().getFullYear();
 
-    // Mobile menu
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
+// Mobile menu (progressive enhancement)
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+let lastFocus = null;
 
-    const closeMenu = () => {
-      if (!btn || !menu) return;
-      if (!menu.hasAttribute("hidden")) {
-        menu.setAttribute("hidden", "");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    };
+const setBtnState = (expanded) => {
+  if (!btn) return;
+  btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+  btn.setAttribute("aria-label", expanded ? "Fermer le menu" : "Ouvrir le menu");
+};
 
-    const openMenu = () => {
-      if (!btn || !menu) return;
-      if (menu.hasAttribute("hidden")) {
-        menu.removeAttribute("hidden");
-        btn.setAttribute("aria-expanded", "true");
-      }
-    };
-
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        const isOpen = !menu.hasAttribute("hidden");
-        if (isOpen) closeMenu();
-        else openMenu();
-      });
-
-      // Close when a link is chosen
-      menu.addEventListener("click", (e) => {
-        const a = e.target.closest("a");
-        if (a) closeMenu();
-      });
-
-      // Close on Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-
-      // Close on outside click
-      document.addEventListener("click", (e) => {
-        if (menu.hasAttribute("hidden")) return;
-        if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu();
-      });
+const closeMenu = (restoreFocus = true) => {
+  if (!btn || !menu) return;
+  if (!menu.hasAttribute("hidden")) {
+    menu.setAttribute("hidden", "");
+    setBtnState(false);
+    if (restoreFocus && lastFocus && typeof lastFocus.focus === "function") {
+      lastFocus.focus();
     }
+  }
+};
 
-    // Active section highlight (desktop + mobile)
-    const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"], #mobileMenu a[href^="#"]'));
-    const sections = Array.from(document.querySelectorAll('section.chapter[id]'));
+const openMenu = () => {
+  if (!btn || !menu) return;
+  if (menu.hasAttribute("hidden")) {
+    lastFocus = document.activeElement;
+    menu.removeAttribute("hidden");
+    setBtnState(true);
+    const firstLink = menu.querySelector("a");
+    if (firstLink) firstLink.focus();
+  }
+};
 
-    const setActive = (id) => {
-      navLinks.forEach(a => {
-        const isActive = a.getAttribute("href") === "#" + id;
-        a.classList.toggle("active", isActive);
-        if (isActive) a.setAttribute("aria-current", "true");
-        else a.removeAttribute("aria-current");
-      });
-    };
+if (btn && menu) {
+  // Ensure closed state is correct even if JS loads late
+  setBtnState(!menu.hasAttribute("hidden"));
 
-    if (navLinks.length && sections.length && "IntersectionObserver" in window) {
-      const navIo = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      }, { rootMargin: "-30% 0px -62% 0px", threshold: [0.1, 0.2, 0.35, 0.5] });
+  btn.addEventListener("click", () => {
+    const isOpen = !menu.hasAttribute("hidden");
+    if (isOpen) closeMenu(false);
+    else openMenu();
+  });
 
-      sections.forEach(s => navIo.observe(s));
-    }
+  // Close when a link is chosen
+  menu.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) closeMenu(false);
+  });
 
-    // Subtle reveal (no dependency)
-    const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (menu.hasAttribute("hidden")) return;
+    if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
+  });
+
+  // Close if focus leaves the menu (keyboard users)
+  document.addEventListener("focusin", (e) => {
+    if (menu.hasAttribute("hidden")) return;
+    if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
+  });
+}
+
+// Active section highlight (desktop + mobile)
+const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"], #mobileMenu a[href^="#"]'));
+const sections = Array.from(document.querySelectorAll('section.chapter[id]'));
+
+const setActive = (id) => {
+  navLinks.forEach(a => {
+    const isActive = a.getAttribute("href") === "#" + id;
+    a.classList.toggle("active", isActive);
+    if (isActive) a.setAttribute("aria-current", "location");
+    else a.removeAttribute("aria-current");
+  });
+};
+
+if (navLinks.length && sections.length && ("IntersectionObserver" in window)) {
+  const navIo = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActive(visible.target.id);
+  }, { rootMargin: "-30% 0px -62% 0px", threshold: [0.1, 0.2, 0.35, 0.5] });
+
+  sections.forEach(s => navIo.observe(s));
+}
+
+// Subtle reveal (no dependency, reduced-motion friendly)
+const revealEls = Array.from(document.querySelectorAll(".reveal"));
+const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (revealEls.length) {
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(el => el.classList.add("in"));
+  } else {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
+  }
+}
   </script>
 </body>
 </html>
