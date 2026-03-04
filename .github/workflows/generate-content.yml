@@ -28,6 +28,9 @@ jobs:
       - name: Generate articles index + sitemap
         run: python scripts/generate_content.py
 
+      - name: Normalize article canonicals + og:url
+        run: python scripts/normalize_articles_seo.py
+
       - name: Commit changes (if any)
         run: |
           git config user.name "github-actions[bot]"
@@ -38,6 +41,9 @@ jobs:
             exit 0
           fi
 
-          git add articles/index.html sitemap.xml
-          git commit -m "chore: auto-update sitemap & articles index [skip ci]"
+          # Scope strict: outputs + article pages, but exclude articles/_template
+          git add articles/index.html sitemap.xml articles/*/index.html
+          git reset articles/_template/index.html || true
+
+          git commit -m "chore: auto-update sitemap & article SEO [skip ci]"
           git push
