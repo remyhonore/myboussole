@@ -1,1 +1,3 @@
-
+User-agent: *
+Allow: /
+Sitemap: https://www.myboussole.fr/sitemap.xml
