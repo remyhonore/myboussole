@@ -33,6 +33,9 @@ jobs:
       - name: Normalize article canonicals + og:url
         run: python scripts/normalize_articles_seo.py
 
+      - name: Normalize root OG + canonical
+        run: python scripts/normalize_root_seo.py
+
       - name: Commit changes (if any)
         run: |
           git config user.name "github-actions[bot]"
