@@ -1,0 +1,44 @@
+name: Generate content
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "articles/**"
+      - "scripts/**"
+      - "sitemap.xml"
+      - "robots.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate articles index + sitemap
+        run: python scripts/generate_content.py
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git add -A
+          git commit -m "chore: auto-update sitemap & articles index [skip ci]"
+          git push
