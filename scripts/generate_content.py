@@ -101,7 +101,7 @@ def collect_articles():
         desc = fm.get("description") or meta.get("description") or ""
         date = parse_date(fm.get("date", "")) or None
         updated = parse_date(fm.get("updated", "")) or None
-        slug = fm.get("slug") or p.name
+        slug = p.name  # single source of truth: folder name
         url = f"{SITE_URL}/articles/{slug}/"
         lastmod = pick_lastmod(updated, date, index)
 
