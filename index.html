@@ -5,42 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Boussole — retrouvez des repères, sans culpabiliser</title>
-  <meta name="description" content="Boussole est un carnet de bord bien-être confidentiel : 4 repères simples, tendances sur 14 jours, export PDF (1 page) si vous le souhaitez. Données sur votre appareil, sans compte, sans cloud, sans tracking." />
+  <meta name="description" content="Boussole est un carnet de bord bien-être confidentiel : 4 repères simples, tendances sur 14 jours, export PDF (1 page) si vous le souhaitez. Données sur votre appareil, sans compte, sans cloud requis, sans tracking." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#06172D" />
   <link rel="canonical" href="https://myboussole.fr/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Boussole — retrouvez des repères, sans culpabiliser" />
-  <meta property="og:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud · sans tracking." />
+  <meta property="og:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud requis · sans tracking." />
   <meta property="og:url" content="https://myboussole.fr/" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Boussole" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Boussole — retrouvez des repères, sans culpabiliser" />
-  <meta name="twitter:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud · sans tracking." />
+  <meta name="twitter:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud requis · sans tracking." />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-            serif: ["Newsreader", "serif"],
+            sans: ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+            serif: ["ui-serif", "Georgia", "Times New Roman", "Times", "serif"],
           },
           colors: {
             paper: "#F3F0E8",
             ink: "#06172D",
             "blue-grey": "#193048",
-            neutral: "#9FA2A2",
             muted: "#5D6368",
             sand: "#E9DDC8",
             terracotta: "#C97A61",
@@ -49,9 +44,9 @@
             "rose-mist": "#E8B7C8",
           },
           boxShadow: {
-            hush: "0 22px 60px rgba(6, 23, 45, 0.10)",
-            whisper: "0 12px 28px rgba(6, 23, 45, 0.08)",
-            button: "0 16px 34px rgba(6, 23, 45, 0.14)",
+            hush: "0 26px 70px rgba(6, 23, 45, 0.14)",
+            whisper: "0 12px 28px rgba(6, 23, 45, 0.10)",
+            soft: "0 8px 22px rgba(6, 23, 45, 0.08)",
           }
         }
       }
@@ -74,86 +69,80 @@
       --lavender: #C9B9D9;
       --roseMist: #E8B7C8;
 
-      --ring: rgba(201,122,97,.45);
       --border: rgba(6,23,45,.10);
-      --borderSoft: rgba(6,23,45,.08);
-      --paperCard: rgba(255,255,255,.66);
-      --paperCardSoft: rgba(255,255,255,.58);
+      --borderSoft: rgba(6,23,45,.07);
+      --ring: rgba(201,122,97,.42);
+
+      --panel: rgba(243,240,232,.88);
+      --panelStrong: rgba(243,240,232,.94);
+
+      --heroSvg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E8B7C8'/%3E%3Cstop offset='.55' stop-color='%23C9B9D9'/%3E%3Cstop offset='1' stop-color='%23E9DDC8'/%3E%3C/linearGradient%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .35 0' result='a'/%3E%3CfeComposite in='SourceGraphic' in2='a' operator='in' result='m'/%3E%3CfeGaussianBlur in='m' stdDeviation='18' result='b'/%3E%3CfeBlend in='SourceGraphic' in2='b' mode='overlay'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='1600' height='1000' fill='url(%23g)'/%3E%3Ccircle cx='1180' cy='260' r='260' fill='%23C97A61' opacity='.18'/%3E%3Ccircle cx='980' cy='620' r='320' fill='%23E8B7C8' opacity='.22'/%3E%3Ccircle cx='1420' cy='740' r='380' fill='%23C9B9D9' opacity='.18'/%3E%3Crect width='1600' height='1000' filter='url(%23f)' opacity='.85'/%3E%3C/svg%3E");
     }
 
     html { scroll-behavior: smooth; }
 
     body{
       background:
-        radial-gradient(900px 600px at 84% 8%, rgba(232,183,200,.22), transparent 64%),
-        radial-gradient(880px 620px at 10% 12%, rgba(201,185,217,.18), transparent 62%),
-        radial-gradient(980px 520px at 70% 120%, rgba(233,221,200,.28), transparent 62%),
-        linear-gradient(180deg, #F7F3EA 0%, var(--paper) 64%, var(--paper) 100%);
+        radial-gradient(900px 560px at 86% 6%, rgba(201,122,97,.18), transparent 65%),
+        radial-gradient(820px 520px at 12% 10%, rgba(232,183,200,.14), transparent 64%),
+        radial-gradient(980px 600px at 70% 120%, rgba(233,221,200,.26), transparent 62%),
+        linear-gradient(180deg, #F8F4EC 0%, var(--paper) 58%, var(--paper) 100%);
     }
 
-    /* Micro-grain paper (no external assets) */
     body::before{
       content:"";
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:.065;
+      opacity:.06;
       mix-blend-mode:multiply;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
-      background-size: 280px 280px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+      background-size: 320px 320px;
     }
 
-    .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+    .serif-italic { font-family: ui-serif, Georgia, "Times New Roman", Times, serif; font-style: italic; }
 
     .focus-ring:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 999px; }
-    .focus-soft:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 20px; }
+    .focus-soft:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 22px; }
+
+    .btn-primary{
+      box-shadow: 0 18px 44px rgba(6,23,45,.18);
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 22px 56px rgba(6,23,45,.22); }
+    .btn-secondary{ transition: transform .18s ease, background-color .18s ease, border-color .18s ease; }
+    .btn-secondary:hover{ transform: translateY(-1px); }
 
     .paper-card{
-      background: var(--paperCard);
+      background: rgba(255,255,255,.62);
       border: 1px solid var(--border);
-      box-shadow: 0 22px 60px rgba(6,23,45,.10);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 22px 70px rgba(6,23,45,.12);
+      backdrop-filter: blur(8px);
     }
     .paper-card-soft{
-      background: var(--paperCardSoft);
+      background: rgba(255,255,255,.56);
       border: 1px solid var(--borderSoft);
-      box-shadow: 0 12px 28px rgba(6,23,45,.08);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 28px rgba(6,23,45,.10);
+      backdrop-filter: blur(8px);
     }
 
     .chip{
       display:inline-flex;
       align-items:center;
       gap:.5rem;
-      padding:.48rem .82rem;
+      padding:.5rem .85rem;
       border-radius: 999px;
       border: 1px solid rgba(6,23,45,.10);
       background:
-        radial-gradient(16px 16px at 15% 30%, rgba(233,221,200,.50), transparent 70%),
-        rgba(255,255,255,.64);
-      color: rgba(6,23,45,.78);
+        radial-gradient(16px 16px at 15% 30%, rgba(233,221,200,.55), transparent 70%),
+        rgba(255,255,255,.68);
+      color: rgba(6,23,45,.80);
       font-weight: 650;
       font-size: 12px;
       white-space: nowrap;
     }
     .chip svg{ opacity:.85; }
 
-    /* Warm button hover (subtle) */
-    .btn-primary{
-      box-shadow: 0 16px 34px rgba(6,23,45,.14);
-      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
-    }
-    .btn-primary:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(6,23,45,.18);
-    }
-    .btn-secondary{
-      transition: transform .18s ease, background-color .18s ease;
-    }
-    .btn-secondary:hover{ transform: translateY(-1px); }
-
-    /* HERO emotional matter: photo (local) + warm veil + mask to keep left readable */
     .hero{
       position: relative;
       overflow: hidden;
@@ -161,10 +150,11 @@
     }
     .hero-backdrop{
       position:absolute;
-      inset:-90px -120px -90px -120px;
+      inset:-120px -140px -120px -140px;
       pointer-events:none;
       z-index: 0;
     }
+
     .hero-backdrop::before{
       content:"";
       position:absolute;
@@ -172,70 +162,68 @@
       background-image:
         url("assets/hero.webp"),
         url("assets/hero.jpg"),
-        radial-gradient(1200px 800px at 72% 26%, rgba(232,183,200,.28), transparent 60%),
-        radial-gradient(1100px 780px at 84% 6%, rgba(201,185,217,.22), transparent 62%),
-        radial-gradient(900px 680px at 55% 70%, rgba(233,221,200,.35), transparent 60%);
+        var(--heroSvg);
       background-size: cover;
-      background-position: 70% 25%;
-      filter: blur(14px) saturate(1.05) contrast(0.95);
-      opacity: .30;
-      transform: scale(1.08);
-      mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,.92) 62%, rgba(0,0,0,1) 100%);
-      -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,.92) 62%, rgba(0,0,0,1) 100%);
+      background-position: 72% 20%;
+      opacity: .72;
+      filter: blur(16px) saturate(1.08) contrast(0.98);
+      transform: scale(1.10);
+      mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,.90) 60%, rgba(0,0,0,1) 100%);
+      -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,.90) 60%, rgba(0,0,0,1) 100%);
     }
+
     .hero-backdrop::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(900px 520px at 78% 18%, rgba(201,122,97,.24), transparent 62%),
-        radial-gradient(880px 520px at 58% 48%, rgba(232,183,200,.22), transparent 62%),
-        linear-gradient(135deg, rgba(201,185,217,.20) 0%, rgba(232,183,200,.18) 40%, rgba(201,122,97,.14) 100%);
-      opacity: .62;
+        radial-gradient(900px 520px at 80% 16%, rgba(201,122,97,.22), transparent 62%),
+        radial-gradient(860px 520px at 58% 46%, rgba(232,183,200,.24), transparent 62%),
+        linear-gradient(135deg, rgba(201,185,217,.22) 0%, rgba(232,183,200,.20) 38%, rgba(201,122,97,.14) 100%);
+      opacity: .86;
       mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 58%, rgba(0,0,0,1) 100%);
       -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 58%, rgba(0,0,0,1) 100%);
     }
 
-    /* Organic blobs (decor only, never behind text without fade) */
-    .blob{
+    .hero-light{
       position:absolute;
-      inset:auto;
+      inset:-120px -120px auto auto;
+      width: 740px;
+      height: 520px;
       pointer-events:none;
       z-index: 0;
-      opacity: .16;
-      filter: blur(0.2px);
+      background: radial-gradient(closest-side, rgba(233,221,200,.42), transparent 70%);
+      opacity: .72;
+      filter: blur(4px);
     }
-    .blob svg{ display:block; }
 
-    /* Section washes */
-    .wash{
+    .content-layer{ position: relative; z-index: 1; }
+
+    .chapter{
       position: relative;
       isolation: isolate;
     }
-    .wash::before{
+    .chapter::before{
       content:"";
       position:absolute;
-      inset:-60px 0 -60px 0;
+      inset:-70px 0 -70px 0;
       pointer-events:none;
       z-index: 0;
       opacity: .55;
       background:
-        radial-gradient(720px 380px at 82% 18%, rgba(232,183,200,.22), transparent 62%),
-        radial-gradient(640px 360px at 12% 26%, rgba(201,185,217,.18), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.20) 38%, rgba(255,255,255,.00) 100%);
+        radial-gradient(760px 420px at 84% 18%, rgba(232,183,200,.18), transparent 64%),
+        radial-gradient(680px 420px at 14% 70%, rgba(201,185,217,.14), transparent 64%),
+        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.22) 40%, rgba(255,255,255,.00) 100%);
       mask-image: radial-gradient(closest-side, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 86%);
       -webkit-mask-image: radial-gradient(closest-side, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 86%);
     }
-    .wash-sand::before{
-      opacity: .62;
+    .chapter-sand::before{
+      opacity: .60;
       background:
-        radial-gradient(760px 380px at 80% 20%, rgba(233,221,200,.36), transparent 62%),
-        radial-gradient(700px 420px at 18% 70%, rgba(201,122,97,.12), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.18) 38%, rgba(255,255,255,.00) 100%);
+        radial-gradient(820px 420px at 80% 22%, rgba(233,221,200,.30), transparent 64%),
+        radial-gradient(720px 440px at 18% 70%, rgba(201,122,97,.10), transparent 64%),
+        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.18) 40%, rgba(255,255,255,.00) 100%);
     }
-
-    /* Keep content above decorative layers */
-    .content-layer{ position: relative; z-index: 1; }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto !important; }
@@ -247,7 +235,7 @@
 
 <body class="text-ink font-sans antialiased selection:bg-terracotta selection:text-paper">
   <a href="#contenu"
-     class="focus-ring sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] bg-white/85 px-4 py-2 shadow-whisper">
+     class="focus-ring sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] bg-white/90 px-4 py-2 shadow-whisper">
     Aller au contenu
   </a>
 
@@ -262,7 +250,7 @@
           <span class="text-sm sm:text-base font-bold tracking-tight uppercase">Boussole</span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-1 text-sm text-ink/75">
+        <nav class="hidden md:flex items-center gap-1 text-sm text-ink/75" aria-label="Navigation principale">
           <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#repères">Repères</a>
           <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#tendance">Tendances</a>
           <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#partager">Partager</a>
@@ -282,7 +270,7 @@
         </div>
 
         <button id="menuBtn" type="button"
-          class="md:hidden focus-ring inline-flex items-center gap-2 rounded-full bg-white/70 hover:bg-white px-4 py-2 text-sm font-semibold shadow-whisper"
+          class="md:hidden focus-ring inline-flex items-center gap-2 rounded-full bg-white/75 hover:bg-white px-4 py-2 text-sm font-semibold shadow-soft"
           aria-expanded="false" aria-controls="mobileMenu">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -302,7 +290,7 @@
 
             <div class="my-2 h-px bg-ink/10"></div>
 
-            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/75 hover:bg-white px-4 py-3 font-semibold shadow-whisper"
+            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/80 hover:bg-white px-4 py-3 font-semibold shadow-soft"
                href="ecosysteme.html">
               Découvrir l’écosystème
             </a>
@@ -310,7 +298,7 @@
                href="https://boussole.micronutriment.fr/">
               Essayer la bêta
             </a>
-            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/75 hover:bg-white px-4 py-3 font-semibold shadow-whisper"
+            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/80 hover:bg-white px-4 py-3 font-semibold shadow-soft"
                href="rejoindre.html">
               Rejoindre
             </a>
@@ -321,92 +309,88 @@
   </header>
 
   <main id="contenu">
-    <!-- HERO -->
     <section id="top" class="hero">
       <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-light" aria-hidden="true"></div>
 
-      <div class="blob -right-24 -top-24 w-[520px] h-[520px] opacity-[0.14]" aria-hidden="true">
-        <svg viewBox="0 0 600 600" width="520" height="520" xmlns="http://www.w3.org/2000/svg">
-          <path fill="rgba(232,183,200,.80)" d="M401,70C452,92,492,150,509,209C526,268,520,328,488,379C456,430,398,472,336,497C274,522,208,530,156,502C104,474,66,410,54,345C42,280,56,215,90,165C124,115,178,80,242,64C306,48,350,48,401,70Z"/>
-        </svg>
-      </div>
-
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-12 sm:pt-16 pb-10 sm:pb-14 content-layer">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-12 sm:pt-16 pb-12 sm:pb-16 content-layer">
         <div class="grid lg:grid-cols-12 gap-10 items-start">
           <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-muted">
+            <div class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/75 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-muted">
               <span class="inline-block h-2 w-2 rounded-full bg-terracotta" aria-hidden="true"></span>
               Des repères simples, sans culpabiliser
             </div>
 
-            <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-              Retrouvez vos repères quand tout <span class="serif-italic font-normal">fluctue</span>.
-            </h1>
+            <div class="mt-5 rounded-[28px] p-5 sm:p-6 border border-ink/10"
+                 style="background: var(--panel);">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
+                Retrouvez vos repères quand tout <span class="serif-italic font-normal">fluctue</span>.
+              </h1>
 
-            <p class="mt-5 text-base sm:text-lg text-ink/75 leading-relaxed max-w-xl">
-              En 30 secondes : <span class="font-semibold">4 repères</span>, des <span class="font-semibold">tendances sur 14 jours</span>,
-              et une <span class="font-semibold">synthèse PDF (1 page)</span> si vous le souhaitez.
-            </p>
+              <p class="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed max-w-xl">
+                En 30 secondes : <span class="font-semibold">4 repères</span>, des <span class="font-semibold">tendances sur 14 jours</span>,
+                et une <span class="font-semibold">synthèse PDF (1 page)</span> si vous le souhaitez.
+              </p>
 
-            <div class="mt-7 flex flex-col sm:flex-row gap-3">
-              <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
-                 href="https://boussole.micronutriment.fr/">
-                Essayer la bêta
-              </a>
-              <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
-                 href="ecosysteme.html">
-                Découvrir l’écosystème
-              </a>
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
+                   href="https://boussole.micronutriment.fr/">
+                  Essayer la bêta
+                </a>
+                <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/80 hover:bg-white border border-ink/10 px-6 py-3.5 text-sm sm:text-base font-semibold shadow-soft"
+                   href="ecosysteme.html">
+                  Découvrir l’écosystème
+                </a>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-2" aria-label="Réassurances principales">
+                <span class="chip">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                  Données sur votre appareil
+                </span>
+                <span class="chip">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8 12.5 10.5 15 16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/>
+                  </svg>
+                  Sans compte
+                </span>
+                <span class="chip">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M7 10h10v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                  Sans cloud requis
+                </span>
+                <span class="chip">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.6" opacity=".85"/>
+                    <path d="M12 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M12 15.8h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                  </svg>
+                  Sans tracking
+                </span>
+              </div>
+
+              <p class="mt-6 text-sm text-ink/65 leading-relaxed max-w-2xl">
+                Outil d’information et de suivi de repères. Aucun diagnostic. Aucune promesse de résultat.
+              </p>
             </div>
-
-            <div class="mt-6 flex flex-wrap gap-2" aria-label="Réassurances principales">
-              <span class="chip">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-                Données sur votre appareil
-              </span>
-              <span class="chip">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M8 12.5 10.5 15 16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/>
-                </svg>
-                Sans compte
-              </span>
-              <span class="chip">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                  <path d="M7 10h10v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-                Sans cloud
-              </span>
-              <span class="chip">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.6" opacity=".85"/>
-                  <path d="M12 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M12 15.8h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
-                </svg>
-                Sans tracking
-              </span>
-            </div>
-
-            <p class="mt-6 text-sm text-ink/60 leading-relaxed max-w-2xl">
-              Outil d’information et de suivi de repères. Aucun diagnostic. Aucune promesse de résultat.
-            </p>
           </div>
 
-          <!-- Mockup -->
           <div class="lg:col-span-5">
-            <div class="paper-card rounded-[34px] p-5 sm:p-6">
+            <div class="paper-card rounded-[36px] p-5 sm:p-6">
               <div class="flex items-center justify-between">
                 <div class="text-sm font-semibold text-ink/80">Aperçu</div>
                 <span class="text-xs text-ink/50">Illustration</span>
               </div>
 
-              <div class="mt-4 rounded-[28px] bg-white/60 border border-ink/10 overflow-hidden">
+              <div class="mt-4 rounded-[30px] bg-white/60 border border-ink/10 overflow-hidden">
                 <div class="px-5 pt-4 pb-3 flex items-center justify-between border-b border-ink/10 bg-paper/25">
                   <div class="text-xs font-bold tracking-widest uppercase text-ink/45">Aujourd’hui</div>
-                  <div class="inline-flex items-center gap-2 rounded-full bg-white/70 border border-ink/10 px-3 py-1 text-[11px] font-semibold text-ink/70">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-white/75 border border-ink/10 px-3 py-1 text-[11px] font-semibold text-ink/70">
                     <span class="h-2 w-2 rounded-full bg-sage" aria-hidden="true"></span>
                     Bilan du jour
                   </div>
@@ -419,7 +403,7 @@
                       <div class="text-sm font-bold text-ink">8/10</div>
                     </div>
                     <div class="mt-3 h-2 rounded-full bg-ink/10 overflow-hidden">
-                      <div class="h-full bg-terracotta rounded-full w-4/5"></div>
+                      <div class="h-full rounded-full w-4/5" style="background: linear-gradient(90deg, rgba(201,122,97,.95), rgba(233,221,200,.55));"></div>
                     </div>
                     <div class="mt-2 text-[11px] text-ink/55">0 = épuisé · 10 = au top</div>
                   </div>
@@ -436,7 +420,7 @@
                   </div>
 
                   <div class="grid grid-cols-2 gap-3">
-                    <div class="rounded-2xl bg-white/70 border border-ink/10 px-4 py-3 text-center text-[11px] font-semibold text-ink/70">
+                    <div class="rounded-2xl bg-white/75 border border-ink/10 px-4 py-3 text-center text-[11px] font-semibold text-ink/70">
                       Tendances 14 jours
                     </div>
                     <div class="rounded-2xl bg-ink text-paper px-4 py-3 text-center text-[11px] font-semibold">
@@ -451,7 +435,7 @@
               </div>
             </div>
 
-            <div class="mt-4 text-xs text-ink/55">
+            <div class="mt-4 text-xs text-ink/60">
               Conception & méthode : <span class="font-semibold">Dr Rémy Honoré</span>, docteur en pharmacie.
             </div>
           </div>
@@ -459,8 +443,7 @@
       </div>
     </section>
 
-    <!-- CHAPTER 1 -->
-    <section id="repères" class="py-12 sm:py-16 wash">
+    <section id="repères" class="py-12 sm:py-16 chapter">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="max-w-2xl">
           <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -468,34 +451,34 @@
             <span class="block serif-italic font-normal text-ink/70 mt-2">pas par la perfection.</span>
           </h2>
           <p class="mt-4 text-base text-ink/75 leading-relaxed">
-            Une routine légère : elle doit tenir même les jours “sans”.
+            Une routine qui tient dans la vraie vie. Même les jours “sans”.
           </p>
         </div>
 
         <div class="mt-9 grid md:grid-cols-3 gap-6">
           <div class="paper-card-soft rounded-[28px] p-6">
             <div class="flex items-start gap-3">
-              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-terracotta" aria-hidden="true"></span>
+              <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-terracotta" aria-hidden="true"></span>
               <div>
                 <h3 class="text-sm font-semibold">Court, mais fidèle</h3>
-                <p class="mt-2 text-sm text-ink/75 leading-relaxed">4 repères (0–10) pour garder l’essentiel, sans se raconter toute la journée.</p>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">4 repères (0–10) pour garder l’essentiel sans se perdre dans les détails.</p>
               </div>
             </div>
           </div>
 
           <div class="paper-card-soft rounded-[28px] p-6">
             <div class="flex items-start gap-3">
-              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sage" aria-hidden="true"></span>
+              <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-sage" aria-hidden="true"></span>
               <div>
                 <h3 class="text-sm font-semibold">Moins de charge mentale</h3>
-                <p class="mt-2 text-sm text-ink/75 leading-relaxed">Vous notez. L’historique se construit. Vous évitez de “tout garder en tête”.</p>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">Vous notez. L’historique se construit. Vous n’avez plus à “tout retenir”.</p>
               </div>
             </div>
           </div>
 
           <div class="paper-card-soft rounded-[28px] p-6">
             <div class="flex items-start gap-3">
-              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-ink/60" aria-hidden="true"></span>
+              <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-ink/60" aria-hidden="true"></span>
               <div>
                 <h3 class="text-sm font-semibold">À votre rythme</h3>
                 <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas de série à tenir. Pas de pression. Juste des repères quand vous en avez besoin.</p>
@@ -506,8 +489,7 @@
       </div>
     </section>
 
-    <!-- CHAPTER 2 -->
-    <section id="tendance" class="py-12 sm:py-16 wash wash-sand border-y border-ink/5 bg-white/15">
+    <section id="tendance" class="py-12 sm:py-16 chapter chapter-sand border-y border-ink/5 bg-white/12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="max-w-2xl">
           <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -515,29 +497,28 @@
             <span class="block serif-italic font-normal text-ink/70 mt-2">pas le bruit.</span>
           </h2>
           <p class="mt-4 text-base text-ink/75 leading-relaxed">
-            Le cerveau retient les extrêmes. Une vue 14 jours remet du contexte.
+            Les extrêmes prennent toute la place. Une vue 14 jours remet du contexte.
           </p>
         </div>
 
         <div class="mt-9 grid md:grid-cols-3 gap-6">
           <div class="paper-card-soft rounded-[28px] p-6">
-            <h3 class="text-sm font-semibold">Des repères lisibles</h3>
-            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Comprendre ce qui monte, ce qui baisse, ce qui revient.</p>
+            <h3 class="text-sm font-semibold">Plus lisible</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Repérer ce qui monte, ce qui baisse, ce qui revient.</p>
           </div>
           <div class="paper-card-soft rounded-[28px] p-6">
-            <h3 class="text-sm font-semibold">Moins d’interprétation</h3>
-            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Observer d’abord. Conclure ensuite, avec prudence.</p>
+            <h3 class="text-sm font-semibold">Plus sobre</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Observer d’abord. Interpréter ensuite, avec prudence.</p>
           </div>
           <div class="paper-card-soft rounded-[28px] p-6">
-            <h3 class="text-sm font-semibold">Un fil conducteur</h3>
-            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Relier le vécu à des tendances de fond (sans sur-analyser).</p>
+            <h3 class="text-sm font-semibold">Plus utile</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Avoir un fil conducteur, sans sur-analyser chaque journée.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CHAPTER 3 -->
-    <section id="partager" class="py-12 sm:py-16 wash">
+    <section id="partager" class="py-12 sm:py-16 chapter">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="max-w-2xl">
           <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -554,12 +535,12 @@
             <p class="mt-2 text-sm text-ink/75 leading-relaxed">Une page, pas un roman. L’essentiel, sans surcharge.</p>
           </div>
           <div class="paper-card-soft rounded-[28px] p-6">
-            <h3 class="text-sm font-semibold">Faits avant opinions</h3>
-            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Repères & tendances : un support pour discuter plus clairement.</p>
+            <h3 class="text-sm font-semibold">Plus clair</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Repères & tendances : un support pour discuter plus simplement.</p>
           </div>
           <div class="paper-card-soft rounded-[28px] p-6">
-            <h3 class="text-sm font-semibold">Votre décision</h3>
-            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Le partage est toujours volontaire. Aucun envoi automatique.</p>
+            <h3 class="text-sm font-semibold">Toujours volontaire</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Aucun envoi automatique. Vous décidez si, quand, et à qui.</p>
           </div>
         </div>
 
@@ -572,8 +553,7 @@
       </div>
     </section>
 
-    <!-- TRUST -->
-    <section id="confiance" class="py-12 sm:py-16 wash wash-sand">
+    <section id="confiance" class="py-12 sm:py-16 chapter chapter-sand">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="paper-card rounded-[36px] p-8 sm:p-10">
           <div class="max-w-2xl">
@@ -581,8 +561,8 @@
               Confiance, en clair.
               <span class="block serif-italic font-normal text-ink/70 mt-2">Vous gardez le contrôle.</span>
             </h2>
-            <p class="mt-4 text-base text-ink/75 leading-relaxed">
-              Une phrase simple : <span class="font-semibold">vos données restent sur votre appareil</span>.
+            <p class="mt-4 text-base text-ink/80 leading-relaxed">
+              Phrase marteau : <span class="font-semibold">rien n’est envoyé sans vous.</span>
             </p>
           </div>
 
@@ -592,12 +572,12 @@
               <p class="mt-2 text-sm text-ink/75 leading-relaxed">Le suivi fonctionne sans serveur requis.</p>
             </div>
             <div class="paper-card-soft rounded-[24px] p-6">
-              <div class="text-sm font-semibold">Sans compte, sans cloud</div>
+              <div class="text-sm font-semibold">Sans compte</div>
               <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas d’inscription pour utiliser le module.</p>
             </div>
             <div class="paper-card-soft rounded-[24px] p-6">
               <div class="text-sm font-semibold">Sans tracking</div>
-              <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas de pixels publicitaires, pas de profilage.</p>
+              <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas de pixels publicitaires. Pas de profilage.</p>
             </div>
           </div>
 
@@ -629,7 +609,7 @@
             </div>
           </div>
 
-          <div class="mt-7 rounded-[24px] bg-white/60 border border-ink/10 p-6">
+          <div class="mt-7 rounded-[24px] bg-white/65 border border-ink/10 p-6">
             <div class="flex items-start gap-3">
               <svg class="mt-0.5 h-5 w-5 text-ink/70 flex-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
@@ -644,8 +624,7 @@
       </div>
     </section>
 
-    <!-- BETA -->
-    <section id="beta" class="py-12 sm:py-16 wash border-y border-ink/5 bg-white/15">
+    <section id="beta" class="py-12 sm:py-16 chapter border-y border-ink/5 bg-white/12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="max-w-2xl">
           <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -653,7 +632,7 @@
             <span class="block serif-italic font-normal text-ink/70 mt-2">Simple, clair, assumé.</span>
           </h2>
           <p class="mt-4 text-base text-ink/75 leading-relaxed">
-            Pas de “grand discours”. Voici ce qui existe, et comment suivre la suite.
+            Pas de grand discours. Ce qui existe, ce qui s’améliore, et comment suivre la suite.
           </p>
         </div>
 
@@ -669,7 +648,7 @@
           <div class="paper-card-soft rounded-[28px] p-6">
             <h3 class="text-sm font-semibold">Suivre / rejoindre</h3>
             <p class="mt-2 text-sm text-ink/75 leading-relaxed">
-              Pour être tenu au courant : <a class="focus-ring underline underline-offset-4 decoration-terracotta/60" href="rejoindre.html">Rejoindre</a>.
+              Pour être informé des évolutions : <a class="focus-ring underline underline-offset-4 decoration-terracotta/60" href="rejoindre.html">Rejoindre</a>.
             </p>
           </div>
         </div>
@@ -679,7 +658,7 @@
              href="https://boussole.micronutriment.fr/">
             Essayer la bêta
           </a>
-          <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
+          <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/80 hover:bg-white border border-ink/10 px-6 py-3.5 text-sm sm:text-base font-semibold shadow-soft"
              href="ecosysteme.html">
             Découvrir l’écosystème
           </a>
@@ -691,8 +670,7 @@
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="py-12 sm:py-16 wash wash-sand">
+    <section class="py-12 sm:py-16 chapter chapter-sand">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
         <div class="paper-card rounded-[36px] p-8 sm:p-10">
           <div class="grid lg:grid-cols-12 gap-8 items-start">
@@ -707,7 +685,7 @@
                    href="https://boussole.micronutriment.fr/">
                   Essayer la bêta
                 </a>
-                <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
+                <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/80 hover:bg-white border border-ink/10 px-6 py-3.5 text-sm sm:text-base font-semibold shadow-soft"
                    href="ecosysteme.html">
                   Découvrir l’écosystème
                 </a>
@@ -724,7 +702,7 @@
                 <p class="mt-2 text-sm text-ink/75 leading-relaxed">
                   Pour une présentation, un échange méthodologique, ou une intégration dans un parcours d’accompagnement.
                 </p>
-                <a class="focus-ring btn-secondary mt-4 inline-flex w-full items-center justify-center rounded-full bg-white/80 hover:bg-white px-5 py-3 text-sm font-semibold shadow-whisper"
+                <a class="focus-ring btn-secondary mt-4 inline-flex w-full items-center justify-center rounded-full bg-white/85 hover:bg-white border border-ink/10 px-5 py-3 text-sm font-semibold shadow-soft"
                    href="mailto:remyhonore@protonmail.com?subject=Boussole%20—%20Contact%20professionnel">
                   Envoyer un email
                 </a>
@@ -732,7 +710,7 @@
             </div>
           </div>
 
-          <div class="mt-8 rounded-[28px] bg-white/60 border border-ink/10 p-6">
+          <div class="mt-8 rounded-[28px] bg-white/65 border border-ink/10 p-6">
             <div class="flex items-start gap-3">
               <svg class="mt-0.5 h-5 w-5 text-ink/70 flex-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
@@ -778,7 +756,7 @@
 
         <div class="lg:col-span-4">
           <div class="text-sm font-semibold text-ink/80">Mentions & limites</div>
-          <div class="mt-3 rounded-[28px] bg-white/60 border border-ink/10 p-5">
+          <div class="mt-3 rounded-[28px] bg-white/65 border border-ink/10 p-5">
             <p class="text-sm text-ink/75 leading-relaxed">
               Boussole est un outil d’information et de suivi de repères. Il ne fournit pas de diagnostic, ne prescrit pas de traitement
               et ne remplace pas une consultation médicale.
@@ -795,7 +773,7 @@
 
       <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-ink/55">
         <div>© <span id="year"></span> Boussole. Tous droits réservés.</div>
-        <div>Données sur l’appareil · Sans compte · Sans cloud · Sans tracking</div>
+        <div>Données sur l’appareil · Sans compte · Sans cloud requis · Sans tracking</div>
       </div>
     </div>
   </footer>
@@ -822,7 +800,5 @@
       });
     }
   </script>
-
-  <!-- Source file used: :contentReference[oaicite:0]{index=0} -->
 </body>
 </html>

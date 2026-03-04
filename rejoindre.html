@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rejoindre l'équipe — app.micronutriment.fr</title>
+  <meta name="description" content="Rejoindre l'équipe fondatrice de app.micronutriment.fr : profils recherchés et cadre de collaboration." />
+  <style>
+    :root {
+      --bg: #2b3a3a;
+      --overlay: rgba(30, 42, 42, 0.62);
+      --overlay-deep: rgba(24, 34, 34, 0.78);
+      --text: #f4f4f2;
+      --text-muted: #d0d0cc;
+      --text-dim: #9a9e96;
+      --accent: #e6a136;
+      --accent-soft: #f2c567;
+      --accent-glow: rgba(230, 161, 54, 0.14);
+      --accent-border: rgba(230, 161, 54, 0.40);
+      --card: rgba(20, 30, 30, 0.55);
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.20);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --max: 820px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+      background:
+        linear-gradient(to bottom, var(--overlay), var(--overlay-deep) 60%, rgba(20, 30, 30, 0.92)),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=80")
+        center / cover no-repeat fixed,
+        var(--bg);
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px 60px; }
+
+    .back-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 0 20px; border-bottom: 1px solid var(--line);
+      flex-wrap: wrap; gap: 12px;
+    }
+    .back-bar a {
+      color: var(--accent); text-decoration: none;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .back-bar a:hover { text-decoration: underline; }
+    .pill {
+      padding: 5px 14px; border-radius: 999px;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      color: var(--accent); font-weight: 700; font-size: 0.80rem;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800;
+      margin: 32px 0 10px; line-height: 1.18;
+      text-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .intro { color: var(--text-muted); font-size: 1.02rem; margin-bottom: 28px; max-width: 640px; }
+
+    .card {
+      padding: 22px;
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+    }
+    .card h2 { font-size: 1.12rem; font-weight: 800; margin-bottom: 6px; }
+    .card h2 .tag {
+      display: inline-block; margin-left: 10px;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 999px; vertical-align: middle;
+    }
+    .tag-priority { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+    .card p { color: var(--text-muted); font-size: 0.94rem; margin: 0 0 10px; }
+    .card ul { margin: 0; padding-left: 20px; }
+    .card li { color: var(--text-muted); font-size: 0.92rem; margin: 6px 0; }
+    .card li strong { color: var(--text); }
+
+    .highlight-box {
+      padding: 18px 20px;
+      border: 1px solid var(--accent-border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-sm);
+      background: var(--accent-glow);
+      margin-bottom: 14px;
+    }
+    .highlight-box h3 { font-size: 1rem; font-weight: 800; color: var(--accent); margin-bottom: 6px; }
+    .highlight-box p { color: #e8d5b4; font-size: 0.94rem; margin: 0; }
+
+    .context-box {
+      padding: 18px 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 20px;
+    }
+    .context-box h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+    .context-box p { color: var(--text-muted); font-size: 0.90rem; margin: 0 0 6px; }
+
+    .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      padding: 12px 22px; border-radius: var(--radius-sm);
+      transition: all .2s; border: 1px solid var(--line-strong);
+      color: #fff; background: rgba(255,255,255,0.06);
+    }
+    .btn:hover { background: rgba(255,255,255,0.12); }
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent-soft), var(--accent));
+      border-color: #ad7427; color: #271905;
+    }
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    footer {
+      text-align: center; padding: 24px 0;
+      color: var(--text-dim); font-size: 0.84rem;
+      border-top: 1px solid var(--line); margin-top: 20px;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      body { background-attachment: scroll; }
+      .cta { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="back-bar">
+    <a href="index.html">← Retour au produit</a>
+    <span class="pill">Rejoindre l'équipe</span>
+  </div>
+
+  <h1>Construire un outil de santé utile, avec une exécution propre</h1>
+  <p class="intro">app.micronutriment.fr cherche 2 associé(e)s fondateurs pour compléter l'équipe. Le produit et le contenu existent. Il manque l'ingénierie et la croissance.</p>
+
+  <div class="card">
+    <h2>Développeur web / PWA senior <span class="tag tag-priority">priorité</span></h2>
+    <p>Transformer le prototype Boussole en application installable, fiable et maintenable — gratuite pour les utilisateurs, avec des revenus B2B (mutuelles, référencement de nutrithérapeutes, structures de santé).</p>
+    <ul>
+      <li><strong>Stack :</strong> vanilla JavaScript, HTML/CSS, PWA (Service Workers, manifest), localStorage / IndexedDB</li>
+      <li><strong>Missions :</strong> architecture modulaire, système de navigation multi-modules, tests automatisés, déploiement CI/CD</li>
+      <li><strong>Sens produit :</strong> simplifier, pas complexifier. Priorisation claire, exécution nette</li>
+      <li><strong>Bonus :</strong> expérience HealthTech ou e-santé, appétence pour le développement assisté par IA</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Growth marketer / Communication santé <span class="tag tag-priority">priorité</span></h2>
+    <p>Transformer 532 319 vues / 28 jours, 9 559 interactions, 88 668 couverture et 1 057 abonnés en utilisateurs actifs, puis en contrats B2B (mutuelles, nutrithérapeutes, pharmacies). <strong>Données au 27 février 2026 — zéro publicité.</strong></p>
+    <ul>
+      <li><strong>Acquisition :</strong> tunnels de conversion, email marketing, SEO santé, stratégie de contenu multicanale</li>
+      <li><strong>Communauté :</strong> engagement Facebook/Instagram, capture d'audience qualifiée</li>
+      <li><strong>Partenariats :</strong> mutuelles, pharmacies, structures de santé, institutionnels</li>
+      <li><strong>Financement :</strong> dossiers BPI, concours e-santé, business angels</li>
+      <li><strong>Éthique :</strong> conviction forte sur les contenus santé sourcés et indépendants</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Autre profil complémentaire</h2>
+    <p>Tu ne rentres pas dans les cases ci-dessus, mais tu te reconnais dans le projet ?</p>
+    <ul>
+      <li><strong>Exemples :</strong> relations publiques santé, finance early-stage, affaires réglementaires, juridique e-santé, data analyst...</li>
+      <li><strong>Ce qui compte :</strong> conviction sur la mission, complémentarité avec l'équipe, capacité à exécuter</li>
+      <li><strong>Format :</strong> à définir ensemble selon ton profil et ton niveau d'engagement</li>
+    </ul>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Modalité : associé(e) cofondateur</h3>
+    <p>Participation au capital pour les deux profils. Phase d'essai de 3 mois pour valider la complémentarité avant engagement long terme. Pacte d'associés formalisé par avocat (vesting, clauses standard).</p>
+  </div>
+
+  <div class="context-box">
+    <h3>Où en est le projet</h3>
+    <p>MVP Boussole fonctionnel (saisie, tendances 14j, export PDF). Architecture modulaire validée. Modèle économique à 5 couches : Boussole gratuit (acquisition) → vente de guides/fiches → accompagnement par nutrithérapeute référencé (remboursable mutuelle) → B2B professionnels (référencement thérapeutes, formations pro) → B2B mutuelles/structures de santé. 532K vues organiques/mois sur les contenus santé Facebook (au 27 février 2026). Fondateur accompagné par BGE Hauts-de-France. Statut juridique en cours de création.</p>
+    <p>Ce qui manque n'est pas la vision — c'est l'exécution technique robuste et la capacité à transformer l'audience en croissance structurée.</p>
+  </div>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#6e1c0b0317060100011c0b2e1e1c011a0100030f0702400d0103511d1b0c040b0d1a532d0f000a070a0f1a1b1c0b4b5c5e2a4b2d5d4b2f57180b02011e1e0b1b1c4b5c5e190b0c4b5c5e4b5c284b5c5e3e392f4b5c5e4b2b5c4b565e4b575a4b5c5e0f1e1e4003070d1c01001b1a1c07030b001a40081c">Candidater — Développeur PWA</a>
+    <a class="btn" href="/cdn-cgi/l/email-protection#cdbfa8a0b4a5a2a3a2bfa88dbdbfa2b9a2a3a0aca4a1e3aea2a0f2beb8afa7a8aeb9f08eaca3a9a4a9acb9b8bfa8e8fffd8abfa2bab9a5e8fffde8ff8be8fffd8ea2a0a0b8a3a4aeacb9a4a2a3e8fffdbeaca3b9e88efee88cf4e8fffde888ffe8f5fde8f4f9e8fffdacbdbde3a0a4aebfa2a3b8b9bfa4a0a8a3b9e3abbf">Candidater — Growth santé</a>
+    <a class="btn" href="/cdn-cgi/l/email-protection#55273
