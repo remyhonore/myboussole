@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Boussole — retrouvez des repères, sans culpabiliser</title>
+  <meta name="description" content="Boussole est un carnet de bord bien-être confidentiel : 4 repères simples, tendances sur 14 jours, export PDF (1 page) si vous le souhaitez. Données sur votre appareil, sans compte, sans cloud, sans tracking." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#06172D" />
+  <link rel="canonical" href="https://myboussole.fr/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Boussole — retrouvez des repères, sans culpabiliser" />
+  <meta property="og:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud · sans tracking." />
+  <meta property="og:url" content="https://myboussole.fr/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Boussole" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Boussole — retrouvez des repères, sans culpabiliser" />
+  <meta name="twitter:description" content="4 repères simples · tendances sur 14 jours · PDF (1 page) si vous le souhaitez. Données sur votre appareil · sans compte · sans cloud · sans tracking." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            serif: ["Newsreader", "serif"],
+          },
+          colors: {
+            paper: "#F3F0E8",
+            ink: "#06172D",
+            "blue-grey": "#193048",
+            neutral: "#9FA2A2",
+            muted: "#5D6368",
+            sand: "#E9DDC8",
+            terracotta: "#C97A61",
+            sage: "#6E877D",
+            lavender: "#C9B9D9",
+            "rose-mist": "#E8B7C8",
+          },
+          boxShadow: {
+            hush: "0 22px 60px rgba(6, 23, 45, 0.10)",
+            whisper: "0 12px 28px rgba(6, 23, 45, 0.08)",
+            button: "0 16px 34px rgba(6, 23, 45, 0.14)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      color-scheme: light;
+
+      --paper: #F3F0E8;
+      --ink: #06172D;
+      --blueGrey: #193048;
+      --muted: #5D6368;
+
+      --sand: #E9DDC8;
+      --terracotta: #C97A61;
+      --sage: #6E877D;
+
+      --lavender: #C9B9D9;
+      --roseMist: #E8B7C8;
+
+      --ring: rgba(201,122,97,.45);
+      --border: rgba(6,23,45,.10);
+      --borderSoft: rgba(6,23,45,.08);
+      --paperCard: rgba(255,255,255,.66);
+      --paperCardSoft: rgba(255,255,255,.58);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body{
+      background:
+        radial-gradient(900px 600px at 84% 8%, rgba(232,183,200,.22), transparent 64%),
+        radial-gradient(880px 620px at 10% 12%, rgba(201,185,217,.18), transparent 62%),
+        radial-gradient(980px 520px at 70% 120%, rgba(233,221,200,.28), transparent 62%),
+        linear-gradient(180deg, #F7F3EA 0%, var(--paper) 64%, var(--paper) 100%);
+    }
+
+    /* Micro-grain paper (no external assets) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.065;
+      mix-blend-mode:multiply;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+      background-size: 280px 280px;
+    }
+
+    .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+
+    .focus-ring:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 999px; }
+    .focus-soft:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 20px; }
+
+    .paper-card{
+      background: var(--paperCard);
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 60px rgba(6,23,45,.10);
+      backdrop-filter: blur(6px);
+    }
+    .paper-card-soft{
+      background: var(--paperCardSoft);
+      border: 1px solid var(--borderSoft);
+      box-shadow: 0 12px 28px rgba(6,23,45,.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.48rem .82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(6,23,45,.10);
+      background:
+        radial-gradient(16px 16px at 15% 30%, rgba(233,221,200,.50), transparent 70%),
+        rgba(255,255,255,.64);
+      color: rgba(6,23,45,.78);
+      font-weight: 650;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .chip svg{ opacity:.85; }
+
+    /* Warm button hover (subtle) */
+    .btn-primary{
+      box-shadow: 0 16px 34px rgba(6,23,45,.14);
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    .btn-primary:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(6,23,45,.18);
+    }
+    .btn-secondary{
+      transition: transform .18s ease, background-color .18s ease;
+    }
+    .btn-secondary:hover{ transform: translateY(-1px); }
+
+    /* HERO emotional matter: photo (local) + warm veil + mask to keep left readable */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-backdrop{
+      position:absolute;
+      inset:-90px -120px -90px -120px;
+      pointer-events:none;
+      z-index: 0;
+    }
+    .hero-backdrop::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        url("assets/hero.webp"),
+        url("assets/hero.jpg"),
+        radial-gradient(1200px 800px at 72% 26%, rgba(232,183,200,.28), transparent 60%),
+        radial-gradient(1100px 780px at 84% 6%, rgba(201,185,217,.22), transparent 62%),
+        radial-gradient(900px 680px at 55% 70%, rgba(233,221,200,.35), transparent 60%);
+      background-size: cover;
+      background-position: 70% 25%;
+      filter: blur(14px) saturate(1.05) contrast(0.95);
+      opacity: .30;
+      transform: scale(1.08);
+      mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,.92) 62%, rgba(0,0,0,1) 100%);
+      -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,.92) 62%, rgba(0,0,0,1) 100%);
+    }
+    .hero-backdrop::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 520px at 78% 18%, rgba(201,122,97,.24), transparent 62%),
+        radial-gradient(880px 520px at 58% 48%, rgba(232,183,200,.22), transparent 62%),
+        linear-gradient(135deg, rgba(201,185,217,.20) 0%, rgba(232,183,200,.18) 40%, rgba(201,122,97,.14) 100%);
+      opacity: .62;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 58%, rgba(0,0,0,1) 100%);
+      -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 58%, rgba(0,0,0,1) 100%);
+    }
+
+    /* Organic blobs (decor only, never behind text without fade) */
+    .blob{
+      position:absolute;
+      inset:auto;
+      pointer-events:none;
+      z-index: 0;
+      opacity: .16;
+      filter: blur(0.2px);
+    }
+    .blob svg{ display:block; }
+
+    /* Section washes */
+    .wash{
+      position: relative;
+      isolation: isolate;
+    }
+    .wash::before{
+      content:"";
+      position:absolute;
+      inset:-60px 0 -60px 0;
+      pointer-events:none;
+      z-index: 0;
+      opacity: .55;
+      background:
+        radial-gradient(720px 380px at 82% 18%, rgba(232,183,200,.22), transparent 62%),
+        radial-gradient(640px 360px at 12% 26%, rgba(201,185,217,.18), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.20) 38%, rgba(255,255,255,.00) 100%);
+      mask-image: radial-gradient(closest-side, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 86%);
+      -webkit-mask-image: radial-gradient(closest-side, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 86%);
+    }
+    .wash-sand::before{
+      opacity: .62;
+      background:
+        radial-gradient(760px 380px at 80% 20%, rgba(233,221,200,.36), transparent 62%),
+        radial-gradient(700px 420px at 18% 70%, rgba(201,122,97,.12), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.18) 38%, rgba(255,255,255,.00) 100%);
+    }
+
+    /* Keep content above decorative layers */
+    .content-layer{ position: relative; z-index: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      * { transition: none !important; animation: none !important; }
+      .btn-primary:hover, .btn-secondary:hover { transform: none !important; }
+    }
+  </style>
+</head>
+
+<body class="text-ink font-sans antialiased selection:bg-terracotta selection:text-paper">
+  <a href="#contenu"
+     class="focus-ring sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] bg-white/85 px-4 py-2 shadow-whisper">
+    Aller au contenu
+  </a>
+
+  <header class="sticky top-0 z-50 bg-paper/82 backdrop-blur border-b border-ink/5">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="flex items-center justify-between py-3">
+        <a href="#top" class="focus-ring inline-flex items-center gap-2 px-2 py-1">
+          <svg class="h-7 w-7 text-ink" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity=".95"/>
+            <path d="M15 9l-3 4-4 2 1-5 6-1z" fill="currentColor" opacity=".95"/>
+          </svg>
+          <span class="text-sm sm:text-base font-bold tracking-tight uppercase">Boussole</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 text-sm text-ink/75">
+          <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#repères">Repères</a>
+          <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#tendance">Tendances</a>
+          <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#partager">Partager</a>
+          <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#confiance">Confiance</a>
+          <a class="focus-ring px-3 py-2 rounded-full hover:bg-white/60 hover:text-ink" href="#beta">Bêta</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-3">
+          <a class="focus-ring px-3 py-2 rounded-full text-sm font-semibold text-ink/70 hover:text-ink hover:bg-white/60"
+             href="ecosysteme.html">
+            Découvrir l’écosystème
+          </a>
+          <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-semibold hover:bg-blue-grey"
+             href="https://boussole.micronutriment.fr/">
+            Essayer la bêta
+          </a>
+        </div>
+
+        <button id="menuBtn" type="button"
+          class="md:hidden focus-ring inline-flex items-center gap-2 rounded-full bg-white/70 hover:bg-white px-4 py-2 text-sm font-semibold shadow-whisper"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          Menu
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="paper-card-soft rounded-3xl p-3">
+          <div class="grid gap-1 text-sm">
+            <a class="focus-ring px-3 py-2 rounded-2xl hover:bg-white/70" href="#repères">Repères</a>
+            <a class="focus-ring px-3 py-2 rounded-2xl hover:bg-white/70" href="#tendance">Tendances</a>
+            <a class="focus-ring px-3 py-2 rounded-2xl hover:bg-white/70" href="#partager">Partager</a>
+            <a class="focus-ring px-3 py-2 rounded-2xl hover:bg-white/70" href="#confiance">Confiance</a>
+            <a class="focus-ring px-3 py-2 rounded-2xl hover:bg-white/70" href="#beta">Bêta</a>
+
+            <div class="my-2 h-px bg-ink/10"></div>
+
+            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/75 hover:bg-white px-4 py-3 font-semibold shadow-whisper"
+               href="ecosysteme.html">
+              Découvrir l’écosystème
+            </a>
+            <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-2xl bg-ink text-paper px-4 py-3 font-semibold hover:bg-blue-grey"
+               href="https://boussole.micronutriment.fr/">
+              Essayer la bêta
+            </a>
+            <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-2xl bg-white/75 hover:bg-white px-4 py-3 font-semibold shadow-whisper"
+               href="rejoindre.html">
+              Rejoindre
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+
+      <div class="blob -right-24 -top-24 w-[520px] h-[520px] opacity-[0.14]" aria-hidden="true">
+        <svg viewBox="0 0 600 600" width="520" height="520" xmlns="http://www.w3.org/2000/svg">
+          <path fill="rgba(232,183,200,.80)" d="M401,70C452,92,492,150,509,209C526,268,520,328,488,379C456,430,398,472,336,497C274,522,208,530,156,502C104,474,66,410,54,345C42,280,56,215,90,165C124,115,178,80,242,64C306,48,350,48,401,70Z"/>
+        </svg>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-12 sm:pt-16 pb-10 sm:pb-14 content-layer">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-muted">
+              <span class="inline-block h-2 w-2 rounded-full bg-terracotta" aria-hidden="true"></span>
+              Des repères simples, sans culpabiliser
+            </div>
+
+            <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
+              Retrouvez vos repères quand tout <span class="serif-italic font-normal">fluctue</span>.
+            </h1>
+
+            <p class="mt-5 text-base sm:text-lg text-ink/75 leading-relaxed max-w-xl">
+              En 30 secondes : <span class="font-semibold">4 repères</span>, des <span class="font-semibold">tendances sur 14 jours</span>,
+              et une <span class="font-semibold">synthèse PDF (1 page)</span> si vous le souhaitez.
+            </p>
+
+            <div class="mt-7 flex flex-col sm:flex-row gap-3">
+              <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
+                 href="https://boussole.micronutriment.fr/">
+                Essayer la bêta
+              </a>
+              <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
+                 href="ecosysteme.html">
+                Découvrir l’écosystème
+              </a>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2" aria-label="Réassurances principales">
+              <span class="chip">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Données sur votre appareil
+              </span>
+              <span class="chip">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 12.5 10.5 15 16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/>
+                </svg>
+                Sans compte
+              </span>
+              <span class="chip">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M7 10h10v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Sans cloud
+              </span>
+              <span class="chip">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="currentColor" stroke-width="1.6" opacity=".85"/>
+                  <path d="M12 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 15.8h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+                Sans tracking
+              </span>
+            </div>
+
+            <p class="mt-6 text-sm text-ink/60 leading-relaxed max-w-2xl">
+              Outil d’information et de suivi de repères. Aucun diagnostic. Aucune promesse de résultat.
+            </p>
+          </div>
+
+          <!-- Mockup -->
+          <div class="lg:col-span-5">
+            <div class="paper-card rounded-[34px] p-5 sm:p-6">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold text-ink/80">Aperçu</div>
+                <span class="text-xs text-ink/50">Illustration</span>
+              </div>
+
+              <div class="mt-4 rounded-[28px] bg-white/60 border border-ink/10 overflow-hidden">
+                <div class="px-5 pt-4 pb-3 flex items-center justify-between border-b border-ink/10 bg-paper/25">
+                  <div class="text-xs font-bold tracking-widest uppercase text-ink/45">Aujourd’hui</div>
+                  <div class="inline-flex items-center gap-2 rounded-full bg-white/70 border border-ink/10 px-3 py-1 text-[11px] font-semibold text-ink/70">
+                    <span class="h-2 w-2 rounded-full bg-sage" aria-hidden="true"></span>
+                    Bilan du jour
+                  </div>
+                </div>
+
+                <div class="p-5 space-y-4">
+                  <div class="rounded-2xl bg-sand/25 border border-ink/10 p-4">
+                    <div class="flex items-end justify-between">
+                      <div class="text-sm font-semibold text-ink/80">Énergie</div>
+                      <div class="text-sm font-bold text-ink">8/10</div>
+                    </div>
+                    <div class="mt-3 h-2 rounded-full bg-ink/10 overflow-hidden">
+                      <div class="h-full bg-terracotta rounded-full w-4/5"></div>
+                    </div>
+                    <div class="mt-2 text-[11px] text-ink/55">0 = épuisé · 10 = au top</div>
+                  </div>
+
+                  <div class="rounded-2xl bg-sand/20 border border-ink/10 p-4">
+                    <div class="flex items-end justify-between">
+                      <div class="text-sm font-semibold text-ink/80">Sommeil</div>
+                      <div class="text-sm font-bold text-ink">6/10</div>
+                    </div>
+                    <div class="mt-3 h-2 rounded-full bg-ink/10 overflow-hidden">
+                      <div class="h-full bg-sage rounded-full w-3/5"></div>
+                    </div>
+                    <div class="mt-2 text-[11px] text-ink/55">0 = pas du tout · 10 = très bien</div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="rounded-2xl bg-white/70 border border-ink/10 px-4 py-3 text-center text-[11px] font-semibold text-ink/70">
+                      Tendances 14 jours
+                    </div>
+                    <div class="rounded-2xl bg-ink text-paper px-4 py-3 text-center text-[11px] font-semibold">
+                      Export PDF
+                    </div>
+                  </div>
+
+                  <div class="text-xs text-ink/55 leading-relaxed">
+                    Rien n’est envoyé automatiquement. Le partage se fait uniquement à votre initiative.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-xs text-ink/55">
+              Conception & méthode : <span class="font-semibold">Dr Rémy Honoré</span>, docteur en pharmacie.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 1 -->
+    <section id="repères" class="py-12 sm:py-16 wash">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+            Guidé par vos repères,
+            <span class="block serif-italic font-normal text-ink/70 mt-2">pas par la perfection.</span>
+          </h2>
+          <p class="mt-4 text-base text-ink/75 leading-relaxed">
+            Une routine légère : elle doit tenir même les jours “sans”.
+          </p>
+        </div>
+
+        <div class="mt-9 grid md:grid-cols-3 gap-6">
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-terracotta" aria-hidden="true"></span>
+              <div>
+                <h3 class="text-sm font-semibold">Court, mais fidèle</h3>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">4 repères (0–10) pour garder l’essentiel, sans se raconter toute la journée.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sage" aria-hidden="true"></span>
+              <div>
+                <h3 class="text-sm font-semibold">Moins de charge mentale</h3>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">Vous notez. L’historique se construit. Vous évitez de “tout garder en tête”.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-ink/60" aria-hidden="true"></span>
+              <div>
+                <h3 class="text-sm font-semibold">À votre rythme</h3>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas de série à tenir. Pas de pression. Juste des repères quand vous en avez besoin.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2 -->
+    <section id="tendance" class="py-12 sm:py-16 wash wash-sand border-y border-ink/5 bg-white/15">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+            Voir la tendance,
+            <span class="block serif-italic font-normal text-ink/70 mt-2">pas le bruit.</span>
+          </h2>
+          <p class="mt-4 text-base text-ink/75 leading-relaxed">
+            Le cerveau retient les extrêmes. Une vue 14 jours remet du contexte.
+          </p>
+        </div>
+
+        <div class="mt-9 grid md:grid-cols-3 gap-6">
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Des repères lisibles</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Comprendre ce qui monte, ce qui baisse, ce qui revient.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Moins d’interprétation</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Observer d’abord. Conclure ensuite, avec prudence.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Un fil conducteur</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Relier le vécu à des tendances de fond (sans sur-analyser).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3 -->
+    <section id="partager" class="py-12 sm:py-16 wash">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+            Partager sans se justifier.
+          </h2>
+          <p class="mt-4 text-base text-ink/75 leading-relaxed">
+            Un PDF (1 page) pour faciliter l’échange, au bon moment, si vous le souhaitez.
+          </p>
+        </div>
+
+        <div class="mt-9 grid md:grid-cols-3 gap-6">
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Synthèse courte</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Une page, pas un roman. L’essentiel, sans surcharge.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Faits avant opinions</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Repères & tendances : un support pour discuter plus clairement.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Votre décision</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Le partage est toujours volontaire. Aucun envoi automatique.</p>
+          </div>
+        </div>
+
+        <div class="mt-9">
+          <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
+             href="https://boussole.micronutriment.fr/">
+            Essayer la bêta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section id="confiance" class="py-12 sm:py-16 wash wash-sand">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="paper-card rounded-[36px] p-8 sm:p-10">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+              Confiance, en clair.
+              <span class="block serif-italic font-normal text-ink/70 mt-2">Vous gardez le contrôle.</span>
+            </h2>
+            <p class="mt-4 text-base text-ink/75 leading-relaxed">
+              Une phrase simple : <span class="font-semibold">vos données restent sur votre appareil</span>.
+            </p>
+          </div>
+
+          <div class="mt-8 grid md:grid-cols-3 gap-5">
+            <div class="paper-card-soft rounded-[24px] p-6">
+              <div class="text-sm font-semibold">Sur l’appareil</div>
+              <p class="mt-2 text-sm text-ink/75 leading-relaxed">Le suivi fonctionne sans serveur requis.</p>
+            </div>
+            <div class="paper-card-soft rounded-[24px] p-6">
+              <div class="text-sm font-semibold">Sans compte, sans cloud</div>
+              <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas d’inscription pour utiliser le module.</p>
+            </div>
+            <div class="paper-card-soft rounded-[24px] p-6">
+              <div class="text-sm font-semibold">Sans tracking</div>
+              <p class="mt-2 text-sm text-ink/75 leading-relaxed">Pas de pixels publicitaires, pas de profilage.</p>
+            </div>
+          </div>
+
+          <div class="mt-7 grid lg:grid-cols-2 gap-5">
+            <div class="paper-card-soft rounded-[24px] p-6">
+              <div class="text-sm font-semibold">Ce que Boussole ne fait pas</div>
+              <ul class="mt-3 space-y-2 text-sm text-ink/75">
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta flex-none" aria-hidden="true"></span>
+                  <span>Aucun diagnostic, aucune recommandation médicale.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta flex-none" aria-hidden="true"></span>
+                  <span>Aucune promesse de résultat.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta flex-none" aria-hidden="true"></span>
+                  <span>Aucune analyse de vos données à votre insu.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="paper-card-soft rounded-[24px] p-6">
+              <div class="text-sm font-semibold">À quoi ça sert (vraiment)</div>
+              <p class="mt-3 text-sm text-ink/75 leading-relaxed">
+                Structurer un suivi de repères pour mieux se situer, mieux expliquer, et décider plus sereinement de la suite
+                (avec un professionnel si besoin).
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-7 rounded-[24px] bg-white/60 border border-ink/10 p-6">
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 text-ink/70 flex-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              </svg>
+              <p class="text-sm text-ink/70 leading-relaxed">
+                Boussole est un outil d’information et de suivi de repères. Il ne fournit pas de diagnostic, ne prescrit pas de traitement,
+                et ne remplace pas une consultation médicale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BETA -->
+    <section id="beta" class="py-12 sm:py-16 wash border-y border-ink/5 bg-white/15">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+            Transparence bêta.
+            <span class="block serif-italic font-normal text-ink/70 mt-2">Simple, clair, assumé.</span>
+          </h2>
+          <p class="mt-4 text-base text-ink/75 leading-relaxed">
+            Pas de “grand discours”. Voici ce qui existe, et comment suivre la suite.
+          </p>
+        </div>
+
+        <div class="mt-9 grid md:grid-cols-3 gap-6">
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Déjà disponible</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Saisie des repères, historique, tendances 14 jours, export PDF.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">En amélioration</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">Lisibilité, micro-copy, détails d’export, retours utilisateurs.</p>
+          </div>
+          <div class="paper-card-soft rounded-[28px] p-6">
+            <h3 class="text-sm font-semibold">Suivre / rejoindre</h3>
+            <p class="mt-2 text-sm text-ink/75 leading-relaxed">
+              Pour être tenu au courant : <a class="focus-ring underline underline-offset-4 decoration-terracotta/60" href="rejoindre.html">Rejoindre</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-3">
+          <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
+             href="https://boussole.micronutriment.fr/">
+            Essayer la bêta
+          </a>
+          <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
+             href="ecosysteme.html">
+            Découvrir l’écosystème
+          </a>
+        </div>
+
+        <p class="mt-6 text-sm text-ink/60 leading-relaxed">
+          Conception & méthode : <span class="font-semibold">Dr Rémy Honoré</span>, docteur en pharmacie.
+        </p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-12 sm:py-16 wash wash-sand">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 content-layer">
+        <div class="paper-card rounded-[36px] p-8 sm:p-10">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-8">
+              <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Prêt à retrouver vos repères ?</h2>
+              <p class="mt-4 text-base text-ink/75 leading-relaxed max-w-2xl">
+                Vous pouvez ouvrir Boussole directement. Ensuite, vous décidez : continuer, faire une pause, exporter… à votre rythme.
+              </p>
+
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a class="focus-ring btn-primary inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3.5 text-sm sm:text-base font-semibold hover:bg-blue-grey"
+                   href="https://boussole.micronutriment.fr/">
+                  Essayer la bêta
+                </a>
+                <a class="focus-ring btn-secondary inline-flex items-center justify-center rounded-full bg-white/75 hover:bg-white px-6 py-3.5 text-sm sm:text-base font-semibold shadow-whisper"
+                   href="ecosysteme.html">
+                  Découvrir l’écosystème
+                </a>
+              </div>
+
+              <p class="mt-5 text-sm text-ink/60">
+                Pour être informé des évolutions : <a class="focus-ring underline underline-offset-4 decoration-terracotta/60" href="rejoindre.html">Rejoindre</a>
+              </p>
+            </div>
+
+            <div class="lg:col-span-4">
+              <div class="rounded-[28px] bg-sand/35 border border-ink/10 p-6">
+                <div class="text-sm font-semibold text-ink/80">Contact professionnel</div>
+                <p class="mt-2 text-sm text-ink/75 leading-relaxed">
+                  Pour une présentation, un échange méthodologique, ou une intégration dans un parcours d’accompagnement.
+                </p>
+                <a class="focus-ring btn-secondary mt-4 inline-flex w-full items-center justify-center rounded-full bg-white/80 hover:bg-white px-5 py-3 text-sm font-semibold shadow-whisper"
+                   href="mailto:remyhonore@protonmail.com?subject=Boussole%20—%20Contact%20professionnel">
+                  Envoyer un email
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-[28px] bg-white/60 border border-ink/10 p-6">
+            <div class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 text-ink/70 flex-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2 20 6v7c0 5-3.5 9.2-8 10-4.5-.8-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              </svg>
+              <p class="text-sm text-ink/70 leading-relaxed">
+                Boussole est un outil d’information et de suivi de repères. Il ne fournit pas de diagnostic, ne prescrit pas de traitement,
+                et ne remplace pas une consultation médicale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ink/5">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-2">
+            <svg class="h-6 w-6 text-ink" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity=".9"/>
+              <path d="M15 9l-3 4-4 2 1-5 6-1z" fill="currentColor" opacity=".9"/>
+            </svg>
+            <span class="text-sm font-bold tracking-tighter uppercase">Boussole</span>
+          </div>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            Des repères simples, en privé. Tendances, synthèse PDF, contrôle utilisateur.
+          </p>
+          <p class="mt-3 text-sm text-ink/60 leading-relaxed">
+            Conception & méthode : <span class="font-semibold">Dr Rémy Honoré</span>, docteur en pharmacie.
+          </p>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="text-sm font-semibold text-ink/80">Liens</div>
+          <div class="mt-3 grid gap-2 text-sm">
+            <a class="focus-ring inline-flex rounded-full px-3 py-2 hover:bg-white/60 w-fit" href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
+            <a class="focus-ring inline-flex rounded-full px-3 py-2 hover:bg-white/60 w-fit" href="ecosysteme.html">Écosystème</a>
+            <a class="focus-ring inline-flex rounded-full px-3 py-2 hover:bg-white/60 w-fit" href="rejoindre.html">Rejoindre</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4">
+          <div class="text-sm font-semibold text-ink/80">Mentions & limites</div>
+          <div class="mt-3 rounded-[28px] bg-white/60 border border-ink/10 p-5">
+            <p class="text-sm text-ink/75 leading-relaxed">
+              Boussole est un outil d’information et de suivi de repères. Il ne fournit pas de diagnostic, ne prescrit pas de traitement
+              et ne remplace pas une consultation médicale.
+            </p>
+            <p class="mt-3 text-sm text-ink/75 leading-relaxed">
+              Pour toute décision de santé (symptômes inquiétants, examens, médicaments, prise en charge), consultez un professionnel.
+              Le PDF d’export est destiné à faciliter l’échange, pas à conclure à lui seul.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 h-px bg-ink/10"></div>
+
+      <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-ink/55">
+        <div>© <span id="year"></span> Boussole. Tous droits réservés.</div>
+        <div>Données sur l’appareil · Sans compte · Sans cloud · Sans tracking</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        const willOpen = mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", String(willOpen));
+      });
+
+      mobileMenu.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (a && a.getAttribute("href") && a.getAttribute("href").startsWith("#")) {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  </script>
+
+  <!-- Source file used: :contentReference[oaicite:0]{index=0} -->
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>app.micronutriment.fr — La science au service de votre santé</title>
+  <meta name="description" content="Écosystème de santé numérique indépendant : suivre vos repères personnels, comprendre la science, vérifier les interactions, choisir vos compléments, partager avec votre soignant. Zéro pub, zéro tracking, données sur votre appareil." />
+  <meta name="author" content="Dr Rémy Honoré — Pharmacien (PharmD)" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://app.micronutriment.fr/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="app.micronutriment.fr — La science au service de votre santé" />
+  <meta property="og:description" content="Suivre, comprendre, vérifier, choisir, partager. Un écosystème santé indépendant, sourcé et sans publicité." />
+  <meta property="og:url" content="https://app.micronutriment.fr/" />
+  <meta property="og:site_name" content="app.micronutriment.fr" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --bg: #2b3a3a;
+      --overlay: rgba(30, 42, 42, 0.62);
+      --overlay-deep: rgba(24, 34, 34, 0.78);
+      --text: #f4f4f2;
+      --text-muted: #d0d0cc;
+      --text-dim: #9a9e96;
+      --accent: #e6a136;
+      --accent-soft: #f2c567;
+      --accent-deep: #c4841e;
+      --accent-glow: rgba(230, 161, 54, 0.14);
+      --accent-border: rgba(230, 161, 54, 0.40);
+      --green: #6dba7a;
+      --green-soft: rgba(109, 186, 122, 0.14);
+      --blue: #6aadcf;
+      --blue-soft: rgba(106, 173, 207, 0.14);
+      --purple: #a68ad4;
+      --purple-soft: rgba(166, 138, 212, 0.14);
+      --card: rgba(20, 30, 30, 0.55);
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.20);
+      --max: 1080px;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+      background:
+        linear-gradient(to bottom, var(--overlay), var(--overlay-deep) 60%, rgba(20, 30, 30, 0.92)),
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=80")
+        center / cover no-repeat fixed,
+        var(--bg);
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section { padding: 0 0 16px; }
+
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 26px 0 20px;
+      border-bottom: 1px solid var(--line);
+      gap: 16px; flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: flex-start; gap: 16px; }
+    .brand-name {
+      font-family: var(--serif);
+      font-weight: 900; font-size: 2.6rem;
+      line-height: 0.92;
+      color: var(--accent);
+      text-shadow: 0 2px 0 rgba(0,0,0,.45);
+    }
+    .brand-tag {
+      font-family: var(--serif);
+      font-weight: 700; font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 0 1px 0 rgba(0,0,0,.45);
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+    nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    nav a {
+      color: var(--text); text-decoration: none;
+      font-weight: 700; font-size: 0.95rem;
+      opacity: 0.90; transition: all .2s;
+    }
+    nav a:hover { color: var(--accent); opacity: 1; }
+    nav a.active {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 7px;
+      text-decoration-thickness: 2px;
+      opacity: 1;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 78px 0 52px;
+    }
+    .hero-domain {
+      display: inline-block;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-border);
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.10;
+      max-width: 800px;
+      margin: 0 auto 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .divider {
+      width: 66px; height: 3px;
+      background: var(--accent);
+      margin: 18px auto;
+      border-radius: 2px;
+    }
+    .hero-sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text);
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.32;
+      text-shadow: 0 2px 8px rgba(0,0,0,.30);
+    }
+    .hero-detail {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      transition: all .2s;
+      border: 1px solid var(--line-strong);
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+    .btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,.30); }
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent-soft), var(--accent));
+      border-color: #ad7427;
+      color: #271905;
+    }
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    .panel {
+      margin: 24px auto 0;
+      max-width: 1020px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: var(--radius);
+      padding: 24px 24px 20px;
+    }
+    .panel-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .panel-title {
+      font-family: var(--serif);
+      font-size: 1.5rem; font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .panel-sub {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 24px;
+      max-width: 680px;
+    }
+
+    .parcours-flow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .parcours-step {
+      display: flex; align-items: center; gap: 7px;
+      padding: 7px 14px; border-radius: 999px;
+      font-weight: 700; font-size: 0.86rem;
+      white-space: nowrap;
+    }
+    .parcours-step .icon { font-size: 1rem; }
+    .parcours-arrow { color: var(--text-dim); font-size: 1.1rem; }
+    .step-suivre { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+    .step-informer { background: var(--blue-soft); color: var(--blue); border: 1px solid rgba(106,173,207,.30); }
+    .step-verifier { background: var(--purple-soft); color: var(--purple); border: 1px solid rgba(166,138,212,.30); }
+    .step-choisir { background: var(--green-soft); color: var(--green); border: 1px solid rgba(109,186,122,.30); }
+    .step-partager { background: rgba(255,255,255,.06); color: var(--text-muted); border: 1px solid var(--line-strong); }
+
+    .modules-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 720px) {
+      .modules-grid { grid-template-columns: 1fr 1fr; }
+      .modules-grid .module-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1; max-width: 50%; margin: 0 auto;
+      }
+    }
+    .module-card {
+      padding: 18px 18px 18px 22px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      transition: all .25s;
+      position: relative; overflow: hidden;
+    }
+    .module-card::before {
+      content: ""; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+    }
+    .module-card:hover { background: rgba(0,0,0,.28); border-color: var(--line-strong); transform: translateY(-2px); }
+    .module-card .module-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .module-card h3 { font-size: 1.04rem; font-weight: 800; margin-bottom: 3px; }
+    .module-card .module-verb {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+    }
+    .module-card p { color: var(--text-muted); font-size: 0.90rem; margin: 0; }
+    .module-card p a { color: var(--accent); }
+    .module-tag {
+      display: inline-block; margin-top: 10px;
+      font-size: 0.73rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 999px;
+    }
+    .module-tag.active { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+    .module-tag.soon { background: rgba(255,255,255,.05); color: var(--text-dim); border: 1px solid var(--line); }
+
+    .mc-suivre::before { background: var(--accent); }
+    .mc-suivre h3, .mc-suivre .module-verb { color: var(--accent); }
+    .mc-informer::before { background: var(--blue); }
+    .mc-informer h3, .mc-informer .module-verb { color: var(--blue); }
+    .mc-verifier::before { background: var(--purple); }
+    .mc-verifier h3, .mc-verifier .module-verb { color: var(--purple); }
+    .mc-choisir::before { background: var(--green); }
+    .mc-choisir h3, .mc-choisir .module-verb { color: var(--green); }
+    .mc-partager::before { background: var(--text-dim); }
+    .mc-partager h3, .mc-partager .module-verb { color: var(--text-muted); }
+
+    .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    @media (min-width: 640px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+    .kpi {
+      padding: 16px 14px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--line);
+      border-radius: 10px; text-align: center;
+    }
+    .kpi-num { display: block; font-size: 1.85rem; font-weight: 900; color: var(--accent); line-height: 1; }
+    .kpi-label { display: block; margin-top: 6px; font-size: 0.83rem; font-weight: 700; color: var(--text-dim); }
+    .traction-note {
+      padding: 12px 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted); font-size: 0.90rem;
+    }
+    .traction-note strong { color: var(--text); }
+
+    .trust-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 640px) { .trust-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .trust-item {
+      padding: 20px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--line);
+      border-radius: 10px; text-align: center;
+    }
+    .trust-icon { font-size: 2rem; margin-bottom: 10px; }
+    .trust-item h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+    .trust-item p { color: var(--text-muted); font-size: 0.88rem; margin: 0; }
+
+    .founder-card {
+      display: flex; gap: 22px; align-items: flex-start;
+      padding: 22px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .founder-avatar {
+      width: 68px; height: 68px; flex-shrink: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.6rem; font-weight: 900;
+      color: #1a0f00;
+    }
+    .founder-info h3 { font-size: 1.08rem; font-weight: 800; margin-bottom: 3px; }
+    .founder-info .founder-title { color: var(--accent); font-weight: 700; font-size: 0.90rem; margin-bottom: 8px; }
+    .founder-info p { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 6px; }
+    .founder-info a { color: var(--accent); }
+
+    .final-cta {
+      text-align: center;
+      padding: 40px 24px;
+      margin-top: 24px;
+    }
+    .final-cta h2 {
+      font-family: var(--serif);
+      font-size: 1.55rem; font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .final-cta p {
+      color: var(--text-muted); max-width: 500px;
+      margin: 0 auto 22px; font-size: 1rem;
+    }
+
+    footer {
+      text-align: center; padding: 20px 0 40px;
+      color: var(--text-dim); font-size: 0.84rem;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 920px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .brand-name { font-size: 2.2rem; }
+      .brand-tag { font-size: 1.25rem; white-space: normal; }
+      .hero { padding: 56px 0 40px; }
+    }
+    @media (max-width: 600px) {
+      body { background-attachment: scroll; }
+      .brand-name { font-size: 1.9rem; }
+      .brand-tag { font-size: 1.1rem; }
+      .hero-cta { flex-direction: column; }
+      .hero-cta .btn { width: 100%; justify-content: center; }
+      .parcours-flow { gap: 4px; }
+      .parcours-step { padding: 5px 9px; font-size: 0.76rem; }
+      .parcours-arrow { font-size: 0.9rem; }
+      .founder-card { flex-direction: column; align-items: center; text-align: center; }
+      .modules-grid .module-card:last-child:nth-child(odd) { max-width: 100%; }
+      .panel { padding: 18px 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="brand-name">Rémy<br/>Honoré</div>
+      <div class="brand-tag">Docteur en pharmacie</div>
+    </div>
+    <nav aria-label="Navigation principale">
+      <a href="#ecosysteme" class="active">Produit</a>
+      <a href="#traction">Utilisateurs</a>
+      <a href="#fondateur">Fondateur</a>
+      <a href="rejoindre.html">Rejoindre</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="hero-domain">app.micronutriment.fr</span>
+    <h1>La science au service de <em>votre</em> santé</h1>
+    <div class="divider"></div>
+    <p class="hero-sub">Alimentation, micronutrition, médicaments — un écosystème d'outils indépendants pour comprendre, suivre et agir sur votre santé</p>
+    <p class="hero-detail">Conçu par un pharmacien pour les personnes vivant avec des situations de santé complexes. Gratuit, sans publicité. Données sur votre appareil.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" target="_blank" rel="noopener">Ouvrir Boussole</a>
+      <a class="btn" href="/cdn-cgi/l/email-protection#4f3d2a2236272021203d2a0f3f3d203b2021222e2623612c2022703c3a2d252a2c3b720c20213b2e2c3b6a7d7f2e3f3f6122262c3d20213a3b3d26222a213b61293d">Prendre contact</a>
+    </div>
+  </section>
+
+  <section class="panel" id="ecosysteme">
+    <span class="panel-label">Écosystème</span>
+    <h2 class="panel-title">Un parcours personnel complet, une seule application</h2>
+    <p class="panel-sub">Chaque module répond à une question concrète du parcours personnel. Tous fonctionnent ensemble dans une seule app web installable.</p>
+
+    <div class="parcours-flow">
+      <span class="parcours-step step-suivre"><span class="icon">🧭</span> Suivre</span>
+      <span class="parcours-arrow">→</span>
+      <span class="parcours-step step-informer"><span class="icon">📚</span> S'informer</span>
+      <span class="parcours-arrow">→</span>
+      <span class="parcours-step step-verifier"><span class="icon">🔬</span> Vérifier</span>
+      <span class="parcours-arrow">→</span>
+      <span class="parcours-step step-choisir"><span class="icon">✅</span> Choisir</span>
+      <span class="parcours-arrow">→</span>
+      <span class="parcours-step step-partager"><span class="icon">📋</span> Partager</span>
+    </div>
+
+    <div class="modules-grid">
+      <article class="module-card mc-suivre">
+        <div class="module-icon">🧭</div>
+        <div class="module-verb">Suivre</div>
+        <h3>Boussole / Boussole+</h3>
+        <p><strong>Boussole</strong> (gratuit) : repères quotidiens — énergie, sommeil, confort physique, clarté mentale. Tendances, corrélations, export PDF pour votre professionnel de santé. <strong>Boussole+</strong> (accompagnement) : guides personnalisés et accompagnement sur mesure par un nutrithérapeute spécialisé référencé sur la plateforme — éligible aux forfaits médecines complémentaires de votre mutuelle. <a href="https://boussole.micronutriment.fr/" target="_blank" rel="noopener">Accéder à Boussole</a>.</p>
+        <span class="module-tag active">En cours de développement</span>
+      </article>
+      <article class="module-card mc-informer">
+        <div class="module-icon">📚</div>
+        <div class="module-verb">S'informer</div>
+        <h3>NutriFact &amp; TechnoFact</h3>
+        <p>Fiches substances (compléments, vitamines, minéraux) et technologies de santé (rTMS, tDCS, Nurosym). Sourcées PubMed et Cochrane. Niveaux de preuve explicites.</p>
+        <span class="module-tag soon">Bientôt</span>
+      </article>
+      <article class="module-card mc-verifier">
+        <div class="module-icon">🔬</div>
+        <div class="module-verb">Vérifier</div>
+        <h3>InteraConnect</h3>
+        <p>Vérificateur d'interactions entre vos médicaments et vos compléments alimentaires. Sécuriser vos choix avant d'en parler à votre soignant.</p>
+        <span class="module-tag soon">Bientôt</span>
+      </article>
+      <article class="module-card mc-choisir">
+        <div class="module-icon">✅</div>
+        <div class="module-verb">Choisir</div>
+        <h3>ClairComplement</h3>
+        <p>Comparateur indépendant de compléments alimentaires. Score objectif basé sur la qualité des formes, les dosages, les additifs et le rapport qualité-prix.</p>
+        <span class="module-tag soon">Bientôt</span>
+      </article>
+      <article class="module-card mc-partager">
+        <div class="module-icon">📋</div>
+        <div class="module-verb">Partager</div>
+        <h3>MonDossier</h3>
+        <p>Export structuré de vos repères et de vos recherches, pensé pour faciliter l'échange avec votre professionnel de santé.</p>
+        <span class="module-tag soon">Bientôt</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="traction">
+    <span class="panel-label">Utilisateurs</span>
+    <h2 class="panel-title">Une base utilisateurs réelle</h2>
+    <p class="panel-sub">Données d'usage observées sur Facebook au 27 février 2026, sans publicité payante.</p>
+    <div class="kpis">
+      <div class="kpi"><span class="kpi-num">532 319</span><span class="kpi-label">vues / 28 jours</span></div>
+      <div class="kpi"><span class="kpi-num">9 559</span><span class="kpi-label">interactions</span></div>
+      <div class="kpi"><span class="kpi-num">88 668</span><span class="kpi-label">couverture</span></div>
+      <div class="kpi"><span class="kpi-num">1 057</span><span class="kpi-label">abonnés</span></div>
+</div>
+    <div class="traction-note">
+      <strong>Profil type :</strong> 87% femmes, pic 45-54 ans. Principalement des personnes vivant avec un Covid long, une fibromyalgie ou une fatigue chronique, en recherche active de contenus sourcés et fiables. <em>Données au 27 février 2026 — zéro publicité payante.</em>
+    </div>
+  </section>
+
+  <section class="panel" id="confiance">
+    <span class="panel-label">Confiance</span>
+    <h2 class="panel-title">Vos données restent les vôtres</h2>
+    <p class="panel-sub">Privacy by design : aucun compte obligatoire, aucun serveur, aucun tracking.</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <h3>Local-first</h3>
+        <p>Toutes vos données sont stockées sur votre appareil. Rien ne transite par un serveur. Vous gardez le contrôle total.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🚫</div>
+        <h3>Zéro publicité</h3>
+        <p>Aucune pub, aucun lien d'affiliation, aucune vente de données. L'indépendance est notre modèle, pas un argument marketing.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📖</div>
+        <h3>Tout est sourcé</h3>
+        <p>Chaque information renvoie vers PubMed ou Cochrane. Les niveaux de preuve sont explicites. Ce qui est incertain est dit incertain.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="fondateur">
+    <span class="panel-label">Fondateur</span>
+    <h2 class="panel-title">Conçu par un pharmacien, pour les personnes</h2>
+    <div class="founder-card">
+      <div class="founder-avatar">RH</div>
+      <div class="founder-info">
+        <h3>Rémy Honoré</h3>
+        <div class="founder-title">Docteur en Pharmacie (PharmD) · Nutrithérapeute</div>
+        <p>12 ans d'officine, nutrithérapeute autodidacte indépendant, 60+ articles scientifiques publiés sur <a href="https://micronutriment.fr" target="_blank" rel="noopener">micronutriment.fr</a>.</p>
+        <p>Lui-même touché par le Covid long, il conçoit les outils qu'il aurait voulu avoir en tant qu'utilisateur et professionnel de santé.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-cta">
+    <h2>Intéressé(e) ?</h2>
+    <p>Utilisateur, professionnel de santé, partenaire potentiel ou investisseur : parlons-en.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#255740485c4d4a4b4a57406555574a514a4b48444c490b464a481a5650474f40465118664a4b514446510017154455550b484c46574a4b5051574c48404b510b4357">Prendre contact</a>
+      <a class="btn" href="rejoindre.html">Rejoindre l'équipe</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 app.micronutriment.fr · <a href="https://micronutriment.fr" target="_blank" rel="noopener">micronutriment.fr</a> · <a href="rejoindre.html">Rejoindre l'équipe</
