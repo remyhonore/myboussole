@@ -3,6 +3,19 @@
   "trailingSlash": true,
   "headers": [
     {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        },
+        {
+          "key": "X-Boussole-Assets-Rule",
+          "value": "1"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -29,15 +42,6 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow, noarchive"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
     }
