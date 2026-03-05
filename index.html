@@ -532,7 +532,231 @@
       .btn{ transition: none !important; }
     }
 
-  </style>
+  
+/* BOUSSOLE HOME REFRESH v2 */
+.home-v2{
+  padding: 0;
+}
+.home-v2 .section{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 20px;
+}
+.home-v2 .hero{
+  padding: 70px 20px 40px;
+}
+.home-v2 .hero-inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+}
+@media (max-width: 940px){
+  .home-v2 .hero-inner{ grid-template-columns: 1fr; }
+  .home-v2 .hero-visual{ order: -1; }
+}
+
+.home-v2 h1{
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  margin: 10px 0 14px;
+  font-size: clamp(40px, 5vw, 68px);
+}
+.home-v2 .sub{
+  max-width: 55ch;
+  line-height: 1.55;
+  font-size: 18px;
+  opacity: .95;
+  margin: 0 0 18px;
+}
+.home-v2 .kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,.06);
+  font-weight: 600;
+  font-size: 13px;
+}
+.home-v2 .kicker .dot{
+  width: 8px; height: 8px; border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  display: inline-block;
+}
+
+.home-v2 .hero-cta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.home-v2 .badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.home-v2 .badge{
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.7);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: .95;
+}
+
+.home-v2 .hero-visual{
+  display: flex;
+  justify-content: flex-end;
+}
+.home-v2 .mockup{
+  width: min(460px, 100%);
+  border-radius: 26px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 18px 60px rgba(0,0,0,.12);
+  padding: 12px;
+}
+.home-v2 .mockup img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+.home-v2 .section-head{
+  margin-bottom: 18px;
+}
+.home-v2 .section-head h2{
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.home-v2 .section-head p{
+  margin: 0;
+  max-width: 62ch;
+  line-height: 1.55;
+  opacity: .9;
+}
+
+.home-v2 .grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 940px){
+  .home-v2 .grid-3{ grid-template-columns: 1fr; }
+}
+
+.home-v2 .card{
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.75);
+  padding: 16px 16px 14px;
+}
+.home-v2 .card .ico{
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.home-v2 .card h3{
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+.home-v2 .card p{
+  margin: 0;
+  line-height: 1.55;
+  opacity: .92;
+}
+
+.home-v2 .shots{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 940px){
+  .home-v2 .shots{ grid-template-columns: 1fr; }
+}
+.home-v2 figure{
+  margin: 0;
+}
+.home-v2 .shot{
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 10px 40px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+.home-v2 .shot img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.home-v2 figcaption{
+  font-size: 13px;
+  opacity: .85;
+  margin-top: 8px;
+  padding-left: 6px;
+}
+
+.home-v2 .grid-4{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 940px){
+  .home-v2 .grid-4{ grid-template-columns: 1fr; }
+}
+
+.home-v2 .split{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 940px){
+  .home-v2 .split{ grid-template-columns: 1fr; }
+}
+
+.home-v2 .timeline{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 940px){
+  .home-v2 .timeline{ grid-template-columns: 1fr; }
+}
+.home-v2 .step{
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.75);
+  padding: 14px 14px 12px;
+}
+.home-v2 .step .k{
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.home-v2 .fine{
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: .8;
+  max-width: 80ch;
+}
+
+/* Header CTA label align */
+.nav .btn.btn-primary{ white-space: nowrap; }
+
+</style>
 </head>
 
 <body>
@@ -565,7 +789,7 @@
 
         <div class="actions">
           <a class="btn" href="rejoindre.html">Rejoindre</a>
-          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
+          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Découvrir l’app</a>
           <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
             Menu
           </button>
@@ -582,281 +806,194 @@
         <a href="ecosysteme.html">Écosystème</a>
         <div class="divider"></div>
         <a href="rejoindre.html">Rejoindre</a>
-        <a href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
+        <a href="https://boussole.micronutriment.fr/">Découvrir l’app</a>
       </nav>
     </div>
   </div>
 
-  <main id="contenu" tabindex="-1">
-    <header class="hero" role="banner">
-      <div class="hero-media" aria-hidden="true">
-        <picture class="hero-photo">
-          <source srcset="assets/espace-zen_tech.webp" type="image/webp" />
-          <img src="assets/espace-zen_tech.jpg" width="2048" height="1365" alt="" fetchpriority="high" decoding="async" />
-        </picture>
-        <picture class="hero-texture">
-          <source srcset="assets/hero.webp" type="image/webp" />
-          <img src="assets/hero.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1400" />
-        </picture>
-        <div class="hero-overlay"></div>
+  
+<main class="home-v2" id="top">
+  <!-- BOUSSOLE:HOME-V2 -->
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span>Bien-être d’abord. Repères ensuite.</div>
+        <h1>Comprendre ce qui varie en soi, avec douceur.</h1>
+        <p class="sub">Boussole transforme des sensations floues en repères simples, sans pression et sans médicalisation.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l’app</a>
+          <a class="btn" href="rejoindre.html">Rejoindre l’espace</a>
+        </div>
+
+        <div class="badges" aria-label="Caractéristiques">
+          <span class="badge">100% local</span>
+          <span class="badge">Sans compte</span>
+          <span class="badge">Export PDF 14 jours</span>
+        </div>
+
+        <p class="fine">Aperçu illustratif. Boussole est un outil d’information et de repères : pas de diagnostic, pas de promesse, et ne remplace pas une consultation.</p>
       </div>
 
-      <div class="wrap">
-        <div class="hero-content">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span>Bien-être d’abord. Repères ensuite.</div>
-          <h1>Un suivi doux, pour retrouver des repères.</h1>
-          <p class="sub">
-            Chaque jour ne se ressemble pas. Boussole vous aide à vous situer sans vous juger : 4 repères simples, une tendance sur 14 jours,
-            et une synthèse PDF si vous le souhaitez.
-          </p>
-
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
-            <a class="btn" href="rejoindre.html">Rejoindre l’espace</a>
-          </div>
-
-          <div class="pills" aria-label="Points clés">
-            <span class="pill">Données sur votre appareil</span>
-            <span class="pill">Sans compte</span>
-            <span class="pill">Sans tracking</span>
-            <span class="pill">Export PDF volontaire</span>
-          </div>
-
-          <div class="hero-note">
-            Aperçu illustratif. Boussole est un outil d’information et de suivi de repères : pas de diagnostic, pas de promesse,
-            et ne remplace pas une consultation.
-          </div>
+      <div class="hero-visual" aria-label="Aperçu de l’app">
+        <div class="mockup">
+          <img src="/assets/boussole_index.webp" alt="Mockup de l’application Boussole" loading="eager" />
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="chapter wrap" id="reperes">
-      <div class="chapter-head">
-        <div>
-          <div class="eyebrow">Chapitre 1 · Repères</div>
-          <h2>Guidé par 4 repères. Sans perfection.</h2>
-          <p class="lead">Vous notez ce qui compte, pas tout ce qui passe. L’idée : un signal fidèle, assez simple pour tenir dans la durée.</p>
-        </div>
+  <section class="section" id="changes">
+    <div class="section-head">
+      <h2>Ce que Boussole change</h2>
+      <p>Pas “tout mesurer”. Juste ce qui aide à se situer, et à se traiter avec plus de douceur.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="ico">🔎</div>
+        <h3>Voir ce qui bouge en soi</h3>
+        <p>Mettre des mots simples sur l’énergie, le confort, la clarté. Sans sur-analyser.</p>
       </div>
-
-      <div class="chapter-grid">
-        <div class="panel reveal">
-          <ul class="bullets">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">⚡️</span>Énergie</h3>
-              <p>Un thermomètre rapide pour sentir où vous en êtes, sans sur-analyser.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🌙</span>Sommeil</h3>
-              <p>Qualité perçue, récupération, rythme. Juste assez pour relier “repos” et “journée”.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧍</span>Confort</h3>
-              <p>Douleurs, tensions, tolérance physique : un repère global, sans jargon.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧠</span>Clarté mentale</h3>
-              <p>Pour capter le brouillard, l’attention, la charge mentale… sans vous culpabiliser.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="callout reveal">
-          <strong>Le plus important</strong>
-          <p>Ce suivi est fait pour préserver l’énergie. Si vous ne notez pas un jour, ce n’est pas un “échec”. C’est juste un jour.</p>
-          <div class="divider"></div>
-          <strong>Sur mobile, comme une app</strong>
-          <p>Boussole fonctionne dans le navigateur et peut s’ajouter à l’écran d’accueil (PWA), sans compte.</p>
-        </div>
+      <div class="card">
+        <div class="ico">🧩</div>
+        <h3>Repérer des schémas</h3>
+        <p>Observer sur 14 jours ce qui revient, ce qui se stabilise, ce qui s’apaise.</p>
       </div>
-    </section>
-
-    <section class="chapter wrap" id="tendances">
-      <div class="chapter-head">
-        <div>
-          <div class="eyebrow">Chapitre 2 · Tendance</div>
-          <h2>Voir la tendance, pas le bruit.</h2>
-          <p class="lead">Une journée isolée ne raconte pas toute l’histoire. La vue 14 jours aide à remettre les variations dans leur contexte.</p>
-        </div>
+      <div class="card">
+        <div class="ico">🤍</div>
+        <h3>Se sentir légitime</h3>
+        <p>Un repère fiable vaut mieux qu’un “ressenti vague”. Et ça aide à se faire confiance.</p>
       </div>
+    </div>
 
-      <div class="chapter-grid">
-        <div class="panel reveal">
-          <ul class="bullets">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">📆</span>14 jours au même endroit</h3>
-              <p>Une lecture simple pour repérer les phases : mieux, stable, plus difficile.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🟢</span>Un repère de journée</h3>
-              <p>Une synthèse visuelle (type vert / orange / rouge) pour aider à décider “quoi faire ensuite”.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧭</span>Décider avec plus de calme</h3>
-              <p>Adapter le rythme, poser des limites, préparer une discussion. Sans injonction.</p>
-            </li>
-          </ul>
-        </div>
+    <div class="shots">
+      <!-- Remplace ces 3 visuels par tes 3 captures quand tu les as -->
+      <figure>
+        <div class="shot"><img src="/assets/boussole_index.webp" alt="Capture 1 de l’app Boussole" loading="lazy" /></div>
+        <figcaption>Repères du jour</figcaption>
+      </figure>
+      <figure>
+        <div class="shot"><img src="/assets/boussole_index.webp" alt="Capture 2 de l’app Boussole" loading="lazy" /></div>
+        <figcaption>Tendance sur 14 jours</figcaption>
+      </figure>
+      <figure>
+        <div class="shot"><img src="/assets/boussole_index.webp" alt="Capture 3 de l’app Boussole" loading="lazy" /></div>
+        <figcaption>Export PDF</figcaption>
+      </figure>
+    </div>
+  </section>
 
-        <div class="hammer reveal">
-          <h3 class="hammer-title"><span class="icon" aria-hidden="true">🛑</span>Stop aux raccourcis</h3>
-          <p>“Un bon jour” ≠ “tout est réglé”. “Un mauvais jour” ≠ “tout s’effondre”. La tendance sert à éviter les conclusions trop rapides.</p>
-          <div class="divider"></div>
-          <p><strong>Vous gardez ce qui vous sert.</strong> Le reste, vous le laissez.</p>
-        </div>
+  <section class="section" id="reperes">
+    <div class="section-head">
+      <h2>Comment ça marche</h2>
+      <p>4 indicateurs. 30 secondes. Une tendance sur 14 jours. Et tout reste sur ton appareil.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="ico">⚡️</div>
+        <h3>Énergie</h3>
+        <p>Un thermomètre simple pour sentir où tu en es, sans te juger.</p>
       </div>
-    </section>
-
-    <section class="chapter wrap" id="partage">
-      <div class="chapter-head">
-        <div>
-          <div class="eyebrow">Chapitre 3 · Export</div>
-          <h2>Partager sans se justifier.</h2>
-          <p class="lead">Quand vous le choisissez, vous exportez une synthèse PDF. C’est un support de discussion, pas un verdict.</p>
-        </div>
+      <div class="card">
+        <div class="ico">🌫️</div>
+        <h3>Clarté mentale</h3>
+        <p>Pour capter le brouillard, la charge, l’attention. Sans culpabiliser.</p>
       </div>
-
-      <div class="chapter-grid">
-        <div class="panel reveal">
-          <ul class="bullets">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧾</span>Synthèse claire</h3>
-              <p>Repères, tendance et notes : un format court qui aide quand “il y a trop à dire”.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🤝</span>Utile en consultation</h3>
-              <p>Un point de départ concret pour discuter de la suite (avec un professionnel si besoin).</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🔒</span>Toujours volontaire</h3>
-              <p>Rien n’est partagé automatiquement. Exporter est un choix explicite, à chaque fois.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="callout reveal">
-          <strong>Ce que Boussole n’est pas</strong>
-          <p>Un outil médical. Boussole ne fournit pas de diagnostic, ne prescrit pas de traitement, et ne remplace pas une consultation.</p>
-          <div class="divider"></div>
-          <strong>Ce que Boussole est</strong>
-          <p>Un outil d’information et de suivi de repères, pour mieux se situer et décider plus sereinement.</p>
-        </div>
+      <div class="card">
+        <div class="ico">🧘‍♀️</div>
+        <h3>Charge émotionnelle</h3>
+        <p>Le niveau de “tension interne” du jour. Juste assez pour se repérer.</p>
       </div>
-    </section>
-
-    <section class="chapter wrap" id="confiance">
-      <div class="chapter-head">
-        <div>
-          <div class="eyebrow">Chapitre 4 · Confiance</div>
-          <h2>Confiance, en clair. Vous gardez le contrôle.</h2>
-          <p class="lead">Le cadre est simple, assumé, et aligné avec le la confidentialité d’abord.</p>
-        </div>
+      <div class="card">
+        <div class="ico">🦴</div>
+        <h3>Confort physique</h3>
+        <p>Douleurs, tensions, tolérance : un repère global, sans jargon.</p>
       </div>
+    </div>
 
-      <div class="chapter-grid">
-        <div class="hammer reveal">
-          <h3 class="hammer-title"><span class="icon" aria-hidden="true">🧷</span>Vos données restent sur votre appareil. Toujours.</h3>
-          <p>Boussole n’envoie rien “dans le dos”. Pas de cloud requis pour fonctionner. Pas de pixels publicitaires. Pas de profilage.</p>
-          <div class="divider"></div>
-          <ul class="bullets" aria-label="Principes de confidentialité">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🙅‍♀️</span>Sans compte</h3>
-              <p>Pas d’inscription nécessaire pour utiliser le module.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🕵️‍♂️</span>Sans tracking</h3>
-              <p>Pas d’outils marketing intrusifs pour suivre vos usages.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧘</span>Sans promesse</h3>
-              <p>Pas de discours magique, pas de résultat garanti.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="panel reveal">
-          <ul class="bullets">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧠</span>Moins de charge mentale</h3>
-              <p>Un format volontairement simple : pour vous aider, pas pour vous occuper.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧾</span>Votre export, votre décision</h3>
-              <p>La synthèse PDF est optionnelle. Vous choisissez si, quand, et à qui vous la montrez.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🧭</span>Un outil, pas une injonction</h3>
-              <p>Si vous traversez une période compliquée, l’objectif reste de préserver l’énergie, pas de “tenir un streak”.</p>
-            </li>
-          </ul>
-        </div>
+    <div class="split" id="partage">
+      <div class="card">
+        <div class="ico">🔒</div>
+        <h3>100% local</h3>
+        <p>Pas de compte. Pas de cloud imposé. Rien n’est “partagé automatiquement”.</p>
       </div>
-    </section>
-
-    <section class="chapter wrap" id="beta">
-      <div class="chapter-head">
-        <div>
-          <div class="eyebrow">Chapitre 5 · Bêta</div>
-          <h2>Simple, clair, étape par étape.</h2>
-          <p class="lead">Boussole avance sans bruit : utile d’abord, puis mieux. Vous pouvez suivre l’évolution ou soutenir le projet.</p>
-        </div>
+      <div class="card">
+        <div class="ico">📄</div>
+        <h3>PDF sur 14 jours</h3>
+        <p>Quand tu le souhaites : une synthèse lisible pour expliquer, sans se perdre dans les détails.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="chapter-grid">
-        <div class="panel reveal">
-          <ul class="bullets">
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">✅</span>Déjà disponible</h3>
-              <p>Saisie rapide des repères, vue 14 jours, note libre, export PDF volontaire.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">🛠️</span>En amélioration</h3>
-              <p>Lisibilité, ergonomie, petites aides au rythme, et passerelles avec l’écosystème.</p>
-            </li>
-            <li class="bullet">
-              <h3><span class="icon" aria-hidden="true">💬</span>Rejoindre</h3>
-              <p>Un espace pour suivre, poser des questions, et soutenir une approche “méthode avant le bruit”.</p>
-            </li>
-          </ul>
+  <section class="section" id="tendances">
+    <div class="section-head">
+      <h2>Une vue longue durée, toujours locale.</h2>
+      <p>Boussole+ vise une lecture plus longue, non médicalisante : utile pour préparer un échange, sans “faire un dossier”.</p>
+    </div>
 
-          <div class="hero-cta" style="margin-top:14px">
-            <a class="btn" href="rejoindre.html">Rejoindre</a>
-            <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Essayer la bêta</a>
-          </div>
-        </div>
-
-        <div class="panel reveal">
-          <figure class="media">
-            <picture>
-              <source srcset="assets/boussole_index.webp" type="image/webp" />
-              <img src="assets/boussole_index.jpg" width="722" height="486" alt="Aperçu du module Boussole (illustration)." loading="lazy" decoding="async" />
-            </picture>
-            <figcaption class="media-cap">
-              Aperçu illustratif. Boussole est un outil d’information et de suivi de repères : pas de diagnostic, pas de promesse, ne remplace pas une consultation.
-            </figcaption>
-          </figure>
-          <div class="divider"></div>
-          <p style="margin:0;color:var(--muted);line-height:1.62">
-            Besoin de contexte ? Découvrez la carte d’ensemble : modules, parcours, et la logique la confidentialité d’abord du projet.
-          </p>
-          <p style="margin:12px 0 0"><a class="btn" href="ecosysteme.html">Découvrir l’écosystème</a></p>
-        </div>
+    <div class="timeline">
+      <div class="step">
+        <div class="k">30 jours</div>
+        <div>Voir la stabilité, les cycles, les périodes plus fragiles.</div>
       </div>
-    </section>
-
-    <footer>
-      <div class="wrap">
-        <div class="foot">
-          <div>© <span id="year"></span> Boussole</div>
-          <div class="small-links">
-            <a href="#confiance">Confidentialité</a>
-            <a href="ecosysteme.html">Écosystème</a>
-            <a href="rejoindre.html">Rejoindre</a>
-          </div>
-        </div>
+      <div class="step">
+        <div class="k">3–6 mois</div>
+        <div>Observer ce qui tient dans la durée (rythme, récup, tolérances).</div>
       </div>
-    </footer>
-  </main>
+      <div class="step">
+        <div class="k">12 mois</div>
+        <div>Garder une trace simple du “long cours”, sans surcharge.</div>
+      </div>
+    </div>
+
+    <div class="hero-cta" style="margin-top:16px">
+      <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Ouvrir Boussole</a>
+      <a class="btn" href="/articles/">Lire les articles</a>
+    </div>
+  </section>
+
+  <section class="section" id="confiance">
+    <div class="section-head">
+      <h2>Valeurs</h2>
+      <p>Le produit est construit pour préserver l’énergie et clarifier, pas pour rajouter une charge.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="ico">🌿</div>
+        <h3>Douceur</h3>
+        <p>Des repères légers, compatibles avec les jours “faibles”.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🧾</div>
+        <h3>Non-médicalisation</h3>
+        <p>Informer et structurer, sans promesse ni vocabulaire qui enferme.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🧠</div>
+        <h3>Simplicité</h3>
+        <p>1 écran, 4 curseurs, une note : assez pour apprendre sans s’épuiser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="beta">
+    <div class="section-head">
+      <h2>Découvrir l’app, tranquillement</h2>
+      <p>Tu peux l’utiliser comme une app sur mobile (PWA), sans compte.</p>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l’app</a>
+      <a class="btn" href="rejoindre.html">Rejoindre l’espace</a>
+    </div>
+  </section>
+
+</main>
+
 
   <script>
 // Year
