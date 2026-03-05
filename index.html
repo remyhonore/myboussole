@@ -838,7 +838,10 @@
 
       <div class="hero-visual" aria-label="Aperçu de l’app">
         <div class="mockup">
-          <img src="/assets/hero.jpg" alt="Mockup de l’application Boussole" loading="eager" />
+          <picture>
+  <source srcset="/assets/hero.webp" type="image/webp">
+  <img src="/assets/hero.jpg" alt="Mockup de l’application Boussole" loading="eager" decoding="async" fetchpriority="high" />
+</picture>
         </div>
       </div>
     </div>
@@ -871,15 +874,24 @@
     <div class="shots">
       <!-- Remplace ces 3 visuels par tes 3 captures quand tu les as -->
       <figure>
-        <div class="shot"><img src="/assets/hero.jpg" alt="Capture 1 de l’app Boussole" loading="lazy" /></div>
+        <div class="shot"><picture>
+  <source srcset="/assets/hero.webp" type="image/webp">
+  <img src="/assets/hero.jpg" alt="Capture 1 de l’app Boussole" loading="lazy" decoding="async" />
+</picture></div>
         <figcaption>Repères du jour</figcaption>
       </figure>
       <figure>
-        <div class="shot"><img src="/assets/hero.jpg" alt="Capture 2 de l’app Boussole" loading="lazy" /></div>
+        <div class="shot"><picture>
+  <source srcset="/assets/hero.webp" type="image/webp">
+  <img src="/assets/hero.jpg" alt="Capture 2 de l’app Boussole" loading="lazy" decoding="async" />
+</picture></div>
         <figcaption>Tendance sur 14 jours</figcaption>
       </figure>
       <figure>
-        <div class="shot"><img src="/assets/hero.jpg" alt="Capture 3 de l’app Boussole" loading="lazy" /></div>
+        <div class="shot"><picture>
+  <source srcset="/assets/hero.webp" type="image/webp">
+  <img src="/assets/hero.jpg" alt="Capture 3 de l’app Boussole" loading="lazy" decoding="async" />
+</picture></div>
         <figcaption>Export PDF</figcaption>
       </figure>
     </div>
