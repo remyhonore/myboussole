@@ -191,328 +191,217 @@
       .menu-btn{ display:inline-flex; align-items:center; gap:10px; }
     }
 
-    /* Hero */
-    .hero{
-      position: relative;
-      min-height: clamp(560px, 78vh, 760px);
-      display:flex;
+    /* Home v2 */
+    .home-v2{ padding: 0; }
+    .home-v2 .section{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 20px;
+    }
+    .home-v2 .hero{
+      padding: 70px 20px 40px;
+    }
+    .home-v2 .hero-inner{
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
       align-items: center;
-      padding: clamp(38px, 7vh, 78px) 0 46px;
-      overflow:hidden;
+    }
+    @media (max-width: 940px){
+      .home-v2 .hero-inner{ grid-template-columns: 1fr; }
+      .home-v2 .hero-visual{ order: -1; }
     }
 
-    .hero-media{ position:absolute; inset:0; z-index:0; }
-
-    .hero-photo{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-    }
-    .hero-photo img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: 92% 40%;
-      filter: saturate(.98) contrast(.98);
-      transform: scale(1.01);
-    }
-
-    @media (min-width: 1200px){
-      .hero-photo img{ object-position: 96% 42%; }
-    }
-
-    .hero-texture{
-      position:absolute; inset:0;
-      opacity: .22;
-      mix-blend-mode: soft-light;
-      pointer-events:none;
-    }
-    .hero-texture img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(.9) contrast(.98);
-    }
-
-    .hero-overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(248,246,240,.98) 0%,
-          rgba(248,246,240,.92) 38%,
-          rgba(248,246,240,.42) 62%,
-          rgba(248,246,240,.12) 74%,
-          rgba(248,246,240,.00) 86%),
-        radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
-        radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      pointer-events:none;
-    }
-
-    .hero-content{ position: relative; z-index: 2; max-width: 52ch; }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: 0 10px 24px rgba(6,23,45,.10);
-      color: var(--muted);
-      font-weight: 720;
-      font-size: 14px;
-    }
-    .kicker .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(201,122,97,.9), rgba(110,135,125,.75));
-      box-shadow: 0 6px 14px rgba(201,122,97,.25);
-    }
-
-    h1{
-      margin: 14px 0 0;
+    .home-v2 h1{
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      margin: 10px 0 14px;
       font-family: var(--serif);
-      font-weight: 780;
-      letter-spacing: -0.03em;
-      line-height: 1.02;
-      font-size: clamp(38px, 4.2vw, 64px);
-      max-width: 18ch;
-      text-wrap: balance;
+      font-size: clamp(40px, 5vw, 68px);
     }
-
-    .sub{
-      margin: 14px 0 0;
-      font-size: clamp(16px, 1.55vw, 19px);
+    .home-v2 .sub{
+      max-width: 55ch;
       line-height: 1.55;
+      font-size: 18px;
       color: var(--muted);
-      max-width: 52ch;
-      text-wrap: pretty;
+      margin: 0 0 18px;
     }
-
-    .hero-cta{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-
-    .pills{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 680;
-    }
-
-    .hero-note{
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.5;
-      max-width: 68ch;
-      padding: 10px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(6,23,45,.10);
-      background: rgba(255,255,255,.52);
-      backdrop-filter: blur(8px);
-    }
-    .hero .btn{ background: rgba(255,255,255,.76); }
-    .hero .pill{ background: rgba(255,255,255,.70); }
-    .hero .kicker{ background: rgba(255,255,255,.72); }
-
-
-
-    @media (max-width: 980px){
-      .hero{ min-height: auto; padding: 34px 0 26px; }
-      .hero-overlay{
-        background:
-          linear-gradient(180deg,
-            rgba(248,246,240,.92) 0%,
-            rgba(248,246,240,.84) 36%,
-            rgba(248,246,240,.55) 62%,
-            rgba(248,246,240,.20) 82%,
-            rgba(248,246,240,.00) 100%),
-          radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
-          radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      }
-      .hero-photo img{ object-position: 72% 30%; }
-      .hero-content{ max-width: 52ch; }
-    }
-
-    @media (max-width: 520px){
-      h1{ max-width: none; }
-      .pills{ gap: 10px; }
-      .pill{ padding: 9px 11px; }
-    }
-
-    /* Chapters */
-    main{ position: relative; }
-    section{ scroll-margin-top: 86px; }
-
-    .chapter{
-      margin: 34px 0 0;
-      padding-top: 26px;
-      padding-bottom: 26px;
-    }
-
-    .chapter-head{
-      display:flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+    .home-v2 .kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted2);
-      font-weight: 720;
+      background: rgba(255,255,255,.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,0,0,.06);
+      font-weight: 600;
       font-size: 13px;
-      margin-bottom: 10px;
-      width: fit-content;
+      color: var(--muted);
+    }
+    .home-v2 .kicker .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: rgba(201,122,97,.8);
+      display: inline-block;
     }
 
-    h2{
-      margin: 0;
+    .home-v2 .hero-cta{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .home-v2 .badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .home-v2 .badge{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.7);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .home-v2 .hero-visual{
+      display: flex;
+      justify-content: flex-end;
+    }
+    .home-v2 .mockup{
+      width: min(460px, 100%);
+      border-radius: 26px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 18px 60px rgba(0,0,0,.12);
+      padding: 12px;
+    }
+    .home-v2 .mockup img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+    }
+
+    .home-v2 .section-head{ margin-bottom: 18px; }
+    .home-v2 .section-head h2{
+      margin: 0 0 6px;
+      font-family: var(--serif);
       font-size: clamp(24px, 2.2vw, 34px);
       letter-spacing: -0.02em;
       line-height: 1.16;
-      font-family: var(--serif);
-          text-wrap: balance;
     }
-
-    .lead{
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.62;
-      max-width: 74ch;
-    }
-
-    .chapter-grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 14px;
-      align-items: start;
-    }
-    @media (max-width: 980px){
-      .chapter-grid{ grid-template-columns: 1fr; }
-    }
-
-    .panel{
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      border-radius: var(--radius2);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .bullets{
+    .home-v2 .section-head p{
       margin: 0;
-      padding: 0;
-      list-style: none;
+      max-width: 62ch;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .home-v2 .grid-3{
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 940px){
+      .home-v2 .grid-3{ grid-template-columns: 1fr; }
     }
 
-    .bullet{
-      border-radius: 18px;
-      border: 1px solid rgba(6,23,45,.08);
-      background: rgba(248,246,240,.66);
-      padding: 14px 14px 12px;
+    .home-v2 .card{
+      border-radius: 22px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.75);
+      padding: 16px 16px 14px;
     }
+    .home-v2 .card .ico{ font-size: 18px; margin-bottom: 8px; }
+    .home-v2 .card h3{ margin: 0 0 6px; font-size: 16px; }
+    .home-v2 .card p{ margin: 0; line-height: 1.55; color: var(--muted); }
 
-    .bullet h3{
-      margin: 0;
-      font-size: 15px;
-      font-weight: 880;
-      letter-spacing: -0.01em;
-      display:flex;
-      align-items: center;
-      gap: 10px;
+    .home-v2 .shots{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-
-    .bullet p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
+    @media (max-width: 940px){
+      .home-v2 .shots{ grid-template-columns: 1fr; }
     }
-
-    .icon{
-      width: 30px; height: 30px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      border: 1px solid rgba(6,23,45,.10);
-      background: linear-gradient(135deg, rgba(201,122,97,.14), rgba(110,135,125,.12));
-      box-shadow: 0 10px 22px rgba(6,23,45,.08);
-      flex: 0 0 auto;
-    }
-
-    .callout{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(201,122,97,.24);
-      background: linear-gradient(135deg, rgba(201,122,97,.12), rgba(110,135,125,.10));
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .callout strong{ font-weight: 900; }
-    .callout p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .hammer{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(6,23,45,.10);
-      background:
-        radial-gradient(700px 260px at 18% 10%, rgba(110,135,125,.18), transparent 60%),
-        radial-gradient(680px 260px at 80% 0%, rgba(232,183,200,.18), transparent 60%),
-        rgba(255,255,255,.56);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .hammer-title{
-      margin: 0;
-      font-weight: 920;
-      letter-spacing: -0.02em;
-      font-size: 18px;
-      display:flex; align-items:center; gap: 10px;
-    }
-
-    .hammer p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .divider{ height: 1px; background: rgba(6,23,45,.08); margin: 12px 0; }
-
-    /* Media card (uses boussole_index.*) */
-    .media{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: var(--shadow);
+    .home-v2 figure{ margin: 0; }
+    .home-v2 .shot{
+      border-radius: 22px;
+      border: 1px solid rgba(0,0,0,.08);
       background: rgba(255,255,255,.55);
-      margin: 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,.08);
+      overflow: hidden;
     }
-    .media img{ width:100%; display:block; }
-    .media-cap{
-      padding: 12px 14px;
-      border-top: 1px solid rgba(6,23,45,.08);
+    .home-v2 .shot img{ width: 100%; height: auto; display: block; }
+    .home-v2 figcaption{
       font-size: 13px;
       color: var(--muted2);
-      background: rgba(248,246,240,.72);
+      margin-top: 8px;
+      padding-left: 6px;
     }
+
+    .home-v2 .grid-4{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 940px){
+      .home-v2 .grid-4{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px){
+      .home-v2 .grid-4{ grid-template-columns: 1fr; }
+    }
+
+    .home-v2 .split{
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 940px){
+      .home-v2 .split{ grid-template-columns: 1fr; }
+    }
+
+    .home-v2 .fine{
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted2);
+      max-width: 80ch;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(6,23,45,.08);
+      background: rgba(255,255,255,.42);
+    }
+
+    /* Callout bêta */
+    .callout-beta{
+      border-radius: 22px;
+      border: 1px solid rgba(201,122,97,.22);
+      background: linear-gradient(135deg, rgba(201,122,97,.10), rgba(110,135,125,.08));
+      padding: 22px 22px 20px;
+      max-width: 600px;
+    }
+    .callout-beta p{ margin: 8px 0 0; color: var(--muted); line-height: 1.6; }
 
     /* Footer */
     footer{
-      margin-top: 30px;
+      margin-top: 10px;
       padding: 24px 0 34px;
       color: var(--muted2);
       font-size: 13px;
     }
     .foot{
-      display:flex; justify-content: space-between; align-items:center;
+      display:flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap;
       gap: 10px;
       border-top: 1px solid rgba(6,23,45,.08);
@@ -522,241 +411,17 @@
     .small-links a{ color: var(--muted2); text-decoration:none; }
     .small-links a:hover{ color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 
-    /* Subtle reveal */
+    /* Reveal */
     .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .42s ease, transform .42s ease; }
     .reveal.in{ opacity: 1; transform: translateY(0); }
-  
     @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
       .reveal{ opacity: 1 !important; transform: none !important; transition: none !important; }
       .btn{ transition: none !important; }
     }
 
-  
-/* BOUSSOLE HOME REFRESH v2 */
-.home-v2{
-  padding: 0;
-}
-.home-v2 .section{
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 72px 20px;
-}
-.home-v2 .hero{
-  padding: 70px 20px 40px;
-}
-.home-v2 .hero-inner{
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 44px;
-  align-items: center;
-}
-@media (max-width: 940px){
-  .home-v2 .hero-inner{ grid-template-columns: 1fr; }
-  .home-v2 .hero-visual{ order: -1; }
-}
-
-.home-v2 h1{
-  line-height: 1.03;
-  letter-spacing: -0.02em;
-  margin: 10px 0 14px;
-  font-size: clamp(40px, 5vw, 68px);
-}
-.home-v2 .sub{
-  max-width: 55ch;
-  line-height: 1.55;
-  font-size: 18px;
-  opacity: .95;
-  margin: 0 0 18px;
-}
-.home-v2 .kicker{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.65);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0,0,0,.06);
-  font-weight: 600;
-  font-size: 13px;
-}
-.home-v2 .kicker .dot{
-  width: 8px; height: 8px; border-radius: 999px;
-  background: rgba(0,0,0,.35);
-  display: inline-block;
-}
-
-.home-v2 .hero-cta{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.home-v2 .badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
-.home-v2 .badge{
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.7);
-  font-size: 13px;
-  font-weight: 600;
-  opacity: .95;
-}
-
-.home-v2 .hero-visual{
-  display: flex;
-  justify-content: flex-end;
-}
-.home-v2 .mockup{
-  width: min(460px, 100%);
-  border-radius: 26px;
-  background: rgba(255,255,255,.75);
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 18px 60px rgba(0,0,0,.12);
-  padding: 12px;
-}
-.home-v2 .mockup img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-}
-
-.home-v2 .section-head{
-  margin-bottom: 18px;
-}
-.home-v2 .section-head h2{
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
-}
-.home-v2 .section-head p{
-  margin: 0;
-  max-width: 62ch;
-  line-height: 1.55;
-  opacity: .9;
-}
-
-.home-v2 .grid-3{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-@media (max-width: 940px){
-  .home-v2 .grid-3{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .card{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.75);
-  padding: 16px 16px 14px;
-}
-.home-v2 .card .ico{
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-.home-v2 .card h3{
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-.home-v2 .card p{
-  margin: 0;
-  line-height: 1.55;
-  opacity: .92;
-}
-
-.home-v2 .shots{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .shots{ grid-template-columns: 1fr; }
-}
-.home-v2 figure{
-  margin: 0;
-}
-.home-v2 .shot{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
-  box-shadow: 0 10px 40px rgba(0,0,0,.08);
-  overflow: hidden;
-}
-.home-v2 .shot img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.home-v2 figcaption{
-  font-size: 13px;
-  opacity: .85;
-  margin-top: 8px;
-  padding-left: 6px;
-}
-
-.home-v2 .grid-4{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 14px;
-}
-@media (max-width: 940px){
-  .home-v2 .grid-4{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .split{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .split{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .timeline{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .timeline{ grid-template-columns: 1fr; }
-}
-.home-v2 .step{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.75);
-  padding: 14px 14px 12px;
-}
-.home-v2 .step .k{
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
-}
-.home-v2 .fine{
-  margin-top: 16px;
-  font-size: 13px;
-  line-height: 1.5;
-  opacity: .8;
-  max-width: 80ch;
-}
-
-/* Header CTA label align */
-.nav .btn.btn-primary{ white-space: nowrap; }
-
-</style>
+    /* Divider */
+    .divider{ height: 1px; background: rgba(6,23,45,.08); margin: 12px 0; }
+  </style>
 </head>
 
 <body>
@@ -776,20 +441,16 @@
         </a>
 
         <nav class="nav" aria-label="Navigation principale">
-          <a href="/#reperes">Repères</a>
-          <a href="/#tendances">Tendance</a>
-          <a href="/#partage">Export</a>
-          <a href="/#confiance">Confiance</a>
-          <a href="/#beta">Bêta</a>
+          <a href="/#comment">Comment ça marche</a>
+          <a href="/#valeurs">Valeurs</a>
           <a href="/articles/">Articles</a>
           <a href="/ecosysteme.html">Écosystème</a>
           <a href="/rejoindre.html">Rejoindre</a>
         </nav>
 
-
         <div class="actions">
           <a class="btn" href="rejoindre.html">Rejoindre</a>
-          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Découvrir l’app</a>
+          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/">Découvrir l'app</a>
           <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
             Menu
           </button>
@@ -797,326 +458,276 @@
       </div>
 
       <nav class="menu" id="mobileMenu" hidden aria-label="Menu mobile">
-        <a href="#reperes">Repères</a>
-        <a href="#tendances">Tendance</a>
-        <a href="#partage">Export</a>
-        <a href="#confiance">Confiance</a>
-        <a href="#beta">Bêta</a>
+        <a href="#comment">Comment ça marche</a>
+        <a href="#valeurs">Valeurs</a>
         <a href="/articles/">Articles</a>
         <a href="ecosysteme.html">Écosystème</a>
         <div class="divider"></div>
         <a href="rejoindre.html">Rejoindre</a>
-        <a href="https://boussole.micronutriment.fr/">Découvrir l’app</a>
+        <a href="https://boussole.micronutriment.fr/">Découvrir l'app</a>
       </nav>
     </div>
   </div>
 
-  
-<main class="home-v2" id="top">
-  <!-- BOUSSOLE:HOME-V2 -->
+  <main class="home-v2" id="contenu">
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span>Bien-être d’abord. Repères ensuite.</div>
-        <h1>Comprendre ce qui varie en soi, avec douceur.</h1>
-        <p class="sub">Boussole transforme des sensations floues en repères simples, sans pression et sans médicalisation.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Bien-être d'abord. Repères ensuite.</div>
+          <h1>Comprendre ce qui varie en soi, avec douceur.</h1>
+          <p class="sub">Boussole transforme des sensations floues en repères simples, sans pression et sans médicalisation.</p>
 
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l’app</a>
-          <a class="btn" href="rejoindre.html">Rejoindre l’espace</a>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l'app</a>
+            <a class="btn" href="rejoindre.html">Rejoindre l'espace</a>
+          </div>
+
+          <div class="badges" aria-label="Caractéristiques">
+            <span class="badge">100% local</span>
+            <span class="badge">Sans compte</span>
+            <span class="badge">Export PDF 14 jours</span>
+          </div>
+
+          <p class="fine">Aperçu illustratif. Boussole est un outil d'information et de repères : pas de diagnostic, pas de promesse, et ne remplace pas une consultation.</p>
         </div>
 
-        <div class="badges" aria-label="Caractéristiques">
-          <span class="badge">100% local</span>
-          <span class="badge">Sans compte</span>
-          <span class="badge">Export PDF 14 jours</span>
-        </div>
-
-        <p class="fine">Aperçu illustratif. Boussole est un outil d’information et de repères : pas de diagnostic, pas de promesse, et ne remplace pas une consultation.</p>
-      </div>
-
-      <div class="hero-visual" aria-label="Aperçu de l’app">
-        <div class="mockup">
-          <picture>
-  <source srcset="/assets/hero.webp" type="image/webp">
-  <img src="/assets/hero.jpg" alt="Mockup de l’application Boussole" loading="eager" decoding="async" fetchpriority="high" />
-</picture>
+        <div class="hero-visual" aria-label="Aperçu de l'app">
+          <div class="mockup">
+            <picture>
+              <source srcset="/assets/hero.webp" type="image/webp">
+              <img src="/assets/hero.jpg" alt="Mockup de l'application Boussole — saisie du jour avec 4 curseurs" loading="eager" decoding="async" fetchpriority="high" />
+            </picture>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- CE QUE BOUSSOLE CHANGE -->
+    <section class="section" id="changes">
+      <div class="section-head">
+        <h2>Ce que Boussole change</h2>
+        <p>Pas "tout mesurer". Juste ce qui aide à se situer, et à se traiter avec plus de douceur.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="ico">🔎</div>
+          <h3>Voir ce qui bouge en soi</h3>
+          <p>Mettre des mots simples sur l'énergie, le confort, la clarté. Sans sur-analyser.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🧩</div>
+          <h3>Repérer des schémas</h3>
+          <p>Observer sur 14 jours ce qui revient, ce qui se stabilise, ce qui s'apaise.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🤍</div>
+          <h3>Se sentir légitime</h3>
+          <p>Un repère fiable vaut mieux qu'un "ressenti vague". Et ça aide à se faire confiance.</p>
+        </div>
+      </div>
+
+      <!-- Screenshots — à remplacer par shot-1/2/3.webp quand disponibles -->
+      <div class="shots" style="margin-top:18px;">
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-1.webp" type="image/webp">
+              <img src="/assets/shot-1.jpg" alt="Saisie du jour — 4 curseurs Énergie, Sommeil, Confort physique, Clarté mentale" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Repères du jour</figcaption>
+        </figure>
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-2.webp" type="image/webp">
+              <img src="/assets/shot-2.jpg" alt="Calendrier 14 jours avec indicateurs Vert, Orange, Rouge" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Tendance sur 14 jours</figcaption>
+        </figure>
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-3.webp" type="image/webp">
+              <img src="/assets/shot-3.jpg" alt="Export PDF — rapport synthétique prêt à partager" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Export PDF</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="section" id="comment">
+      <div class="section-head">
+        <h2>Comment ça marche</h2>
+        <p>4 indicateurs. 30 secondes. Une tendance sur 14 jours. Tout reste sur votre appareil.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card reveal">
+          <div class="ico">⚡️</div>
+          <h3>Énergie</h3>
+          <p>Un thermomètre simple pour sentir où vous en êtes, sans vous juger.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🌙</div>
+          <h3>Sommeil</h3>
+          <p>La qualité ressentie du repos — pas une mesure, un repère personnel.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🦴</div>
+          <h3>Confort physique</h3>
+          <p>Douleurs, tensions, tolérance : un repère global, sans jargon médical.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🌫️</div>
+          <h3>Clarté mentale</h3>
+          <p>Pour capter le brouillard, la charge cognitive, l'attention disponible.</p>
+        </div>
+      </div>
+
+      <div class="split" id="partage">
+        <div class="card reveal">
+          <div class="ico">🔒</div>
+          <h3>100% local</h3>
+          <p>Pas de compte. Pas de cloud. Rien n'est transmis automatiquement — vos données restent sur votre appareil.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">📄</div>
+          <h3>Export PDF 14 jours</h3>
+          <p>Quand vous le souhaitez : une synthèse lisible pour préparer un échange avec un professionnel de santé.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALEURS -->
+    <section class="section" id="valeurs">
+      <div class="section-head">
+        <h2>Valeurs</h2>
+        <p>Boussole est construit pour préserver l'énergie et clarifier — pas pour rajouter une charge.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="ico">🌿</div>
+          <h3>Douceur</h3>
+          <p>Des repères légers, compatibles avec les jours difficiles. Pas de streak, pas de pression.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🧾</div>
+          <h3>Non-médicalisation</h3>
+          <p>Informer et structurer, sans promesse ni vocabulaire qui enferme. Vous restez l'expert de votre propre vécu.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ico">🧠</div>
+          <h3>Simplicité</h3>
+          <p>1 écran, 4 curseurs, une note libre : assez pour apprendre sans s'épuiser.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section" id="beta" style="padding-top: 32px; padding-bottom: 80px;">
+      <div class="callout-beta reveal">
+        <strong>Essayer Boussole, sans engagement</strong>
+        <p>Fonctionne comme une application sur mobile (PWA), sans compte, sans inscription. Vos données ne quittent pas votre appareil.</p>
+        <div class="hero-cta" style="margin-top: 16px;">
+          <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l'app</a>
+          <a class="btn" href="rejoindre.html">Rejoindre l'espace</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <span>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr" rel="noopener">micronutriment.fr</a></span>
+        <div class="small-links">
+          <a href="/articles/">Articles</a>
+          <a href="/ecosysteme.html">Écosystème</a>
+          <a href="/rejoindre.html">Rejoindre</a>
+        </div>
+      </div>
+      <p style="margin:10px 0 0; font-size:12px; color: var(--muted2); max-width: 80ch;">
+        Boussole est un outil d'information et de repères personnels. Il ne constitue pas un dispositif médical, ne pose aucun diagnostic et ne remplace pas l'avis d'un professionnel de santé.
+      </p>
     </div>
-  </section>
-
-  <section class="section" id="changes">
-    <div class="section-head">
-      <h2>Ce que Boussole change</h2>
-      <p>Pas “tout mesurer”. Juste ce qui aide à se situer, et à se traiter avec plus de douceur.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="ico">🔎</div>
-        <h3>Voir ce qui bouge en soi</h3>
-        <p>Mettre des mots simples sur l’énergie, le confort, la clarté. Sans sur-analyser.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧩</div>
-        <h3>Repérer des schémas</h3>
-        <p>Observer sur 14 jours ce qui revient, ce qui se stabilise, ce qui s’apaise.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🤍</div>
-        <h3>Se sentir légitime</h3>
-        <p>Un repère fiable vaut mieux qu’un “ressenti vague”. Et ça aide à se faire confiance.</p>
-      </div>
-    </div>
-
-    <div class="shots">
-      <!-- Remplace ces 3 visuels par tes 3 captures quand tu les as -->
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/hero.webp" type="image/webp">
-  <img src="/assets/hero.jpg" alt="Capture 1 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Repères du jour</figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/hero.webp" type="image/webp">
-  <img src="/assets/hero.jpg" alt="Capture 2 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Tendance sur 14 jours</figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/hero.webp" type="image/webp">
-  <img src="/assets/hero.jpg" alt="Capture 3 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Export PDF</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section" id="reperes">
-    <div class="section-head">
-      <h2>Comment ça marche</h2>
-      <p>4 indicateurs. 30 secondes. Une tendance sur 14 jours. Et tout reste sur ton appareil.</p>
-    </div>
-
-    <div class="grid-4">
-      <div class="card">
-        <div class="ico">⚡️</div>
-        <h3>Énergie</h3>
-        <p>Un thermomètre simple pour sentir où tu en es, sans te juger.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🌫️</div>
-        <h3>Clarté mentale</h3>
-        <p>Pour capter le brouillard, la charge, l’attention. Sans culpabiliser.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧘‍♀️</div>
-        <h3>Charge émotionnelle</h3>
-        <p>Le niveau de “tension interne” du jour. Juste assez pour se repérer.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🦴</div>
-        <h3>Confort physique</h3>
-        <p>Douleurs, tensions, tolérance : un repère global, sans jargon.</p>
-      </div>
-    </div>
-
-    <div class="split" id="partage">
-      <div class="card">
-        <div class="ico">🔒</div>
-        <h3>100% local</h3>
-        <p>Pas de compte. Pas de cloud imposé. Rien n’est “partagé automatiquement”.</p>
-      </div>
-      <div class="card">
-        <div class="ico">📄</div>
-        <h3>PDF sur 14 jours</h3>
-        <p>Quand tu le souhaites : une synthèse lisible pour expliquer, sans se perdre dans les détails.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="tendances">
-    <div class="section-head">
-      <h2>Une vue longue durée, toujours locale.</h2>
-      <p>Boussole+ vise une lecture plus longue, non médicalisante : utile pour préparer un échange, sans “faire un dossier”.</p>
-    </div>
-
-    <div class="timeline">
-      <div class="step">
-        <div class="k">30 jours</div>
-        <div>Voir la stabilité, les cycles, les périodes plus fragiles.</div>
-      </div>
-      <div class="step">
-        <div class="k">3–6 mois</div>
-        <div>Observer ce qui tient dans la durée (rythme, récup, tolérances).</div>
-      </div>
-      <div class="step">
-        <div class="k">12 mois</div>
-        <div>Garder une trace simple du “long cours”, sans surcharge.</div>
-      </div>
-    </div>
-
-    <div class="hero-cta" style="margin-top:16px">
-      <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Ouvrir Boussole</a>
-      <a class="btn" href="/articles/">Lire les articles</a>
-    </div>
-  </section>
-
-  <section class="section" id="confiance">
-    <div class="section-head">
-      <h2>Valeurs</h2>
-      <p>Le produit est construit pour préserver l’énergie et clarifier, pas pour rajouter une charge.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="ico">🌿</div>
-        <h3>Douceur</h3>
-        <p>Des repères légers, compatibles avec les jours “faibles”.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧾</div>
-        <h3>Non-médicalisation</h3>
-        <p>Informer et structurer, sans promesse ni vocabulaire qui enferme.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧠</div>
-        <h3>Simplicité</h3>
-        <p>1 écran, 4 curseurs, une note : assez pour apprendre sans s’épuiser.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="beta">
-    <div class="section-head">
-      <h2>Découvrir l’app, tranquillement</h2>
-      <p>Tu peux l’utiliser comme une app sur mobile (PWA), sans compte.</p>
-    </div>
-
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="https://boussole.micronutriment.fr/" rel="noopener">Découvrir l’app</a>
-      <a class="btn" href="rejoindre.html">Rejoindre l’espace</a>
-    </div>
-  </section>
-
-</main>
-
+  </footer>
 
   <script>
-// Year
-const y = document.getElementById("year");
-if (y) y.textContent = new Date().getFullYear();
+    // Année dynamique
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
 
-// Mobile menu (progressive enhancement)
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("mobileMenu");
-let lastFocus = null;
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    let lastFocus = null;
 
-const setBtnState = (expanded) => {
-  if (!btn) return;
-  btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-  btn.setAttribute("aria-label", expanded ? "Fermer le menu" : "Ouvrir le menu");
-};
+    const setBtnState = (expanded) => {
+      if (!btn) return;
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      btn.setAttribute("aria-label", expanded ? "Fermer le menu" : "Ouvrir le menu");
+    };
 
-const closeMenu = (restoreFocus = true) => {
-  if (!btn || !menu) return;
-  if (!menu.hasAttribute("hidden")) {
-    menu.setAttribute("hidden", "");
-    setBtnState(false);
-    if (restoreFocus && lastFocus && typeof lastFocus.focus === "function") {
-      lastFocus.focus();
+    const closeMenu = (restoreFocus = true) => {
+      if (!btn || !menu) return;
+      if (!menu.hasAttribute("hidden")) {
+        menu.setAttribute("hidden", "");
+        setBtnState(false);
+        if (restoreFocus && lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }
+    };
+
+    const openMenu = () => {
+      if (!btn || !menu) return;
+      if (menu.hasAttribute("hidden")) {
+        lastFocus = document.activeElement;
+        menu.removeAttribute("hidden");
+        setBtnState(true);
+        const firstLink = menu.querySelector("a");
+        if (firstLink) firstLink.focus();
+      }
+    };
+
+    if (btn && menu) {
+      setBtnState(!menu.hasAttribute("hidden"));
+      btn.addEventListener("click", () => {
+        const isOpen = !menu.hasAttribute("hidden");
+        if (isOpen) closeMenu(false); else openMenu();
+      });
+      menu.addEventListener("click", (e) => { const a = e.target.closest("a"); if (a) closeMenu(false); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      document.addEventListener("click", (e) => {
+        if (menu.hasAttribute("hidden")) return;
+        if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
+      });
+      document.addEventListener("focusin", (e) => {
+        if (menu.hasAttribute("hidden")) return;
+        if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
+      });
     }
-  }
-};
 
-const openMenu = () => {
-  if (!btn || !menu) return;
-  if (menu.hasAttribute("hidden")) {
-    lastFocus = document.activeElement;
-    menu.removeAttribute("hidden");
-    setBtnState(true);
-    const firstLink = menu.querySelector("a");
-    if (firstLink) firstLink.focus();
-  }
-};
-
-if (btn && menu) {
-  // Ensure closed state is correct even if JS loads late
-  setBtnState(!menu.hasAttribute("hidden"));
-
-  btn.addEventListener("click", () => {
-    const isOpen = !menu.hasAttribute("hidden");
-    if (isOpen) closeMenu(false);
-    else openMenu();
-  });
-
-  // Close when a link is chosen
-  menu.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (a) closeMenu(false);
-  });
-
-  // Close on Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // Close on outside click
-  document.addEventListener("click", (e) => {
-    if (menu.hasAttribute("hidden")) return;
-    if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
-  });
-
-  // Close if focus leaves the menu (keyboard users)
-  document.addEventListener("focusin", (e) => {
-    if (menu.hasAttribute("hidden")) return;
-    if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(false);
-  });
-}
-
-// Active section highlight (desktop + mobile)
-const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"], #mobileMenu a[href^="#"]'));
-const sections = Array.from(document.querySelectorAll('section.chapter[id]'));
-
-const setActive = (id) => {
-  navLinks.forEach(a => {
-    const isActive = a.getAttribute("href") === "#" + id;
-    a.classList.toggle("active", isActive);
-    if (isActive) a.setAttribute("aria-current", "location");
-    else a.removeAttribute("aria-current");
-  });
-};
-
-if (navLinks.length && sections.length && ("IntersectionObserver" in window)) {
-  const navIo = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActive(visible.target.id);
-  }, { rootMargin: "-30% 0px -62% 0px", threshold: [0.1, 0.2, 0.35, 0.5] });
-
-  sections.forEach(s => navIo.observe(s));
-}
-
-// Subtle reveal (no dependency, reduced-motion friendly)
-const revealEls = Array.from(document.querySelectorAll(".reveal"));
-const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (revealEls.length) {
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach(el => el.classList.add("in"));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-  }
-}
+    // Reveal au scroll
+    const revealEls = Array.from(document.querySelectorAll(".reveal"));
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (revealEls.length) {
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach(el => el.classList.add("in"));
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => io.observe(el));
+      }
+    }
   </script>
 </body>
 </html>
