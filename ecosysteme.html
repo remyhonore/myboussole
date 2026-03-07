@@ -133,6 +133,14 @@
     transition: background .15s;
   }
   .btn-primary:hover { background: var(--color-accent-2); }
+  .btn:not(.btn-primary){
+    background: transparent;
+    color: #2d6a4f;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(45,106,79,0.4);
+    text-underline-offset: 3px;
+  }
 
   /* ── MOBILE MENU ── */
   .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
