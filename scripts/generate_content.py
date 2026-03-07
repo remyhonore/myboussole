@@ -102,6 +102,12 @@ def collect_articles():
         date = parse_date(fm.get("date", "")) or None
         updated = parse_date(fm.get("updated", "")) or None
         slug = p.name  # single source of truth: folder name
+        import json as _json
+        tags_raw = fm.get("tags", "[]")
+        try:
+            tags = _json.loads(tags_raw) if isinstance(tags_raw, str) else list(tags_raw)
+        except Exception:
+            tags = []
         url = f"{SITE_URL}/articles/{slug}/"
         lastmod = pick_lastmod(updated, date, index)
 
@@ -118,6 +124,7 @@ def collect_articles():
             "updated": updated,
             "index_path": str(index),
             "lastmod": lastmod,
+            "tags": tags,
         })
 
     # sort: date desc, then slug asc
@@ -132,17 +139,17 @@ def write_articles_index(items):
     if not out.exists():
         return
     html = out.read_text(encoding="utf-8", errors="replace")
-    ul_pattern = r'(<ul>\s*)(.*?)(\s*</ul>)'
-    m = re.search(ul_pattern, html, flags=re.S|re.I)
+    list_pattern = r'(<div class="articles-list"[^>]*>)(.*?)(</div>)'
+    m = re.search(list_pattern, html, flags=re.S|re.I)
     if not m:
         return
     li = []
-    for it in items:
-        date = it["date"].isoformat() if it["date"] else ""
-        meta = f' <span class="meta">— {escape(date)}</span>' if date else ""
-        li.append(f'<li><a href="/articles/{escape(it["slug"])}/">{escape(it["title"])}</a>{meta}</li>')
-    new_ul = m.group(1) + "\n        " + "\n        ".join(li) + "\n      " + m.group(3)
-    new_html = html[:m.start()] + new_ul + html[m.end():]
+    for item in items:
+        date = item["date"].isoformat() if item["date"] else ""
+        tags_attr = " ".join(item.get("tags", []))
+        li.append(f'        <li data-tags="{tags_attr}"><a href="/articles/{escape(item["slug"])}/">{escape(item["title"])}</a> <span class="meta">— {escape(date)}</span></li>')
+    ul = "\n      <ul>\n" + "\n".join(li) + "\n      </ul>\n    "
+    new_html = html[:m.start()] + m.group(1) + ul + m.group(3) + html[m.end():]
     out.write_text(new_html, encoding="utf-8")
 
 def write_sitemap(items):
