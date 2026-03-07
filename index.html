@@ -102,7 +102,7 @@
 
     /* ── HEADER ── */
     .site-header {
-      background: rgba(248,246,240,0.85);
+      background: rgba(248,246,240,0.85) !important;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(6,23,45,0.06);
@@ -289,7 +289,7 @@
       background: rgba(255,255,255,.52);
       backdrop-filter: blur(8px);
     }
-    .hero .btn{ background: rgba(255,255,255,.76); }
+    .hero .btn:not(.btn-primary){ background: rgba(255,255,255,.76); }
     .hero .pill{ background: rgba(255,255,255,.70); }
     .hero .kicker{ background: rgba(255,255,255,.72); }
 
