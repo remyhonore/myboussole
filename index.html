@@ -505,22 +505,11 @@
     }
 
     /* Footer */
-    footer{
-      margin-top: 30px;
-      padding: 24px 0 34px;
-      color: var(--muted2);
-      font-size: 13px;
-    }
-    .foot{
-      display:flex; justify-content: space-between; align-items:center;
-      flex-wrap: wrap;
-      gap: 10px;
-      border-top: 1px solid rgba(6,23,45,.08);
-      padding-top: 16px;
-    }
-    .small-links{ display:flex; gap: 12px; flex-wrap: wrap; }
-    .small-links a{ color: var(--muted2); text-decoration:none; }
-    .small-links a:hover{ color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+    footer{ border-top: 1px solid var(--border); padding: 28px 0 20px; margin-top: 60px; font-size: 0.82rem; color: var(--muted2); }
+    .foot{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .foot a{ color: var(--muted2); text-decoration: none; }
+    .foot a:hover{ color: var(--ink); }
+    .small-links{ display: flex; gap: 16px; }
 
     /* Subtle reveal */
     .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .42s ease, transform .42s ease; }
@@ -765,7 +754,7 @@
   <div class="topbar" id="top">
     <div class="wrap">
       <div class="topbar-inner">
-        <a class="brand" href="#top" aria-label="Boussole — retour en haut de page">
+        <a class="brand" href="/" aria-label="Boussole — retour à l'accueil">
           <span class="mark" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M40 18L33 36L15 44L22 26L40 18Z" fill="#06172D" opacity=".92"/>
@@ -776,14 +765,8 @@
         </a>
 
         <nav class="nav" aria-label="Navigation principale">
-          <a href="/#reperes">Repères</a>
-          <a href="/#tendances">Tendance</a>
-          <a href="/#partage">Export</a>
-          <a href="/#confiance">Confiance</a>
-          <a href="/#beta">Bêta</a>
           <a href="/articles/">Articles</a>
           <a href="/ecosysteme.html">Écosystème</a>
-          <a href="/rejoindre.html">Rejoindre</a>
         </nav>
 
 
@@ -797,15 +780,9 @@
       </div>
 
       <nav class="menu" id="mobileMenu" hidden aria-label="Menu mobile">
-        <a href="#reperes">Repères</a>
-        <a href="#tendances">Tendance</a>
-        <a href="#partage">Export</a>
-        <a href="#confiance">Confiance</a>
-        <a href="#beta">Bêta</a>
         <a href="/articles/">Articles</a>
-        <a href="ecosysteme.html">Écosystème</a>
+        <a href="/ecosysteme.html">Écosystème</a>
         <div class="divider"></div>
-        <a href="rejoindre.html">Rejoindre</a>
         <a href="https://boussole.micronutriment.fr/">Découvrir l’app</a>
       </nav>
     </div>
@@ -1118,9 +1095,17 @@ if (revealEls.length) {
 }
   </script>
 
-  <footer style="text-align:center;padding:32px 20px 24px;font-size:0.82rem;color:#888;border-top:1px solid #f0ede8;">
-    <p>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr" style="color:#888;">micronutriment.fr</a></p>
-    <p style="margin-top:6px;">Application d'information en santé — non substituable à un avis médical.</p>
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
+        <div class="small-links">
+          <a href="/#confiance">Confidentialité</a>
+          <a href="/ecosysteme.html">Écosystème</a>
+          <a href="/rejoindre.html">Rejoindre</a>
+        </div>
+      </div>
+    </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
