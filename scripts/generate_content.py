@@ -105,6 +105,9 @@ def collect_articles():
         url = f"{SITE_URL}/articles/{slug}/"
         lastmod = pick_lastmod(updated, date, index)
 
+        if title == "Titre de l'article" or slug == "mon-article":
+            continue
+
         items.append({
             "dir": p.name,
             "slug": slug,
