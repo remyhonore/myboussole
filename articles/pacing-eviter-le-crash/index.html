@@ -111,7 +111,7 @@ tags: ["Pacing", "Covid long", "Fatigue chronique"]
       border-bottom: 1px solid rgba(6,23,45,.06);
     }
     .topbar-inner{
-      display: flex; align-items: center; justify-content: space-between;
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
       padding: 14px 0;
       gap: 12px;
     }
@@ -145,7 +145,7 @@ tags: ["Pacing", "Covid long", "Fatigue chronique"]
     .nav a:hover{ background: rgba(6,23,45,.05); color: var(--ink); }
     .nav a.active{ background: rgba(6,23,45,.07); color: var(--ink); box-shadow: 0 8px 18px rgba(6,23,45,.08); }
 
-    .actions{ display:flex; align-items:center; gap: 10px; }
+    .actions{ display:flex; align-items:center; gap: 10px; justify-content: flex-end; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
