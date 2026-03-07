@@ -1,664 +1,376 @@
-<!--
----
-title: "Pacing : éviter le crash d’effort dans le Covid long et la fatigue chronique"
-description: "Le crash post-effort n’est pas de la fatigue normale. C’est une réaction biologique. Comprendre le pacing pour ne plus l’ignorer."
-date: "2026-03-04"
-updated: "2026-03-04"
+<!-- ---
+title: "Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique"
+description: "Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing."
 slug: "pacing-eviter-le-crash"
-tags: ["Pacing", "Covid long", "Fatigue chronique"]
----
--->
-<!doctype html>
+date: "2026-03-04"
+readingTime: "7 min"
+tags: "Fatigue chronique, Covid long"
+--- -->
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="color-scheme" content="light" />
-<meta name="theme-color" content="#06172D" />
-<link rel="canonical" href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" />
-<meta property="og:url" content="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" />
-<meta name="robots" content="index,follow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacing : éviter le crash d'effort dans le Covid long | myboussole.fr</title>
+  <meta name="description" content="Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing." />
+  <link rel="canonical" href="https://myboussole.fr/articles/pacing-eviter-le-crash/" />
 
-<title>Pacing : éviter le crash — Boussole</title>
-<meta name="description" content="Le crash post-effort n’est pas de la fatigue normale. C’est une réaction biologique. Comprendre le pacing pour ne plus l’ignorer." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique" />
+  <meta property="og:description" content="Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myboussole.fr/articles/pacing-eviter-le-crash/" />
 
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Boussole" />
-<meta property="og:title" content="Pacing : éviter le crash — Boussole" />
-<meta property="og:description" content="Le crash post-effort n’est pas de la fatigue normale. C’est une réaction biologique. Comprendre le pacing pour ne plus l’ignorer." />
-<meta property="og:image" content="https://www.myboussole.fr/assets/espace-zen_tech.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://www.myboussole.fr/assets/espace-zen_tech.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-
-    :root{
-      color-scheme: light;
-
-      --paper: #F3F0E8;
-      --paper2: #F8F6F0;
-      --ink: #06172D;
-      --muted: rgba(6, 23, 45, .72);
-      --muted2: rgba(6, 23, 45, .58);
-
-      --sage: #6E877D;
-      --terracotta: #C97A61;
-      --lavender: #C9B9D9;
-      --rose: #E8B7C8;
-
-      --border: rgba(6,23,45,.12);
-      --borderSoft: rgba(6,23,45,.08);
-
-      --shadow: 0 22px 60px rgba(6,23,45,.16);
-      --shadowSoft: 0 14px 34px rgba(6,23,45,.11);
-
-      --radius: 22px;
-      --radius2: 28px;
-
-      --max: 1160px;
-      --pad: clamp(18px, 3.2vw, 34px);
-
-      --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      --color-border: #e9ecef;
-      --color-text: #1a1a2e;
-      --color-accent: #2d6a4f;
-      --color-accent-2: #1b4332;
+    :root {
+      --color-bg: #fafaf8;
+      --color-surface: #ffffff;
+      --color-text: #1a1a1a;
+      --color-muted: #6b7280;
+      --color-accent: #2563eb;
+      --color-accent-light: #eff6ff;
+      --color-border: #e5e7eb;
+      --color-tag-bg: #f3f4f6;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-serif: 'Lora', Georgia, serif;
+      --max-w: 680px;
     }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
-      *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-      .reveal{ opacity: 1 !important; transform: none !important; }
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      font-size: 17px;
     }
 
-    body{
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--ink);
-      background:
-        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
-        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
-        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
-        linear-gradient(180deg, var(--paper2), var(--paper));
-    }
-
-    a{ color: inherit; }
-
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-
-    .skip{
-      position: absolute; left: 10px; top: 10px;
-      background: rgba(255,255,255,.92);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 999px;
-      transform: translateY(-140%);
-      transition: transform .18s ease;
-      z-index: 50;
-      text-decoration: none;
-      box-shadow: var(--shadowSoft);
-    }
-    .skip:focus{ transform: translateY(0); outline: none; }
-
-    :focus-visible{ outline: 3px solid rgba(201,122,97,.40); outline-offset: 3px; }
-
-    /* ── HEADER ── */
-    .site-header {
-      background: rgba(248,246,240,0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(6,23,45,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+    /* NAV */
     .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 60px;
+      height: 56px;
     }
-    .topbar-logo {
-      grid-column: 1;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--color-accent);
-      text-decoration: none;
+    .topbar-brand { font-weight: 600; font-size: 1rem; text-decoration: none; color: var(--color-text); }
+    .topbar-nav { display: flex; gap: 1.5rem; align-items: center; justify-content: center; }
+    .topbar-nav a { text-decoration: none; color: var(--color-muted); font-size: .9rem; font-weight: 500; transition: color .2s; }
+    .topbar-nav a:hover { color: var(--color-text); }
+    .topbar-cta { display: flex; justify-content: flex-end; }
+    .btn-cta {
+      background: var(--color-accent); color: #fff;
+      padding: .45rem 1rem; border-radius: 6px;
+      font-size: .85rem; font-weight: 600; text-decoration: none;
+      transition: background .2s;
+      white-space: nowrap;
     }
-    .topbar-nav {
-      grid-column: 2;
-      display: flex;
-      gap: 32px;
-    }
-    .topbar-nav a {
-      color: var(--color-text);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      opacity: 0.8;
-      transition: opacity .15s;
-    }
-    .topbar-nav a:hover { opacity: 1; }
-    .topbar-cta {
-      grid-column: 3;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .btn-primary {
-      background: var(--color-accent);
-      color: #fff;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .15s;
-    }
-    .btn-primary:hover { background: var(--color-accent-2); }
+    .btn-cta:hover { background: #1d4ed8; }
 
-    /* ── MOBILE MENU ── */
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .mobile-nav { display: none; }
+    /* MOBILE NAV */
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: .5rem; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 4px 0; border-radius: 2px; }
+    .mobile-nav { display: none; background: #fff; border-bottom: 1px solid var(--color-border); padding: 1rem 1.5rem; flex-direction: column; gap: .75rem; }
+    .mobile-nav a { text-decoration: none; color: var(--color-text); font-size: .95rem; font-weight: 500; }
+    .mobile-nav .mobile-cta { color: var(--color-accent); }
+    .mobile-nav hr { border: none; border-top: 1px solid var(--color-border); }
     @media (max-width: 640px) {
       .topbar-nav, .topbar-cta { display: none; }
-      .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
-      .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
-      .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
+      .mobile-menu-btn { display: block; }
+      .topbar { grid-template-columns: 1fr auto; }
     }
 
-    /* Hero */
-    .hero{
-      position: relative;
-      min-height: clamp(560px, 78vh, 760px);
-      display:flex;
-      align-items: center;
-      padding: clamp(38px, 7vh, 78px) 0 46px;
-      overflow:hidden;
-    }
+    /* ARTICLE */
+    .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
-    .hero-media{ position:absolute; inset:0; z-index:0; }
+    .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+    .tag { background: var(--color-tag-bg); color: var(--color-muted); font-size: .78rem; font-weight: 500; padding: .25rem .65rem; border-radius: 20px; }
+    .meta-sep { color: var(--color-border); }
+    .meta-date, .meta-read { font-size: .82rem; color: var(--color-muted); }
 
-    .hero-photo{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-    }
-    .hero-photo img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: 92% 40%;
-      filter: saturate(.98) contrast(.98);
-      transform: scale(1.01);
-    }
-
-    @media (min-width: 1200px){
-      .hero-photo img{ object-position: 96% 42%; }
-    }
-
-    .hero-texture{
-      position:absolute; inset:0;
-      opacity: .22;
-      mix-blend-mode: soft-light;
-      pointer-events:none;
-    }
-    .hero-texture img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(.9) contrast(.98);
-    }
-
-    .hero-overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(248,246,240,.98) 0%,
-          rgba(248,246,240,.92) 38%,
-          rgba(248,246,240,.42) 62%,
-          rgba(248,246,240,.12) 74%,
-          rgba(248,246,240,.00) 86%),
-        radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
-        radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      pointer-events:none;
-    }
-
-    .hero-content{ position: relative; z-index: 2; max-width: 52ch; }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: 0 10px 24px rgba(6,23,45,.10);
-      color: var(--muted);
-      font-weight: 720;
-      font-size: 14px;
-    }
-    .kicker .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(201,122,97,.9), rgba(110,135,125,.75));
-      box-shadow: 0 6px 14px rgba(201,122,97,.25);
-    }
-
-    h1{
-      margin: 14px 0 0;
-      font-family: var(--serif);
-      font-weight: 780;
-      letter-spacing: -.01em;
-      line-height: 1.2;
+    h1 {
+      font-family: var(--font-serif);
       font-size: clamp(20px, 2vw, 26px);
-      max-width: 18ch;
-      text-wrap: balance;
+      line-height: 1.3;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
     }
 
-    .sub{
-      margin: 14px 0 0;
-      font-size: clamp(16px, 1.55vw, 19px);
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 52ch;
-      text-wrap: pretty;
-    }
-
-    .hero-cta{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-
-    .pills{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 680;
-    }
-
-    .hero-note{
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.5;
-      max-width: 68ch;
-      padding: 10px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(6,23,45,.10);
-      background: rgba(255,255,255,.52);
-      backdrop-filter: blur(8px);
-    }
-    .hero .btn{ background: rgba(255,255,255,.76); }
-    .hero .pill{ background: rgba(255,255,255,.70); }
-    .hero .kicker{ background: rgba(255,255,255,.72); }
-
-
-
-    @media (max-width: 980px){
-      .hero{ min-height: auto; padding: 34px 0 26px; }
-      .hero-overlay{
-        background:
-          linear-gradient(180deg,
-            rgba(248,246,240,.92) 0%,
-            rgba(248,246,240,.84) 36%,
-            rgba(248,246,240,.55) 62%,
-            rgba(248,246,240,.20) 82%,
-            rgba(248,246,240,.00) 100%),
-          radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
-          radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      }
-      .hero-photo img{ object-position: 72% 30%; }
-      .hero-content{ max-width: 52ch; }
-    }
-
-    @media (max-width: 520px){
-      h1{ max-width: none; }
-      .pills{ gap: 10px; }
-      .pill{ padding: 9px 11px; }
-    }
-
-    /* Chapters */
-    main{ position: relative; }
-    section{ scroll-margin-top: 86px; }
-
-    .chapter{
-      margin: 34px 0 0;
-      padding-top: 26px;
-      padding-bottom: 26px;
-    }
-
-    .chapter-head{
-      display:flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted2);
-      font-weight: 720;
-      font-size: 13px;
-      margin-bottom: 10px;
-      width: fit-content;
-    }
-
-    h2{
-      margin: 0;
-      font-size: clamp(15px, 1.4vw, 18px);
-      letter-spacing: -0.02em;
-      line-height: 1.16;
-      font-family: var(--serif);
-          text-wrap: balance;
-    }
-
-    .lead{
-      font-size: clamp(15px, 1.3vw, 17px);
+    .lead {
+      font-size: 1.1rem;
+      color: #374151;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1rem;
       line-height: 1.65;
-      color: var(--muted, #555);
-      border-left: 3px solid var(--accent, #c4614a);
-      padding-left: 14px;
-      margin-bottom: 28px;
     }
 
-    .chapter-grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 14px;
-      align-items: start;
-    }
-    @media (max-width: 980px){
-      .chapter-grid{ grid-template-columns: 1fr; }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.5vw, 20px);
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: .9rem;
     }
 
-    .panel{
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      border-radius: var(--radius2);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
+    p { margin-bottom: 1.1rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 1.1rem; }
+    li { margin-bottom: .45rem; }
+    strong { font-weight: 600; }
 
-    .bullets{
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    /* FIGURE */
+    figure { margin: 2rem 0; }
+    figure img { width: 100%; border-radius: 8px; display: block; }
+    figcaption { font-size: .82rem; color: var(--color-muted); margin-top: .6rem; line-height: 1.5; font-style: italic; }
+
+    /* TIMELINE PEM */
+    .pem-timeline {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 480px) { .pem-timeline { grid-template-columns: 1fr; } }
+    .pem-card {
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      text-align: center;
+    }
+    .pem-card.j0 { background: #dcfce7; border-top: 4px solid #16a34a; }
+    .pem-card.j1 { background: #fef9c3; border-top: 4px solid #ca8a04; }
+    .pem-card.j2 { background: #fee2e2; border-top: 4px solid #dc2626; }
+    .pem-card .pem-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+    .pem-card.j0 .pem-label { color: #15803d; }
+    .pem-card.j1 .pem-label { color: #a16207; }
+    .pem-card.j2 .pem-label { color: #b91c1c; }
+    .pem-card p { font-size: .85rem; margin-bottom: 0; }
+
+    /* NOTE AUTEUR */
+    .author-note {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 2rem 0;
+    }
+    .author-note-header {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .8rem; font-weight: 600; color: var(--color-accent);
+      text-transform: uppercase; letter-spacing: .05em;
+      margin-bottom: .7rem;
+    }
+    .author-note p { font-size: .93rem; color: #374151; margin-bottom: .6rem; }
+    .author-note p:last-child { margin-bottom: 0; }
+
+    /* SIGNAUX */
+    .signal-list { list-style: none; padding: 0; }
+    .signal-list li {
+      padding: .55rem .8rem .55rem 2.2rem;
+      position: relative;
+      border-bottom: 1px solid var(--color-border);
+      font-size: .95rem;
+    }
+    .signal-list li:last-child { border-bottom: none; }
+    .signal-list li::before {
+      content: "⚠️";
+      position: absolute; left: .3rem;
+      font-size: .85rem;
     }
 
-    .bullet{
-      border-radius: 18px;
-      border: 1px solid rgba(6,23,45,.08);
-      background: rgba(248,246,240,.66);
-      padding: 14px 14px 12px;
+    /* CTA */
+    .cta-block {
+      background: var(--color-accent-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .cta-block h3 { font-family: var(--font-serif); font-size: 1rem; margin-bottom: .5rem; }
+    .cta-block p { font-size: .92rem; color: #374151; margin-bottom: 1rem; }
+    .cta-block a {
+      display: inline-block;
+      background: var(--color-accent); color: #fff;
+      padding: .55rem 1.2rem; border-radius: 6px;
+      font-size: .88rem; font-weight: 600; text-decoration: none;
+    }
+    .cta-block a:hover { background: #1d4ed8; }
+
+    /* SOURCES */
+    .sources { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+    .sources h3 { font-size: .9rem; font-weight: 600; color: var(--color-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .8rem; }
+    .sources ol { font-size: .83rem; color: var(--color-muted); padding-left: 1.2rem; }
+    .sources li { margin-bottom: .35rem; }
+    .sources a { color: var(--color-accent); }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      margin-top: 2rem;
+      font-size: .82rem; color: var(--color-muted);
+      background: var(--color-tag-bg);
+      border-radius: 6px; padding: .8rem 1rem;
     }
 
-    .bullet h3{
-      margin: 0;
-      font-size: 15px;
-      font-weight: 880;
-      letter-spacing: -0.01em;
-      display:flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .bullet p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .icon{
-      width: 30px; height: 30px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      border: 1px solid rgba(6,23,45,.10);
-      background: linear-gradient(135deg, rgba(201,122,97,.14), rgba(110,135,125,.12));
-      box-shadow: 0 10px 22px rgba(6,23,45,.08);
-      flex: 0 0 auto;
-    }
-
-    .callout{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(201,122,97,.24);
-      background: linear-gradient(135deg, rgba(201,122,97,.12), rgba(110,135,125,.10));
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .callout strong{ font-weight: 900; }
-    .callout p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .hammer{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(6,23,45,.10);
-      background:
-        radial-gradient(700px 260px at 18% 10%, rgba(110,135,125,.18), transparent 60%),
-        radial-gradient(680px 260px at 80% 0%, rgba(232,183,200,.18), transparent 60%),
-        rgba(255,255,255,.56);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .hammer-title{
-      margin: 0;
-      font-weight: 920;
-      letter-spacing: -0.02em;
-      font-size: 18px;
-      display:flex; align-items:center; gap: 10px;
-    }
-
-    .hammer p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .divider{ height: 1px; background: rgba(6,23,45,.08); margin: 12px 0; }
-
-    /* Media card (uses boussole_index.*) */
-    .media{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: var(--shadow);
-      background: rgba(255,255,255,.55);
-      margin: 0;
-    }
-    .media img{ width:100%; display:block; }
-    .media-cap{
-      padding: 12px 14px;
-      border-top: 1px solid rgba(6,23,45,.08);
-      font-size: 13px;
-      color: var(--muted2);
-      background: rgba(248,246,240,.72);
-    }
-
-    /* Footer */
-    footer{
-      margin-top: 30px;
-      padding: 24px 0 34px;
-      color: var(--muted2);
-      font-size: 13px;
-    }
-    .foot{
-      display:flex; justify-content: space-between; align-items:center;
-      flex-wrap: wrap;
-      gap: 10px;
-      border-top: 1px solid rgba(6,23,45,.08);
-      padding-top: 16px;
-    }
-    .small-links{ display:flex; gap: 12px; flex-wrap: wrap; }
-    .small-links a{ color: var(--muted2); text-decoration:none; }
-    .small-links a:hover{ color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
-
-    /* Subtle reveal */
-    .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .42s ease, transform .42s ease; }
-    .reveal.in{ opacity: 1; transform: translateY(0); }
-  
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
-      .reveal{ opacity: 1 !important; transform: none !important; transition: none !important; }
-      .btn{ transition: none !important; }
-    }
-
-  
-
-/* Article (prose) */
-.article-shell{ padding: 34px 0 72px; }
-.article-card{
-  max-width: 74ch;
-  margin: 0 auto;
-  background: rgba(255,255,255,.92);
-  border-radius: var(--radius2);
-  box-shadow: var(--shadow);
-  padding: clamp(28px, 4vw, 56px);
-}
-.article-head{ padding: 0; }
-.article-kicker{ display:flex; gap:10px; align-items:center; color: var(--muted2); font-size: 14px; margin-bottom: 18px; }
-.article-kicker a{ color: inherit; text-decoration:none; }
-.article-kicker a:hover{ text-decoration:underline; }
-.prose{ max-width: 100%; margin: 0; }
-.prose h1{ margin: 10px 0 14px; font-size: clamp(20px, 2vw, 26px); font-family: var(--serif); line-height: 1.2; letter-spacing: -.01em; }
-.prose .lead{ font-size: clamp(15px, 1.3vw, 17px); line-height: 1.65; color: var(--muted); margin-bottom: 28px; border-left: 3px solid var(--accent, #c4614a); padding-left: 14px; }
-.prose p{ line-height: 1.75; color: var(--muted); }
-.prose h2{ margin-top: 36px; margin-bottom: 10px; font-size: clamp(15px, 1.4vw, 18px); font-weight: 700; letter-spacing: -.005em; }
-.prose ul, .prose ol{ padding-left: 1.25rem; color: var(--muted); line-height: 1.7; }
-.prose li{ margin: 6px 0; }
-.prose blockquote{ margin: 28px 0; padding: 14px 20px; background: rgba(196,97,74,.07); border-left: 3px solid var(--accent, #c4614a); border-radius: 0 6px 6px 0; font-style: italic; color: var(--muted); }
-.prose code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  background: rgba(6,23,45,.06);
-  padding: .15em .35em;
-  border-radius: 8px;
-}
-.prose pre{
-  overflow:auto;
-  padding: 14px 16px;
-  background: rgba(6,23,45,.06);
-  border-radius: 14px;
-}
-.prose a{ text-decoration: underline; text-underline-offset: 3px; }
-
-</style>
+    /* FOOTER */
+    footer { border-top: 1px solid var(--color-border); padding: 1.5rem; text-align: center; font-size: .82rem; color: var(--color-muted); }
+    footer a { color: var(--color-muted); }
+  </style>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="topbar">
-    <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
-    <nav class="topbar-nav">
+
+<header>
+  <nav class="topbar">
+    <a href="https://myboussole.fr" class="topbar-brand">🧭 myboussole</a>
+    <div class="topbar-nav">
       <a href="https://myboussole.fr/articles/">Articles</a>
       <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
-    </nav>
-    <div class="topbar-cta">
-      <a href="https://boussole.micronutriment.fr" class="btn-primary">Essayer Boussole</a>
     </div>
-    <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <div class="topbar-cta">
+      <a href="https://boussole.micronutriment.fr" class="btn-cta">Essayer Boussole</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').style.display = document.querySelector('.mobile-nav').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
-  </div>
-  <nav class="mobile-nav" id="mobileNav">
+  </nav>
+  <nav class="mobile-nav">
     <a href="https://myboussole.fr/articles/">Articles</a>
     <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
-    <a href="https://boussole.micronutriment.fr">Essayer Boussole</a>
+    <hr />
+    <a href="https://boussole.micronutriment.fr" class="mobile-cta">Essayer Boussole</a>
   </nav>
 </header>
 
-  
+<main>
+  <article class="article-wrap">
 
-<main id="contenu" tabindex="-1">
-  <div class="wrap article-shell">
-    <div class="article-card">
-      <div class="article-kicker">
-        <a href="/articles/">← Articles</a>
-        <span aria-hidden="true">•</span>
-        <time datetime="2026-03-04">04/03/2026</time>
-      </div>
-
-      <article class="article-head">
-<h1>Pacing : éviter le crash d’effort</h1>
-<p class="lead">Le crash post-effort n’est pas de la fatigue normale. C’est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing.</p>
-<h2>Ce que l’on appelle "crash" n’est pas de la faiblesse</h2>
-<p>Dans le Covid long, la fibromyalgie et le syndrome de fatigue chronique (SFC/EM), une caractéristique revient systématiquement : l’effort — physique, cognitif ou émotionnel — peut déclencher une aggravation brutale des symptômes dans les 12 à 72 heures qui suivent. Ce phénomène a un nom : le <em>malaise post-effort</em> (PEM, pour <em>post-exertional malaise</em>).</p>
-<p>Il ne s’agit pas de "être fatigué après l’effort". Il s’agit d’une réaction dysrégulée du système nerveux autonome et du métabolisme cellulaire — une incapacité à récupérer normalement après une dépense d’énergie.</p>
-<h2>Pourquoi le corps "crashe"</h2>
-<p>Chez les personnes atteintes de ces pathologies, plusieurs mécanismes sont en cause :</p>
-<ul>
-<li><strong>Dysfonction mitochondriale</strong> — les cellules peinent à produire de l’ATP en réponse à la demande, notamment via la voie oxydative.</li>
-<li><strong>Activation neuro-immune</strong> — l’effort déclenche une réponse inflammatoire disproportionnée, avec libération de cytokines pro-inflammatoires (IL-6, TNF-α).</li>
-<li><strong>Dysautonomie</strong> — le système nerveux autonome régule mal le débit sanguin à l’effort, provoquant hypoperfusion cérébrale et effondrement de la tolérance orthostatique.</li>
-<li><strong>Surcharge du système d’éveil</strong> — la noradrénaline et le cortisol, mobilisés à l’effort, épuisent des réserves déjà limitées.</li>
-</ul>
-<p>Le délai de 24 à 72h entre l’effort et le crash est caractéristique : c’est le temps que prend la cascade inflammatoire pour s’installer.</p>
-<h2>Le pacing : rester sous le seuil anaérobie</h2>
-<p>Le pacing consiste à calibrer son activité pour ne pas dépasser son <em>seuil anaérobie individuel</em> — le niveau d’effort au-delà duquel le métabolisme bascule vers des voies moins efficaces et plus coûteuses pour la récupération.</p>
-<p>Concrètement, cela signifie :</p>
-<ul>
-<li>Fragmenter les activités (physiques ET cognitives) en courtes séquences suivies de pauses</li>
-<li>Anticiper les journées "chargées" en réduisant les dépenses les jours précédents et suivants</li>
-<li>Apprendre à reconnaître ses signaux précurseurs de surcharge avant que le crash ne s’installe</li>
-<li>Ne pas confondre "je me sens mieux aujourd’hui" avec "je peux rattraper ce que je n’ai pas fait"</li>
-</ul>
-<blockquote>Le pacing n’est pas du repos passif. C’est une gestion active de l’enveloppe énergétique disponible — pour rester fonctionnel sans déclencher de réaction en chaîne.</blockquote>
-<h2>Reconnaître ses signaux précurseurs</h2>
-<p>Avant le crash, des signaux apparaissent souvent — mais ils sont subtils et varient d’une personne à l’autre :</p>
-<ul>
-<li>Brouillard mental soudain en cours d’activité</li>
-<li>Sensation de chaleur ou de flush sans raison apparente</li>
-<li>Irritabilité ou hypersensibilité sensorielle augmentée</li>
-<li>Besoin urgent de s’asseoir ou de s’allonger</li>
-<li>Pouls qui monte de façon disproportionnée à l’effort fourni</li>
-</ul>
-<p>Les repérer, c’est pouvoir s’arrêter avant de franchir le seuil — et éviter le J+1/J+2 difficile.</p>
-<h2>Suivre l’énergie pour calibrer le pacing</h2>
-<p>L’application Boussole permet de noter chaque jour son niveau d’<strong>énergie</strong> et de <strong>confort physique</strong> sur 10. En suivant ces métriques sur 14 jours, il devient possible d’identifier :</p>
-<ul>
-<li>Les patterns de crash (baisse systématique 1 à 2 jours après une journée chargée)</li>
-<li>Son seuil personnel d’activité tolérable</li>
-<li>Les corrélations entre type d’effort et intensité du rebond</li>
-</ul>
-<p>Ces données, objectivées, peuvent être partagées avec un professionnel de santé pour adapter la prise en charge.</p>
-<blockquote>Information à visée éducative. Elle ne remplace pas un avis médical. Si vous observez des crashs répétés ou une aggravation progressive, consultez votre médecin.</blockquote>
-</article>
+    <div class="article-meta">
+      <span class="tag">Fatigue chronique</span>
+      <span class="tag">Covid long</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-date">4 mars 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-read">7 min de lecture</span>
     </div>
-  </div>
+
+    <h1>Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique</h1>
+
+    <p class="lead">Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing.</p>
+
+    <h2>Ce que l'on appelle "crash" n'est pas de la faiblesse</h2>
+
+    <p>Dans le Covid long, la fibromyalgie et le syndrome de fatigue chronique (SFC/EM), une caractéristique revient systématiquement : l'effort — physique, cognitif ou émotionnel — peut déclencher une aggravation brutale des symptômes dans les 12 à 72 heures qui suivent. Ce phénomène a un nom : le <strong>malaise post-effort</strong> (PEM, pour <em>post-exertional malaise</em>).</p>
+
+    <p>Il ne s'agit pas de "être fatigué après l'effort". Il s'agit d'une réaction dysrégulée du système nerveux autonome et du métabolisme cellulaire — une incapacité à récupérer normalement après une dépense d'énergie.</p>
+
+    <h2>Pourquoi le corps "crashe"</h2>
+
+    <figure>
+      <img src="pem-mecanismes-crash-effort.jpg" alt="Schéma des mécanismes du malaise post-effort (PEM) : dysfonction mitochondriale, activation neuro-immune, dysautonomie et délai de 24-72h" />
+      <figcaption>Le délai de 24 à 72h entre l'effort et le crash est caractéristique du PEM : c'est le temps que prend la cascade inflammatoire pour s'installer après dépassement du seuil.</figcaption>
+    </figure>
+
+    <p>Chez les personnes concernées par ces pathologies, plusieurs mécanismes se combinent :</p>
+
+    <ul>
+      <li><strong>Dysfonction mitochondriale</strong> — les cellules peinent à produire de l'ATP en réponse à la demande, notamment via la voie oxydative.</li>
+      <li><strong>Activation neuro-immune</strong> — l'effort déclenche une réponse inflammatoire disproportionnée, avec libération de cytokines pro-inflammatoires (IL-6, TNF-α).</li>
+      <li><strong>Dysautonomie</strong> — le système nerveux autonome régule mal le débit sanguin à l'effort, provoquant hypoperfusion cérébrale et effondrement de la tolérance orthostatique.</li>
+      <li><strong>Surcharge du système d'éveil</strong> — la noradrénaline et le cortisol, mobilisés à l'effort, épuisent des réserves déjà limitées.</li>
+    </ul>
+
+    <div class="pem-timeline">
+      <div class="pem-card j0">
+        <div class="pem-label">Jour J — Effort</div>
+        <p>Sensation normale pendant l'effort. Le seuil est dépassé sans signal clair.</p>
+      </div>
+      <div class="pem-card j1">
+        <div class="pem-label">J+1 — La cascade</div>
+        <p>Fatigue lourde, brouillard, hypersensiblité. La réponse inflammatoire s'installe.</p>
+      </div>
+      <div class="pem-card j2">
+        <div class="pem-label">J+2 — Le crash</div>
+        <p>Pic des symptômes. Parfois impossible de se lever. Plusieurs jours de récupération.</p>
+      </div>
+    </div>
+
+    <div class="author-note">
+      <div class="author-note-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+        Note de l'auteur — Dr Rémy Honoré, PharmD
+      </div>
+      <p>Fin février 2026, en Guadeloupe. Je reprends la course à pied tranquillement — alternance marche/course, rythme très modéré. Après 1h30, première sensation de fatigue intense. À l'arrêt : épuisement total, et quelque chose d'inhabituel — des <strong>compulsions marquées pour des aliments très denses</strong> : fromages, en particulier. Pas de vertige, pas de tremblement, pas de sueurs froides.</p>
+      <p>J'ai couru un 112 km avec 3000m D+ en Suisse en 2017. Je connais l'hypoglycémie d'effort. Ce que je ressentais était <strong>radicalement différent</strong> — une déplétion profonde, systémique, qui ne ressemblait pas à un manque de glucose. La compulsion fromage était cohérente avec un appel lipidique et protéique (caséine → tyrosine → dopamine ; sel → vasoconstriction périphérique) — comme si le corps cherchait à compenser une déplétion noradrénergique.</p>
+      <p>Le lendemain matin (J+1), je me suis réveillé bien. Mais en journée, grosse fatigue. Et à J+2 : nettement mieux que les jours précédents, meilleure nuit — <strong>comme si l'effort avait provoqué un reset</strong>. Avant la course, j'avais tendance à trop de gain cérébral la nuit, peu de sommeil mais sans épuisement en journée. Ce J+2 amélioré pourrait correspondre à une phase de sur-compensation post-déplétion, avec restauration du tonus autonome après la tempête sympathique. Le PEM n'est pas toujours unidirectionnel.</p>
+    </div>
+
+    <h2>Le pacing : rester sous le seuil anaérobie</h2>
+
+    <p>Le pacing consiste à calibrer son activité pour <strong>ne pas dépasser son seuil anaérobie individuel</strong> — le niveau d'effort au-delà duquel le métabolisme bascule vers des voies moins efficaces et plus coûteuses pour la récupération.</p>
+
+    <p>Concrètement, cela signifie :</p>
+
+    <ul>
+      <li>Fragmenter les activités (physiques <em>et</em> cognitives) en courtes séquences suivies de pauses</li>
+      <li>Anticiper les journées "chargées" en réduisant les dépenses les jours précédents et suivants</li>
+      <li>Apprendre à reconnaître ses signaux précurseurs de surcharge avant que le crash ne s'installe</li>
+      <li>Ne pas confondre "je me sens mieux aujourd'hui" avec "je peux rattraper ce que je n'ai pas fait"</li>
+    </ul>
+
+    <p>Le pacing n'est pas du repos passif. C'est une <strong>gestion active de l'enveloppe énergétique disponible</strong> — pour rester fonctionnel sans déclencher de réaction en chaîne.</p>
+
+    <h2>Reconnaître ses signaux précurseurs</h2>
+
+    <p>Avant le crash, des signaux apparaissent souvent — mais ils sont subtils et varient d'une personne à l'autre :</p>
+
+    <ul class="signal-list">
+      <li>Brouillard mental soudain en cours d'activité</li>
+      <li>Sensation de chaleur ou de flush sans raison apparente</li>
+      <li>Irritabilité ou hypersensibilité sensorielle augmentée</li>
+      <li>Besoin urgent de s'asseoir ou de s'allonger</li>
+      <li>Pouls qui monte de façon disproportionnée à l'effort fourni</li>
+      <li>Compulsions alimentaires inhabituelles (sucre, gras, sel) — signal métabolique sous-estimé</li>
+    </ul>
+
+    <p>Les repérer, c'est pouvoir s'arrêter avant de franchir le seuil — et éviter le J+1/J+2 difficile.</p>
+
+    <div class="cta-block">
+      <h3>🧭 Suivre l'énergie pour calibrer le pacing</h3>
+      <p>Boussole vous permet de noter chaque jour votre énergie et votre confort physique sur 10. En suivant ces métriques sur 14 jours, il devient possible d'identifier les patterns de crash, votre seuil personnel d'activité tolérable, et les corrélations entre type d'effort et intensité du rebond. Ces données, objectivées, peuvent être partagées avec un professionnel de santé pour adapter la prise en charge.</p>
+      <a href="https://boussole.micronutriment.fr">Essayer Boussole gratuitement</a>
+    </div>
+
+    <div class="sources">
+      <h3>Sources</h3>
+      <ol>
+        <li>Carruthers BM et al. <em>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome: Clinical Working Case Definition</em>. Journal of CFS, 2003. <a href="https://pubmed.ncbi.nlm.nih.gov/12586543/" target="_blank" rel="noopener">PMID 12586543</a></li>
+        <li>Maes M, Twisk FN. <em>Chronic fatigue syndrome: Harvey and Wessely's (bio)psychosocial model versus a bio(psychosocial) model</em>. BMC Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2908558/" target="_blank" rel="noopener">PMC2908558</a></li>
+        <li>Vermeulen RC et al. <em>Patients with chronic fatigue syndrome performed worse than controls in a controlled repeated exercise study</em>. Journal of Translational Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2873939/" target="_blank" rel="noopener">PMC2873939</a></li>
+        <li>Dani M et al. <em>Autonomic dysfunction in long COVID</em>. Clinical Medicine, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7850225/" target="_blank" rel="noopener">PMC7850225</a></li>
+        <li>Tomas C, Newton J. <em>Metabolic abnormalities in chronic fatigue syndrome/myalgic encephalomyelitis</em>. Curr Rheumatol Rep, 2018. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5954566/" target="_blank" rel="noopener">PMC5954566</a></li>
+        <li>Workwell Foundation. <em>Pacing and Heart Rate Monitoring for ME/CFS</em>. workwellfoundation.org, 2021.</li>
+        <li>Rowe PC et al. <em>Orthostatic intolerance and chronic fatigue syndrome associated with Ehlers-Danlos syndrome</em>. J Pediatr, 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10228308/" target="_blank" rel="noopener">PMID 10228308</a></li>
+      </ol>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Information éducative.</strong> Les contenus de cet article sont à visée pédagogique. Ils ne constituent pas un avis médical et ne remplacent pas une consultation avec un professionnel de santé. En cas de crashes répétés ou d'aggravation progressive, consultez votre médecin.
+    </div>
+
+  </article>
 </main>
 
 <footer>
-      <div class="wrap">
-        <div class="foot">
-          <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
-          <div class="small-links">
-            <a href="/#confiance">Confidentialité</a>
-            <a href="/ecosysteme.html">Écosystème</a>
-            <a href="/rejoindre.html">Rejoindre</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+  © <a href="https://micronutriment.fr">micronutriment.fr</a> · Dr Rémy Honoré, PharmD · <a href="https://myboussole.fr">myboussole.fr</a>
+</footer>
 
-<script>
-const yr = document.getElementById('year');
-if (yr) yr.textContent = new Date().getFullYear();
-const btn = document.getElementById('menuBtn');
-const nav = document.getElementById('mobileNav');
-if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
-</script>
 </body>
 </html>
