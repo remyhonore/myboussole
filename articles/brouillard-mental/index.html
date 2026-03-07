@@ -13,363 +13,284 @@ tags: "Fatigue chronique, Covid long"
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brouillard mental : ce qui se passe dans votre cerveau | myboussole.fr</title>
   <meta name="description" content="Tête dans le coton, pensées qui patinent, incapacité à vous concentrer — ce n'est pas dans la tête. C'est une question de neurochimie." />
-  <link rel="canonical" href="https://www.myboussole.fr/articles/brouillard-mental/" />
-
-  <!-- Open Graph -->
+  <link rel="canonical" href="https://myboussole.fr/articles/brouillard-mental/" />
   <meta property="og:title" content="Brouillard mental : ce qui se passe dans votre cerveau" />
   <meta property="og:description" content="Tête dans le coton, pensées qui patinent, incapacité à vous concentrer — ce n'est pas dans la tête. C'est une question de neurochimie." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.myboussole.fr/articles/brouillard-mental/" />
-
+  <meta property="og:url" content="https://myboussole.fr/articles/brouillard-mental/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --color-bg: #fafaf8;
-      --color-surface: #ffffff;
-      --color-text: #1a1a1a;
-      --color-muted: #6b7280;
-      --color-accent: #2563eb;
-      --color-accent-light: #eff6ff;
-      --color-border: #e5e7eb;
-      --color-tag-bg: #f3f4f6;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --font-serif: 'Lora', Georgia, serif;
-      --max-w: 680px;
+      --color-bg: #ffffff;
+      --color-surface: #f8f9fa;
+      --color-border: #e9ecef;
+      --color-text: #1a1a2e;
+      --color-text-muted: #6c757d;
+      --color-accent: #2d6a4f;
+      --color-accent-light: #e8f5e9;
+      --color-accent-2: #1b4332;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 12px;
+      --max-width: 720px;
+      --paper: #F3F0E8;
+      --paper2: #F8F6F0;
     }
 
     body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
+      font-family: var(--font-main);
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, var(--paper2), var(--paper));
       color: var(--color-text);
-      line-height: 1.7;
+      line-height: 1.75;
       font-size: 17px;
     }
 
-    /* NAV */
+    /* ── HEADER ── */
+    .site-header {
+      background: rgba(248,246,240,0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(6,23,45,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
     .topbar {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--color-border);
-      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      height: 56px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
     }
-    .topbar-brand { font-weight: 600; font-size: 1rem; text-decoration: none; color: var(--color-text); }
-    .topbar-brand span { color: var(--color-accent); }
-    .topbar-nav { display: flex; gap: 1.5rem; align-items: center; justify-content: center; }
-    .topbar-nav a { text-decoration: none; color: var(--color-muted); font-size: 0.9rem; font-weight: 500; transition: color .2s; }
-    .topbar-nav a:hover { color: var(--color-text); }
-    .topbar-cta { display: flex; justify-content: flex-end; }
-    .btn-cta {
-      background: var(--color-accent); color: #fff;
-      padding: .45rem 1rem; border-radius: 6px;
-      font-size: .85rem; font-weight: 600; text-decoration: none;
-      transition: background .2s;
-      white-space: nowrap;
-    }
-    .btn-cta:hover { background: #1d4ed8; }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--color-accent); text-decoration: none; }
+    .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
+    .topbar-nav a { color: var(--color-text); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
+    .topbar-nav a:hover { opacity: 1; }
+    .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
+    .btn-primary { background: var(--color-accent); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--color-accent-2); }
 
-    /* MOBILE NAV */
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: .5rem; }
-    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 4px 0; border-radius: 2px; }
-    .mobile-nav { display: none; background: #fff; border-bottom: 1px solid var(--color-border); padding: 1rem 1.5rem; flex-direction: column; gap: .75rem; }
-    .mobile-nav a { text-decoration: none; color: var(--color-text); font-size: .95rem; font-weight: 500; }
-    .mobile-nav .mobile-cta { color: var(--color-accent); }
-    .mobile-nav hr { border: none; border-top: 1px solid var(--color-border); }
-    @media (max-width: 640px) {
-      .topbar-nav, .topbar-cta { display: none; }
-      .mobile-menu-btn { display: block; }
-      .topbar { grid-template-columns: 1fr auto; }
+    /* ── ARTICLE ── */
+    .article-wrapper { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+
+    .article-card {
+      background: rgba(255,255,255,.92);
+      border-radius: 22px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.12);
+      padding: clamp(28px, 4vw, 48px);
     }
 
-    /* ARTICLE */
-    .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 14px; color: var(--color-text-muted); flex-wrap: wrap; }
+    .article-meta .tag { background: var(--color-accent-light); color: var(--color-accent); padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 13px; }
 
-    .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
-    .tag {
-      background: var(--color-tag-bg); color: var(--color-muted);
-      font-size: .78rem; font-weight: 500; padding: .25rem .65rem;
-      border-radius: 20px;
-    }
-    .meta-sep { color: var(--color-border); }
-    .meta-date, .meta-read { font-size: .82rem; color: var(--color-muted); }
+    h1 { font-size: clamp(22px, 3vw, 32px); font-weight: 700; line-height: 1.25; color: var(--color-text); margin-bottom: 20px; }
 
-    h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(20px, 2vw, 26px);
-      line-height: 1.3;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      color: var(--color-text);
-    }
+    .lead { font-size: 18px; line-height: 1.7; color: #374151; border-left: 4px solid var(--color-accent); padding-left: 20px; margin-bottom: 40px; }
 
-    .lead {
-      font-size: 1.1rem;
-      color: #374151;
-      margin-bottom: 2.5rem;
-      border-left: 3px solid var(--color-accent);
-      padding-left: 1rem;
-      line-height: 1.65;
-    }
+    h2 { font-size: clamp(17px, 2vw, 21px); font-weight: 700; color: var(--color-text); margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--color-accent-light); }
 
-    h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(16px, 1.5vw, 20px);
-      font-weight: 600;
-      margin-top: 2.5rem;
-      margin-bottom: .9rem;
-      color: var(--color-text);
-    }
-
-    p { margin-bottom: 1.1rem; }
-
-    ul, ol { padding-left: 1.4rem; margin-bottom: 1.1rem; }
-    li { margin-bottom: .45rem; }
-
+    p { margin-bottom: 18px; }
+    ul, ol { padding-left: 22px; margin-bottom: 18px; }
+    li { margin-bottom: 6px; }
     strong { font-weight: 600; }
 
-    /* FIGURE */
-    figure { margin: 2rem 0; }
-    figure img { width: 100%; border-radius: 8px; display: block; }
-    figcaption {
-      font-size: .82rem; color: var(--color-muted);
-      margin-top: .6rem; line-height: 1.5;
-      font-style: italic;
-    }
+    /* ── FIGURE ── */
+    .article-figure { margin: 24px 0 32px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); }
+    .article-figure img { width: 100%; height: auto; display: block; }
+    .article-figure figcaption { padding: 10px 16px; font-size: 13px; color: var(--color-text-muted); background: var(--color-surface); line-height: 1.5; border-top: 1px solid var(--color-border); }
 
-    /* CALLOUT PROFILS */
-    .profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-    @media (max-width: 540px) { .profiles { grid-template-columns: 1fr; } }
-    .profile-card {
-      border-radius: 10px; padding: 1.1rem 1.2rem;
-    }
-    .profile-card.a { background: #fef3c7; border-left: 4px solid #f59e0b; }
-    .profile-card.b { background: #ede9fe; border-left: 4px solid #7c3aed; }
-    .profile-card .profile-label {
-      font-weight: 700; font-size: .82rem; letter-spacing: .04em;
-      text-transform: uppercase; margin-bottom: .4rem;
-    }
-    .profile-card.a .profile-label { color: #92400e; }
-    .profile-card.b .profile-label { color: #4c1d95; }
-    .profile-card p { font-size: .9rem; margin-bottom: 0; }
+    /* ── PROFILS ── */
+    .profiles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 32px; }
+    @media (max-width: 560px) { .profiles-grid { grid-template-columns: 1fr; } }
+    .profile-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 18px 20px; }
+    .profile-card .profile-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .profile-card.hypoeveil .profile-label { color: #2d6a4f; }
+    .profile-card.hypereveil .profile-label { color: #e63946; }
+    .profile-card p { font-size: 15px; margin: 0; }
 
-    /* NOTE AUTEUR */
-    .author-note {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid var(--color-accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1.2rem 1.4rem;
-      margin: 2rem 0;
-    }
-    .author-note-header {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .8rem; font-weight: 600; color: var(--color-accent);
-      text-transform: uppercase; letter-spacing: .05em;
-      margin-bottom: .7rem;
-    }
-    .author-note-header svg { flex-shrink: 0; }
-    .author-note p { font-size: .93rem; color: #374151; margin-bottom: .6rem; }
+    /* ── NOTE AUTEUR ── */
+    .author-note { background: #f0f4ff; border-left: 4px solid #4361ee; border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; font-size: 15.5px; line-height: 1.7; }
+    .author-note .author-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #4361ee; margin-bottom: 8px; }
+    .author-note p { margin-bottom: 12px; }
     .author-note p:last-child { margin-bottom: 0; }
 
-    /* CTA BOUSSOLE */
-    .cta-block {
-      background: var(--color-accent-light);
-      border: 1px solid #bfdbfe;
-      border-radius: 10px;
-      padding: 1.4rem 1.5rem;
-      margin: 2.5rem 0;
-    }
-    .cta-block h3 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      margin-bottom: .5rem;
-    }
-    .cta-block p { font-size: .92rem; color: #374151; margin-bottom: 1rem; }
-    .cta-block a {
-      display: inline-block;
-      background: var(--color-accent); color: #fff;
-      padding: .55rem 1.2rem; border-radius: 6px;
-      font-size: .88rem; font-weight: 600; text-decoration: none;
-    }
-    .cta-block a:hover { background: #1d4ed8; }
+    /* ── CTA BOUSSOLE ── */
+    .cta-boussole { background: var(--color-accent-light); border: 1px solid #b7e4c7; border-radius: var(--radius); padding: 28px 32px; margin: 48px 0 32px; text-align: center; }
+    .cta-boussole h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--color-accent-2); }
+    .cta-boussole p { font-size: 15.5px; color: #374151; margin-bottom: 20px; }
+    .btn-cta { display: inline-block; background: var(--color-accent); color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-cta:hover { background: var(--color-accent-2); }
 
-    /* SOURCES */
-    .sources { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
-    .sources h3 { font-size: .9rem; font-weight: 600; color: var(--color-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .8rem; }
-    .sources ol { font-size: .83rem; color: var(--color-muted); padding-left: 1.2rem; }
-    .sources li { margin-bottom: .35rem; }
+    /* ── SOURCES ── */
+    .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+    .sources h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-muted); margin-bottom: 12px; }
+    .sources ol { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+    .sources ol li { margin-bottom: 6px; }
     .sources a { color: var(--color-accent); }
 
-    /* DISCLAIMER */
-    .disclaimer {
-      margin-top: 2rem;
-      font-size: .82rem; color: var(--color-muted);
-      background: var(--color-tag-bg);
-      border-radius: 6px; padding: .8rem 1rem;
-    }
+    /* ── DISCLAIMER ── */
+    .disclaimer { background: var(--color-surface); border-radius: var(--radius); padding: 16px 20px; font-size: 13px; color: var(--color-text-muted); margin-top: 32px; line-height: 1.6; }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--color-border);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: .82rem;
-      color: var(--color-muted);
+    /* ── FOOTER ── */
+    .site-footer { border-top: 1px solid var(--color-border); padding: 32px 24px; text-align: center; font-size: 14px; color: var(--color-text-muted); }
+    .site-footer a { color: var(--color-accent); text-decoration: none; }
+
+    /* ── MOBILE ── */
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .mobile-nav { display: none; }
+    @media (max-width: 640px) {
+      .topbar-nav, .topbar-cta { display: none; }
+      .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
+      .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
+      .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
     }
-    footer a { color: var(--color-muted); }
   </style>
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <nav class="topbar">
-    <a href="https://myboussole.fr" class="topbar-brand">🧭 myboussole</a>
+    <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
     <div class="topbar-nav">
       <a href="https://myboussole.fr/articles/">Articles</a>
       <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
     </div>
     <div class="topbar-cta">
-      <a href="https://boussole.micronutriment.fr" class="btn-cta">Essayer Boussole</a>
+      <a href="https://boussole.micronutriment.fr" class="btn-primary">Essayer Boussole</a>
     </div>
-    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').style.display = document.querySelector('.mobile-nav').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </nav>
   <nav class="mobile-nav">
     <a href="https://myboussole.fr/articles/">Articles</a>
     <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
-    <hr />
-    <a href="https://boussole.micronutriment.fr" class="mobile-cta">Essayer Boussole</a>
+    <a href="https://boussole.micronutriment.fr">Essayer Boussole</a>
   </nav>
 </header>
 
-<main>
-  <article class="article-wrap">
+<main class="article-wrapper">
+<div class="article-card">
 
-    <div class="article-meta">
-      <span class="tag">Fatigue chronique</span>
-      <span class="tag">Covid long</span>
-      <span class="meta-sep">·</span>
-      <span class="meta-date">6 mars 2026</span>
-      <span class="meta-sep">·</span>
-      <span class="meta-read">7 min de lecture</span>
+  <div class="article-meta">
+    <span class="tag">Fatigue chronique</span>
+    <span class="tag">Covid long</span>
+    <span>6 mars 2026</span>
+    <span>· 7 min de lecture</span>
+  </div>
+
+  <h1>Brouillard mental : ce qui se passe vraiment dans votre cerveau</h1>
+
+  <p class="lead">Tête dans le coton, pensées qui patinent, incapacité à vous concentrer — ce n'est pas "dans la tête". C'est une question de neurochimie, et ça s'explique.</p>
+
+  <h2>Ce que vous ressentez a un nom, et une biologie</h2>
+
+  <p>Le brouillard mental — ou <em>brain fog</em> — est l'un des symptômes les plus fréquents dans le Covid long, la fibromyalgie et la fatigue chronique. Il est souvent minimisé ou attribué à "l'anxiété". Pourtant, il correspond à une réalité physiologique : un déséquilibre des systèmes d'éveil du cerveau.</p>
+
+  <p>Comprendre ce déséquilibre, c'est la première étape pour mieux le repérer et en parler avec un professionnel de santé.</p>
+
+  <h2>La cascade d'éveil : quatre messagers clés</h2>
+
+  <figure class="article-figure">
+    <img src="cascade-eveil-neurotransmetteurs.jpg" alt="Schéma de la cascade d'éveil cérébral : histamine, acétylcholine, dopamine, noradrénaline et leurs interactions dans le maintien de la vigilance" />
+    <figcaption>La cascade d'éveil repose sur quatre neurotransmetteurs couplés. Un déséquilibre de leur ratio — pas forcément un manque — suffit à installer le brouillard.</figcaption>
+  </figure>
+
+  <p>Pour rester fonctionnel, votre cerveau jongle en permanence avec quatre neurotransmetteurs qui forment la cascade d'éveil :</p>
+
+  <ul>
+    <li><strong>Histamine</strong> — le signal de départ. Elle assure l'éveil de fond et maintient la vigilance de base.</li>
+    <li><strong>Acétylcholine</strong> — le filtre attentionnel. Elle aide à trier les informations pertinentes et à rester concentré sur une tâche.</li>
+    <li><strong>Dopamine</strong> — le moteur motivationnel. Elle détermine ce qui mérite l'effort et ce qui est important.</li>
+    <li><strong>Noradrénaline</strong> — l'amplificateur. Elle gère l'intensité de la vigilance et la réponse au stress.</li>
+  </ul>
+
+  <p>Le brouillard n'apparaît pas forcément parce que l'un de ces messagers manque. Il s'installe quand le ratio entre eux se dérègle — quand la balance penche trop d'un côté ou de l'autre.</p>
+
+  <h2>Deux types de brouillard — et pourtant si semblables</h2>
+
+  <p>Deux états opposés peuvent produire le même ressenti :</p>
+
+  <div class="profiles-grid">
+    <div class="profile-card hypoeveil">
+      <div class="profile-label">Profil A — Hypo-éveil</div>
+      <p>"Tête dans le coton". Systèmes sous-activés. Lenteur, somnolence, pensées floues. Vous avez envie de dormir mais le repos ne récupère pas.</p>
     </div>
-
-    <h1>Brouillard mental : ce qui se passe vraiment dans votre cerveau</h1>
-
-    <p class="lead">Tête dans le coton, pensées qui patinent, incapacité à vous concentrer — ce n'est pas "dans la tête". C'est une question de neurochimie, et ça s'explique.</p>
-
-    <h2>Ce que vous ressentez a un nom, et une biologie</h2>
-
-    <p>Le brouillard mental — ou <em>brain fog</em> — est l'un des symptômes les plus fréquents dans le Covid long, la fibromyalgie et la fatigue chronique. Il est souvent minimisé ou attribué à "l'anxiété". Pourtant, il correspond à une réalité physiologique : un déséquilibre des systèmes d'éveil du cerveau.</p>
-
-    <p>Comprendre ce déséquilibre, c'est la première étape pour mieux le repérer et en parler avec un professionnel de santé.</p>
-
-    <h2>La cascade d'éveil : quatre messagers clés</h2>
-
-    <figure>
-      <img src="cascade-eveil-neurotransmetteurs.jpg" alt="Schéma de la cascade d'éveil cérébral : histamine, acétylcholine, dopamine, noradrénaline et leurs interactions dans le maintien de la vigilance" />
-      <figcaption>La cascade d'éveil repose sur quatre neurotransmetteurs couplés. Un déséquilibre de leur ratio — pas forcément un manque — suffit à installer le brouillard.</figcaption>
-    </figure>
-
-    <p>Pour rester fonctionnel, votre cerveau jongle en permanence avec quatre neurotransmetteurs qui forment la cascade d'éveil :</p>
-
-    <ul>
-      <li><strong>Histamine</strong> — le signal de départ. Elle assure l'éveil de fond et maintient la vigilance de base.</li>
-      <li><strong>Acétylcholine</strong> — le filtre attentionnel. Elle aide à trier les informations pertinentes et à rester concentré sur une tâche.</li>
-      <li><strong>Dopamine</strong> — le moteur motivationnel. Elle détermine ce qui mérite l'effort et ce qui est important.</li>
-      <li><strong>Noradrénaline</strong> — l'amplificateur. Elle gère l'intensité de la vigilance et la réponse au stress.</li>
-    </ul>
-
-    <p>Le brouillard n'apparaît pas forcément parce que l'un de ces messagers manque. Il peut s'installer quand le ratio entre eux se dérègle — quand la balance penche trop d'un côté ou de l'autre.</p>
-
-    <h2>Deux types de brouillard — et pourtant si semblables</h2>
-
-    <p>Deux états opposés peuvent produire le même ressenti :</p>
-
-    <div class="profiles">
-      <div class="profile-card a">
-        <div class="profile-label">Profil A — Hypo-éveil</div>
-        <p>"Tête dans le coton". Systèmes sous-activés. Lenteur, somnolence, pensées floues. Vous avez envie de dormir mais le repos ne récupère pas.</p>
-      </div>
-      <div class="profile-card b">
-        <div class="profile-label">Profil B — Hyper-éveil</div>
-        <p>"Cerveau électrique". Systèmes en surchauffe. Trop de stimulations, trop de bruit interne — le brouillard s'installe par saturation. Épuisé et incapable de "couper" en même temps.</p>
-      </div>
+    <div class="profile-card hypereveil">
+      <div class="profile-label">Profil B — Hyper-éveil</div>
+      <p>"Cerveau électrique". Systèmes en surchauffe. Trop de stimulations, trop de bruit interne — le brouillard s'installe par saturation. Épuisé et incapable de "couper" en même temps.</p>
     </div>
+  </div>
 
-    <p>Ces deux états peuvent coexister dans la même journée. C'est notamment ce qui rend le Covid long si déroutant.</p>
+  <p>Ces deux états peuvent coexister dans la même journée. C'est notamment ce qui rend le Covid long si déroutant.</p>
 
-    <p>Le brouillard mental n'est pas un échec de volonté. C'est un signal que le système d'éveil est en déséquilibre — et que la charge cognitive dépasse la marge disponible ce jour-là.</p>
+  <p>Le brouillard mental n'est pas un échec de volonté. C'est un signal que le système d'éveil est en déséquilibre — et que la charge cognitive dépasse la marge disponible ce jour-là.</p>
 
-    <div class="author-note">
-      <div class="author-note-header">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
-        Note de l'auteur — Dr Rémy Honoré, PharmD
-      </div>
-      <p>J'ai développé un Covid long en juillet 2020. Parmi les premiers symptômes : des céphalées matinales intenses, aggravées dès la position debout et à la prise du petit-déjeuner. S'y ajoutaient une lenteur d'exécution mentale marquée et les classiques troubles de la concentration, de la mémoire et de la motivation — le tableau type du <strong>brouillard hypo-éveil</strong>.</p>
-      <p>La <strong>caféine améliorait systématiquement l'état</strong> — et ce par deux mécanismes complémentaires. Le premier est neurochimique : l'antagonisme des récepteurs à l'adénosine lève le frein sur l'histamine et la dopamine, restaurant la cascade d'éveil. Le second est vasculaire : l'adénosine accumulée provoque une vasoconstriction cérébrale ; la caféine la lève, améliorant directement la <strong>perfusion cérébrale</strong> — et donc le brouillard. Ce n'est pas que la caféine "donne de l'énergie" : elle corrige une hypoperfusion et un déficit d'éveil simultanés.</p>
-      <p>Paradoxalement, il m'arrivait d'avoir besoin de caféine la nuit pour <strong>me rendormir</strong> — ce qui peut sembler absurde. La biologie l'explique : en situation de dysautonomie, la caféine augmente la pression artérielle via la noradrénaline, ce qui active les barorécepteurs, qui déclenchent une réponse vagale compensatrice — somnolence, bâillements, envie de dormir. Ce "coup de mou" baroréflexe était chez moi probablement exagéré par une hyperréactivité vagale liée au Covid long.</p>
-      <p>Le point d'inflexion est venu avec le <strong>myo-inositol</strong>. Avant, je présentais ce que j'appelle un excès de "gain" neuronal : légers maux de tête de fond, sursauts d'endormissement fréquents, nuits peu profondes malgré l'absence d'épuisement diurne — le signe d'une hyperexcitabilité du système d'éveil en phase de transition veille/sommeil. L'inositol, précurseur du second messager IP3, module la signalisation GABA-A et sérotoninergique — il abaisse l'excitabilité neuronale. Résultat : disparition des sursauts hypnagogiques, des céphalées de fond, et stabilisation nette du sommeil. Ces cinq ans m'ont appris que le brouillard et le "trop de gain" peuvent être les deux faces d'un même dérèglement.</p>
-    </div>
+  <div class="author-note">
+    <div class="author-label">Note de l'auteur — Dr Rémy Honoré, PharmD</div>
+    <p>J'ai développé un Covid long en juillet 2020. Parmi les premiers symptômes : des céphalées matinales intenses, aggravées dès la position debout et à la prise du petit-déjeuner. S'y ajoutaient une lenteur d'exécution mentale marquée et les classiques troubles de la concentration, de la mémoire et de la motivation — le tableau type du <strong>brouillard hypo-éveil</strong>.</p>
+    <p>La <strong>caféine améliorait systématiquement l'état</strong> — par deux mécanismes complémentaires. Le premier est neurochimique : l'antagonisme des récepteurs à l'adénosine lève le frein sur l'histamine et la dopamine, restaurant la cascade d'éveil. Le second est vasculaire : l'adénosine accumulée provoque une vasoconstriction cérébrale ; la caféine la lève, améliorant directement la <strong>perfusion cérébrale</strong> — et donc le brouillard. Ce n'est pas que la caféine "donne de l'énergie" : elle corrige une hypoperfusion et un déficit d'éveil simultanés.</p>
+    <p>Paradoxalement, il m'arrivait d'avoir besoin de caféine la nuit pour <strong>me rendormir</strong>. La biologie l'explique : en situation de dysautonomie, la caféine augmente la pression artérielle via la noradrénaline, ce qui active les barorécepteurs, qui déclenchent une réponse vagale compensatrice — somnolence, bâillements, envie de dormir. Ce "coup de mou" baroréflexe était chez moi probablement exagéré par une hyperréactivité vagale liée au Covid long.</p>
+    <p>Le point d'inflexion est venu avec le <strong>myo-inositol</strong>. Avant, je présentais ce que j'appelle un excès de "gain" neuronal : légers maux de tête de fond, sursauts d'endormissement fréquents, nuits peu profondes malgré l'absence d'épuisement diurne — signe d'une hyperexcitabilité en phase de transition veille/sommeil. L'inositol, précurseur du second messager IP3, module la signalisation GABA-A et sérotoninergique — il abaisse l'excitabilité neuronale. Résultat : disparition des sursauts hypnagogiques, des céphalées de fond, et stabilisation nette du sommeil. Ces cinq ans m'ont appris que le brouillard et le "trop de gain" peuvent être les deux faces d'un même dérèglement.</p>
+  </div>
 
-    <h2>Le rôle du récepteur H3 : le frein neuronal</h2>
+  <h2>Le rôle du récepteur H3 : le frein neuronal</h2>
 
-    <p>Le récepteur H3 agit comme un <strong>frein neural</strong> : il régule la libération d'histamine et, par cascade, l'activité des autres systèmes d'éveil. Quand ce frein fonctionne mal — comme chez certaines personnes atteintes de Covid long ou de dysautonomie — le système peut basculer sans prévenir : d'un réveil correct à une saturation cognitive en quelques heures.</p>
+  <p>Le récepteur H3 agit comme un <strong>frein neural</strong> : il régule la libération d'histamine et, par cascade, l'activité des autres systèmes d'éveil. Quand ce frein fonctionne mal — comme chez certaines personnes atteintes de Covid long ou de dysautonomie — le système peut basculer sans prévenir : d'un réveil correct à une saturation cognitive en quelques heures.</p>
 
-    <p>L'aggravation du brouillard à la position debout, observée dans certains tableaux de Covid long, s'explique par une <strong>composante orthostatique</strong> : la redistribution sanguine au lever réduit la perfusion cérébrale, aggravant le déficit d'éveil déjà présent. De même, un petit-déjeuner glucidique provoque un pic insulinique qui redistribue le flux sanguin vers le territoire splanchnique — creusant temporairement l'hypoperfusion cérébrale.</p>
+  <p>L'aggravation du brouillard à la position debout s'explique par une <strong>composante orthostatique</strong> : la redistribution sanguine au lever réduit la perfusion cérébrale, aggravant le déficit d'éveil déjà présent. De même, un petit-déjeuner glucidique provoque un pic insulinique qui redistribue le flux sanguin vers le territoire splanchnique — creusant temporairement l'hypoperfusion cérébrale.</p>
 
-    <h2>Pourquoi forcer n'aide pas</h2>
+  <h2>Pourquoi forcer n'aide pas</h2>
 
-    <p>Forcer l'attention en saturation aggrave souvent le brouillard le lendemain — le <strong>crash J+1/J+2</strong> bien connu dans le Covid long et la fatigue chronique.</p>
+  <p>Forcer l'attention en saturation aggrave souvent le brouillard le lendemain — le <strong>crash J+1/J+2</strong> bien connu dans le Covid long et la fatigue chronique.</p>
 
-    <p>Ce qui aide, c'est d'apprendre à repérer ses propres patterns :</p>
+  <p>Ce qui aide, c'est d'apprendre à repérer ses propres patterns :</p>
 
-    <ul>
-      <li>À quel moment de la journée le brouillard est-il le plus présent ?</li>
-      <li>Quels déclencheurs l'amplifient — écrans, bruit, interactions sociales, effort physique ?</li>
-      <li>Quel est le délai entre l'effort et l'apparition du brouillard ?</li>
-      <li>Vous êtes plutôt "lenteur" (hypo-éveil) ou "saturation" (hyper-éveil) ?</li>
-    </ul>
+  <ul>
+    <li>À quel moment de la journée le brouillard est-il le plus présent ?</li>
+    <li>Quels déclencheurs l'amplifient — écrans, bruit, interactions sociales, effort physique ?</li>
+    <li>Quel est le délai entre l'effort et l'apparition du brouillard ?</li>
+    <li>Vous êtes plutôt "lenteur" (hypo-éveil) ou "saturation" (hyper-éveil) ?</li>
+  </ul>
 
-    <div class="cta-block">
-      <h3>🧭 Suivre la clarté mentale pour y voir plus clair</h3>
-      <p>Boussole inclut la clarté mentale comme l'une des quatre métriques quotidiennes. En notant cette donnée chaque jour, vous pouvez identifier des tendances sur 14 jours — des patterns, des corrélations avec le sommeil ou l'activité, des signaux précoces avant un jour difficile. Pas pour poser un diagnostic, mais pour <strong>objectiver ce que vous ressentez</strong> et en parler avec des données concrètes.</p>
-      <a href="https://boussole.micronutriment.fr">Essayer Boussole gratuitement</a>
-    </div>
+  <div class="cta-boussole">
+    <h3>🧭 Suivre la clarté mentale pour y voir plus clair</h3>
+    <p>Boussole inclut la clarté mentale comme l'une des quatre métriques quotidiennes. En notant cette donnée chaque jour, vous pouvez identifier des tendances sur 14 jours — des patterns, des corrélations avec le sommeil ou l'activité, des signaux précoces avant un jour difficile. Pas pour poser un diagnostic, mais pour <strong>objectiver ce que vous ressentez</strong> et en parler avec des données concrètes.</p>
+    <a href="https://boussole.micronutriment.fr" class="btn-cta">Essayer Boussole gratuitement</a>
+  </div>
 
-    <div class="sources">
-      <h3>Sources</h3>
-      <ol>
-        <li>Theoharides TC et al. <em>Mast cells, brain inflammation and autism</em> — modèle de dysrégulation histaminergique centrale. Neuroscience & Biobehavioral Reviews, 2019.</li>
-        <li>Haas H, Panula P. <em>The role of histamine and the tuberomamillary nucleus in the nervous system</em>. Nature Reviews Neuroscience, 2003. <a href="https://pubmed.ncbi.nlm.nih.gov/12671643/" target="_blank" rel="noopener">PMID 12671643</a></li>
-        <li>Komaroff AL. <em>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome and the biopsychosocial model</em>. Journal of General Internal Medicine, 2019. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6318204/" target="_blank" rel="noopener">PMC6318204</a></li>
-        <li>Dani M et al. <em>Autonomic dysfunction in long COVID</em>. Clinical Medicine, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7850225/" target="_blank" rel="noopener">PMC7850225</a></li>
-        <li>Hellmuth J et al. <em>Persistent COVID-19-associated neurocognitive symptoms in non-hospitalized patients</em>. J Neurovirol, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8081510/" target="_blank" rel="noopener">PMC8081510</a></li>
-        <li>Winkler AS et al. <em>Histamine receptor dysfunction in fatigue syndromes</em>. European Journal of Neurology, 2010.</li>
-        <li>Fredholm BB et al. <em>Actions of caffeine in the brain with special reference to factors that contribute to its widespread use</em>. Pharmacological Reviews, 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10353985/" target="_blank" rel="noopener">PMID 10353985</a></li>
-        <li>Pelligrino DA et al. <em>Caffeine and the control of cerebral hemodynamics</em>. J Alzheimers Dis, 2010. <a href="https://pubmed.ncbi.nlm.nih.gov/20413889/" target="_blank" rel="noopener">PMID 20413889</a></li>
-        <li>Mukai T et al. <em>A meta-analysis of inositol for depression and anxiety disorders</em>. Human Psychopharmacology, 2014. <a href="https://pubmed.ncbi.nlm.nih.gov/24424706/" target="_blank" rel="noopener">PMID 24424706</a></li>
-      </ol>
-    </div>
+  <div class="sources">
+    <h3>Sources</h3>
+    <ol>
+      <li>Theoharides TC et al. <em>Mast cells, brain inflammation and autism</em>. Neuroscience & Biobehavioral Reviews, 2019.</li>
+      <li>Haas H, Panula P. <em>The role of histamine and the tuberomamillary nucleus in the nervous system</em>. Nature Reviews Neuroscience, 2003. <a href="https://pubmed.ncbi.nlm.nih.gov/12671643/" target="_blank" rel="noopener">PMID 12671643</a></li>
+      <li>Komaroff AL. <em>ME/CFS and the biopsychosocial model</em>. Journal of General Internal Medicine, 2019. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6318204/" target="_blank" rel="noopener">PMC6318204</a></li>
+      <li>Dani M et al. <em>Autonomic dysfunction in long COVID</em>. Clinical Medicine, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7850225/" target="_blank" rel="noopener">PMC7850225</a></li>
+      <li>Hellmuth J et al. <em>Persistent COVID-19-associated neurocognitive symptoms</em>. J Neurovirol, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8081510/" target="_blank" rel="noopener">PMC8081510</a></li>
+      <li>Winkler AS et al. <em>Histamine receptor dysfunction in fatigue syndromes</em>. European Journal of Neurology, 2010.</li>
+      <li>Fredholm BB et al. <em>Actions of caffeine in the brain</em>. Pharmacological Reviews, 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10353985/" target="_blank" rel="noopener">PMID 10353985</a></li>
+      <li>Pelligrino DA et al. <em>Caffeine and the control of cerebral hemodynamics</em>. J Alzheimers Dis, 2010. <a href="https://pubmed.ncbi.nlm.nih.gov/20413889/" target="_blank" rel="noopener">PMID 20413889</a></li>
+      <li>Mukai T et al. <em>A meta-analysis of inositol for depression and anxiety disorders</em>. Human Psychopharmacology, 2014. <a href="https://pubmed.ncbi.nlm.nih.gov/24424706/" target="_blank" rel="noopener">PMID 24424706</a></li>
+    </ol>
+  </div>
 
-    <div class="disclaimer">
-      <strong>Information éducative.</strong> Les contenus de cet article sont à visée pédagogique. Ils ne constituent pas un avis médical et ne remplacent pas une consultation avec un professionnel de santé. En cas de symptômes cognitifs importants ou d'aggravation rapide, consultez votre médecin.
-    </div>
+  <div class="disclaimer">
+    <strong>Information éducative.</strong> Les contenus de cet article sont à visée pédagogique. Ils ne constituent pas un avis médical et ne remplacent pas une consultation avec un professionnel de santé. En cas de symptômes cognitifs importants ou d'aggravation rapide, consultez votre médecin.
+  </div>
 
-  </article>
+</div>
 </main>
 
-<footer>
+<footer class="site-footer">
   © <a href="https://micronutriment.fr">micronutriment.fr</a> · Dr Rémy Honoré, PharmD · <a href="https://myboussole.fr">myboussole.fr</a>
 </footer>
 

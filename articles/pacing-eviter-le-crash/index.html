@@ -13,362 +13,262 @@ tags: "Fatigue chronique, Covid long"
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pacing : éviter le crash d'effort dans le Covid long | myboussole.fr</title>
   <meta name="description" content="Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing." />
-  <link rel="canonical" href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" />
-
-  <!-- Open Graph -->
+  <link rel="canonical" href="https://myboussole.fr/articles/pacing-eviter-le-crash/" />
   <meta property="og:title" content="Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique" />
   <meta property="og:description" content="Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" />
-
+  <meta property="og:url" content="https://myboussole.fr/articles/pacing-eviter-le-crash/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --color-bg: #fafaf8;
-      --color-surface: #ffffff;
-      --color-text: #1a1a1a;
-      --color-muted: #6b7280;
-      --color-accent: #2563eb;
-      --color-accent-light: #eff6ff;
-      --color-border: #e5e7eb;
-      --color-tag-bg: #f3f4f6;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --font-serif: 'Lora', Georgia, serif;
-      --max-w: 680px;
+      --color-bg: #ffffff;
+      --color-surface: #f8f9fa;
+      --color-border: #e9ecef;
+      --color-text: #1a1a2e;
+      --color-text-muted: #6c757d;
+      --color-accent: #2d6a4f;
+      --color-accent-light: #e8f5e9;
+      --color-accent-2: #1b4332;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 12px;
+      --max-width: 720px;
+      --paper: #F3F0E8;
+      --paper2: #F8F6F0;
     }
 
     body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
+      font-family: var(--font-main);
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, var(--paper2), var(--paper));
       color: var(--color-text);
-      line-height: 1.7;
+      line-height: 1.75;
       font-size: 17px;
     }
 
-    /* NAV */
-    .topbar {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--color-border);
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      height: 56px;
-    }
-    .topbar-brand { font-weight: 600; font-size: 1rem; text-decoration: none; color: var(--color-text); }
-    .topbar-nav { display: flex; gap: 1.5rem; align-items: center; justify-content: center; }
-    .topbar-nav a { text-decoration: none; color: var(--color-muted); font-size: .9rem; font-weight: 500; transition: color .2s; }
-    .topbar-nav a:hover { color: var(--color-text); }
-    .topbar-cta { display: flex; justify-content: flex-end; }
-    .btn-cta {
-      background: var(--color-accent); color: #fff;
-      padding: .45rem 1rem; border-radius: 6px;
-      font-size: .85rem; font-weight: 600; text-decoration: none;
-      transition: background .2s;
-      white-space: nowrap;
-    }
-    .btn-cta:hover { background: #1d4ed8; }
+    .site-header { background: rgba(248,246,240,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(6,23,45,0.06); position: sticky; top: 0; z-index: 100; }
+    .topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--color-accent); text-decoration: none; }
+    .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
+    .topbar-nav a { color: var(--color-text); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
+    .topbar-nav a:hover { opacity: 1; }
+    .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
+    .btn-primary { background: var(--color-accent); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--color-accent-2); }
 
-    /* MOBILE NAV */
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: .5rem; }
-    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 4px 0; border-radius: 2px; }
-    .mobile-nav { display: none; background: #fff; border-bottom: 1px solid var(--color-border); padding: 1rem 1.5rem; flex-direction: column; gap: .75rem; }
-    .mobile-nav a { text-decoration: none; color: var(--color-text); font-size: .95rem; font-weight: 500; }
-    .mobile-nav .mobile-cta { color: var(--color-accent); }
-    .mobile-nav hr { border: none; border-top: 1px solid var(--color-border); }
-    @media (max-width: 640px) {
-      .topbar-nav, .topbar-cta { display: none; }
-      .mobile-menu-btn { display: block; }
-      .topbar { grid-template-columns: 1fr auto; }
-    }
+    .article-wrapper { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+    .article-card { background: rgba(255,255,255,.92); border-radius: 22px; box-shadow: 0 22px 60px rgba(0,0,0,.12); padding: clamp(28px, 4vw, 48px); }
 
-    /* ARTICLE */
-    .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 14px; color: var(--color-text-muted); flex-wrap: wrap; }
+    .article-meta .tag { background: var(--color-accent-light); color: var(--color-accent); padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 13px; }
 
-    .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
-    .tag { background: var(--color-tag-bg); color: var(--color-muted); font-size: .78rem; font-weight: 500; padding: .25rem .65rem; border-radius: 20px; }
-    .meta-sep { color: var(--color-border); }
-    .meta-date, .meta-read { font-size: .82rem; color: var(--color-muted); }
-
-    h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(20px, 2vw, 26px);
-      line-height: 1.3;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-      color: #374151;
-      margin-bottom: 2.5rem;
-      border-left: 3px solid var(--color-accent);
-      padding-left: 1rem;
-      line-height: 1.65;
-    }
-
-    h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(16px, 1.5vw, 20px);
-      font-weight: 600;
-      margin-top: 2.5rem;
-      margin-bottom: .9rem;
-    }
-
-    p { margin-bottom: 1.1rem; }
-    ul, ol { padding-left: 1.4rem; margin-bottom: 1.1rem; }
-    li { margin-bottom: .45rem; }
+    h1 { font-size: clamp(22px, 3vw, 32px); font-weight: 700; line-height: 1.25; color: var(--color-text); margin-bottom: 20px; }
+    .lead { font-size: 18px; line-height: 1.7; color: #374151; border-left: 4px solid var(--color-accent); padding-left: 20px; margin-bottom: 40px; }
+    h2 { font-size: clamp(17px, 2vw, 21px); font-weight: 700; color: var(--color-text); margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--color-accent-light); }
+    p { margin-bottom: 18px; }
+    ul, ol { padding-left: 22px; margin-bottom: 18px; }
+    li { margin-bottom: 6px; }
     strong { font-weight: 600; }
 
-    /* FIGURE */
-    figure { margin: 2rem 0; }
-    figure img { width: 100%; border-radius: 8px; display: block; }
-    figcaption { font-size: .82rem; color: var(--color-muted); margin-top: .6rem; line-height: 1.5; font-style: italic; }
+    .article-figure { margin: 24px 0 32px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); }
+    .article-figure img { width: 100%; height: auto; display: block; }
+    .article-figure figcaption { padding: 10px 16px; font-size: 13px; color: var(--color-text-muted); background: var(--color-surface); line-height: 1.5; border-top: 1px solid var(--color-border); }
 
-    /* TIMELINE PEM */
-    .pem-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: .75rem;
-      margin: 1.5rem 0;
-    }
+    /* ── TIMELINE PEM ── */
+    .pem-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0 32px; }
     @media (max-width: 480px) { .pem-timeline { grid-template-columns: 1fr; } }
-    .pem-card {
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
-      text-align: center;
-    }
+    .pem-card { border-radius: var(--radius); padding: 16px 18px; text-align: center; }
     .pem-card.j0 { background: #dcfce7; border-top: 4px solid #16a34a; }
     .pem-card.j1 { background: #fef9c3; border-top: 4px solid #ca8a04; }
     .pem-card.j2 { background: #fee2e2; border-top: 4px solid #dc2626; }
-    .pem-card .pem-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+    .pem-card .pem-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
     .pem-card.j0 .pem-label { color: #15803d; }
     .pem-card.j1 .pem-label { color: #a16207; }
     .pem-card.j2 .pem-label { color: #b91c1c; }
-    .pem-card p { font-size: .85rem; margin-bottom: 0; }
+    .pem-card p { font-size: 14px; margin: 0; }
 
-    /* NOTE AUTEUR */
-    .author-note {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid var(--color-accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1.2rem 1.4rem;
-      margin: 2rem 0;
-    }
-    .author-note-header {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .8rem; font-weight: 600; color: var(--color-accent);
-      text-transform: uppercase; letter-spacing: .05em;
-      margin-bottom: .7rem;
-    }
-    .author-note p { font-size: .93rem; color: #374151; margin-bottom: .6rem; }
+    .author-note { background: #f0f4ff; border-left: 4px solid #4361ee; border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 32px 0; font-size: 15.5px; line-height: 1.7; }
+    .author-note .author-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #4361ee; margin-bottom: 8px; }
+    .author-note p { margin-bottom: 12px; }
     .author-note p:last-child { margin-bottom: 0; }
 
-    /* SIGNAUX */
-    .signal-list { list-style: none; padding: 0; }
-    .signal-list li {
-      padding: .55rem .8rem .55rem 2.2rem;
-      position: relative;
-      border-bottom: 1px solid var(--color-border);
-      font-size: .95rem;
-    }
+    /* ── SIGNAUX ── */
+    .signal-list { list-style: none; padding: 0; margin: 12px 0 24px; }
+    .signal-list li { padding: 10px 10px 10px 36px; position: relative; border-bottom: 1px solid var(--color-border); font-size: 15.5px; }
     .signal-list li:last-child { border-bottom: none; }
-    .signal-list li::before {
-      content: "⚠️";
-      position: absolute; left: .3rem;
-      font-size: .85rem;
-    }
+    .signal-list li::before { content: "⚠️"; position: absolute; left: 6px; font-size: 14px; }
 
-    /* CTA */
-    .cta-block {
-      background: var(--color-accent-light);
-      border: 1px solid #bfdbfe;
-      border-radius: 10px;
-      padding: 1.4rem 1.5rem;
-      margin: 2.5rem 0;
-    }
-    .cta-block h3 { font-family: var(--font-serif); font-size: 1rem; margin-bottom: .5rem; }
-    .cta-block p { font-size: .92rem; color: #374151; margin-bottom: 1rem; }
-    .cta-block a {
-      display: inline-block;
-      background: var(--color-accent); color: #fff;
-      padding: .55rem 1.2rem; border-radius: 6px;
-      font-size: .88rem; font-weight: 600; text-decoration: none;
-    }
-    .cta-block a:hover { background: #1d4ed8; }
+    .cta-boussole { background: var(--color-accent-light); border: 1px solid #b7e4c7; border-radius: var(--radius); padding: 28px 32px; margin: 48px 0 32px; text-align: center; }
+    .cta-boussole h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--color-accent-2); }
+    .cta-boussole p { font-size: 15.5px; color: #374151; margin-bottom: 20px; }
+    .btn-cta { display: inline-block; background: var(--color-accent); color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-cta:hover { background: var(--color-accent-2); }
 
-    /* SOURCES */
-    .sources { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
-    .sources h3 { font-size: .9rem; font-weight: 600; color: var(--color-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .8rem; }
-    .sources ol { font-size: .83rem; color: var(--color-muted); padding-left: 1.2rem; }
-    .sources li { margin-bottom: .35rem; }
+    .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+    .sources h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-muted); margin-bottom: 12px; }
+    .sources ol { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+    .sources ol li { margin-bottom: 6px; }
     .sources a { color: var(--color-accent); }
 
-    /* DISCLAIMER */
-    .disclaimer {
-      margin-top: 2rem;
-      font-size: .82rem; color: var(--color-muted);
-      background: var(--color-tag-bg);
-      border-radius: 6px; padding: .8rem 1rem;
-    }
+    .disclaimer { background: var(--color-surface); border-radius: var(--radius); padding: 16px 20px; font-size: 13px; color: var(--color-text-muted); margin-top: 32px; line-height: 1.6; }
 
-    /* FOOTER */
-    footer { border-top: 1px solid var(--color-border); padding: 1.5rem; text-align: center; font-size: .82rem; color: var(--color-muted); }
-    footer a { color: var(--color-muted); }
+    .site-footer { border-top: 1px solid var(--color-border); padding: 32px 24px; text-align: center; font-size: 14px; color: var(--color-text-muted); }
+    .site-footer a { color: var(--color-accent); text-decoration: none; }
+
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .mobile-nav { display: none; }
+    @media (max-width: 640px) {
+      .topbar-nav, .topbar-cta { display: none; }
+      .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
+      .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
+      .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
+    }
   </style>
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <nav class="topbar">
-    <a href="https://myboussole.fr" class="topbar-brand">🧭 myboussole</a>
+    <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
     <div class="topbar-nav">
       <a href="https://myboussole.fr/articles/">Articles</a>
       <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
     </div>
     <div class="topbar-cta">
-      <a href="https://boussole.micronutriment.fr" class="btn-cta">Essayer Boussole</a>
+      <a href="https://boussole.micronutriment.fr" class="btn-primary">Essayer Boussole</a>
     </div>
-    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').style.display = document.querySelector('.mobile-nav').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </nav>
   <nav class="mobile-nav">
     <a href="https://myboussole.fr/articles/">Articles</a>
     <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
-    <hr />
-    <a href="https://boussole.micronutriment.fr" class="mobile-cta">Essayer Boussole</a>
+    <a href="https://boussole.micronutriment.fr">Essayer Boussole</a>
   </nav>
 </header>
 
-<main>
-  <article class="article-wrap">
+<main class="article-wrapper">
+<div class="article-card">
 
-    <div class="article-meta">
-      <span class="tag">Fatigue chronique</span>
-      <span class="tag">Covid long</span>
-      <span class="meta-sep">·</span>
-      <span class="meta-date">4 mars 2026</span>
-      <span class="meta-sep">·</span>
-      <span class="meta-read">7 min de lecture</span>
+  <div class="article-meta">
+    <span class="tag">Fatigue chronique</span>
+    <span class="tag">Covid long</span>
+    <span>4 mars 2026</span>
+    <span>· 7 min de lecture</span>
+  </div>
+
+  <h1>Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique</h1>
+
+  <p class="lead">Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing.</p>
+
+  <h2>Ce que l'on appelle "crash" n'est pas de la faiblesse</h2>
+
+  <p>Dans le Covid long, la fibromyalgie et le syndrome de fatigue chronique (SFC/EM), une caractéristique revient systématiquement : l'effort — physique, cognitif ou émotionnel — peut déclencher une aggravation brutale des symptômes dans les 12 à 72 heures qui suivent. Ce phénomène a un nom : le <strong>malaise post-effort</strong> (PEM, pour <em>post-exertional malaise</em>).</p>
+
+  <p>Il ne s'agit pas de "être fatigué après l'effort". Il s'agit d'une réaction dysrégulée du système nerveux autonome et du métabolisme cellulaire — une incapacité à récupérer normalement après une dépense d'énergie.</p>
+
+  <h2>Pourquoi le corps "crashe"</h2>
+
+  <figure class="article-figure">
+    <img src="pem-mecanismes-crash-effort.jpg" alt="Schéma des mécanismes du malaise post-effort (PEM) : dysfonction mitochondriale, activation neuro-immune, dysautonomie et délai de 24-72h" />
+    <figcaption>Le délai de 24 à 72h entre l'effort et le crash est caractéristique du PEM : c'est le temps que prend la cascade inflammatoire pour s'installer après dépassement du seuil.</figcaption>
+  </figure>
+
+  <p>Chez les personnes concernées, plusieurs mécanismes se combinent :</p>
+
+  <ul>
+    <li><strong>Dysfonction mitochondriale</strong> — les cellules peinent à produire de l'ATP en réponse à la demande, notamment via la voie oxydative.</li>
+    <li><strong>Activation neuro-immune</strong> — l'effort déclenche une réponse inflammatoire disproportionnée, avec libération de cytokines pro-inflammatoires (IL-6, TNF-α).</li>
+    <li><strong>Dysautonomie</strong> — le système nerveux autonome régule mal le débit sanguin à l'effort, provoquant hypoperfusion cérébrale et effondrement de la tolérance orthostatique.</li>
+    <li><strong>Surcharge du système d'éveil</strong> — la noradrénaline et le cortisol, mobilisés à l'effort, épuisent des réserves déjà limitées.</li>
+  </ul>
+
+  <div class="pem-timeline">
+    <div class="pem-card j0">
+      <div class="pem-label">Jour J — Effort</div>
+      <p>Sensation normale pendant l'effort. Le seuil est dépassé sans signal clair.</p>
     </div>
-
-    <h1>Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique</h1>
-
-    <p class="lead">Le crash post-effort n'est pas de la fatigue normale. C'est une réaction biologique mesurable. Et il se prévient — si on comprend la logique du pacing.</p>
-
-    <h2>Ce que l'on appelle "crash" n'est pas de la faiblesse</h2>
-
-    <p>Dans le Covid long, la fibromyalgie et le syndrome de fatigue chronique (SFC/EM), une caractéristique revient systématiquement : l'effort — physique, cognitif ou émotionnel — peut déclencher une aggravation brutale des symptômes dans les 12 à 72 heures qui suivent. Ce phénomène a un nom : le <strong>malaise post-effort</strong> (PEM, pour <em>post-exertional malaise</em>).</p>
-
-    <p>Il ne s'agit pas de "être fatigué après l'effort". Il s'agit d'une réaction dysrégulée du système nerveux autonome et du métabolisme cellulaire — une incapacité à récupérer normalement après une dépense d'énergie.</p>
-
-    <h2>Pourquoi le corps "crashe"</h2>
-
-    <figure>
-      <img src="pem-mecanismes-crash-effort.jpg" alt="Schéma des mécanismes du malaise post-effort (PEM) : dysfonction mitochondriale, activation neuro-immune, dysautonomie et délai de 24-72h" />
-      <figcaption>Le délai de 24 à 72h entre l'effort et le crash est caractéristique du PEM : c'est le temps que prend la cascade inflammatoire pour s'installer après dépassement du seuil.</figcaption>
-    </figure>
-
-    <p>Chez les personnes concernées par ces pathologies, plusieurs mécanismes se combinent :</p>
-
-    <ul>
-      <li><strong>Dysfonction mitochondriale</strong> — les cellules peinent à produire de l'ATP en réponse à la demande, notamment via la voie oxydative.</li>
-      <li><strong>Activation neuro-immune</strong> — l'effort déclenche une réponse inflammatoire disproportionnée, avec libération de cytokines pro-inflammatoires (IL-6, TNF-α).</li>
-      <li><strong>Dysautonomie</strong> — le système nerveux autonome régule mal le débit sanguin à l'effort, provoquant hypoperfusion cérébrale et effondrement de la tolérance orthostatique.</li>
-      <li><strong>Surcharge du système d'éveil</strong> — la noradrénaline et le cortisol, mobilisés à l'effort, épuisent des réserves déjà limitées.</li>
-    </ul>
-
-    <div class="pem-timeline">
-      <div class="pem-card j0">
-        <div class="pem-label">Jour J — Effort</div>
-        <p>Sensation normale pendant l'effort. Le seuil est dépassé sans signal clair.</p>
-      </div>
-      <div class="pem-card j1">
-        <div class="pem-label">J+1 — La cascade</div>
-        <p>Fatigue lourde, brouillard, hypersensiblité. La réponse inflammatoire s'installe.</p>
-      </div>
-      <div class="pem-card j2">
-        <div class="pem-label">J+2 — Le crash</div>
-        <p>Pic des symptômes. Parfois impossible de se lever. Plusieurs jours de récupération.</p>
-      </div>
+    <div class="pem-card j1">
+      <div class="pem-label">J+1 — La cascade</div>
+      <p>Fatigue lourde, brouillard, hypersensibilité. La réponse inflammatoire s'installe.</p>
     </div>
-
-    <div class="author-note">
-      <div class="author-note-header">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
-        Note de l'auteur — Dr Rémy Honoré, PharmD
-      </div>
-      <p>Fin février 2026, en Guadeloupe. Je reprends la course à pied tranquillement — alternance marche/course, rythme très modéré. Après 1h30, première sensation de fatigue intense. À l'arrêt : épuisement total, et quelque chose d'inhabituel — des <strong>compulsions marquées pour des aliments très denses</strong> : fromages, en particulier. Pas de vertige, pas de tremblement, pas de sueurs froides.</p>
-      <p>J'ai couru un 112 km avec 3000m D+ en Suisse en 2017. Je connais l'hypoglycémie d'effort. Ce que je ressentais était <strong>radicalement différent</strong> — une déplétion profonde, systémique, qui ne ressemblait pas à un manque de glucose. La compulsion fromage était cohérente avec un appel lipidique et protéique (caséine → tyrosine → dopamine ; sel → vasoconstriction périphérique) — comme si le corps cherchait à compenser une déplétion noradrénergique.</p>
-      <p>Le lendemain matin (J+1), je me suis réveillé bien. Mais en journée, grosse fatigue. Et à J+2 : nettement mieux que les jours précédents, meilleure nuit — <strong>comme si l'effort avait provoqué un reset</strong>. Avant la course, j'avais tendance à trop de gain cérébral la nuit, peu de sommeil mais sans épuisement en journée. Ce J+2 amélioré pourrait correspondre à une phase de sur-compensation post-déplétion, avec restauration du tonus autonome après la tempête sympathique. Le PEM n'est pas toujours unidirectionnel.</p>
+    <div class="pem-card j2">
+      <div class="pem-label">J+2 — Le crash</div>
+      <p>Pic des symptômes. Parfois impossible de se lever. Plusieurs jours de récupération.</p>
     </div>
+  </div>
 
-    <h2>Le pacing : rester sous le seuil anaérobie</h2>
+  <div class="author-note">
+    <div class="author-label">Note de l'auteur — Dr Rémy Honoré, PharmD</div>
+    <p>Fin février 2026, en Guadeloupe. Je reprends la course à pied tranquillement — alternance marche/course, rythme très modéré. Après 1h30, première sensation de fatigue intense. À l'arrêt : épuisement total, et quelque chose d'inhabituel — des <strong>compulsions marquées pour des aliments très denses</strong> : fromages, en particulier. Pas de vertige, pas de tremblement, pas de sueurs froides.</p>
+    <p>J'ai couru un 112 km avec 3000m D+ en Suisse en 2017. Je connais l'hypoglycémie d'effort. Ce que je ressentais était <strong>radicalement différent</strong> — une déplétion profonde, systémique. La compulsion fromage était cohérente avec un appel lipidique et protéique (caséine → tyrosine → dopamine ; sel → vasoconstriction périphérique) — comme si le corps cherchait à compenser une déplétion noradrénergique.</p>
+    <p>Le lendemain matin (J+1), je me suis réveillé bien. Mais en journée, grosse fatigue. Et à J+2 : nettement mieux que les jours précédents, meilleure nuit — <strong>comme si l'effort avait provoqué un reset</strong>. Ce J+2 amélioré pourrait correspondre à une phase de sur-compensation post-déplétion, avec restauration du tonus autonome après la tempête sympathique. Le PEM n'est pas toujours unidirectionnel.</p>
+  </div>
 
-    <p>Le pacing consiste à calibrer son activité pour <strong>ne pas dépasser son seuil anaérobie individuel</strong> — le niveau d'effort au-delà duquel le métabolisme bascule vers des voies moins efficaces et plus coûteuses pour la récupération.</p>
+  <h2>Le pacing : rester sous le seuil anaérobie</h2>
 
-    <p>Concrètement, cela signifie :</p>
+  <p>Le pacing consiste à calibrer son activité pour <strong>ne pas dépasser son seuil anaérobie individuel</strong> — le niveau d'effort au-delà duquel le métabolisme bascule vers des voies moins efficaces et plus coûteuses pour la récupération.</p>
 
-    <ul>
-      <li>Fragmenter les activités (physiques <em>et</em> cognitives) en courtes séquences suivies de pauses</li>
-      <li>Anticiper les journées "chargées" en réduisant les dépenses les jours précédents et suivants</li>
-      <li>Apprendre à reconnaître ses signaux précurseurs de surcharge avant que le crash ne s'installe</li>
-      <li>Ne pas confondre "je me sens mieux aujourd'hui" avec "je peux rattraper ce que je n'ai pas fait"</li>
-    </ul>
+  <p>Concrètement, cela signifie :</p>
 
-    <p>Le pacing n'est pas du repos passif. C'est une <strong>gestion active de l'enveloppe énergétique disponible</strong> — pour rester fonctionnel sans déclencher de réaction en chaîne.</p>
+  <ul>
+    <li>Fragmenter les activités (physiques <em>et</em> cognitives) en courtes séquences suivies de pauses</li>
+    <li>Anticiper les journées "chargées" en réduisant les dépenses les jours précédents et suivants</li>
+    <li>Apprendre à reconnaître ses signaux précurseurs de surcharge avant que le crash ne s'installe</li>
+    <li>Ne pas confondre "je me sens mieux aujourd'hui" avec "je peux rattraper ce que je n'ai pas fait"</li>
+  </ul>
 
-    <h2>Reconnaître ses signaux précurseurs</h2>
+  <p>Le pacing n'est pas du repos passif. C'est une <strong>gestion active de l'enveloppe énergétique disponible</strong> — pour rester fonctionnel sans déclencher de réaction en chaîne.</p>
 
-    <p>Avant le crash, des signaux apparaissent souvent — mais ils sont subtils et varient d'une personne à l'autre :</p>
+  <h2>Reconnaître ses signaux précurseurs</h2>
 
-    <ul class="signal-list">
-      <li>Brouillard mental soudain en cours d'activité</li>
-      <li>Sensation de chaleur ou de flush sans raison apparente</li>
-      <li>Irritabilité ou hypersensibilité sensorielle augmentée</li>
-      <li>Besoin urgent de s'asseoir ou de s'allonger</li>
-      <li>Pouls qui monte de façon disproportionnée à l'effort fourni</li>
-      <li>Compulsions alimentaires inhabituelles (sucre, gras, sel) — signal métabolique sous-estimé</li>
-    </ul>
+  <p>Avant le crash, des signaux apparaissent souvent — subtils, et variables d'une personne à l'autre :</p>
 
-    <p>Les repérer, c'est pouvoir s'arrêter avant de franchir le seuil — et éviter le J+1/J+2 difficile.</p>
+  <ul class="signal-list">
+    <li>Brouillard mental soudain en cours d'activité</li>
+    <li>Sensation de chaleur ou de flush sans raison apparente</li>
+    <li>Irritabilité ou hypersensibilité sensorielle augmentée</li>
+    <li>Besoin urgent de s'asseoir ou de s'allonger</li>
+    <li>Pouls qui monte de façon disproportionnée à l'effort fourni</li>
+    <li>Compulsions alimentaires inhabituelles (sucre, gras, sel) — signal métabolique souvent sous-estimé</li>
+  </ul>
 
-    <div class="cta-block">
-      <h3>🧭 Suivre l'énergie pour calibrer le pacing</h3>
-      <p>Boussole vous permet de noter chaque jour votre énergie et votre confort physique sur 10. En suivant ces métriques sur 14 jours, il devient possible d'identifier les patterns de crash, votre seuil personnel d'activité tolérable, et les corrélations entre type d'effort et intensité du rebond. Ces données, objectivées, peuvent être partagées avec un professionnel de santé pour adapter la prise en charge.</p>
-      <a href="https://boussole.micronutriment.fr">Essayer Boussole gratuitement</a>
-    </div>
+  <p>Les repérer, c'est pouvoir s'arrêter avant de franchir le seuil — et éviter le J+1/J+2 difficile.</p>
 
-    <div class="sources">
-      <h3>Sources</h3>
-      <ol>
-        <li>Carruthers BM et al. <em>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome: Clinical Working Case Definition</em>. Journal of CFS, 2003. <a href="https://pubmed.ncbi.nlm.nih.gov/12586543/" target="_blank" rel="noopener">PMID 12586543</a></li>
-        <li>Maes M, Twisk FN. <em>Chronic fatigue syndrome: Harvey and Wessely's (bio)psychosocial model versus a bio(psychosocial) model</em>. BMC Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2908558/" target="_blank" rel="noopener">PMC2908558</a></li>
-        <li>Vermeulen RC et al. <em>Patients with chronic fatigue syndrome performed worse than controls in a controlled repeated exercise study</em>. Journal of Translational Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2873939/" target="_blank" rel="noopener">PMC2873939</a></li>
-        <li>Dani M et al. <em>Autonomic dysfunction in long COVID</em>. Clinical Medicine, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7850225/" target="_blank" rel="noopener">PMC7850225</a></li>
-        <li>Tomas C, Newton J. <em>Metabolic abnormalities in chronic fatigue syndrome/myalgic encephalomyelitis</em>. Curr Rheumatol Rep, 2018. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5954566/" target="_blank" rel="noopener">PMC5954566</a></li>
-        <li>Workwell Foundation. <em>Pacing and Heart Rate Monitoring for ME/CFS</em>. workwellfoundation.org, 2021.</li>
-        <li>Rowe PC et al. <em>Orthostatic intolerance and chronic fatigue syndrome associated with Ehlers-Danlos syndrome</em>. J Pediatr, 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10228308/" target="_blank" rel="noopener">PMID 10228308</a></li>
-      </ol>
-    </div>
+  <div class="cta-boussole">
+    <h3>🧭 Suivre l'énergie pour calibrer le pacing</h3>
+    <p>Boussole vous permet de noter chaque jour votre énergie et votre confort physique sur 10. En suivant ces métriques sur 14 jours, il devient possible d'identifier les patterns de crash, votre seuil personnel d'activité tolérable, et les corrélations entre type d'effort et intensité du rebond. Ces données, objectivées, peuvent être partagées avec un professionnel de santé.</p>
+    <a href="https://boussole.micronutriment.fr" class="btn-cta">Essayer Boussole gratuitement</a>
+  </div>
 
-    <div class="disclaimer">
-      <strong>Information éducative.</strong> Les contenus de cet article sont à visée pédagogique. Ils ne constituent pas un avis médical et ne remplacent pas une consultation avec un professionnel de santé. En cas de crashes répétés ou d'aggravation progressive, consultez votre médecin.
-    </div>
+  <div class="sources">
+    <h3>Sources</h3>
+    <ol>
+      <li>Carruthers BM et al. <em>ME/CFS: Clinical Working Case Definition</em>. Journal of CFS, 2003. <a href="https://pubmed.ncbi.nlm.nih.gov/12586543/" target="_blank" rel="noopener">PMID 12586543</a></li>
+      <li>Maes M, Twisk FN. <em>Chronic fatigue syndrome: biopsychosocial model vs bio(psychosocial)</em>. BMC Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2908558/" target="_blank" rel="noopener">PMC2908558</a></li>
+      <li>Vermeulen RC et al. <em>Patients with CFS performed worse than controls in a repeated exercise study</em>. J Translational Medicine, 2010. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2873939/" target="_blank" rel="noopener">PMC2873939</a></li>
+      <li>Dani M et al. <em>Autonomic dysfunction in long COVID</em>. Clinical Medicine, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7850225/" target="_blank" rel="noopener">PMC7850225</a></li>
+      <li>Tomas C, Newton J. <em>Metabolic abnormalities in CFS/ME</em>. Curr Rheumatol Rep, 2018. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5954566/" target="_blank" rel="noopener">PMC5954566</a></li>
+      <li>Workwell Foundation. <em>Pacing and Heart Rate Monitoring for ME/CFS</em>. 2021.</li>
+      <li>Rowe PC et al. <em>Orthostatic intolerance and CFS associated with Ehlers-Danlos syndrome</em>. J Pediatr, 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10228308/" target="_blank" rel="noopener">PMID 10228308</a></li>
+    </ol>
+  </div>
 
-  </article>
+  <div class="disclaimer">
+    <strong>Information éducative.</strong> Les contenus de cet article sont à visée pédagogique. Ils ne constituent pas un avis médical et ne remplacent pas une consultation avec un professionnel de santé. En cas de crashes répétés ou d'aggravation progressive, consultez votre médecin.
+  </div>
+
+</div>
 </main>
 
-<footer>
+<footer class="site-footer">
   © <a href="https://micronutriment.fr">micronutriment.fr</a> · Dr Rémy Honoré, PharmD · <a href="https://myboussole.fr">myboussole.fr</a>
 </footer>
 
