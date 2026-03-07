@@ -146,7 +146,7 @@ def write_articles_index(items):
     li = []
     for item in items:
         date = item["date"].isoformat() if item["date"] else ""
-        tags_attr = " ".join(item.get("tags", []))
+        tags_attr = ",".join(item.get("tags", []))
         li.append(f'        <li data-tags="{tags_attr}"><a href="/articles/{escape(item["slug"])}/">{escape(item["title"])}</a> <span class="meta">— {escape(date)}</span></li>')
     ul = "\n      <ul>\n" + "\n".join(li) + "\n      </ul>\n    "
     new_html = html[:m.start()] + m.group(1) + ul + m.group(3) + html[m.end():]

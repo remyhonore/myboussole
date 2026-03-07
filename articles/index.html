@@ -723,7 +723,7 @@ if (btn && menu) {
   // Collect all unique tags
   const allTags = new Set();
   items.forEach(li => {
-    const tags = (li.dataset.tags || '').split(' ').filter(Boolean);
+    const tags = (li.dataset.tags || '').split(',').filter(Boolean);
     tags.forEach(t => allTags.add(t));
   });
 
@@ -754,7 +754,7 @@ if (btn && menu) {
     let visible = 0;
     items.forEach(li => {
       const text = li.textContent.toLowerCase();
-      const tags = (li.dataset.tags || '').split(' ');
+      const tags = (li.dataset.tags || '').split(',');
       const matchSearch = !q || text.includes(q);
       const matchTag = !activeTag || tags.includes(activeTag);
       if (matchSearch && matchTag) {
