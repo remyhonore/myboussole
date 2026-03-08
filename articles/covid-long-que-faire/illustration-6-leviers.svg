@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="#FAF6F1"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="70" rx="16" fill="#1E2D4A"/>
+  <rect x="0" y="40" width="800" height="30" fill="#1E2D4A"/>
+  <text x="40" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" fill="#FAF6F1">🛠️ Les 6 leviers concrets</text>
+  <text x="760" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13" fill="#2E9E9E" text-anchor="end">Méthode 1-1-14</text>
+
+  <!-- Lever 1 -->
+  <g transform="translate(40, 95)">
+    <circle cx="20" cy="16" r="18" fill="#2E9E9E" opacity="0.12"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#2E9E9E" text-anchor="middle">1</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Te faire accompagner</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Un interlocuteur qui écoute et priorise avec toi</text>
+  </g>
+
+  <!-- Separator -->
+  <line x1="60" y1="148" x2="740" y2="148" stroke="#1E2D4A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lever 2 -->
+  <g transform="translate(40, 163)">
+    <circle cx="20" cy="16" r="18" fill="#2E9E9E" opacity="0.12"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#2E9E9E" text-anchor="middle">2</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Cibler ta fonction au quotidien</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Qu'est-ce qui te coûte le plus, là, maintenant ?</text>
+  </g>
+
+  <line x1="60" y1="216" x2="740" y2="216" stroke="#1E2D4A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lever 3 -->
+  <g transform="translate(40, 231)">
+    <circle cx="20" cy="16" r="18" fill="#D4894A" opacity="0.12"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#D4894A" text-anchor="middle">3</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Corriger ce qui est objectivable</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Carences, sommeil, orthostase, douleur — chercher et documenter</text>
+  </g>
+
+  <line x1="60" y1="284" x2="740" y2="284" stroke="#1E2D4A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lever 4 -->
+  <g transform="translate(40, 299)">
+    <circle cx="20" cy="16" r="18" fill="#D4894A" opacity="0.12"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#D4894A" text-anchor="middle">4</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Tester un changement à la fois</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Une variable, 14 jours — c'est comme ça qu'on apprend</text>
+  </g>
+
+  <line x1="60" y1="352" x2="740" y2="352" stroke="#1E2D4A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lever 5 -->
+  <g transform="translate(40, 367)">
+    <circle cx="20" cy="16" r="18" fill="#1E2D4A" opacity="0.08"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#1E2D4A" text-anchor="middle">5</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Apprendre le pacing</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Gérer ton énergie comme un budget — le crash peut être retardé de 24 à 72h</text>
+  </g>
+
+  <line x1="60" y1="420" x2="740" y2="420" stroke="#1E2D4A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lever 6 -->
+  <g transform="translate(40, 435)">
+    <circle cx="20" cy="16" r="18" fill="#1E2D4A" opacity="0.08"/>
+    <text x="20" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#1E2D4A" text-anchor="middle">6</text>
+    <text x="50" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E2D4A">Suivre ce qui se passe vraiment</text>
+    <text x="50" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#3D3D47" opacity="0.7">Un journal simple aide plus qu'un ressenti global flou</text>
+  </g>
+
+  <!-- Bottom accent -->
+  <rect x="40" y="486" width="60" height="4" rx="2" fill="#2E9E9E"/>
+  <text x="790" y="494" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="10" fill="#3D3D47" text-anchor="end" opacity="0.4">Dr Rémy Honoré — Docteur en pharmacie et nutrithérapeute</text>
+</svg>

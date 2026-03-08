@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" rx="16" fill="#1E2D4A"/>
+
+  <!-- Title -->
+  <text x="400" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#C95454" letter-spacing="2" text-anchor="middle">LE CYCLE DU CRASH</text>
+  <text x="400" y="64" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="13" fill="#FAF6F1" text-anchor="middle" opacity="0.5">Pourquoi on reproduit le même schéma</text>
+
+  <!-- Circular path (invisible, just for layout reference) -->
+  <!-- Center at 300, 230, radius 120 -->
+
+  <!-- Stage 1: Bon jour (top) - Green -->
+  <circle cx="300" cy="110" r="44" fill="#4CAF7D" opacity="0.15"/>
+  <text x="300" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#4CAF7D" text-anchor="middle">☀️ Bon jour</text>
+  <text x="300" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11" fill="#FAF6F1" text-anchor="middle" opacity="0.6">"Je me sens mieux"</text>
+
+  <!-- Arrow 1→2 (top right) -->
+  <path d="M 345 130 Q 400 140 430 170" fill="none" stroke="#4CAF7D" stroke-width="2" stroke-dasharray="5 3" opacity="0.5"/>
+  <polygon points="428,164 436,174 424,174" fill="#4CAF7D" opacity="0.5"/>
+
+  <!-- Stage 2: J'en fais trop (right) - Amber -->
+  <circle cx="460" cy="210" r="44" fill="#D4894A" opacity="0.15"/>
+  <text x="460" y="206" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#D4894A" text-anchor="middle">⚡ J'en fais trop</text>
+  <text x="460" y="226" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11" fill="#FAF6F1" text-anchor="middle" opacity="0.6">"Je rattrape le retard"</text>
+
+  <!-- Arrow 2→3 (bottom right) -->
+  <path d="M 440 258 Q 410 310 360 330" fill="none" stroke="#D4894A" stroke-width="2" stroke-dasharray="5 3" opacity="0.5"/>
+  <polygon points="366,326 356,334 362,322" fill="#D4894A" opacity="0.5"/>
+
+  <!-- Stage 3: Crash (bottom) - Red -->
+  <circle cx="300" cy="350" r="44" fill="#C95454" opacity="0.15"/>
+  <text x="300" y="344" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#C95454" text-anchor="middle">💥 Crash</text>
+  <text x="300" y="362" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11" fill="#FAF6F1" text-anchor="middle" opacity="0.6">24 à 72h après</text>
+
+  <!-- Arrow 3→4 (bottom left) -->
+  <path d="M 255 336 Q 200 310 170 270" fill="none" stroke="#C95454" stroke-width="2" stroke-dasharray="5 3" opacity="0.5"/>
+  <polygon points="174,276 166,264 178,268" fill="#C95454" opacity="0.5"/>
+
+  <!-- Stage 4: Repos forcé + culpabilité (left) - Muted -->
+  <circle cx="140" cy="210" r="44" fill="#FAF6F1" opacity="0.06"/>
+  <text x="140" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#FAF6F1" text-anchor="middle" opacity="0.7">😔 Repos forcé</text>
+  <text x="140" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11" fill="#FAF6F1" text-anchor="middle" opacity="0.4">"Je ne fais plus rien"</text>
+  <text x="140" y="234" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11" fill="#FAF6F1" text-anchor="middle" opacity="0.4">culpabilité</text>
+
+  <!-- Arrow 4→1 (top left, closing the loop) -->
+  <path d="M 160 165 Q 190 130 250 112" fill="none" stroke="#FAF6F1" stroke-width="2" stroke-dasharray="5 3" opacity="0.3"/>
+  <polygon points="246,106 258,110 248,118" fill="#FAF6F1" opacity="0.3"/>
+
+  <!-- Right side: The alternative -->
+  <rect x="540" y="100" width="230" height="240" rx="12" fill="#2E9E9E" opacity="0.08" stroke="#2E9E9E" stroke-width="1" opacity="0.2"/>
+
+  <text x="655" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#2E9E9E" text-anchor="middle">🧭 PACING</text>
+  <text x="655" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13" fill="#FAF6F1" text-anchor="middle" opacity="0.8">L'alternative :</text>
+
+  <text x="565" y="190" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="12" fill="#FAF6F1" opacity="0.7">→ Fractionner les activités</text>
+  <text x="565" y="215" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="12" fill="#FAF6F1" opacity="0.7">→ Identifier son seuil</text>
+  <text x="565" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="12" fill="#FAF6F1" opacity="0.7">→ Ménager des marges</text>
+  <text x="565" y="265" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="12" fill="#FAF6F1" opacity="0.7">→ Ne pas "rattraper" les bons jours</text>
+  <text x="565" y="290" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="12" fill="#FAF6F1" opacity="0.7">→ Suivre pour repérer les patterns</text>
+
+  <rect x="570" y="310" width="170" height="18" rx="9" fill="#2E9E9E" opacity="0.15"/>
+  <text x="655" y="323" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="11" fill="#2E9E9E" text-anchor="middle">Gérer l'énergie comme un budget</text>
+
+  <!-- Signature -->
+  <text x="790" y="414" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="10" fill="#FAF6F1" text-anchor="end" opacity="0.3">Dr Rémy Honoré — Docteur en pharmacie et nutrithérapeute</text>
+</svg>
