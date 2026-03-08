@@ -725,6 +725,43 @@
   max-width: 80ch;
 }
 
+.founder-block{
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 34px 32px 30px;
+  border-radius: 26px;
+  border: 1px solid rgba(110,135,125,.22);
+  background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
+  text-align: center;
+}
+.founder-block .founder-label{
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+.founder-block p{
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 54ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.founder-block .founder-link{
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45,106,79,.3);
+  padding-bottom: 1px;
+  transition: border-color .15s;
+}
+.founder-block .founder-link:hover{ border-color: var(--color-accent); }
+
 
 </style>
 </head>
@@ -930,6 +967,14 @@
         <h3>Simplicité</h3>
         <p>1 écran, 4 curseurs, une note : assez pour apprendre sans s’épuiser.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="fondateur">
+    <div class="founder-block">
+      <p class="founder-label">Qui est derrière Boussole ?</p>
+      <p>Conçu par Rémy Honoré, Docteur en Pharmacie et nutrithérapeute, lui-même touché par le Covid long. Il construit les outils qu'il aurait voulu avoir — en tant qu'utilisateur et professionnel de santé.</p>
+      <a class="founder-link" href="/ecosysteme.html">En savoir plus →</a>
     </div>
   </section>
 
