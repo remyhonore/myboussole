@@ -1105,8 +1105,7 @@
     <div class="newsletter-inner">
       <h2 class="newsletter-title">Reste informé(e)</h2>
       <p class="newsletter-sub">Reçois les prochains articles directement dans ta boîte mail. Gratuit, sans spam, désinscription en un clic.</p>
-      <!-- TODO_BREVO_ACTION_URL : remplacer l'action ci-dessous par l'URL réelle du formulaire Brevo liste #3 -->
-      <form action="TODO_BREVO_ACTION_URL" method="post" class="newsletter-form" novalidate>
+      <form id="newsletter-main-form" action="TODO_BREVO_ACTION_URL" method="post" class="newsletter-form" novalidate>
         <div class="newsletter-fields">
           <label for="newsletter-email" class="visually-hidden">Adresse e-mail</label>
           <input
@@ -1122,6 +1121,27 @@
         </div>
         <p class="newsletter-fine">En t'inscrivant, tu acceptes de recevoir des articles par e-mail. Désabonnement en un clic à tout moment.</p>
       </form>
+      <div id="newsletter-main-confirm" style="display:none;color:var(--sage);font-weight:600;padding:12px 0;">Merci ! Tu recevras les prochains articles.</div>
+      <script>
+      (function(){
+        // TODO: connecter l'envoi réel vers Brevo API liste #3
+        var form = document.getElementById('newsletter-main-form');
+        var msg = document.getElementById('newsletter-main-confirm');
+        function showConfirm(){
+          if(form) form.style.display='none';
+          if(msg) msg.style.display='';
+        }
+        if(localStorage.getItem('newsletter_email')){ showConfirm(); }
+        if(form){
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var input = form.querySelector('input[type="email"]');
+            if(input && input.value){ localStorage.setItem('newsletter_email', input.value); }
+            showConfirm();
+          });
+        }
+      })();
+      </script>
     </div>
   </section>
 

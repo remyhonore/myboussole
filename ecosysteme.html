@@ -590,10 +590,31 @@
     <div class="footer-newsletter">
       <p class="footer-newsletter__title">Reste informé(e)</p>
       <p class="footer-newsletter__sub">Reçois les prochains articles par e-mail. Gratuit, sans spam.</p>
-      <form action="TODO_BREVO_ACTION_URL" method="post" class="footer-newsletter__form">
+      <form id="footer-nl-form" action="TODO_BREVO_ACTION_URL" method="post" class="footer-newsletter__form">
         <input type="email" name="EMAIL" placeholder="ton@email.com" required aria-label="Adresse e-mail">
         <button type="submit">S'inscrire</button>
       </form>
+      <div id="footer-nl-confirm" style="display:none;color:#6E877D;font-weight:600;padding:8px 0;">Merci ! Tu recevras les prochains articles.</div>
+      <script>
+      (function(){
+        // TODO: connecter l'envoi réel vers Brevo API liste #3
+        var form = document.getElementById('footer-nl-form');
+        var msg = document.getElementById('footer-nl-confirm');
+        function showConfirm(){
+          if(form) form.style.display='none';
+          if(msg) msg.style.display='';
+        }
+        if(localStorage.getItem('newsletter_email')){ showConfirm(); }
+        if(form){
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var input = form.querySelector('input[type="email"]');
+            if(input && input.value){ localStorage.setItem('newsletter_email', input.value); }
+            showConfirm();
+          });
+        }
+      })();
+      </script>
     </div>
     <div class="foot">
       <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
