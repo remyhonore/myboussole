@@ -590,14 +590,13 @@
     <div class="footer-newsletter">
       <p class="footer-newsletter__title">Reste informé(e)</p>
       <p class="footer-newsletter__sub">Reçois les prochains articles par e-mail. Gratuit, sans spam.</p>
-      <form id="footer-nl-form" action="TODO_BREVO_ACTION_URL" method="post" class="footer-newsletter__form">
+      <form id="footer-nl-form" action="https://ffd96913.sibforms.com/serve/MUIFAJUmjQTMcr8EIjmLErqYjjECrQ73i0aPhf_n6tBk2T-Z5AzjIeTGaQAcaPFU0Gg_yPaV46hxNb6EtRVWlzHZOM4fH08S6nOFuz5CNcfhisSD5UFAsEOsTMl8w405AGiQRhn3MyOfmYSaCUtoAMGqVRzRXKkdXN2kjT-18CVH688z0YTCeL_NKQzYUcFCGw44EksGyMRhKlBtUw==" method="post" class="footer-newsletter__form">
         <input type="email" name="EMAIL" placeholder="ton@email.com" required aria-label="Adresse e-mail">
         <button type="submit">S'inscrire</button>
       </form>
       <div id="footer-nl-confirm" style="display:none;color:#6E877D;font-weight:600;padding:8px 0;">Merci ! Tu recevras les prochains articles.</div>
       <script>
       (function(){
-        // TODO: connecter l'envoi réel vers Brevo API liste #3
         var form = document.getElementById('footer-nl-form');
         var msg = document.getElementById('footer-nl-confirm');
         function showConfirm(){
@@ -610,6 +609,10 @@
             e.preventDefault();
             var input = form.querySelector('input[type="email"]');
             if(input && input.value){ localStorage.setItem('newsletter_email', input.value); }
+            var data = new FormData(form);
+            fetch(form.action, { method: 'POST', body: data })
+              .then(function(r){ if(!r.ok) console.error('Newsletter: HTTP', r.status); })
+              .catch(function(err){ console.error('Newsletter error:', err); });
             showConfirm();
           });
         }
