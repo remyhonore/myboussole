@@ -762,6 +762,86 @@
 }
 .founder-block .founder-link:hover{ border-color: var(--color-accent); }
 
+/* ── NEWSLETTER SECTION ── */
+.newsletter-section{
+  padding: 52px var(--pad) 48px;
+  text-align: center;
+}
+.newsletter-inner{
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 36px 32px 30px;
+  border-radius: 28px;
+  border: 1px solid rgba(110,135,125,.22);
+  background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
+  box-shadow: var(--shadowSoft);
+}
+.newsletter-title{
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: -0.02em;
+}
+.newsletter-sub{
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-fields{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.newsletter-input{
+  flex: 1 1 220px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(6,23,45,.14);
+  background: rgba(255,255,255,.80);
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.newsletter-input:focus{
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(110,135,125,.18);
+}
+.newsletter-btn{
+  padding: 11px 22px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.newsletter-btn:hover{ background: var(--color-accent-2); }
+.newsletter-fine{
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.5;
+}
+.visually-hidden{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── SOCIAL PROOF STRIP ── */
 .proof-strip{
   text-align: center;
@@ -815,7 +895,7 @@
 
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Essayer Boussole</a>
-          <a class="btn" href="rejoindre.html">Rejoindre la communauté</a>
+          <a class="btn" href="#newsletter">Recevoir les prochains articles</a>
         </div>
 
         <div class="badges" aria-label="Caractéristiques">
@@ -941,7 +1021,7 @@
   <section class="section" id="tendances">
     <div class="section-head">
       <h2>Une vue longue durée, toujours locale.</h2>
-      <p>Boussole+ vise une lecture plus longue, non médicalisante : utile pour préparer un échange, sans “faire un dossier”.</p>
+      <p>Une vue sur plusieurs mois est en cours de développement pour t'aider à identifier tes tendances sur le long terme.</p>
     </div>
 
     <div class="timeline">
@@ -1006,7 +1086,7 @@
 
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Essayer Boussole</a>
-      <a class="btn" href="rejoindre.html">Rejoindre la communauté</a>
+      <a class="btn" href="#newsletter">Recevoir les prochains articles</a>
     </div>
   </section>
 
@@ -1018,6 +1098,30 @@
   const nav = document.getElementById('mobileNav');
   if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
+
+  <section id="newsletter" class="newsletter-section">
+    <div class="newsletter-inner">
+      <h2 class="newsletter-title">Reste informé(e)</h2>
+      <p class="newsletter-sub">Reçois les prochains articles directement dans ta boîte mail. Gratuit, sans spam, désinscription en un clic.</p>
+      <!-- TODO_BREVO_ACTION_URL : remplacer l'action ci-dessous par l'URL réelle du formulaire Brevo liste #3 -->
+      <form action="TODO_BREVO_ACTION_URL" method="post" class="newsletter-form" novalidate>
+        <div class="newsletter-fields">
+          <label for="newsletter-email" class="visually-hidden">Adresse e-mail</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="EMAIL"
+            placeholder="ton@adresse.fr"
+            required
+            autocomplete="email"
+            class="newsletter-input"
+          />
+          <button type="submit" class="newsletter-btn">S'inscrire</button>
+        </div>
+        <p class="newsletter-fine">En t'inscrivant, tu acceptes de recevoir des articles par e-mail. Désabonnement en un clic à tout moment.</p>
+      </form>
+    </div>
+  </section>
 
   <footer>
     <div class="wrap">
