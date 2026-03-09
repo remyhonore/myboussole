@@ -9,7 +9,7 @@
   <meta property="og:url" content="https://www.myboussole.fr/" />
   <meta name="robots" content="index,follow" />
 <title>Boussole — un suivi doux, des repères clairs</title>
-  <meta name="description" content="Boussole est un carnet de bord bienveillant : 4 repères simples, une tendance sur 14 jours, et un export PDF si tu le souhaites. Tes données restent sur ton appareil, sans compte et sans tracking." />
+  <meta name="description" content="Boussole est un carnet de bord bienveillant : 4 repères simples, une tendance sur 30 jours, et un export PDF si tu le souhaites. Tes données restent sur ton appareil, sans compte et sans tracking." />
 <meta name="theme-color" content="#06172D" />
 
     <meta name="color-scheme" content="light" />
@@ -497,12 +497,56 @@
     /* Subtle reveal */
     .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .42s ease, transform .42s ease; }
     .reveal.in{ opacity: 1; transform: translateY(0); }
-  
+
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior: auto; }
       .reveal{ opacity: 1 !important; transform: none !important; transition: none !important; }
       .btn{ transition: none !important; }
     }
+
+.footer-newsletter {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.footer-newsletter__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
+.footer-newsletter__sub {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.footer-newsletter__form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-newsletter__form input[type="email"] {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  min-width: 200px;
+}
+.footer-newsletter__form button {
+  padding: 0.5rem 1rem;
+  background: #4A90D9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.footer-newsletter__form button:hover {
+  background: #357ABD;
+}
 
   
 /* BOUSSOLE HOME REFRESH v2 */
@@ -941,7 +985,7 @@
       <div class="card">
         <div class="ico">🧩</div>
         <h3>Repérer des schémas</h3>
-        <p>Observer sur 14 jours ce qui revient, ce qui se stabilise, ce qui s’apaise.</p>
+        <p>Observer sur 30 jours ce qui revient, ce qui se stabilise, ce qui s’apaise.</p>
       </div>
       <div class="card">
         <div class="ico">🤍</div>
@@ -963,7 +1007,7 @@
   <source srcset="/assets/shot-2.webp" type="image/webp">
   <img src="/assets/shot-2.jpg" alt="Capture 2 de l’app Boussole" loading="lazy" decoding="async" />
 </picture></div>
-        <figcaption>Tendance sur 14 jours</figcaption>
+        <figcaption>Tendance sur 30 jours</figcaption>
       </figure>
       <figure>
         <div class="shot"><picture>
@@ -978,7 +1022,7 @@
   <section class="section" id="reperes">
     <div class="section-head">
       <h2>Comment ça marche</h2>
-      <p>4 indicateurs. 30 secondes. Une tendance sur 14 jours. Tout reste sur ton appareil.</p>
+      <p>4 indicateurs. 30 secondes. Une tendance sur 30 jours. Tout reste sur ton appareil.</p>
     </div>
 
     <div class="grid-4">
@@ -1012,7 +1056,7 @@
       </div>
       <div class="card">
         <div class="ico">📄</div>
-        <h3>PDF sur 14 jours</h3>
+        <h3>PDF sur 30 jours</h3>
         <p>Quand tu le souhaites : une synthèse lisible à partager avec ton professionnel de santé.</p>
       </div>
     </div>
@@ -1125,6 +1169,15 @@
 
   <footer>
     <div class="wrap">
+      <!-- Newsletter footer compact -->
+      <div class="footer-newsletter">
+        <p class="footer-newsletter__title">Reste informé(e)</p>
+        <p class="footer-newsletter__sub">Reçois les prochains articles par e-mail. Gratuit, sans spam.</p>
+        <form action="TODO_BREVO_ACTION_URL" method="post" class="footer-newsletter__form">
+          <input type="email" name="EMAIL" placeholder="ton@email.com" required aria-label="Adresse e-mail">
+          <button type="submit">S'inscrire</button>
+        </form>
+      </div>
       <div class="foot">
         <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
         <div class="small-links">

@@ -376,6 +376,50 @@
   .foot a:hover{ color: var(--ink); }
   .small-links{ display: flex; gap: 16px; }
 
+  .footer-newsletter {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .footer-newsletter__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--ink);
+  }
+  .footer-newsletter__sub {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .footer-newsletter__form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-newsletter__form input[type="email"] {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 0.875rem;
+    min-width: 200px;
+  }
+  .footer-newsletter__form button {
+    padding: 0.5rem 1rem;
+    background: #4A90D9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .footer-newsletter__form button:hover {
+    background: #357ABD;
+  }
+
   @media (max-width: 920px) {
     .hero { padding: 56px 0 40px; }
   }
@@ -417,10 +461,10 @@
 <div class="wrap">
 <section class="hero">
 <span class="hero-domain">myboussole.fr</span>
-<h1>La science au service de <em>votre</em> santé</h1>
+<h1>La science au service de <em>ta</em> santé</h1>
 <hr class="hero-hr" />
-<p class="hero-sub">Alimentation, micronutrition, médicaments — un écosystème d'outils indépendants pour comprendre, suivre et agir sur votre santé</p>
-<p class="hero-detail">Conçu par un pharmacien pour les personnes vivant avec des situations de santé complexes. Gratuit, sans publicité. Données sur votre appareil.</p>
+<p class="hero-sub">Alimentation, micronutrition, médicaments — un écosystème d'outils indépendants pour comprendre, suivre et agir sur ta santé</p>
+<p class="hero-detail">Conçu par un pharmacien pour les personnes vivant avec des situations de santé complexes. Gratuit, sans publicité. Données sur ton appareil.</p>
 <div class="hero-cta">
 <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener" target="_blank">Ouvrir Boussole</a>
 <a class="btn" href="mailto:remyhonore@protonmail.com?subject=Contact%20Boussole">Prendre contact</a>
@@ -446,7 +490,7 @@
 <div class="module-icon">🧭</div>
 <div class="module-verb">Suivre</div>
 <h3>Boussole / Boussole+</h3>
-<p><strong>Boussole</strong> (gratuit) : repères quotidiens — énergie, sommeil, confort physique, clarté mentale. Tendances, corrélations, export PDF pour votre professionnel de santé. <strong>Boussole+</strong> (accompagnement) : guides personnalisés et accompagnement sur mesure par un nutrithérapeute spécialisé référencé sur la plateforme — éligible aux forfaits médecines complémentaires de votre mutuelle. <a href="https://app.myboussole.fr/" rel="noopener" target="_blank">Accéder à Boussole</a>.</p>
+<p><strong>Boussole</strong> (gratuit) : repères quotidiens — énergie, sommeil, confort physique, clarté mentale. Tendances, corrélations, export PDF pour ton professionnel de santé. <strong>Boussole+</strong> (accompagnement) : guides personnalisés et accompagnement sur mesure par un nutrithérapeute spécialisé référencé sur la plateforme — éligible aux forfaits médecines complémentaires de ta mutuelle. <a href="https://app.myboussole.fr/" rel="noopener" target="_blank">Accéder à Boussole</a>.</p>
 <span class="module-tag active">En cours de développement</span>
 </article>
 <article class="module-card mc-informer">
@@ -460,7 +504,7 @@
 <div class="module-icon">🔬</div>
 <div class="module-verb">Vérifier</div>
 <h3>InteraConnect</h3>
-<p>Vérificateur d'interactions entre vos médicaments et vos compléments alimentaires. Sécuriser vos choix avant d'en parler à votre soignant.</p>
+<p>Vérificateur d'interactions entre tes médicaments et tes compléments alimentaires. Sécuriser tes choix avant d'en parler à ton soignant.</p>
 <span class="module-tag soon">Bientôt</span>
 </article>
 <article class="module-card mc-choisir">
@@ -474,7 +518,7 @@
 <div class="module-icon">📋</div>
 <div class="module-verb">Partager</div>
 <h3>MonDossier</h3>
-<p>Export structuré de vos repères et de vos recherches, pensé pour faciliter l'échange avec votre professionnel de santé.</p>
+<p>Export structuré de tes repères et de tes recherches, pensé pour faciliter l'échange avec ton professionnel de santé.</p>
 <span class="module-tag soon">Bientôt</span>
 </article>
 </div>
@@ -495,13 +539,13 @@
 </section>
 <section class="panel" id="confiance">
 <span class="panel-label">Confiance</span>
-<h2 class="panel-title">Vos données restent les vôtres</h2>
+<h2 class="panel-title">Tes données restent les tiennes</h2>
 <p class="panel-sub">Privacy by design : aucun compte obligatoire, aucun serveur, aucun tracking.</p>
 <div class="trust-grid">
 <div class="trust-item">
 <div class="trust-icon">🔒</div>
 <h3>Local-first</h3>
-<p>Toutes vos données sont stockées sur votre appareil. Rien ne transite par un serveur. Vous gardez le contrôle total.</p>
+<p>Toutes tes données sont stockées sur ton appareil. Rien ne transite par un serveur. Tu gardes le contrôle total.</p>
 </div>
 <div class="trust-item">
 <div class="trust-icon">🚫</div>
@@ -540,6 +584,15 @@
 
 <footer>
   <div class="wrap">
+    <!-- Newsletter footer compact -->
+    <div class="footer-newsletter">
+      <p class="footer-newsletter__title">Reste informé(e)</p>
+      <p class="footer-newsletter__sub">Reçois les prochains articles par e-mail. Gratuit, sans spam.</p>
+      <form action="TODO_BREVO_ACTION_URL" method="post" class="footer-newsletter__form">
+        <input type="email" name="EMAIL" placeholder="ton@email.com" required aria-label="Adresse e-mail">
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
     <div class="foot">
       <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
       <div class="small-links">
