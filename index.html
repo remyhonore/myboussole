@@ -340,6 +340,15 @@
     .pill { padding: 9px 11px; }
   }
 
+  /* ── HERO VISUAL MOCKUP ── */
+  .hero-visual {
+    flex: 0 0 auto;
+    width: clamp(230px, 25vw, 296px);
+    align-self: center;
+  }
+  .hero-visual svg { width: 100%; height: auto; display: block; }
+  @media (max-width: 900px) { .hero-visual { display: none; } }
+
   /* ── SECTIONS COMMUNES ── */
   main { position: relative; }
   section { scroll-margin-top: 86px; }
@@ -737,7 +746,7 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <div class="wrap" style="position:relative;z-index:2;width:100%;">
+      <div class="wrap" style="position:relative;z-index:2;width:100%;display:flex;align-items:center;gap:clamp(24px,5vw,60px);">
         <div class="hero-content">
           <div class="kicker">
             <span class="dot" aria-hidden="true"></span>
@@ -760,6 +769,85 @@
           </div>
 
           <p class="hero-note">Boussole est un outil d'information et de repères. Pas de diagnostic, pas de promesse thérapeutique — et ne remplace pas une consultation médicale.</p>
+        </div>
+
+        <!-- ── HERO VISUAL : mockup "Saisie du jour" ── -->
+        <div class="hero-visual" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480" overflow="visible" role="img" aria-label="Écran Saisie du jour — Boussole : énergie 7/10, sommeil 5/10, confort physique 4/10, clarté mentale 6/10">
+            <defs>
+              <filter id="f-ph" x="-18%" y="-10%" width="136%" height="128%">
+                <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#06172D" flood-opacity="0.14"/>
+              </filter>
+              <clipPath id="ph-cp">
+                <rect width="320" height="480" rx="32"/>
+              </clipPath>
+            </defs>
+
+            <!-- Phone body + shadow -->
+            <rect width="320" height="480" rx="32" fill="white" filter="url(#f-ph)"/>
+
+            <g clip-path="url(#ph-cp)">
+              <rect width="320" height="480" fill="white"/>
+
+              <!-- ── HEADER ── -->
+              <text x="22" y="40" font-family="'Plus Jakarta Sans',sans-serif" font-size="16" font-weight="700" fill="#06172D">Saisie du jour</text>
+              <text x="22" y="60" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" fill="#06172D" opacity="0.5">10 mars 2026</text>
+              <rect x="22" y="72" width="276" height="1" fill="#06172D" opacity="0.1"/>
+
+              <!-- ── SEPARATEURS DE LIGNES ── -->
+              <rect x="22" y="166" width="276" height="1" fill="#06172D" opacity="0.06"/>
+              <rect x="22" y="252" width="276" height="1" fill="#06172D" opacity="0.06"/>
+              <rect x="22" y="338" width="276" height="1" fill="#06172D" opacity="0.06"/>
+
+              <!-- ── ROW 1 : Énergie — 7/10 — sage #6E877D ── -->
+              <!-- base_y=80 · label_y=109 · track_y=124 · thumb_cy=127 -->
+              <!-- fill = 7/10 × 258 = 180.6 · thumb_cx = 22+180.6 = 202.6 -->
+              <text x="22" y="109" font-family="sans-serif" font-size="16">⚡</text>
+              <text x="46" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="600" fill="#06172D">Énergie</text>
+              <text x="298" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#06172D" text-anchor="end">7</text>
+              <rect x="22" y="124" width="258" height="6" rx="3" fill="#06172D" opacity="0.09"/>
+              <rect x="22" y="124" width="180.6" height="6" rx="3" fill="#6E877D"/>
+              <circle cx="202.6" cy="128" r="10" fill="rgba(110,135,125,0.2)"/>
+              <circle cx="202.6" cy="127" r="8" fill="white"/>
+
+              <!-- ── ROW 2 : Sommeil — 5/10 — terracotta #C97A61 ── -->
+              <!-- base_y=166 · label_y=195 · track_y=210 · thumb_cy=213 -->
+              <!-- fill = 5/10 × 258 = 129 · thumb_cx = 22+129 = 151 -->
+              <text x="22" y="195" font-family="sans-serif" font-size="16">🌙</text>
+              <text x="46" y="195" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="600" fill="#06172D">Sommeil</text>
+              <text x="298" y="195" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#06172D" text-anchor="end">5</text>
+              <rect x="22" y="210" width="258" height="6" rx="3" fill="#06172D" opacity="0.09"/>
+              <rect x="22" y="210" width="129" height="6" rx="3" fill="#C97A61"/>
+              <circle cx="151" cy="214" r="10" fill="rgba(201,122,97,0.2)"/>
+              <circle cx="151" cy="213" r="8" fill="white"/>
+
+              <!-- ── ROW 3 : Confort physique — 4/10 — lavender #C9B9D9 ── -->
+              <!-- base_y=252 · label_y=281 · track_y=296 · thumb_cy=299 -->
+              <!-- fill = 4/10 × 258 = 103.2 · thumb_cx = 22+103.2 = 125.2 -->
+              <text x="22" y="281" font-family="sans-serif" font-size="16">🫁</text>
+              <text x="46" y="281" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="600" fill="#06172D">Confort physique</text>
+              <text x="298" y="281" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#06172D" text-anchor="end">4</text>
+              <rect x="22" y="296" width="258" height="6" rx="3" fill="#06172D" opacity="0.09"/>
+              <rect x="22" y="296" width="103.2" height="6" rx="3" fill="#C9B9D9"/>
+              <circle cx="125.2" cy="300" r="10" fill="rgba(201,185,217,0.35)"/>
+              <circle cx="125.2" cy="299" r="8" fill="white"/>
+
+              <!-- ── ROW 4 : Clarté mentale — 6/10 — rose #E8B7C8 ── -->
+              <!-- base_y=338 · label_y=367 · track_y=382 · thumb_cy=385 -->
+              <!-- fill = 6/10 × 258 = 154.8 · thumb_cx = 22+154.8 = 176.8 -->
+              <text x="22" y="367" font-family="sans-serif" font-size="16">🧠</text>
+              <text x="46" y="367" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="600" fill="#06172D">Clarté mentale</text>
+              <text x="298" y="367" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#06172D" text-anchor="end">6</text>
+              <rect x="22" y="382" width="258" height="6" rx="3" fill="#06172D" opacity="0.09"/>
+              <rect x="22" y="382" width="154.8" height="6" rx="3" fill="#E8B7C8"/>
+              <circle cx="176.8" cy="386" r="10" fill="rgba(232,183,200,0.35)"/>
+              <circle cx="176.8" cy="385" r="8" fill="white"/>
+
+              <!-- ── BOUTON "Enregistrer" ── -->
+              <rect x="22" y="432" width="276" height="32" rx="10" fill="#2d6a4f"/>
+              <text x="160" y="453" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">Enregistrer</text>
+            </g>
+          </svg>
         </div>
       </div>
     </section>
