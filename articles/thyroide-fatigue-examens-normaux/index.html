@@ -84,97 +84,60 @@
   </script>
 
   <style>
-    :root {
-      --color-bg: #FAF6F1;
-      --color-surface: #ffffff;
-      --color-navy: #06172D;
-      --color-accent: #2E9E9E;
-      --color-accent-2: #1f7a7a;
-      --color-text: #1a1a2e;
-      --color-text-muted: #6b7280;
-      --color-border: #e5e7eb;
-      --color-tag-bg: #f0fafa;
-      --color-tag-text: #2E9E9E;
-      --font-main: 'Georgia', serif;
-      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --max-width: 720px;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .skip-link {
-      position: absolute; top: -40px; left: 0;
-      background: var(--color-accent); color: white;
-      padding: 8px 16px; z-index: 100; text-decoration: none;
-      border-radius: 0 0 4px 0;
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f8f9fa;
+      --color-border: #e9ecef;
+      --color-text: #1a1a2e;
+      --color-text-muted: #6c757d;
+      --color-accent: #2d6a4f;
+      --color-accent-light: #e8f5e9;
+      --color-accent-2: #1b4332;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 12px;
+      --max-width: 720px;
+      --paper: #F3F0E8;
+      --paper2: #F8F6F0;
     }
-    .skip-link:focus { top: 0; }
 
     body {
-      font-family: var(--font-ui);
-      background: var(--color-bg);
+      font-family: var(--font-main);
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, var(--paper2), var(--paper));
       color: var(--color-text);
-      line-height: 1.65;
+      line-height: 1.75;
+      font-size: 17px;
     }
 
-    /* ─── Header ─── */
-    .site-header {
-      background: var(--color-navy);
-      padding: 0 24px;
-      position: sticky; top: 0; z-index: 50;
-    }
-    .header-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr auto 1fr;
-      align-items: center; height: 56px;
-    }
-    .site-logo {
-      font-family: var(--font-ui); font-weight: 700; font-size: 18px;
-      color: white; text-decoration: none; letter-spacing: -0.02em;
-      grid-column: 1;
-    }
-    .site-logo span { color: var(--color-accent); }
-    .site-nav { grid-column: 2; display: flex; gap: 28px; }
-    .site-nav a {
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      font-size: 14px; font-weight: 500; transition: color .2s;
-    }
-    .site-nav a:hover { color: white; }
-    .header-cta { grid-column: 3; display: flex; justify-content: flex-end; }
-    .btn-header {
-      background: var(--color-accent); color: white;
-      padding: 7px 16px; border-radius: 6px; font-size: 13px;
-      font-weight: 600; text-decoration: none; transition: background .2s;
-    }
-    .btn-header:hover { background: var(--color-accent-2); }
+    .site-header { background: rgba(248,246,240,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(6,23,45,0.06); position: sticky; top: 0; z-index: 100; }
+    .topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--color-accent); text-decoration: none; }
+    .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
+    .topbar-nav a { color: var(--color-text); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
+    .topbar-nav a:hover { opacity: 1; }
+    .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
+    .btn-primary { background: var(--color-accent); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--color-accent-2); }
 
-    /* ─── Breadcrumb ─── */
-    .breadcrumb {
-      max-width: var(--max-width); margin: 0 auto;
-      padding: 20px 24px 0;
-      font-size: 13px; color: var(--color-text-muted);
-    }
-    .breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--color-accent); }
-    .breadcrumb span { margin: 0 6px; }
-
-    /* ─── Article layout ─── */
-    .article-wrap {
-      max-width: var(--max-width); margin: 0 auto;
-      padding: 0 24px 80px;
-    }
+    .article-wrapper { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+    .article-card { background: rgba(255,255,255,.92); border-radius: 22px; box-shadow: 0 22px 60px rgba(0,0,0,.12); padding: clamp(28px, 4vw, 48px); }
 
     /* ─── Header article ─── */
     .article-header { padding: 32px 0 28px; }
     .article-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
     .tag {
-      background: var(--color-tag-bg); color: var(--color-tag-text);
+      background: var(--color-accent-light); color: var(--color-accent);
       padding: 3px 10px; border-radius: 20px; font-size: 12px;
       font-weight: 600; letter-spacing: .02em;
     }
     .article-header h1 {
       font-family: var(--font-main); font-size: clamp(22px, 3.5vw, 34px);
-      font-weight: 700; line-height: 1.25; color: var(--color-navy);
+      font-weight: 700; line-height: 1.25; color: #06172D;
       margin-bottom: 14px;
     }
     .article-lead {
@@ -187,7 +150,7 @@
       font-size: 13px; color: var(--color-text-muted);
     }
     .article-meta .author-badge {
-      background: var(--color-navy); color: white;
+      background: #06172D; color: white;
       padding: 3px 10px; border-radius: 20px; font-size: 12px;
       font-weight: 600;
     }
@@ -207,25 +170,25 @@
     /* ─── Prose ─── */
     .prose h2 {
       font-family: var(--font-main); font-size: clamp(17px, 2.2vw, 22px);
-      font-weight: 700; color: var(--color-navy);
+      font-weight: 700; color: #06172D;
       margin: 40px 0 12px; padding-top: 8px;
       border-top: 2px solid var(--color-border);
     }
     .prose h3 {
-      font-size: 16px; font-weight: 700; color: var(--color-navy);
+      font-size: 16px; font-weight: 700; color: #06172D;
       margin: 28px 0 10px;
     }
     .prose p { margin-bottom: 18px; font-size: 16px; line-height: 1.75; color: #1f2937; }
     .prose ul, .prose ol { margin: 0 0 18px 22px; font-size: 16px; line-height: 1.75; color: #1f2937; }
     .prose li { margin-bottom: 6px; }
-    .prose strong { color: var(--color-navy); }
+    .prose strong { color: #06172D; }
     .prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
     .prose a:hover { color: var(--color-accent-2); }
 
     /* ─── Table ─── */
     .table-wrap { overflow-x: auto; margin: 24px 0 28px; border-radius: 10px; border: 1px solid var(--color-border); }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    thead { background: var(--color-navy); color: white; }
+    thead { background: #06172D; color: white; }
     thead th { padding: 11px 16px; text-align: left; font-weight: 600; font-size: 13px; }
     tbody tr:nth-child(even) { background: #f9fafb; }
     tbody td { padding: 10px 16px; border-bottom: 1px solid var(--color-border); }
@@ -257,7 +220,7 @@
       padding: 16px 20px; font-size: 15px; font-weight: 600;
       cursor: pointer; list-style: none; display: flex;
       justify-content: space-between; align-items: center;
-      color: var(--color-navy); background: var(--color-surface);
+      color: #06172D; background: var(--color-surface);
       transition: background .15s;
     }
     .faq-item summary:hover { background: #f9fafb; }
@@ -305,7 +268,7 @@
     }
     .btn-share:hover { opacity: .85; }
     .btn-share-fb { background: #1877f2; color: white; }
-    .btn-share-copy { background: var(--color-navy); color: white; }
+    .btn-share-copy { background: #06172D; color: white; }
 
     /* ─── Sources ─── */
     .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border); }
@@ -320,49 +283,35 @@
 
     /* ─── Site footer ─── */
     .site-footer {
-      background: var(--color-navy); color: rgba(255,255,255,.6);
+      background: #06172D; color: rgba(255,255,255,.6);
       padding: 32px 24px; text-align: center; font-size: 13px; margin-top: 64px;
     }
     .site-footer a { color: rgba(255,255,255,.6); }
 
     @media (max-width: 640px) {
       .site-nav { display: none; }
-      .header-inner { grid-template-columns: 1fr auto; }
-      .header-cta { grid-column: 2; }
       .article-header h1 { font-size: 22px; }
     }
   </style>
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-<!-- ─── Header ─── -->
 <header class="site-header">
-  <div class="header-inner">
-    <a href="https://www.myboussole.fr" class="site-logo">my<span>Boussole</span></a>
-    <nav class="site-nav" aria-label="Navigation principale">
+  <nav class="topbar">
+    <a href="https://www.myboussole.fr" class="topbar-logo">🧭 myboussole</a>
+    <div class="topbar-nav">
       <a href="https://www.myboussole.fr/articles/">Articles</a>
       <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
-    </nav>
-    <div class="header-cta">
-      <a href="https://app.myboussole.fr" class="btn-header">Essayer Boussole</a>
     </div>
-  </div>
+    <div class="topbar-cta">
+      <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
+    </div>
+  </nav>
 </header>
 
-<!-- ─── Breadcrumb ─── -->
-<nav class="breadcrumb" aria-label="Fil d'Ariane">
-  <a href="https://www.myboussole.fr">Accueil</a>
-  <span aria-hidden="true">›</span>
-  <a href="https://www.myboussole.fr/articles/">Articles</a>
-  <span aria-hidden="true">›</span>
-  Thyroïde et fatigue
-</nav>
-
 <!-- ─── Main ─── -->
-<main id="main-content">
-  <div class="article-wrap">
+<main id="main-content" class="article-wrapper">
+<div class="article-card">
 
     <article>
 
@@ -540,22 +489,6 @@
 
       </div><!-- /prose -->
 
-      <!-- CTA Boussole -->
-      <aside aria-label="Découvrir Boussole">
-        <div class="cta-boussole">
-          <h3>Documenter tes symptômes thyroïdiens dans le temps</h3>
-          <p>Boussole suit tes 4 indicateurs quotidiens pour objectiver les tendances longues — utiles pour un bilan thyroïdien complet.</p>
-          <div class="metrics">
-            <span class="metric-pill">⚡ Énergie</span>
-            <span class="metric-pill">🌙 Sommeil</span>
-            <span class="metric-pill">🫁 Confort physique</span>
-            <span class="metric-pill">🧠 Clarté mentale</span>
-          </div>
-          <a href="https://app.myboussole.fr" class="btn-cta">Utiliser Boussole gratuitement</a>
-          <p class="cta-note">Données stockées uniquement sur ton appareil · Aucun compte requis</p>
-        </div>
-      </aside>
-
       <!-- FAQ -->
       <section class="faq-section" aria-labelledby="faq-title">
         <h2 id="faq-title">Questions fréquentes</h2>
@@ -595,6 +528,22 @@
           </div>
         </details>
       </section>
+
+      <!-- CTA Boussole -->
+      <aside aria-label="Découvrir Boussole">
+        <div class="cta-boussole">
+          <h3>Documenter tes symptômes thyroïdiens dans le temps</h3>
+          <p>Boussole suit tes 4 indicateurs quotidiens pour objectiver les tendances longues — utiles pour un bilan thyroïdien complet.</p>
+          <div class="metrics">
+            <span class="metric-pill">⚡ Énergie</span>
+            <span class="metric-pill">🌙 Sommeil</span>
+            <span class="metric-pill">🫁 Confort physique</span>
+            <span class="metric-pill">🧠 Clarté mentale</span>
+          </div>
+          <a href="https://app.myboussole.fr" class="btn-primary">Utiliser Boussole gratuitement</a>
+          <p class="cta-note">Données stockées uniquement sur ton appareil · Aucun compte requis</p>
+        </div>
+      </aside>
 
       <!-- Partage -->
       <div class="share-section">
@@ -639,7 +588,7 @@
 
     </article>
 
-  </div><!-- /article-wrap -->
+</div><!-- /article-card -->
 </main>
 
 <!-- ─── Site footer ─── -->
