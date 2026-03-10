@@ -1,133 +1,306 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialit&eacute; - Boussole</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="alternate icon" href="/favicon.svg">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#6E877D">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Boussole">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="canonical" href="https://www.myboussole.fr/confidentialite.html" />
+<meta name="robots" content="index,follow" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+<!-- ── SEO ── -->
+<title>Politique de confidentialité — Boussole</title>
+<meta name="description" content="Boussole ne collecte aucune donnée personnelle. Tout reste sur votre appareil. Aucun cookie de suivi, aucun compte requis." />
 
-  <style>
-    .privacy-section {
-      margin-bottom: 28px;
-    }
-    .privacy-section h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #06172D;
-      margin: 0 0 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .privacy-section h2 .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background: rgba(110,135,125,.12);
-      border-radius: 50%;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-    .privacy-section p,
-    .privacy-section li {
-      font-size: 14px;
-      line-height: 1.75;
-      color: rgba(6,23,45,.72);
-      margin: 0 0 6px;
-    }
-    .privacy-section ul {
-      margin: 6px 0 0 20px;
-      padding: 0;
-    }
-    .privacy-section li {
-      margin-bottom: 4px;
-    }
-    .privacy-divider {
-      border: none;
-      border-top: 1px solid rgba(6,23,45,.08);
-      margin: 0 0 28px;
-    }
-    .privacy-hero {
-      text-align: center;
-      padding: 12px 0 20px;
-    }
-    .privacy-hero h1 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #06172D;
-      margin: 0 0 8px;
-    }
-    .privacy-hero p {
-      font-size: 13px;
-      color: rgba(6,23,45,.5);
-      margin: 0;
-    }
-    .badge-local {
-      display: inline-block;
-      background: rgba(110,135,125,.15);
-      color: #4a6b5e;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-top: 10px;
-    }
-  </style>
+<!-- ── Favicon ── -->
+<meta name="theme-color" content="#06172D" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
+
+<!-- ── Fonts ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F3F0E8;
+    --paper2: #F8F6F0;
+    --ink: #06172D;
+    --muted: rgba(6, 23, 45, .72);
+    --muted2: rgba(6, 23, 45, .58);
+    --sage: #6E877D;
+    --terracotta: #C97A61;
+    --lavender: #C9B9D9;
+    --rose: #E8B7C8;
+    --border: rgba(6,23,45,.12);
+    --borderSoft: rgba(6,23,45,.08);
+    --shadow: 0 22px 60px rgba(6,23,45,.16);
+    --shadowSoft: 0 14px 34px rgba(6,23,45,.11);
+    --radius: 22px;
+    --radius2: 28px;
+    --max: 1160px;
+    --pad: clamp(18px, 3.2vw, 34px);
+    --serif: 'Plus Jakarta Sans', sans-serif;
+    --sans: 'Plus Jakarta Sans', sans-serif;
+    --color-border: #e9ecef;
+    --color-text: #1a1a2e;
+    --color-accent: #2d6a4f;
+    --color-accent-2: #1b4332;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+      radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+      radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+      linear-gradient(180deg, var(--paper2), var(--paper));
+    min-height: 100vh;
+  }
+
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: rgba(248,246,240,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(6,23,45,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 60px;
+  }
+  .topbar-logo {
+    grid-column: 1;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .topbar-nav {
+    grid-column: 2;
+    display: flex;
+    gap: 32px;
+  }
+  .topbar-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity .15s;
+  }
+  .topbar-nav a:hover { opacity: 1; }
+  .topbar-cta {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .15s;
+  }
+  .btn-primary:hover { background: var(--color-accent-2); }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .mobile-nav { display: none; }
+  @media (max-width: 640px) {
+    .topbar-nav, .topbar-cta { display: none; }
+    .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
+    .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
+    .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 20px;
+    margin-top: 60px;
+    font-size: 0.82rem;
+    color: var(--muted2);
+  }
+  .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot a { color: var(--muted2); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+  .small-links { display: flex; gap: 16px; }
+  .footer-fb { display: flex; justify-content: center; margin-top: 12px; }
+  .footer-fb a { color: var(--muted); transition: color .15s; line-height: 0; }
+  .footer-fb a:hover { color: var(--sage); }
+
+  /* ── CONFIDENTIALITÉ ── */
+  .privacy-wrap {
+    max-width: 720px;
+    margin: 48px auto 0;
+    padding: 0 var(--pad) 0;
+  }
+  .privacy-card {
+    background: rgba(255,255,255,.68);
+    border: 1px solid var(--border);
+    border-radius: var(--radius2);
+    padding: clamp(24px, 4vw, 44px);
+    box-shadow: var(--shadowSoft);
+    backdrop-filter: blur(8px);
+  }
+  .privacy-hero {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .privacy-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .privacy-hero p {
+    font-size: 13px;
+    color: var(--muted2);
+    margin: 0;
+  }
+  .badge-local {
+    display: inline-block;
+    background: rgba(110,135,125,.15);
+    color: #4a6b5e;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: 1px solid rgba(110,135,125,.2);
+  }
+  .privacy-divider {
+    border: none;
+    border-top: 1px solid var(--borderSoft);
+    margin: 0 0 28px;
+  }
+  .privacy-section {
+    margin-bottom: 28px;
+  }
+  .privacy-section h2 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.01em;
+  }
+  .privacy-section h2 .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(110,135,125,.12);
+    border-radius: 50%;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .privacy-section p,
+  .privacy-section li {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  .privacy-section ul {
+    margin: 6px 0 0 20px;
+    padding: 0;
+  }
+  .privacy-section li {
+    margin-bottom: 4px;
+  }
+  .privacy-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,106,79,.4);
+    text-underline-offset: 2px;
+  }
+  .privacy-section a:hover {
+    text-decoration-color: var(--color-accent);
+  }
+  .privacy-section code {
+    background: rgba(6,23,45,.06);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 13px;
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-
-    <!-- En-tête -->
-    <header class="header">
-      <h1><a href="https://myboussole.fr" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Boussole</a></h1>
-      <p>Donn&eacute;es sur ton appareil &middot; sans compte &middot; sans cloud</p>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="nav" role="navigation">
-      <a class="nav-btn" href="/index.html" aria-label="Aller &agrave; l&rsquo;Accueil">
-        Accueil
-      </a>
-      <a class="nav-btn" href="https://myboussole.fr/articles/" aria-label="Lire les articles">
-        Articles
-      </a>
+  <header class="site-header">
+    <div class="topbar">
+      <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
+      <nav class="topbar-nav" aria-label="Navigation principale">
+        <a href="https://myboussole.fr/articles/">Articles</a>
+        <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
+      </nav>
+      <div class="topbar-cta">
+        <a href="https://app.myboussole.fr" class="btn-primary" rel="noopener">Essayer Boussole</a>
+      </div>
+      <button
+        class="mobile-menu-btn"
+        id="menuBtn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+      <a href="https://myboussole.fr/articles/">Articles</a>
+      <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
+      <a href="https://app.myboussole.fr" rel="noopener">Essayer Boussole</a>
     </nav>
+  </header>
 
-    <!-- Contenu principal -->
-    <div class="panel active" id="panel-privacy" style="padding-top:0;">
-
-      <div class="card">
+  <main id="contenu">
+    <div class="privacy-wrap">
+      <div class="privacy-card">
 
         <div class="privacy-hero">
-          <h1>Confidentialit&eacute;</h1>
-          <p>Derni&egrave;re mise &agrave; jour&nbsp;: mars 2026</p>
-          <span class="badge-local">&#128274; 100&nbsp;% local-first</span>
+          <h1>Confidentialité</h1>
+          <p>Dernière mise à jour&nbsp;: mars 2026</p>
+          <span class="badge-local">🔒 Vos données restent sur votre appareil</span>
         </div>
 
         <hr class="privacy-divider">
 
         <!-- Section 1 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#128274;</span> Vos donn&eacute;es restent sur votre appareil</h2>
-          <p>Boussole ne collecte, ne transmet et ne stocke <strong>aucune donn&eacute;e personnelle</strong> sur un serveur.</p>
+          <h2><span class="icon">🔒</span> Vos données restent sur votre appareil</h2>
+          <p>Boussole ne collecte, ne transmet et ne stocke <strong>aucune donnée personnelle</strong> sur un serveur.</p>
           <ul>
-            <li>Toutes vos saisies (scores quotidiens, mesures objectives, notes libres) sont enregistr&eacute;es uniquement dans le stockage local de votre navigateur (<code>localStorage</code>).</li>
-            <li>Aucun compte utilisateur n&rsquo;est n&eacute;cessaire.</li>
+            <li>Toutes vos saisies (scores quotidiens, mesures objectives, notes libres) sont enregistrées uniquement dans le stockage local de votre navigateur (<code>localStorage</code>).</li>
+            <li>Aucun compte utilisateur n'est nécessaire.</li>
           </ul>
         </div>
 
@@ -135,11 +308,11 @@
 
         <!-- Section 2 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#128683;</span> Aucun tracking, aucun cookie tiers</h2>
+          <h2><span class="icon">🚫</span> Aucun tracking, aucun cookie tiers</h2>
           <ul>
-            <li>Boussole n&rsquo;utilise aucun cookie de suivi.</li>
-            <li>Aucun outil d&rsquo;analyse (Google Analytics, Facebook Pixel, etc.) n&rsquo;est int&eacute;gr&eacute;.</li>
-            <li>Aucune donn&eacute;e n&rsquo;est partag&eacute;e avec des tiers.</li>
+            <li>Boussole n'utilise aucun cookie de suivi.</li>
+            <li>Aucun outil d'analyse (Google Analytics, Facebook Pixel, etc.) n'est intégré.</li>
+            <li>Aucune donnée n'est partagée avec des tiers.</li>
           </ul>
         </div>
 
@@ -147,10 +320,10 @@
 
         <!-- Section 3 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#128196;</span> Les PDF g&eacute;n&eacute;r&eacute;s restent les v&ocirc;tres</h2>
+          <h2><span class="icon">📄</span> Les PDF générés restent les vôtres</h2>
           <ul>
-            <li>Les rapports PDF (enrichi et consultation) sont g&eacute;n&eacute;r&eacute;s <strong>localement</strong> dans votre navigateur.</li>
-            <li>Aucun PDF n&rsquo;est transmis &agrave; un serveur. Vous &ecirc;tes le seul &agrave; y avoir acc&egrave;s.</li>
+            <li>Les rapports PDF (enrichi et consultation) sont générés <strong>localement</strong> dans votre navigateur.</li>
+            <li>Aucun PDF n'est transmis à un serveur. Vous êtes le seul à y avoir accès.</li>
           </ul>
         </div>
 
@@ -158,11 +331,11 @@
 
         <!-- Section 4 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#128140;</span> Newsletter (optionnel)</h2>
+          <h2><span class="icon">📌</span> Newsletter (optionnel)</h2>
           <ul>
-            <li>Si vous vous inscrivez &agrave; la newsletter via le site <a href="https://myboussole.fr" target="_blank" rel="noopener">myboussole.fr</a>, votre adresse email est g&eacute;r&eacute;e par Brevo (ex-Sendinblue), h&eacute;berg&eacute; en France/UE.</li>
-            <li>Vous pouvez vous d&eacute;sinscrire &agrave; tout moment via le lien en bas de chaque email.</li>
-            <li>Votre email n&rsquo;est jamais partag&eacute; avec des tiers.</li>
+            <li>Si vous vous inscrivez à la newsletter via le site <a href="https://myboussole.fr" target="_blank" rel="noopener">myboussole.fr</a>, votre adresse email est gérée par Brevo (ex-Sendinblue), hébergé en France/UE.</li>
+            <li>Vous pouvez vous désinscrire à tout moment via le lien en bas de chaque email.</li>
+            <li>Votre email n'est jamais partagé avec des tiers.</li>
           </ul>
         </div>
 
@@ -170,9 +343,9 @@
 
         <!-- Section 5 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#9878;</span> Vos droits</h2>
-          <p>Conform&eacute;ment au RGPD, vous pouvez &agrave; tout moment supprimer vos donn&eacute;es en vidant le <code>localStorage</code> de votre navigateur&nbsp;:</p>
-          <p style="font-size:13px;color:rgba(6,23,45,.5);font-style:italic;">Param&egrave;tres &rsaquo; Donn&eacute;es de navigation &rsaquo; Stockage local</p>
+          <h2><span class="icon">⚖</span> Vos droits</h2>
+          <p>Conformément au RGPD, vous pouvez à tout moment supprimer vos données en vidant le <code>localStorage</code> de votre navigateur&nbsp;:</p>
+          <p style="font-size:13px;color:var(--muted2);font-style:italic;">Paramètres › Données de navigation › Stockage local</p>
           <p>Pour toute question&nbsp;: <a href="mailto:contact@myboussole.fr">contact@myboussole.fr</a></p>
         </div>
 
@@ -180,29 +353,42 @@
 
         <!-- Section 6 -->
         <div class="privacy-section">
-          <h2><span class="icon">&#127968;</span> &Eacute;diteur</h2>
-          <p>Dr R&eacute;my Honor&eacute;, Docteur en pharmacie</p>
+          <h2><span class="icon">🏠</span> Éditeur</h2>
+          <p>Dr Rémy Honoré, Docteur en pharmacie</p>
           <p><a href="https://myboussole.fr" target="_blank" rel="noopener">myboussole.fr</a></p>
         </div>
 
       </div>
     </div>
+  </main>
 
-  </div>
-
-  <!-- Footer version -->
-  <footer class="app-footer">
-    <span>Boussole v3.1 &mdash; </span>
-    <a href="https://myboussole.fr/confidentialite" target="_blank" rel="noopener" aria-label="Politique de confidentialit&eacute;">Confidentialit&eacute;</a>
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year"></span> myBoussole — Dr Rémy Honoré, Docteur en pharmacie</div>
+        <div class="small-links">
+          <a href="/confidentialite.html">Confidentialité</a>
+          <a href="/ecosysteme.html">Écosystème</a>
+          <a href="/rejoindre.html">Rejoindre</a>
+        </div>
+      </div>
+      <div class="footer-fb">
+        <a href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook de Rémy Honoré — myBoussole">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path fill="white" d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Service Worker PWA -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(() => console.log('Service Worker actif'))
-          .catch(err => console.warn('SW non enregistr&eacute; :', err));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    if (btn && nav) {
+      btn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
       });
     }
   </script>
