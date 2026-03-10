@@ -3,1112 +3,930 @@
 <head>
 <meta charset="utf-8" />
 <meta name="google-site-verification" content="BgqyxC1J-9ZTME78C42ANUm018vNnhK9pfrJb18f2HA" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
-  <link rel="canonical" href="https://www.myboussole.fr/" />
-  <meta property="og:url" content="https://www.myboussole.fr/" />
-  <meta name="robots" content="index,follow" />
-<title>Boussole — un suivi doux, des repères clairs</title>
-  <meta name="description" content="Boussole est un carnet de bord bienveillant : 4 repères simples, une tendance sur 30 jours, et un export PDF si tu le souhaites. Tes données restent sur ton appareil, sans compte et sans tracking." />
-<meta name="theme-color" content="#06172D" />
+<link rel="canonical" href="https://www.myboussole.fr/" />
+<meta name="robots" content="index,follow" />
 
-    <meta name="color-scheme" content="light" />
+<!-- ── SEO ── -->
+<title>Boussole — Suivi quotidien bien-être · Covid long, fibromyalgie, fatigue chronique</title>
+<meta name="description" content="Boussole objectivise tes symptômes : énergie, sommeil, confort physique, clarté mentale. Journal de bord quotidien sans compte ni cloud. Rapport PDF pour ton praticien de santé." />
+
+<!-- ── Open Graph ── -->
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="Boussole — Suivi simple (fatigue chronique, Covid long, fibromyalgie)" />
-  <meta property="og:description" content="Un suivi santé simple et privacy-first : énergie, sommeil, confort, clarté mentale. Articles et outil Boussole." />
+<meta property="og:url" content="https://www.myboussole.fr/" />
+<meta property="og:title" content="Boussole — Suivi bien-être pour le Covid long, la fibromyalgie et la fatigue chronique" />
+<meta property="og:description" content="Objectivise tes symptômes en 30 secondes par jour. Privacy-first : aucune donnée ne quitte ton appareil. Rapport PDF à partager avec ton praticien de santé." />
 <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="Boussole" />
-  <meta property="og:image" content="https://www.myboussole.fr/assets/og-default.jpg" />
+<meta property="og:site_name" content="myBoussole" />
+<meta property="og:image" content="https://www.myboussole.fr/assets/og-default.jpg" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Boussole — Suivi simple (fatigue chronique, Covid long, fibromyalgie)" />
-  <meta name="twitter:description" content="Un suivi santé simple et privacy-first : énergie, sommeil, confort, clarté mentale. Articles et outil Boussole." />
-  <meta name="twitter:image" content="https://www.myboussole.fr/assets/og-default.jpg" />
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Boussole — Suivi bien-être pour le Covid long, la fibromyalgie et la fatigue chronique" />
+<meta name="twitter:description" content="Objectivise tes symptômes en 30 secondes par jour. Privacy-first : aucune donnée ne quitte ton appareil." />
+<meta name="twitter:image" content="https://www.myboussole.fr/assets/og-default.jpg" />
+
+<!-- ── Favicon & PWA ── -->
+<meta name="theme-color" content="#06172D" />
+<meta name="color-scheme" content="light" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2726%27 fill=%27%2306172D%27/%3E%3Cpath d=%27M39 25l-5 12-12 5 5-12 12-5z%27 fill=%27%23F3F0E8%27/%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-  <style>
-    :root{
-      color-scheme: light;
+<!-- ── Performance : preload hero ── -->
+<link rel="preload" as="image" href="/assets/hero.webp" type="image/webp" />
 
-      --paper: #F3F0E8;
-      --paper2: #F8F6F0;
-      --ink: #06172D;
-      --muted: rgba(6, 23, 45, .72);
-      --muted2: rgba(6, 23, 45, .58);
+<!-- ── Fonts ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
-      --sage: #6E877D;
-      --terracotta: #C97A61;
-      --lavender: #C9B9D9;
-      --rose: #E8B7C8;
+<!-- ── Schema.org ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Boussole",
+  "url": "https://app.myboussole.fr",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Journal de bord quotidien pour objectiver les symptômes (énergie, sommeil, confort physique, clarté mentale). Conçu pour le Covid long, la fibromyalgie et la fatigue chronique. Privacy-first : aucune donnée ne quitte l'appareil.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Rémy Honoré",
+    "jobTitle": "Docteur en pharmacie et nutrithérapeute",
+    "url": "https://www.myboussole.fr/ecosysteme.html"
+  }
+}
+</script>
 
-      --border: rgba(6,23,45,.12);
-      --borderSoft: rgba(6,23,45,.08);
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F3F0E8;
+    --paper2: #F8F6F0;
+    --ink: #06172D;
+    --muted: rgba(6, 23, 45, .72);
+    --muted2: rgba(6, 23, 45, .58);
+    --sage: #6E877D;
+    --terracotta: #C97A61;
+    --lavender: #C9B9D9;
+    --rose: #E8B7C8;
+    --border: rgba(6,23,45,.12);
+    --borderSoft: rgba(6,23,45,.08);
+    --shadow: 0 22px 60px rgba(6,23,45,.16);
+    --shadowSoft: 0 14px 34px rgba(6,23,45,.11);
+    --radius: 22px;
+    --radius2: 28px;
+    --max: 1160px;
+    --pad: clamp(18px, 3.2vw, 34px);
+    --serif: 'Plus Jakarta Sans', sans-serif;
+    --sans: 'Plus Jakarta Sans', sans-serif;
+    --color-border: #e9ecef;
+    --color-text: #1a1a2e;
+    --color-accent: #2d6a4f;
+    --color-accent-2: #1b4332;
+  }
 
-      --shadow: 0 22px 60px rgba(6,23,45,.16);
-      --shadowSoft: 0 14px 34px rgba(6,23,45,.11);
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
 
-      --radius: 22px;
-      --radius2: 28px;
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+      radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+      radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+      linear-gradient(180deg, var(--paper2), var(--paper));
+  }
 
-      --max: 1160px;
-      --pad: clamp(18px, 3.2vw, 34px);
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
-      --serif: 'Plus Jakarta Sans', sans-serif;
-      --sans: 'Plus Jakarta Sans', sans-serif;
-      --color-border: #e9ecef;
-      --color-text: #1a1a2e;
-      --color-accent: #2d6a4f;
-      --color-accent-2: #1b4332;
-    }
+  /* ── Skip link ── */
+  .skip {
+    position: absolute; left: 10px; top: 10px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 999px;
+    transform: translateY(-140%);
+    transition: transform .18s ease;
+    z-index: 50;
+    text-decoration: none;
+    box-shadow: var(--shadowSoft);
+  }
+  .skip:focus { transform: translateY(0); outline: none; }
+  :focus-visible { outline: 3px solid rgba(201,122,97,.40); outline-offset: 3px; }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
-      *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-      .reveal{ opacity: 1 !important; transform: none !important; }
-    }
+  /* ── HEADER ── */
+  .site-header {
+    background: rgba(248,246,240,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(6,23,45,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 60px;
+  }
+  .topbar-logo {
+    grid-column: 1;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .topbar-nav {
+    grid-column: 2;
+    display: flex;
+    gap: 32px;
+  }
+  .topbar-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity .15s;
+  }
+  .topbar-nav a:hover { opacity: 1; }
+  .topbar-cta {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .15s;
+  }
+  .btn-primary:hover { background: var(--color-accent-2); }
 
-    body{
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--ink);
+  /* ── MOBILE MENU ── */
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .mobile-nav { display: none; }
+  @media (max-width: 640px) {
+    .topbar-nav, .topbar-cta { display: none; }
+    .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
+    .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
+    .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: clamp(560px, 78vh, 760px);
+    display: flex;
+    align-items: center;
+    padding: clamp(38px, 7vh, 78px) 0 46px;
+    overflow: hidden;
+  }
+  .hero-media { position: absolute; inset: 0; z-index: 0; }
+  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 92% 40%;
+    filter: saturate(.98) contrast(.98);
+    transform: scale(1.01);
+  }
+  @media (min-width: 1200px) {
+    .hero-photo img { object-position: 96% 42%; }
+  }
+  .hero-texture { position: absolute; inset: 0; opacity: .22; mix-blend-mode: soft-light; pointer-events: none; }
+  .hero-texture img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.9) contrast(.98); }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg,
+        rgba(248,246,240,.98) 0%,
+        rgba(248,246,240,.92) 38%,
+        rgba(248,246,240,.42) 62%,
+        rgba(248,246,240,.12) 74%,
+        rgba(248,246,240,.00) 86%),
+      radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
+      radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 52ch; }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.68);
+    border: 1px solid rgba(6,23,45,.10);
+    box-shadow: 0 10px 24px rgba(6,23,45,.10);
+    color: var(--muted);
+    font-weight: 720;
+    font-size: 14px;
+  }
+  .kicker .dot {
+    width: 10px; height: 10px; border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(201,122,97,.9), rgba(110,135,125,.75));
+    box-shadow: 0 6px 14px rgba(201,122,97,.25);
+  }
+
+  h1 {
+    margin: 14px 0 0;
+    font-family: var(--serif);
+    font-weight: 780;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    font-size: clamp(38px, 4.2vw, 64px);
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .sub {
+    margin: 14px 0 0;
+    font-size: clamp(16px, 1.55vw, 19px);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; align-items: center; }
+
+  .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s; }
+  .btn.btn-primary { background: var(--color-accent); color: #fff; }
+  .btn.btn-primary:hover { background: var(--color-accent-2); }
+  .btn-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,106,79,.4);
+    text-underline-offset: 3px;
+    transition: text-decoration-color .15s;
+  }
+  .btn-link:hover { text-decoration-color: var(--color-accent); }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.62);
+    border: 1px solid rgba(6,23,45,.10);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 680;
+  }
+  .hero .pill { background: rgba(255,255,255,.70); }
+  .hero .kicker { background: rgba(255,255,255,.72); }
+
+  .hero-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted2);
+    line-height: 1.5;
+    max-width: 68ch;
+    padding: 10px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(6,23,45,.10);
+    background: rgba(255,255,255,.52);
+    backdrop-filter: blur(8px);
+  }
+
+  @media (max-width: 980px) {
+    .hero { min-height: auto; padding: 34px 0 26px; }
+    .hero-overlay {
       background:
-        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
-        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
-        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
-        linear-gradient(180deg, var(--paper2), var(--paper));
-    }
-
-    a{ color: inherit; }
-
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-
-    .skip{
-      position: absolute; left: 10px; top: 10px;
-      background: rgba(255,255,255,.92);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 999px;
-      transform: translateY(-140%);
-      transition: transform .18s ease;
-      z-index: 50;
-      text-decoration: none;
-      box-shadow: var(--shadowSoft);
-    }
-    .skip:focus{ transform: translateY(0); outline: none; }
-
-    :focus-visible{ outline: 3px solid rgba(201,122,97,.40); outline-offset: 3px; }
-
-    /* ── HEADER ── */
-    .site-header {
-      background: rgba(248,246,240,0.85) !important;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(6,23,45,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .topbar {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 60px;
-    }
-    .topbar-logo {
-      grid-column: 1;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-    .topbar-nav {
-      grid-column: 2;
-      display: flex;
-      gap: 32px;
-    }
-    .topbar-nav a {
-      color: var(--color-text);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      opacity: 0.8;
-      transition: opacity .15s;
-    }
-    .topbar-nav a:hover { opacity: 1; }
-    .topbar-cta {
-      grid-column: 3;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .btn-primary {
-      background: var(--color-accent);
-      color: #fff;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .15s;
-    }
-    .btn-primary:hover { background: var(--color-accent-2); }
-
-    /* ── MOBILE MENU ── */
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .mobile-nav { display: none; }
-    @media (max-width: 640px) {
-      .topbar-nav, .topbar-cta { display: none; }
-      .mobile-menu-btn { display: block; grid-column: 3; justify-self: end; }
-      .mobile-nav.open { display: flex; flex-direction: column; gap: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 8px 0; }
-      .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
-    }
-
-    /* Hero */
-    .hero{
-      position: relative;
-      min-height: clamp(560px, 78vh, 760px);
-      display:flex;
-      align-items: center;
-      padding: clamp(38px, 7vh, 78px) 0 46px;
-      overflow:hidden;
-    }
-
-    .hero-media{ position:absolute; inset:0; z-index:0; }
-
-    .hero-photo{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-    }
-    .hero-photo img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: 92% 40%;
-      filter: saturate(.98) contrast(.98);
-      transform: scale(1.01);
-    }
-
-    @media (min-width: 1200px){
-      .hero-photo img{ object-position: 96% 42%; }
-    }
-
-    .hero-texture{
-      position:absolute; inset:0;
-      opacity: .22;
-      mix-blend-mode: soft-light;
-      pointer-events:none;
-    }
-    .hero-texture img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(.9) contrast(.98);
-    }
-
-    .hero-overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(248,246,240,.98) 0%,
-          rgba(248,246,240,.92) 38%,
-          rgba(248,246,240,.42) 62%,
-          rgba(248,246,240,.12) 74%,
-          rgba(248,246,240,.00) 86%),
+        linear-gradient(180deg,
+          rgba(248,246,240,.92) 0%,
+          rgba(248,246,240,.84) 36%,
+          rgba(248,246,240,.55) 62%,
+          rgba(248,246,240,.20) 82%,
+          rgba(248,246,240,.00) 100%),
         radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
         radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      pointer-events:none;
     }
+    .hero-photo img { object-position: 72% 30%; }
+    .hero-content { max-width: 52ch; }
+  }
+  @media (max-width: 520px) {
+    h1 { max-width: none; }
+    .pills { gap: 10px; }
+    .pill { padding: 9px 11px; }
+  }
 
-    .hero-content{ position: relative; z-index: 2; max-width: 52ch; }
+  /* ── SECTIONS COMMUNES ── */
+  main { position: relative; }
+  section { scroll-margin-top: 86px; }
 
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: 0 10px 24px rgba(6,23,45,.10);
-      color: var(--muted);
-      font-weight: 720;
-      font-size: 14px;
-    }
-    .kicker .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(201,122,97,.9), rgba(110,135,125,.75));
-      box-shadow: 0 6px 14px rgba(201,122,97,.25);
-    }
+  .section { padding: 52px var(--pad) 0; }
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 24px; }
+  .section-head h2 { margin: 0 0 10px; }
+  .section-head p { margin: 0; color: var(--muted); line-height: 1.65; }
 
-    h1{
-      margin: 14px 0 0;
-      font-family: var(--serif);
-      font-weight: 780;
-      letter-spacing: -0.03em;
-      line-height: 1.02;
-      font-size: clamp(38px, 4.2vw, 64px);
-      max-width: 18ch;
-      text-wrap: balance;
-    }
-
-    .sub{
-      margin: 14px 0 0;
-      font-size: clamp(16px, 1.55vw, 19px);
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 52ch;
-      text-wrap: pretty;
-    }
-
-    .hero-cta{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-
-    .pills{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 680;
-    }
-
-    .hero-note{
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.5;
-      max-width: 68ch;
-      padding: 10px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(6,23,45,.10);
-      background: rgba(255,255,255,.52);
-      backdrop-filter: blur(8px);
-    }
-    .btn:not(.btn-primary){
-      background: transparent;
-      color: #2d6a4f;
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-color: rgba(45,106,79,0.4);
-      text-underline-offset: 3px;
-    }
-    .hero .pill{ background: rgba(255,255,255,.70); }
-    .hero .kicker{ background: rgba(255,255,255,.72); }
+  h2 {
+    margin: 0;
+    font-size: clamp(24px, 2.2vw, 34px);
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+    font-family: var(--serif);
+    text-wrap: balance;
+  }
 
 
 
-    @media (max-width: 980px){
-      .hero{ min-height: auto; padding: 34px 0 26px; }
-      .hero-overlay{
-        background:
-          linear-gradient(180deg,
-            rgba(248,246,240,.92) 0%,
-            rgba(248,246,240,.84) 36%,
-            rgba(248,246,240,.55) 62%,
-            rgba(248,246,240,.20) 82%,
-            rgba(248,246,240,.00) 100%),
-          radial-gradient(900px 520px at 18% 10%, rgba(201,185,217,.22), transparent 62%),
-          radial-gradient(980px 560px at 35% 105%, rgba(110,135,125,.14), transparent 62%);
-      }
-      .hero-photo img{ object-position: 72% 30%; }
-      .hero-content{ max-width: 52ch; }
-    }
+  /* ── POUR QUI ── */
+  .audience-strip {
+    padding: 40px var(--pad) 0;
+  }
+  .audience-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(201,122,97,.22);
+    background: linear-gradient(135deg, rgba(201,122,97,.09), rgba(201,185,217,.12));
+    padding: 28px 32px 24px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .audience-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted2);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .audience-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(6,23,45,.10);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
 
-    @media (max-width: 520px){
-      h1{ max-width: none; }
-      .pills{ gap: 10px; }
-      .pill{ padding: 9px 11px; }
-    }
+  /* ── GRIDS CARDS ── */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
 
-    /* Chapters */
-    main{ position: relative; }
-    section{ scroll-margin-top: 86px; }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  @media (max-width: 940px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } }
 
-    .chapter{
-      margin: 34px 0 0;
-      padding-top: 26px;
-      padding-bottom: 26px;
-    }
+  .split {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
-    .chapter-head{
-      display:flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+  .card {
+    border-radius: var(--radius);
+    border: 1px solid rgba(6,23,45,.08);
+    background: rgba(255,255,255,.64);
+    padding: 20px 18px 18px;
+    box-shadow: var(--shadowSoft);
+  }
+  .card .ico { font-size: 26px; margin-bottom: 10px; line-height: 1; }
+  .card h3 { margin: 0 0 8px; font-size: 16px; font-weight: 780; letter-spacing: -0.01em; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.62; }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      color: var(--muted2);
-      font-weight: 720;
-      font-size: 13px;
-      margin-bottom: 10px;
-      width: fit-content;
-    }
+  /* ── SCREENSHOTS ── */
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 700px) { .shots { grid-template-columns: 1fr; } }
+  .shots figure { margin: 0; }
+  .shot {
+    border-radius: var(--radius);
+    border: 1px solid rgba(6,23,45,.10);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .shot img { width: 100%; height: auto; display: block; }
+  .shots figcaption { font-size: 13px; opacity: .85; margin-top: 8px; padding-left: 6px; }
 
-    h2{
-      margin: 0;
-      font-size: clamp(24px, 2.2vw, 34px);
-      letter-spacing: -0.02em;
-      line-height: 1.16;
-      font-family: var(--serif);
-          text-wrap: balance;
-    }
+  /* ── HIGHLIGHT CARD ── */
+  .highlight-card {
+    margin-top: 14px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(45,106,79,.22);
+    background: linear-gradient(135deg, rgba(45,106,79,.08), rgba(110,135,125,.10));
+    padding: 24px 28px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadowSoft);
+  }
+  .highlight-ico { font-size: 32px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .highlight-body h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; letter-spacing: -0.015em; }
+  .highlight-body p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
 
-    .lead{
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.62;
-      max-width: 74ch;
-    }
+  /* ── FONDATEUR ── */
+  .founder-section { padding: 48px var(--pad) 0; }
+  .founder-block {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 36px 30px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(110,135,125,.22);
+    background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
+    box-shadow: var(--shadowSoft);
+  }
+  .founder-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted2);
+    margin: 0 0 16px;
+  }
+  .founder-block h2 {
+    font-size: clamp(20px, 2vw, 26px);
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .founder-block p {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .founder-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .founder-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.60);
+    border: 1px solid rgba(6,23,45,.10);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .founder-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,106,79,.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color .15s;
+  }
+  .founder-link:hover { text-decoration-color: var(--color-accent); }
 
-    .chapter-grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 14px;
-      align-items: start;
-    }
-    @media (max-width: 980px){
-      .chapter-grid{ grid-template-columns: 1fr; }
-    }
+  /* ── FINE ── */
+  .fine {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted2);
+    max-width: 80ch;
+  }
 
-    .panel{
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(6,23,45,.10);
-      border-radius: var(--radius2);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
+  /* ── CTA FINAL ── */
+  .cta-section {
+    padding: 52px var(--pad) 0;
+    text-align: center;
+  }
+  .cta-inner {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 40px 36px 36px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(6,23,45,.10);
+    background: rgba(255,255,255,.64);
+    box-shadow: var(--shadow);
+  }
+  .cta-inner h2 { margin: 0 0 12px; }
+  .cta-inner p { margin: 0 0 22px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+  .cta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .cta-badge {
+    font-size: 12px;
+    color: var(--muted2);
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(6,23,45,.10);
+    background: rgba(248,246,240,.80);
+  }
 
-    .bullets{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
+  /* ── NEWSLETTER ── */
+  .newsletter-section {
+    padding: 52px var(--pad) 48px;
+    text-align: center;
+  }
+  .newsletter-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 36px 32px 30px;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(110,135,125,.22);
+    background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
+    box-shadow: var(--shadowSoft);
+  }
+  .newsletter-title {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.2vw, 30px);
+    letter-spacing: -0.02em;
+  }
+  .newsletter-sub {
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .newsletter-fields {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .newsletter-input {
+    flex: 1 1 220px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(6,23,45,.14);
+    background: rgba(255,255,255,.80);
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .newsletter-input:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(110,135,125,.18);
+  }
+  .newsletter-btn {
+    padding: 11px 22px;
+    border-radius: 12px;
+    border: none;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .newsletter-btn:hover { background: var(--color-accent-2); }
+  .newsletter-fine {
+    margin: 12px 0 0;
+    font-size: 12px;
+    color: var(--muted2);
+    line-height: 1.5;
+  }
 
-    .bullet{
-      border-radius: 18px;
-      border: 1px solid rgba(6,23,45,.08);
-      background: rgba(248,246,240,.66);
-      padding: 14px 14px 12px;
-    }
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 20px;
+    margin-top: 60px;
+    font-size: 0.82rem;
+    color: var(--muted2);
+  }
+  .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot a { color: var(--muted2); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+  .small-links { display: flex; gap: 16px; }
+  .footer-fb { display: flex; justify-content: center; margin-top: 12px; }
+  .footer-fb a { color: var(--muted); transition: color .15s; line-height: 0; }
+  .footer-fb a:hover { color: var(--sage); }
 
-    .bullet h3{
-      margin: 0;
-      font-size: 15px;
-      font-weight: 880;
-      letter-spacing: -0.01em;
-      display:flex;
-      align-items: center;
-      gap: 10px;
-    }
+  /* ── Utilities ── */
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
 
-    .bullet p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .icon{
-      width: 30px; height: 30px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      border: 1px solid rgba(6,23,45,.10);
-      background: linear-gradient(135deg, rgba(201,122,97,.14), rgba(110,135,125,.12));
-      box-shadow: 0 10px 22px rgba(6,23,45,.08);
-      flex: 0 0 auto;
-    }
-
-    .callout{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(201,122,97,.24);
-      background: linear-gradient(135deg, rgba(201,122,97,.12), rgba(110,135,125,.10));
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .callout strong{ font-weight: 900; }
-    .callout p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .hammer{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(6,23,45,.10);
-      background:
-        radial-gradient(700px 260px at 18% 10%, rgba(110,135,125,.18), transparent 60%),
-        radial-gradient(680px 260px at 80% 0%, rgba(232,183,200,.18), transparent 60%),
-        rgba(255,255,255,.56);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadowSoft);
-    }
-
-    .hammer-title{
-      margin: 0;
-      font-weight: 920;
-      letter-spacing: -0.02em;
-      font-size: 18px;
-      display:flex; align-items:center; gap: 10px;
-    }
-
-    .hammer p{ margin: 10px 0 0; color: var(--muted); line-height: 1.62; }
-
-    .divider{ height: 1px; background: rgba(6,23,45,.08); margin: 12px 0; }
-
-    /* Media card (uses boussole_index.*) */
-    .media{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border: 1px solid rgba(6,23,45,.10);
-      box-shadow: var(--shadow);
-      background: rgba(255,255,255,.55);
-      margin: 0;
-    }
-    .media img{ width:100%; display:block; }
-    .media-cap{
-      padding: 12px 14px;
-      border-top: 1px solid rgba(6,23,45,.08);
-      font-size: 13px;
-      color: var(--muted2);
-      background: rgba(248,246,240,.72);
-    }
-
-    /* Footer */
-    footer{ border-top: 1px solid var(--border); padding: 28px 0 20px; margin-top: 60px; font-size: 0.82rem; color: var(--muted2); }
-    .foot{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .foot a{ color: var(--muted2); text-decoration: none; }
-    .foot a:hover{ color: var(--ink); }
-    .small-links{ display: flex; gap: 16px; }
-    .footer-fb{ display:flex; justify-content:center; margin-top:12px; }
-    .footer-fb a{ color:var(--muted); transition:color .15s; line-height:0; }
-    .footer-fb a:hover{ color:var(--sage); }
-
-    /* Subtle reveal */
-    .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .42s ease, transform .42s ease; }
-    .reveal.in{ opacity: 1; transform: translateY(0); }
-
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior: auto; }
-      .reveal{ opacity: 1 !important; transform: none !important; transition: none !important; }
-      .btn{ transition: none !important; }
-    }
-
-/* BOUSSOLE HOME REFRESH v2 */
-.home-v2{
-  padding: 0;
-}
-.home-v2 .section{
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 72px 20px;
-}
-.home-v2 .hero{
-  padding: 70px 20px 40px;
-}
-.home-v2 .hero-inner{
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 44px;
-  align-items: center;
-}
-@media (max-width: 940px){
-  .home-v2 .hero-inner{ grid-template-columns: 1fr; }
-  .home-v2 .hero-visual{ order: -1; }
-}
-
-.home-v2 h1{
-  line-height: 1.03;
-  letter-spacing: -0.02em;
-  margin: 10px 0 14px;
-  font-size: clamp(40px, 5vw, 68px);
-}
-.home-v2 .sub{
-  max-width: 55ch;
-  line-height: 1.55;
-  font-size: 18px;
-  opacity: .95;
-  margin: 0 0 18px;
-}
-.home-v2 .kicker{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.65);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0,0,0,.06);
-  font-weight: 600;
-  font-size: 13px;
-}
-.home-v2 .kicker .dot{
-  width: 8px; height: 8px; border-radius: 999px;
-  background: rgba(0,0,0,.35);
-  display: inline-block;
-}
-
-.home-v2 .hero-cta{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.home-v2 .badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
-.home-v2 .badge{
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.7);
-  font-size: 13px;
-  font-weight: 600;
-  opacity: .95;
-}
-
-.home-v2 .hero-visual{
-  display: flex;
-  justify-content: flex-end;
-}
-.home-v2 .mockup{
-  width: min(460px, 100%);
-  border-radius: 26px;
-  background: transparent;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 18px 60px rgba(0,0,0,.12);
-  padding: 12px;
-}
-.home-v2 .mockup img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-}
-
-.home-v2 .section-head{
-  margin-bottom: 18px;
-}
-.home-v2 .section-head h2{
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
-}
-.home-v2 .section-head p{
-  margin: 0;
-  max-width: 62ch;
-  line-height: 1.55;
-  opacity: .9;
-}
-
-.home-v2 .grid-3{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-@media (max-width: 940px){
-  .home-v2 .grid-3{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .card{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.75);
-  padding: 16px 16px 14px;
-}
-.home-v2 .card .ico{
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-.home-v2 .card h3{
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-.home-v2 .card p{
-  margin: 0;
-  line-height: 1.55;
-  opacity: .92;
-}
-
-.home-v2 .shots{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .shots{ grid-template-columns: 1fr; }
-}
-.home-v2 figure{
-  margin: 0;
-}
-.home-v2 .shot{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
-  box-shadow: 0 10px 40px rgba(0,0,0,.08);
-  overflow: hidden;
-}
-.home-v2 .shot img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.home-v2 figcaption{
-  font-size: 13px;
-  opacity: .85;
-  margin-top: 8px;
-  padding-left: 6px;
-}
-
-.home-v2 .grid-4{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 14px;
-}
-@media (max-width: 940px){
-  .home-v2 .grid-4{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .split{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .split{ grid-template-columns: 1fr; }
-}
-
-.home-v2 .timeline{
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-@media (max-width: 940px){
-  .home-v2 .timeline{ grid-template-columns: 1fr; }
-}
-.home-v2 .step{
-  border-radius: 22px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.75);
-  padding: 14px 14px 12px;
-}
-.home-v2 .step .k{
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
-}
-.home-v2 .fine{
-  margin-top: 16px;
-  font-size: 13px;
-  line-height: 1.5;
-  opacity: .8;
-  max-width: 80ch;
-}
-
-.founder-block{
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 34px 32px 30px;
-  border-radius: 26px;
-  border: 1px solid rgba(110,135,125,.22);
-  background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
-  text-align: center;
-}
-.founder-block .founder-label{
-  margin: 0 0 14px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--muted2);
-}
-.founder-block p{
-  margin: 0 0 18px;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 54ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.founder-block .founder-link{
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(45,106,79,.3);
-  padding-bottom: 1px;
-  transition: border-color .15s;
-}
-.founder-block .founder-link:hover{ border-color: var(--color-accent); }
-
-/* ── NEWSLETTER SECTION ── */
-.newsletter-section{
-  padding: 52px var(--pad) 48px;
-  text-align: center;
-}
-.newsletter-inner{
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 36px 32px 30px;
-  border-radius: 28px;
-  border: 1px solid rgba(110,135,125,.22);
-  background: linear-gradient(135deg, rgba(201,185,217,.16), rgba(110,135,125,.11));
-  box-shadow: var(--shadowSoft);
-}
-.newsletter-title{
-  margin: 0 0 8px;
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.2vw, 30px);
-  letter-spacing: -0.02em;
-}
-.newsletter-sub{
-  margin: 0 0 20px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--muted);
-  max-width: 46ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.newsletter-fields{
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.newsletter-input{
-  flex: 1 1 220px;
-  padding: 11px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(6,23,45,.14);
-  background: rgba(255,255,255,.80);
-  font-family: var(--sans);
-  font-size: 15px;
-  color: var(--ink);
-  outline: none;
-  transition: border-color .15s, box-shadow .15s;
-}
-.newsletter-input:focus{
-  border-color: var(--sage);
-  box-shadow: 0 0 0 3px rgba(110,135,125,.18);
-}
-.newsletter-btn{
-  padding: 11px 22px;
-  border-radius: 12px;
-  border: none;
-  background: var(--color-accent);
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background .15s;
-}
-.newsletter-btn:hover{ background: var(--color-accent-2); }
-.newsletter-fine{
-  margin: 12px 0 0;
-  font-size: 12px;
-  color: var(--muted2);
-  line-height: 1.5;
-}
-.visually-hidden{
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ── SOCIAL PROOF STRIP ── */
-.proof-strip{
-  text-align: center;
-  padding: 18px var(--pad);
-  font-size: 13.5px;
-  color: var(--muted2);
-  letter-spacing: 0.01em;
-}
-.proof-strip .sep{
-  margin: 0 10px;
-  opacity: .5;
-}
-
+  /* ── Reveal animation ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
 </style>
 </head>
 
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="site-header">
-  <div class="topbar">
-    <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
-    <nav class="topbar-nav">
+  <header class="site-header">
+    <div class="topbar">
+      <a href="https://myboussole.fr" class="topbar-logo">🧭 myboussole</a>
+      <nav class="topbar-nav" aria-label="Navigation principale">
+        <a href="https://myboussole.fr/articles/">Articles</a>
+        <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
+      </nav>
+      <div class="topbar-cta">
+        <a href="https://app.myboussole.fr" class="btn-primary" rel="noopener">Essayer Boussole</a>
+      </div>
+      <button
+        class="mobile-menu-btn"
+        id="menuBtn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
       <a href="https://myboussole.fr/articles/">Articles</a>
       <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
+      <a href="https://app.myboussole.fr" rel="noopener">Essayer Boussole</a>
     </nav>
-    <div class="topbar-cta">
-      <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
-    </div>
-    <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="https://myboussole.fr/articles/">Articles</a>
-    <a href="https://myboussole.fr/ecosysteme.html">Écosystème</a>
-    <a href="https://app.myboussole.fr">Essayer Boussole</a>
-  </nav>
-</header>
+  </header>
 
-  
-<main class="home-v2" id="top">
-  <!-- BOUSSOLE:HOME-V2 -->
+  <main id="contenu">
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span>Bien-être d’abord. Repères ensuite.</div>
-        <h1>Comprendre ce qui varie en soi, avec douceur.</h1>
-        <p class="sub">Boussole transforme des sensations floues en repères simples, sans pression et sans médicalisation.</p>
-
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Essayer Boussole</a>
-          <a class="btn" href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener">Suivre sur Facebook</a>
-        </div>
-
-        <div class="badges" aria-label="Caractéristiques">
-          <span class="badge">100% local</span>
-          <span class="badge">Sans compte</span>
-          <span class="badge">Export PDF 30 jours</span>
-        </div>
-
-        <p class="fine">Aperçu illustratif. Boussole est un outil d’information et de repères : pas de diagnostic, pas de promesse, et ne remplace pas une consultation.</p>
-      </div>
-
-      <div class="hero-visual" aria-label="Aperçu de l’app">
-        <div class="mockup">
+    <!-- ── HERO ── -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-photo">
           <picture>
-  <source srcset="/assets/hero.webp" type="image/webp">
-  <img src="/assets/hero.jpg" alt="Mockup de l’application Boussole" loading="eager" decoding="async" fetchpriority="high" />
-</picture>
+            <source srcset="/assets/hero.webp" type="image/webp" />
+            <img
+              src="/assets/hero.jpg"
+              alt=""
+              width="1200" height="760"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="wrap" style="position:relative;z-index:2;width:100%;">
+        <div class="hero-content">
+          <div class="kicker">
+            <span class="dot" aria-hidden="true"></span>
+            Covid long · Fibromyalgie · Fatigue chronique
+          </div>
+
+          <h1 id="hero-title">Ton vécu quotidien, enfin suivi.</h1>
+
+          <p class="sub">Boussole transforme tes sensations floues du quotidien en repères clairs et factuels — utiles dès la prochaine consultation.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Essayer gratuitement</a>
+            <a class="btn-link" href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener noreferrer">Rejoindre la communauté</a>
+          </div>
+
+          <div class="pills" aria-label="Caractéristiques principales">
+            <span class="pill"><span aria-hidden="true">🔒</span> Tes données sur ton appareil uniquement</span>
+            <span class="pill"><span aria-hidden="true">👤</span> Sans compte</span>
+            <span class="pill"><span aria-hidden="true">📄</span> Rapport PDF pour ton praticien de santé</span>
+          </div>
+
+          <p class="hero-note">Boussole est un outil d'information et de repères. Pas de diagnostic, pas de promesse thérapeutique — et ne remplace pas une consultation médicale.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ── POUR QUI ── -->
+    <div class="audience-strip reveal" id="public">
+      <div class="audience-inner">
+        <span class="audience-label">Pour qui ?</span>
+        <div class="audience-tags">
+          <span class="audience-tag"><span aria-hidden="true">🦠</span> Covid long</span>
+          <span class="audience-tag"><span aria-hidden="true">🌀</span> Fibromyalgie</span>
+          <span class="audience-tag"><span aria-hidden="true">⚡</span> Syndrome de fatigue chronique</span>
+          <span class="audience-tag"><span aria-hidden="true">🌿</span> Suivi nutrithérapeutique</span>
+          <span class="audience-tag"><span aria-hidden="true">🧭</span> Tout suivi de bien-être quotidien</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <div class="proof-strip" aria-label="Chiffres clés">
-    532&nbsp;000 personnes rejointes chaque mois sur les réseaux
-    <span class="sep" aria-hidden="true">·</span>
-    Zéro publicité
-    <span class="sep" aria-hidden="true">·</span>
-    100% indépendant
-  </div>
-
-  <section class="section" id="changes">
-    <div class="section-head">
-      <h2>Ce que Boussole change</h2>
-      <p>Pas “tout mesurer”. Juste ce qui aide à se situer, et à se traiter avec plus de douceur.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="ico">🔎</div>
-        <h3>Voir ce qui bouge en soi</h3>
-        <p>Mettre des mots simples sur l’énergie, le confort, la clarté. Sans sur-analyser.</p>
+    <!-- ── CE QUE BOUSSOLE CHANGE ── -->
+    <section class="section reveal" id="apport" aria-labelledby="apport-title">
+      <div class="section-head">
+        <h2 id="apport-title">Ce que ça change concrètement</h2>
+        <p>Arrêter de dire "je vais mal" et commencer à montrer comment, quand, et combien.</p>
       </div>
-      <div class="card">
-        <div class="ico">🧩</div>
-        <h3>Repérer des schémas</h3>
-        <p>Observer sur 30 jours ce qui revient, ce qui se stabilise, ce qui s’apaise.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="ico" aria-hidden="true">📍</div>
+          <h3>Te situer chaque jour</h3>
+          <p>Énergie, sommeil, confort physique, clarté mentale — 4 curseurs, 30 secondes. Un repère simple au lieu d'un ressenti flou.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🔍</div>
+          <h3>Repérer ce qui revient</h3>
+          <p>Sur 30 jours, les patterns émergent : les cycles, les déclencheurs, les périodes fragiles. Invisibles au quotidien, visibles sur la durée.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🤝</div>
+          <h3>Parler avec des données</h3>
+          <p>Un rapport PDF daté à partager lors de ta consultation. Tu arrives avec des faits, pas seulement un ressenti.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">🤍</div>
-        <h3>Se sentir légitime</h3>
-        <p>Un repère fiable vaut mieux qu’un “ressenti vague”. Et ça aide à se faire confiance.</p>
+
+      <div class="shots" aria-label="Captures d'écran de l'application">
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-1.webp" type="image/webp" />
+              <img src="/assets/shot-1.jpg" alt="Saisie quotidienne des 4 indicateurs dans Boussole" width="390" height="844" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Saisie du jour — 30 secondes</figcaption>
+        </figure>
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-2.webp" type="image/webp" />
+              <img src="/assets/shot-2.jpg" alt="Tendance sur 30 jours dans l'application Boussole" width="390" height="844" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Tendance sur 30 jours</figcaption>
+        </figure>
+        <figure>
+          <div class="shot">
+            <picture>
+              <source srcset="/assets/shot-3.webp" type="image/webp" />
+              <img src="/assets/shot-3.jpg" alt="Export PDF du rapport Boussole pour la consultation médicale" width="390" height="844" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <figcaption>Rapport PDF — à partager avec ton praticien de santé</figcaption>
+        </figure>
       </div>
-    </div>
+    </section>
 
-    <div class="shots">
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/shot-1.webp" type="image/webp">
-  <img src="/assets/shot-1.jpg" alt="Capture 1 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Repères du jour</figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/shot-2.webp" type="image/webp">
-  <img src="/assets/shot-2.jpg" alt="Capture 2 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Tendance sur 30 jours</figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><picture>
-  <source srcset="/assets/shot-3.webp" type="image/webp">
-  <img src="/assets/shot-3.jpg" alt="Capture 3 de l’app Boussole" loading="lazy" decoding="async" />
-</picture></div>
-        <figcaption>Export PDF</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section" id="reperes">
-    <div class="section-head">
-      <h2>Comment ça marche</h2>
-      <p>4 indicateurs. 30 secondes. Une tendance sur 30 jours. Tout reste sur ton appareil.</p>
-    </div>
-
-    <div class="grid-4">
-      <div class="card">
-        <div class="ico">⚡️</div>
-        <h3>Énergie</h3>
-        <p>Un thermomètre simple pour te situer, sans jugement.</p>
+    <!-- ── COMMENT ÇA MARCHE ── -->
+    <section class="section reveal" id="reperes" aria-labelledby="reperes-title">
+      <div class="section-head">
+        <h2 id="reperes-title">Les 4 indicateurs</h2>
+        <p>Pas de questionnaire long. 4 curseurs de 0 à 10, une note libre optionnelle. Tout reste sur ton appareil.</p>
       </div>
-      <div class="card">
-        <div class="ico">🌫️</div>
-        <h3>Clarté mentale</h3>
-        <p>Pour capter le brouillard, la charge, l’attention. Sans culpabiliser.</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="ico" aria-hidden="true">⚡️</div>
+          <h3>Énergie</h3>
+          <p>Un thermomètre simple pour te situer, sans jugement.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🌫️</div>
+          <h3>Clarté mentale</h3>
+          <p>Pour capter le brouillard, la charge, l'attention disponible ce jour-là.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🌙</div>
+          <h3>Sommeil</h3>
+          <p>La qualité du repos de la nuit. Pour repérer ce qui perturbe et ce qui stabilise.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">🩻</div>
+          <h3>Confort physique</h3>
+          <p>Douleurs, tensions, tolérance : un repère global, sans jargon médical.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">🧘‍♀️</div>
-        <h3>Sommeil</h3>
-        <p>La qualité et la profondeur de ton repos. Pour repérer ce qui perturbe.</p>
+
+      <div class="split" id="partage">
+        <div class="card">
+          <div class="ico" aria-hidden="true"><span aria-hidden="true">🔒</span></div>
+          <h3>Tes données sur ton appareil</h3>
+          <p>Pas de compte. Pas de cloud. Rien n'est transmis, partagé ou analysé à ton insu. Tout reste dans ton navigateur.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">📄</div>
+          <h3>Rapport PDF pour ton praticien de santé</h3>
+          <p>En un clic : une synthèse sur 30 jours avec score, tendances et indicateurs — lisible et partageable lors d'une consultation.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico">🦴</div>
-        <h3>Confort physique</h3>
-        <p>Douleurs, tensions, tolérance : un repère global, sans jargon.</p>
+
+      <!-- Mise en avant clinique -->
+      <div class="highlight-card reveal">
+        <div class="highlight-ico" aria-hidden="true">🗓️</div>
+        <div class="highlight-body">
+          <h3>Utile dès la première semaine</h3>
+          <p>Dans le Covid long ou la fibromyalgie, les symptômes fluctuent d'un jour à l'autre. 7 jours de données suffisent souvent à identifier un pattern — et à rendre une consultation beaucoup plus productive.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="split" id="partage">
-      <div class="card">
-        <div class="ico">🔒</div>
-        <h3>100% local</h3>
-        <p>Pas de compte. Pas de cloud imposé. Rien n’est “partagé automatiquement”.</p>
+    <!-- ── FONDATEUR ── -->
+    <section class="founder-section reveal" id="fondateur" aria-labelledby="fondateur-title">
+      <div class="founder-block">
+        <p class="founder-eyebrow">Qui est derrière Boussole ?</p>
+        <h2 id="fondateur-title">Conçu par un Docteur en pharmacie atteint de Covid long</h2>
+        <div class="founder-meta">
+          <span class="founder-tag"><span aria-hidden="true">🎓</span> PharmD — 12 ans d'officine</span>
+          <span class="founder-tag"><span aria-hidden="true">🧬</span> Nutrithérapeute</span>
+          <span class="founder-tag"><span aria-hidden="true">🦠</span> Covid long depuis juillet 2020</span>
+        </div>
+        <p>Je suis Rémy Honoré, Docteur en pharmacie et nutrithérapeute. En juillet 2020, j'ai développé un Covid long. Parmi mes premiers symptômes : un brouillard mental intense, une fatigue inexpliquée, et une impossibilité à objectiver ce que je ressentais — même en tant que professionnel de santé.</p>
+        <p>J'ai construit Boussole parce que cet outil n'existait pas. Simple, privacy-first, et calibré pour les maladies à symptômes fluctuants. Pas pour poser un diagnostic — pour commencer à voir ce qui se passe vraiment.</p>
+        <a class="founder-link" href="/ecosysteme.html">Découvrir l'écosystème myBoussole →</a>
       </div>
-      <div class="card">
-        <div class="ico">📄</div>
-        <h3>PDF sur 30 jours</h3>
-        <p>Quand tu le souhaites : une synthèse lisible à partager avec ton professionnel de santé.</p>
+    </section>
+
+    <!-- ── CTA FINAL ── -->
+    <section class="cta-section reveal" id="essayer" aria-labelledby="cta-title">
+      <div class="cta-inner">
+        <h2 id="cta-title">Commence aujourd'hui.<br>Ça prend 30 secondes.</h2>
+        <p>Gratuit, sans compte, sans installation. Tes données ne quittent jamais ton appareil.</p>
+        <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener" style="font-size:16px;padding:13px 28px;">Ouvrir Boussole</a>
+        <div class="cta-badges">
+          <span class="cta-badge">🔒 100% local</span>
+          <span class="cta-badge">👤 Sans compte</span>
+          <span class="cta-badge">📄 PDF praticien inclus</span>
+          <span class="cta-badge">📱 Installable sur mobile</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="tendances">
-    <div class="section-head">
-      <h2>Une vue longue durée, toujours locale.</h2>
-      <p>Une vue sur plusieurs mois est en cours de développement pour t'aider à identifier tes tendances sur le long terme.</p>
-    </div>
+  </main>
 
-    <div class="timeline">
-      <div class="step">
-        <div class="k">30 jours</div>
-        <div>Voir la stabilité, les cycles, les périodes plus fragiles.</div>
-      </div>
-      <div class="step">
-        <div class="k">3–6 mois</div>
-        <div>Observer ce qui tient dans la durée (rythme, récup, tolérances).</div>
-      </div>
-      <div class="step">
-        <div class="k">12 mois</div>
-        <div>Garder une trace simple du “long cours”, sans surcharge.</div>
-      </div>
-    </div>
-
-    <div class="hero-cta" style="margin-top:16px">
-      <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Ouvrir Boussole</a>
-      <a class="btn" href="/articles/">Lire les articles</a>
-    </div>
-  </section>
-
-  <section class="section" id="confiance">
-    <div class="section-head">
-      <h2>Valeurs</h2>
-      <p>Le produit est construit pour préserver l’énergie et clarifier, pas pour rajouter une charge.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="ico">🌿</div>
-        <h3>Douceur</h3>
-        <p>Des repères légers, compatibles avec les jours “faibles”.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧾</div>
-        <h3>Non-médicalisation</h3>
-        <p>Informer et structurer, sans promesse ni vocabulaire qui enferme.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧠</div>
-        <h3>Simplicité</h3>
-        <p>1 écran, 4 curseurs, une note : assez pour apprendre sans s’épuiser.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="fondateur">
-    <div class="founder-block">
-      <p class="founder-label">Qui est derrière Boussole ?</p>
-      <p>Conçu par Rémy Honoré, Docteur en Pharmacie et nutrithérapeute, lui-même touché par le Covid long. Il construit les outils qu'il aurait voulu avoir — en tant qu'utilisateur et professionnel de santé.</p>
-      <a class="founder-link" href="/ecosysteme.html">En savoir plus →</a>
-    </div>
-  </section>
-
-  <section class="section" id="beta">
-    <div class="section-head">
-      <h2>Découvrir l’app, tranquillement</h2>
-      <p>Tu peux l’utiliser comme une app sur mobile (PWA), sans compte.</p>
-    </div>
-
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="https://app.myboussole.fr/" rel="noopener">Essayer Boussole</a>
-      <a class="btn" href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener">Suivre sur Facebook</a>
-    </div>
-  </section>
-
-</main>
-
-
-<script>
-  const btn = document.getElementById('menuBtn');
-  const nav = document.getElementById('mobileNav');
-  if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
-</script>
-
-  <section id="newsletter" class="newsletter-section">
+  <!-- ── NEWSLETTER ── -->
+  <section id="newsletter" class="newsletter-section" aria-labelledby="newsletter-title">
     <div class="newsletter-inner">
-      <h2 class="newsletter-title">Reste informé(e)</h2>
-      <p class="newsletter-sub">Reçois les prochains articles directement dans ta boîte mail. Gratuit, sans spam, désinscription en un clic.</p>
+      <h2 class="newsletter-title" id="newsletter-title">Articles dans ta boîte mail</h2>
+      <p class="newsletter-sub">Covid long, fibromyalgie, micronutrition — des articles sourcés, en langage clair. Gratuit, sans spam, désinscription en un clic.</p>
       <form id="newsletter-main-form" action="https://ffd96913.sibforms.com/serve/MUIFAJUmjQTMcr8EIjmLErqYjjECrQ73i0aPhf_n6tBk2T-Z5AzjIeTGaQAcaPFU0Gg_yPaV46hxNb6EtRVWlzHZOM4fH08S6nOFuz5CNcfhisSD5UFAsEOsTMl8w405AGiQRhn3MyOfmYSaCUtoAMGqVRzRXKkdXN2kjT-18CVH688z0YTCeL_NKQzYUcFCGw44EksGyMRhKlBtUw==" method="post" class="newsletter-form" novalidate>
         <div class="newsletter-fields">
           <label for="newsletter-email" class="visually-hidden">Adresse e-mail</label>
@@ -1125,50 +943,82 @@
         </div>
         <p class="newsletter-fine">En t'inscrivant, tu acceptes de recevoir des articles par e-mail. Désabonnement en un clic à tout moment.</p>
       </form>
-      <div id="newsletter-main-confirm" style="display:none;color:var(--sage);font-weight:600;padding:12px 0;">Merci ! Tu recevras les prochains articles.</div>
-      <script>
-      (function(){
-        var form = document.getElementById('newsletter-main-form');
-        var msg = document.getElementById('newsletter-main-confirm');
-        function showConfirm(){
-          if(form) form.style.display='none';
-          if(msg) msg.style.display='';
-        }
-        if(localStorage.getItem('newsletter_email')){ showConfirm(); }
-        if(form){
-          form.addEventListener('submit', function(e){
-            e.preventDefault();
-            var input = form.querySelector('input[type="email"]');
-            if(input && input.value){ localStorage.setItem('newsletter_email', input.value); }
-            var data = new FormData(form);
-            fetch(form.action, { method: 'POST', body: data })
-              .then(function(r){ if(!r.ok) console.error('Newsletter: HTTP', r.status); })
-              .catch(function(err){ console.error('Newsletter error:', err); });
-            showConfirm();
-          });
-        }
-      })();
-      </script>
+      <div id="newsletter-main-confirm" style="display:none;color:var(--sage);font-weight:600;padding:12px 0;">Merci ! Tu recevras les prochains articles directement dans ta boîte mail.</div>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-<div class="foot">
-        <div>© <span id="year"></span> Boussole — <a href="https://micronutriment.fr">micronutriment.fr</a></div>
+      <div class="foot">
+        <div>© <span id="year"></span> myBoussole — Dr Rémy Honoré, Docteur en pharmacie</div>
         <div class="small-links">
-          <a href="/#confiance">Confidentialité</a>
+          <a href="/confidentialite.html">Confidentialité</a>
           <a href="/ecosysteme.html">Écosystème</a>
           <a href="/rejoindre.html">Rejoindre</a>
         </div>
       </div>
       <div class="footer-fb">
-        <a href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener" aria-label="Page Facebook de Boussole">
+        <a href="https://www.facebook.com/remy.honore.3" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook de Rémy Honoré — myBoussole">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path fill="white" d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
         </a>
       </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    // Year footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    if (btn && nav) {
+      btn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    // Newsletter
+    (function(){
+      var form = document.getElementById('newsletter-main-form');
+      var msg = document.getElementById('newsletter-main-confirm');
+      function showConfirm(){
+        if(form) form.style.display='none';
+        if(msg) msg.style.display='';
+      }
+      if(localStorage.getItem('newsletter_email')){ showConfirm(); }
+      if(form){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var input = form.querySelector('input[type="email"]');
+          if(input && input.value){ localStorage.setItem('newsletter_email', input.value); }
+          var data = new FormData(form);
+          fetch(form.action, { method: 'POST', body: data })
+            .then(function(r){ if(!r.ok) console.error('Newsletter: HTTP', r.status); })
+            .catch(function(err){ console.error('Newsletter error:', err); });
+          showConfirm();
+        });
+      }
+    })();
+
+    // Reveal on scroll
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el){ el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el){ io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
