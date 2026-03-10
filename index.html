@@ -347,7 +347,13 @@
     align-self: center;
   }
   .hero-visual svg { width: 100%; height: auto; display: block; }
-  @media (max-width: 900px) { .hero-visual { display: none; } }
+  @media (max-width: 900px) {
+    .hero-visual { display: block; max-width: 260px; margin: 0 auto; }
+    .hero-wrap { flex-direction: column !important; align-items: center !important; }
+  }
+  @media (max-width: 400px) {
+    .hero-visual { max-width: 220px; }
+  }
 
   /* ── SECTIONS COMMUNES ── */
   main { position: relative; }
@@ -746,7 +752,7 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <div class="wrap" style="position:relative;z-index:2;width:100%;display:flex;align-items:center;gap:clamp(24px,5vw,60px);">
+      <div class="wrap hero-wrap" style="position:relative;z-index:2;width:100%;display:flex;align-items:center;gap:clamp(24px,5vw,60px);">
         <div class="hero-content">
           <div class="kicker">
             <span class="dot" aria-hidden="true"></span>
