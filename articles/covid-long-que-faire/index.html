@@ -187,6 +187,49 @@ author: "Dr Rémy Honoré"
       font-size: 0.95rem;
     }
 
+    .share-block {
+      margin: 24px 0 32px;
+    }
+
+    .share-intro {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: opacity 0.15s;
+    }
+
+    .btn-share:hover { opacity: 0.85; }
+
+    .btn-share-fb {
+      background: #1877F2;
+      color: #fff;
+    }
+
+    .btn-share-copy {
+      background: var(--color-surface, #f3f4f6);
+      color: var(--navy, #06172D);
+      border: 1px solid var(--color-border, #e5e7eb);
+    }
+
     .site-footer { border-top: 1px solid var(--color-border); padding: 32px 24px; text-align: center; font-size: 14px; color: var(--color-text-muted); }
     .site-footer a { color: var(--color-accent); text-decoration: none; }
 
