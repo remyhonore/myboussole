@@ -30,6 +30,8 @@ author: "Dr Rémy Honoré"
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: 8px 16px; background: var(--navy, #06172D); color: #fff; font-weight: 600; text-decoration: none; z-index: 9999; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -344,6 +346,7 @@ author: "Dr Rémy Honoré"
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <header class="site-header">
   <nav class="topbar">
@@ -366,7 +369,7 @@ author: "Dr Rémy Honoré"
   </nav>
 </header>
 
-<main class="article-wrapper">
+<main id="main-content" class="article-wrapper">
 <div class="article-card">
 
 <article>
