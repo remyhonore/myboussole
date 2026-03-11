@@ -125,6 +125,7 @@ def collect_articles():
             "index_path": str(index),
             "lastmod": lastmod,
             "tags": tags,
+            "read_time": fm.get("read_time", ""),
         })
 
     # sort: date desc, then slug asc
@@ -134,22 +135,43 @@ def collect_articles():
     items.sort(key=sort_key)
     return items
 
+MONTHS_FR = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
+
+def format_date_fr(d: datetime.date | None) -> str:
+    if not d:
+        return ""
+    return f"{d.day} {MONTHS_FR[d.month - 1]} {d.year}"
+
 def write_articles_index(items):
     out = Path("articles/index.html")
     if not out.exists():
         return
     html = out.read_text(encoding="utf-8", errors="replace")
-    list_pattern = r'(<div class="articles-list"[^>]*>)(.*?)(</div>)'
+    list_pattern = r'(<div id="articles-list"[^>]*>)(.*?)(</div>)(?=\s*<div id="empty-state")'
     m = re.search(list_pattern, html, flags=re.S|re.I)
     if not m:
         return
-    li = []
+    cards = []
     for item in items:
-        date = item["date"].isoformat() if item["date"] else ""
-        tags_attr = ",".join(item.get("tags", []))
-        li.append(f'        <li data-tags="{tags_attr}"><a href="/articles/{escape(item["slug"])}/">{escape(item["title"])}</a> <span class="meta">— {escape(date)}</span></li>')
-    ul = "\n      <ul>\n" + "\n".join(li) + "\n      </ul>\n    "
-    new_html = html[:m.start()] + m.group(1) + ul + m.group(3) + html[m.end():]
+        tags = item.get("tags", [])
+        tags_attr = ",".join(tags)
+        # show max 2 tags in UI
+        tag_spans = "".join(f'<span class="article-tag">{escape(t)}</span>' for t in tags[:2])
+        date_fr = format_date_fr(item["date"])
+        read_time = item.get("read_time", "")
+        cards.append(
+            f'      <a href="{SITE_URL}/articles/{escape(item["slug"])}/" class="article-item" data-tags="{tags_attr}">\n'
+            f'        <div>\n'
+            f'          <div class="article-tags-row">{tag_spans}</div>\n'
+            f'          <div class="article-title">{escape(item["title"])}</div>\n'
+            f'        </div>\n'
+            f'        <div class="article-meta"><span class="article-date">{escape(date_fr)}</span>'
+            + (f'<span class="article-readtime">{escape(read_time)}</span>' if read_time else "")
+            + f'</div>\n'
+            f'      </a>'
+        )
+    inner = "\n" + "\n".join(cards) + "\n    "
+    new_html = html[:m.start()] + m.group(1) + inner + m.group(3) + html[m.end():]
     out.write_text(new_html, encoding="utf-8")
 
 def write_sitemap(items):
