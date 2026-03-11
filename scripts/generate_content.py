@@ -32,6 +32,35 @@ def parse_front_matter(html: str) -> dict:
         out[k] = v
     return out
 
+def extract_hero_image(html: str, slug: str, fm: dict) -> str:
+    """Extract a thumbnail URL: front matter image > og:image > first <img src> in content."""
+    # 1. Front matter image field
+    fm_image = fm.get("image", "")
+    if fm_image:
+        if fm_image.startswith("http"):
+            return fm_image
+        return f"{SITE_URL}/articles/{slug}/{fm_image}"
+    # 2. og:image meta tag (both attribute orders)
+    for pat in [
+        r'<meta\s[^>]*property=["\']og:image["\']\s[^>]*content=["\'](.*?)["\']',
+        r'<meta\s[^>]*content=["\'](.*?)["\']\s[^>]*property=["\']og:image["\']',
+    ]:
+        m = re.search(pat, html, flags=re.I | re.S)
+        if m:
+            url = m.group(1).strip()
+            if url:
+                return url
+    # 3. First <img src> in content (skip data: URIs)
+    m = re.search(r'<img\b[^>]*\bsrc=["\']((?!data:)[^"\']+)["\']', html, flags=re.I | re.S)
+    if m:
+        src = m.group(1).strip()
+        if src:
+            if src.startswith("http"):
+                return src
+            return f"{SITE_URL}/articles/{slug}/{src}"
+    return ""
+
+
 def parse_html_meta(html: str) -> dict:
     def find(pattern: str):
         m = re.search(pattern, html, flags=re.I|re.S)
@@ -126,6 +155,7 @@ def collect_articles():
             "lastmod": lastmod,
             "tags": tags,
             "read_time": fm.get("read_time", ""),
+            "image": extract_hero_image(html, slug, fm),
         })
 
     # sort: date desc, then slug asc
@@ -159,6 +189,11 @@ def write_articles_index(items):
         tag_spans = "".join(f'<span class="article-tag">{escape(t)}</span>' for t in tags[:2])
         date_fr = format_date_fr(item["date"])
         read_time = item.get("read_time", "")
+        image = item.get("image", "")
+        if image:
+            thumb_html = f'        <img class="article-thumb" src="{escape(image)}" alt="" loading="lazy" aria-hidden="true" />\n'
+        else:
+            thumb_html = '        <span class="article-thumb article-thumb--empty" aria-hidden="true"></span>\n'
         cards.append(
             f'      <a href="{SITE_URL}/articles/{escape(item["slug"])}/" class="article-item" data-tags="{tags_attr}">\n'
             f'        <div>\n'
@@ -168,7 +203,8 @@ def write_articles_index(items):
             f'        <div class="article-meta"><span class="article-date">{escape(date_fr)}</span>'
             + (f'<span class="article-readtime">{escape(read_time)}</span>' if read_time else "")
             + f'</div>\n'
-            f'      </a>'
+            + thumb_html
+            + f'      </a>'
         )
     inner = "\n" + "\n".join(cards) + "\n    "
     new_html = html[:m.start()] + m.group(1) + inner + m.group(3) + html[m.end():]

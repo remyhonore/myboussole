@@ -81,8 +81,8 @@
     .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
     .articles-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 48px; }
     .article-item {
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: center; gap: 12px; padding: 16px 0;
+      display: grid; grid-template-columns: 1fr auto 80px;
+      align-items: center; gap: 12px 16px; padding: 16px 0;
       border-top: 1px solid rgba(0,0,0,.07);
       text-decoration: none; color: inherit; transition: opacity .15s;
     }
@@ -97,6 +97,11 @@
     .article-meta { text-align: right; white-space: nowrap; flex-shrink: 0; }
     .article-date { font-size: 12px; color: var(--muted); display: block; margin-bottom: 2px; }
     .article-readtime { font-size: 11px; color: #b0b8c1; }
+    .article-thumb {
+      width: 80px; height: 80px; object-fit: cover; border-radius: 8px;
+      display: block; flex-shrink: 0;
+    }
+    .article-thumb--empty { width: 80px; height: 80px; background: transparent; }
     #empty-state { display: none; text-align: center; padding: 64px 24px; color: var(--muted); font-size: 15px; }
     .email-section { max-width: 1100px; margin: 0 auto 48px; padding: 0 24px; }
     .email-card {
@@ -124,9 +129,16 @@
       .topbar-nav, .topbar-cta { display: none; }
       .hero { padding: 24px 20px 16px; flex-direction: column; gap: 16px; }
       .hero-right { max-width: 100%; }
-      .article-item { grid-template-columns: 1fr; }
-      .article-meta { text-align: left; display: flex; gap: 8px; align-items: center; }
+      .article-item { grid-template-columns: 1fr auto 60px; gap: 8px 12px; }
+      .article-thumb { width: 60px; height: 60px; }
+      .article-thumb--empty { width: 60px; height: 60px; }
+      .article-meta { text-align: right; }
       .email-card { flex-direction: column; padding: 20px; }
+    }
+    @media (max-width: 420px) {
+      .article-item { grid-template-columns: 1fr auto; }
+      .article-thumb, .article-thumb--empty { display: none; }
+      .article-meta { text-align: left; display: flex; gap: 8px; align-items: center; }
     }
   </style>
 <meta property="og:url" content="https://www.myboussole.fr/articles/" />
@@ -175,6 +187,7 @@
           <div class="article-title">Méthylation et cerveau : quand un déficit invisible dérègle tout</div>
         </div>
         <div class="article-meta"><span class="article-date">11 mars 2026</span><span class="article-readtime">12 min</span></div>
+        <span class="article-thumb article-thumb--empty" aria-hidden="true"></span>
       </a>
       <a href="https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/" class="article-item" data-tags="Fatigue chronique,Covid long,Système nerveux,Énergie">
         <div>
@@ -182,6 +195,7 @@
           <div class="article-title">Thyroïde et fatigue : quand les examens sont normaux mais que le corps dit non</div>
         </div>
         <div class="article-meta"><span class="article-date">10 mars 2026</span><span class="article-readtime">8 min</span></div>
+        <img class="article-thumb" src="https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
       <a href="https://www.myboussole.fr/articles/covid-long-que-faire/" class="article-item" data-tags="Covid long,Fatigue chronique,Pacing,Méthode">
         <div>
@@ -189,6 +203,7 @@
           <div class="article-title">Covid long : que peut-on faire, concrètement ?</div>
         </div>
         <div class="article-meta"><span class="article-date">8 mars 2026</span></div>
+        <img class="article-thumb" src="https://www.myboussole.fr/articles/covid-long-que-faire/illustration-aube-fenetre.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
       <a href="https://www.myboussole.fr/articles/reveil-deja-fatigue/" class="article-item" data-tags="Fatigue chronique,Covid long,Système nerveux,Sommeil">
         <div>
@@ -196,6 +211,7 @@
           <div class="article-title">Réveil déjà fatigué : pourquoi le matin est si difficile</div>
         </div>
         <div class="article-meta"><span class="article-date">7 mars 2026</span></div>
+        <img class="article-thumb" src="https://www.myboussole.fr/articles/reveil-deja-fatigue/desynchronisation-matinale-cortisol-sympathique.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
       <a href="https://www.myboussole.fr/articles/brouillard-mental/" class="article-item" data-tags="Fatigue chronique,Covid long">
         <div>
@@ -203,6 +219,7 @@
           <div class="article-title">Brouillard mental : ce qui se passe dans votre cerveau</div>
         </div>
         <div class="article-meta"><span class="article-date">6 mars 2026</span></div>
+        <img class="article-thumb" src="https://www.myboussole.fr/articles/brouillard-mental/cascade-eveil-neurotransmetteurs.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
       <a href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" class="article-item" data-tags="Fatigue chronique,Covid long">
         <div>
@@ -210,6 +227,7 @@
           <div class="article-title">Pacing : éviter le crash d&#x27;effort dans le Covid long et la fatigue chronique</div>
         </div>
         <div class="article-meta"><span class="article-date">4 mars 2026</span></div>
+        <img class="article-thumb" src="https://www.myboussole.fr/articles/pacing-eviter-le-crash/mecanismes-malaise-post-effort.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
     </div>
     <div id="empty-state">Aucun article ne correspond à ta recherche.</div>
