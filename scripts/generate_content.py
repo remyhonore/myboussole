@@ -19,11 +19,14 @@ TAG_TO_ANGLE = {
     "methylation": "Mécanisme biologique", "cortisol": "Mécanisme biologique",
     "thyroide": "Mécanisme biologique", "système nerveux": "Mécanisme biologique",
     "axe hpa": "Mécanisme biologique", "orexine": "Mécanisme biologique",
+    "mécanisme": "Mécanisme biologique", "biologie": "Mécanisme biologique",
     "fibromyalgie": "Vécu patient", "covid long": "Vécu patient",
     "fatigue chronique": "Vécu patient", "réveil fatigué": "Vécu patient",
     "brouillard mental": "Vécu patient", "dysautonomie": "Vécu patient",
+    "pem": "Vécu patient", "pots": "Vécu patient",
     "pacing": "Pratique / Ressource", "sommeil": "Pratique / Ressource",
     "supplémentation": "Pratique / Ressource", "guide": "Pratique / Ressource",
+    "ressource": "Pratique / Ressource",
 }
 
 def get_fallback_svg(tags_list):
