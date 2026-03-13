@@ -4,6 +4,37 @@ import re, datetime, subprocess
 from pathlib import Path
 from html import escape
 
+# ── SVG FALLBACKS miniatures listing ──────────────────────────
+FALLBACK_SVGS = {
+    "Mécanisme biologique": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#EEF2F8"/><circle cx="40" cy="40" r="7" fill="#2d6a4f"/><ellipse cx="40" cy="40" rx="26" ry="10" fill="none" stroke="#4A7AB5" stroke-width="1.8" opacity="0.7"/><ellipse cx="40" cy="40" rx="26" ry="10" fill="none" stroke="#4A7AB5" stroke-width="1.8" opacity="0.7" transform="rotate(60 40 40)"/><ellipse cx="40" cy="40" rx="26" ry="10" fill="none" stroke="#4A7AB5" stroke-width="1.8" opacity="0.7" transform="rotate(120 40 40)"/><circle cx="66" cy="40" r="3" fill="#6A9AD5"/><circle cx="27" cy="54" r="3" fill="#6A9AD5"/><circle cx="27" cy="26" r="3" fill="#6A9AD5"/></svg>',
+    "Vécu patient": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#FAF0F0"/><circle cx="40" cy="26" r="10" fill="#C08090" opacity="0.85"/><path d="M22 62 Q22 44 40 44 Q58 44 58 62" fill="#C08090" opacity="0.75"/><path d="M16 70 Q22 64 28 70 Q34 76 40 70 Q46 64 52 70 Q58 76 64 70" fill="none" stroke="#E07080" stroke-width="2" opacity="0.6"/></svg>',
+    "Pratique / Ressource": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#EEF4F0"/><circle cx="40" cy="40" r="24" fill="none" stroke="#2d6a4f" stroke-width="2" opacity="0.5"/><circle cx="40" cy="40" r="3" fill="#2d6a4f"/><polygon points="40,18 37,40 43,40" fill="#2d6a4f"/><polygon points="40,62 37,40 43,40" fill="#A0B0A8"/><text x="40" y="13" text-anchor="middle" font-size="7" fill="#2d6a4f" font-family="sans-serif" font-weight="700">N</text></svg>',
+    "Intersectionnel": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#F2EEF8"/><circle cx="32" cy="40" r="20" fill="#9080C0" opacity="0.35"/><circle cx="48" cy="40" r="20" fill="#4A7AB5" opacity="0.35"/><path d="M40 22 Q54 30 54 40 Q54 50 40 58 Q26 50 26 40 Q26 30 40 22 Z" fill="#7060A8" opacity="0.3"/></svg>',
+    "Bingo / Liste": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#F8F4EE"/><rect x="16" y="20" width="10" height="10" rx="2" fill="none" stroke="#2d6a4f" stroke-width="1.8"/><path d="M18 25 L21 28 L26 22" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-linecap="round"/><line x1="32" y1="25" x2="64" y2="25" stroke="#06172D" stroke-width="2" opacity="0.4"/><rect x="16" y="36" width="10" height="10" rx="2" fill="none" stroke="#2d6a4f" stroke-width="1.8"/><path d="M18 41 L21 44 L26 38" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-linecap="round"/><line x1="32" y1="41" x2="64" y2="41" stroke="#06172D" stroke-width="2" opacity="0.4"/><rect x="16" y="52" width="10" height="10" rx="2" fill="none" stroke="#A0A0A0" stroke-width="1.5"/><line x1="32" y1="57" x2="55" y2="57" stroke="#06172D" stroke-width="2" opacity="0.25"/></svg>',
+    "default": '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="10" fill="#FAF8F4"/><circle cx="40" cy="40" r="26" fill="none" stroke="#2d6a4f" stroke-width="2" opacity="0.4"/><circle cx="40" cy="40" r="4" fill="#2d6a4f"/><polygon points="40,16 37,40 43,40" fill="#2d6a4f"/><polygon points="40,64 37,40 43,40" fill="#B0C0B8"/><polygon points="16,40 40,37 40,43" fill="#B0C0B8"/><polygon points="64,40 40,37 40,43" fill="#2d6a4f" opacity="0.6"/></svg>',
+}
+
+TAG_TO_ANGLE = {
+    "histamine": "Mécanisme biologique", "mcas": "Mécanisme biologique",
+    "methylation": "Mécanisme biologique", "cortisol": "Mécanisme biologique",
+    "thyroide": "Mécanisme biologique", "système nerveux": "Mécanisme biologique",
+    "axe hpa": "Mécanisme biologique", "orexine": "Mécanisme biologique",
+    "fibromyalgie": "Vécu patient", "covid long": "Vécu patient",
+    "fatigue chronique": "Vécu patient", "réveil fatigué": "Vécu patient",
+    "brouillard mental": "Vécu patient", "dysautonomie": "Vécu patient",
+    "pacing": "Pratique / Ressource", "sommeil": "Pratique / Ressource",
+    "supplémentation": "Pratique / Ressource", "guide": "Pratique / Ressource",
+}
+
+def get_fallback_svg(tags_list):
+    for tag in (tags_list or []):
+        tag_lower = tag.lower().strip()
+        for key, angle in TAG_TO_ANGLE.items():
+            if key in tag_lower:
+                return FALLBACK_SVGS.get(angle, FALLBACK_SVGS["default"])
+    return FALLBACK_SVGS["default"]
+# ──────────────────────────────────────────────────────────────
+
 SITE_URL = "https://www.myboussole.fr"
 ARTICLES_DIR = Path("articles")
 EXCLUDE_DIRS = {"_template"}
@@ -190,10 +221,13 @@ def write_articles_index(items):
         date_fr = format_date_fr(item["date"])
         read_time = item.get("read_time", "")
         image = item.get("image", "")
-        if image:
+        tags = item.get("tags", [])
+        is_image = image and any(image.lower().endswith(ext) for ext in ('.jpg', '.jpeg', '.png', '.webp', '.gif'))
+        if is_image:
             thumb_html = f'        <img class="article-thumb" src="{escape(image)}" alt="" loading="lazy" aria-hidden="true" />\n'
         else:
-            thumb_html = '        <span class="article-thumb article-thumb--empty" aria-hidden="true"></span>\n'
+            svg = get_fallback_svg(tags)
+            thumb_html = f'        <div class="article-thumb article-thumb-svg" aria-hidden="true">{svg}</div>\n'
         cards.append(
             f'      <a href="{SITE_URL}/articles/{escape(item["slug"])}/" class="article-item" data-tags="{tags_attr}">\n'
             f'        <div>\n'
