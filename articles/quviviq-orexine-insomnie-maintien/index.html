@@ -6,6 +6,7 @@ date: "2026-03-13"
 readingTime: "8 min"
 tags: ["Sommeil", "Covid long", "Fatigue chronique"]
 author: "Dr Rémy Honoré"
+image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
 --- -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,12 +24,15 @@ author: "Dr Rémy Honoré"
   <meta property="og:description" content="Le réveil précoce fixe est fréquent dans le Covid long et la fatigue chronique. Comprendre le rôle des orexines et des nouvelles pistes thérapeutiques." />
   <meta property="og:url" content="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/hero.jpg" />
+  <meta property="og:image" content="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="672">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Réveil à 5h sans pouvoir se rendormir : orexine et insomnie de maintien" />
   <meta name="twitter:description" content="Le réveil précoce fixe dans le Covid long et la fatigue chronique — mécanismes et pistes." />
+  <meta name="twitter:image" content="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -136,24 +140,12 @@ author: "Dr Rémy Honoré"
     .skip-link:focus { left: 16px; top: 16px; }
 
     /* ── HEADER GLOBAL (vitrine) ── */
-    .site-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      position: sticky; top: 0; z-index: 100;
-      backdrop-filter: blur(8px);
-    }
+    .site-header { background: rgba(248,246,240,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(6,23,45,0.06); position: sticky; top: 0; z-index: 100; }
     .site-header-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px;
     }
-    .site-logo {
-      font-weight: 800; font-size: 18px;
-      color: var(--ink); text-decoration: none;
-      letter-spacing: -.02em;
-    }
-    .site-logo span { color: var(--forest); }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--forest); text-decoration: none; }
     .site-nav { display: flex; gap: 28px; }
     .site-nav a {
       font-size: 14px; font-weight: 500;
@@ -527,7 +519,7 @@ author: "Dr Rémy Honoré"
   <!-- HEADER VITRINE -->
   <header class="site-header" role="banner">
     <div class="site-header-inner">
-      <a href="https://www.myboussole.fr" class="site-logo">🧭 myboussole</a>
+      <a href="https://www.myboussole.fr" class="topbar-logo">🧭 myboussole</a>
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="https://www.myboussole.fr/articles/">Articles</a>
         <a href="https://www.myboussole.fr/#ecosysteme">Écosystème</a>
