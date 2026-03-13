@@ -115,7 +115,11 @@ author: "Dr Rémy Honoré"
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, #F8F6F0, #F3F0E8);
       color: var(--ink);
       font-size: 17px;
       line-height: 1.75;
@@ -157,12 +161,29 @@ author: "Dr Rémy Honoré"
       transition: color .2s;
     }
     .site-nav a:hover { color: var(--ink); }
+    .btn-primary {
+      background: var(--forest);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .btn-primary:hover { background: var(--forest-dark); }
 
     /* ── ARTICLE LAYOUT ── */
-    .article-wrap {
-      max-width: var(--max-w);
+    .article-wrapper {
+      max-width: 800px;
       margin: 0 auto;
       padding: 48px 24px 80px;
+    }
+    .article-card {
+      background: rgba(255,255,255,.92);
+      border-radius: 22px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.12);
+      padding: clamp(28px, 4vw, 48px);
     }
 
     /* ── BREADCRUMB ── */
@@ -485,7 +506,7 @@ author: "Dr Rémy Honoré"
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .site-nav { display: none; }
-      .article-wrap { padding: 32px 16px 64px; }
+      .article-wrapper { padding: 32px 16px 64px; }
       .cta-boussole { padding: 28px 20px; }
       .micro-cta { flex-direction: column; }
     }
@@ -509,14 +530,15 @@ author: "Dr Rémy Honoré"
       <a href="https://www.myboussole.fr" class="site-logo">my<span>BOUSSOLE</span></a>
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="https://www.myboussole.fr/articles/">Articles</a>
-        <a href="https://app.myboussole.fr">Boussole</a>
-        <a href="https://www.myboussole.fr/#contact">Contact</a>
+        <a href="https://www.myboussole.fr/#ecosysteme">Écosystème</a>
       </nav>
+      <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
     </div>
   </header>
 
   <main id="main-content">
-    <div class="article-wrap">
+    <div class="article-wrapper">
+      <div class="article-card">
 
       <!-- BREADCRUMB -->
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
@@ -770,6 +792,7 @@ author: "Dr Rémy Honoré"
         <p style="margin-top:8px;font-size:12px">Information à visée éducative, non substituable à un avis médical individualisé.</p>
       </footer>
 
+      </div>
     </div>
   </main>
 
