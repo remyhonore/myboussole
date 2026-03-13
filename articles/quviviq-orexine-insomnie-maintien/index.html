@@ -470,12 +470,11 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
 
     /* ── SOURCES ── */
     .sources-section h2 { margin-top: 0; }
-    .sources-section ol {
-      padding-left: 20px;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .sources-section li { font-size: 14px; color: var(--muted); }
+    .sources-section ol { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; counter-reset: source-counter; }
+    .sources-section li { font-size: 14px; color: var(--muted); line-height: 1.6; }
     .sources-section a { color: var(--sage); }
+    sup a { color: var(--forest); font-size: 11px; font-weight: 700; text-decoration: none; }
+    sup a:hover { text-decoration: underline; }
 
     /* ── FOOTER ARTICLE ── */
     .article-footer {
@@ -581,7 +580,7 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         <!-- 1 -->
         <h2 id="insomnie-maintien">L'insomnie de maintien : un profil distinct</h2>
         <p>Les somnifères classiques — benzodiazépines, zolpidem, zopiclone — agissent sur les récepteurs GABA : ils éteignent globalement le cerveau. L'endormissement peut être facilité, mais le sommeil profond et paradoxal sont souvent altérés. Et ces molécules ne ciblent pas spécifiquement le profil du réveil précoce.</p>
-        <p>Dans le Covid long et le syndrome de fatigue chronique (ME/SFC), une étude cas-témoin en polysomnographie — 17 personnes avec Covid long vs 34 témoins — a documenté une augmentation mesurable du temps d'éveil après endormissement (WASO). Un phénotype similaire à l'insomnie chronique standard, mais dans un contexte de dérégulation du système nerveux autonome.</p>
+        <p>Dans le Covid long et le syndrome de fatigue chronique (ME/SFC), une étude cas-témoin en polysomnographie — 17 personnes avec Covid long vs 34 témoins — a documenté une augmentation mesurable du temps d'éveil après endormissement (WASO).<sup><a href="#source-6" aria-label="Source 6">[6]</a></sup> Un phénotype similaire à l'insomnie chronique standard, mais dans un contexte de dérégulation du système nerveux autonome.</p>
         <p>Ce n'est pas « dans la tête ». Ce profil a des corrélats biologiques mesurables en laboratoire du sommeil.</p>
 
         <!-- 2 -->
@@ -594,12 +593,12 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
           <div class="callout-title">🔬 Mécanisme OX1R/OX2R — pour les curieux</div>
           <p>Les récepteurs OX1R et OX2R sont couplés à des protéines Gi/Go. Leur activation par l'orexine A et B stimule les circuits noradrénergiques (locus coeruleus), dopaminergiques (aire tegmentale ventrale), histaminergiques (noyaux tubéromammillaires) et cholinergiques — tous impliqués dans l'éveil actif.</p>
           <p style="margin-top:10px">Le daridorexant (Quviviq) bloque sélectivement ces deux récepteurs, interrompant la cascade pro-éveil sans toucher aux récepteurs GABA, histaminiques H1 ou muscariniques. C'est cette sélectivité qui explique son profil de tolérance plus favorable.</p>
-          <p style="margin-top:10px;font-size:13px;color:var(--muted)">Dose : 25 mg ou 50 mg au coucher. Demi-vie : ~8h. Métabolisme : CYP3A4 exclusif (89%).</p>
+          <p style="margin-top:10px;font-size:13px;color:var(--muted)">Dose : 25 mg ou 50 mg au coucher. Demi-vie : ~8h. Métabolisme : CYP3A4 exclusif (89%).<sup><a href="#source-5" aria-label="Source 5">[5]</a></sup></p>
         </div>
 
         <!-- 3 -->
         <h2 id="donnees">Ce que dit la science — données chiffrées</h2>
-        <p>Deux essais cliniques pivots de phase III ont évalué le daridorexant dans l'insomnie chronique, avec mesure en polysomnographie (PSG) :</p>
+        <p>Deux essais cliniques pivots de phase III ont évalué le daridorexant dans l'insomnie chronique, avec mesure en polysomnographie (PSG) <sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> :</p>
 
         <div class="table-wrap">
           <table>
@@ -636,7 +635,7 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
                 <td><span class="badge badge-solid">Solide</span></td>
               </tr>
               <tr>
-                <td>DORAs dans fibromyalgie (suvorexant)</td>
+                <td>DORAs dans fibromyalgie (suvorexant)<sup><a href="#source-7" aria-label="Source 7">[7]</a></sup></td>
                 <td colspan="2">Signal cohérent — RCT crossover, N=10 femmes</td>
                 <td><span class="badge badge-warn">Très limité</span></td>
               </tr>
@@ -649,7 +648,7 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
           </table>
         </div>
 
-        <p>Une méta-analyse réseau (Kishi et al., Transl Psychiatry 2025, 8 RCTs, n=5 198) confirme l'efficacité des DORAs sur le WASO avec un profil de tolérance favorable comparé aux autres classes de somnifères.</p>
+        <p>Une méta-analyse réseau confirme l'efficacité des DORAs<sup><a href="#source-2" aria-label="Source 2">[2]</a></sup> sur le WASO avec un profil de tolérance favorable comparé aux autres classes de somnifères.</p>
 
         <!-- MICRO-CTA -->
         <aside class="micro-cta" aria-label="Découvrir Boussole">
@@ -667,12 +666,12 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         <ul>
           <li><strong>Dysautonomie / POTS :</strong> l'orexine module l'activation sympathique et la fréquence cardiaque nocturne. Un DORA pourrait réduire l'hyperéveil sympathique de fin de nuit — mécanistique uniquement, non prouvé en clinique.</li>
           <li><strong>Profil neurodéveloppemental :</strong> une hyperactivité orexinergique est proposée dans les profils TSA-compatibles — données très limitées, à prendre avec prudence.</li>
-          <li><strong>Covid long :</strong> insomnie de maintien documentée en PSG post-COVID avec phénotype similaire à l'insomnie chronique.</li>
+          <li><strong>Covid long :</strong> insomnie de maintien documentée en PSG post-COVID avec phénotype similaire à l'insomnie chronique.<sup><a href="#source-6" aria-label="Source 6">[6]</a></sup></li>
         </ul>
 
         <div class="callout callout-warning" role="note" aria-label="Point de vigilance">
           <div class="callout-title">⚠️ Le paradoxe biologique — point d'honnêteté scientifique</div>
-          <p>Les données biologiques disponibles (modèles animaux SARS-CoV-2, cas de narcolepsie post-COVID) suggèrent une <strong>déplétion ou lésion du système orexinergique</strong> post-infectieux — pas un excès.</p>
+          <p>Les données biologiques disponibles (modèles animaux SARS-CoV-2<sup><a href="#source-3" aria-label="Source 3">[3]</a></sup>, cas de narcolepsie post-COVID) suggèrent une <strong>déplétion ou lésion du système orexinergique</strong> post-infectieux — pas un excès.<sup><a href="#source-4" aria-label="Source 4">[4]</a></sup></p>
           <p style="margin-top:10px">L'hypothèse clinique d'hyperéveil orexinergique et la biologie disponible pointent dans des <strong>directions opposées</strong>. Sans mesure d'orexine en LCR ou plasma dans ce profil précis, le mécanisme cible ne peut pas être validé.</p>
           <p style="margin-top:10px">Hypothèses concurrentes non écartées : pic cortisol/CRH prématuré de fin de nuit, hypersensibilité sensorielle, désynchronisation circadienne.</p>
           <p style="margin-top:10px"><strong>Conclusion :</strong> piste sérieuse, mais pas encore de certitude. Les essais spécifiques au Covid long / ME/SFC sont à ce jour inexistants.</p>
@@ -766,14 +765,14 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         <!-- SOURCES -->
         <section class="sources-section" aria-labelledby="sources-title">
           <h2 id="sources-title">Sources</h2>
-          <ol>
-            <li>Mignot E et al. — Daridorexant phase III RCTs. <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Lancet Neurol, 2022 — PubMed</a></li>
-            <li>Kishi T et al. — NMA DORAs insomnie chronique (8 RCTs, n=5 198). <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Transl Psychiatry, 2025 — PubMed</a></li>
-            <li>Yoon et al. — SARS-CoV-2 et suppression orexine hypothalamique. bioRxiv, janvier 2026 (preprint — non encore peer-reviewed)</li>
-            <li>Ruhrländer et al. — Système orexinergique et PASC. <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Biomedicines, 2025 — PubMed</a></li>
-            <li>EMA — Résumé des Caractéristiques du Produit Quviviq (daridorexant). European Medicines Agency.</li>
-            <li>Étude PSG Covid long cas-témoin (n=17 vs 34) — référence exacte à confirmer avant publication.</li>
-            <li>RCT crossover suvorexant + fibromyalgie (N=10 femmes) — référence exacte à confirmer avant publication.</li>
+          <ol class="sources-list">
+            <li id="source-1">Mignot E et al. — Daridorexant phase III RCTs. <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Lancet Neurol, 2022 — PubMed</a></li>
+            <li id="source-2">Kishi T et al. — NMA DORAs insomnie chronique (8 RCTs, n=5 198). <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Transl Psychiatry, 2025 — PubMed</a></li>
+            <li id="source-3">Yoon et al. — SARS-CoV-2 et suppression orexine hypothalamique. bioRxiv, janvier 2026 (preprint — non encore peer-reviewed)</li>
+            <li id="source-4">Ruhrländer et al. — Système orexinergique et PASC. <a href="https://pubmed.ncbi.nlm.nih.gov/" rel="noopener">Biomedicines, 2025 — PubMed</a></li>
+            <li id="source-5">EMA — Résumé des Caractéristiques du Produit Quviviq (daridorexant). European Medicines Agency.</li>
+            <li id="source-6">Debellemanière G et al. — Polysomnographic parameters in long-COVID chronic insomnia patients. <a href="https://pubmed.ncbi.nlm.nih.gov/37390849/" target="_blank" rel="noopener">World J Biol Psychiatry, 2023 — PubMed</a></li>
+            <li id="source-7">RCT crossover suvorexant + fibromyalgie (N=10 femmes) — référence exacte à confirmer avant publication.</li>
           </ol>
         </section>
 
