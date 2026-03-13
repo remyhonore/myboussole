@@ -73,6 +73,8 @@ def extract_hero_image(html: str, slug: str, fm: dict) -> str:
     if fm_image:
         if fm_image.startswith("http"):
             return fm_image
+        if fm_image.startswith("/articles/"):
+            return f"{SITE_URL}{fm_image}"
         return f"{SITE_URL}/articles/{slug}/{fm_image}"
     # 2. og:image meta tag (both attribute orders)
     for pat in [
