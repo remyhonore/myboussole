@@ -1,0 +1,801 @@
+<!-- ---
+title: "Persistance antigénique SARS-CoV-2 : pourquoi votre corps garde une trace du virus après la guérison"
+description: "PCR négatif ne veut pas dire absence de virus. Des fragments viraux peuvent persister dans vos tissus des mois après l'infection et alimenter le Covid long."
+slug: "persistance-antigenique-sars-cov2-covid-long-pcr-negatif"
+date: "2026-03-15"
+readingTime: "9 min"
+tags: ["Covid long", "Immunologie", "Persistance virale", "Fatigue chronique"]
+author: "Dr Rémy Honoré"
+image: "/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/hero.jpg"
+--- -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persistance antigénique SARS-CoV-2 et Covid long — PCR négatif ≠ guéri</title>
+  <meta name="description" content="PCR négatif ne veut pas dire absence de virus. Des fragments viraux peuvent persister dans vos tissus des mois après l'infection et alimenter le Covid long.">
+  <link rel="canonical" href="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Persistance antigénique SARS-CoV-2 et Covid long — PCR négatif ≠ guéri">
+  <meta property="og:description" content="PCR négatif ne veut pas dire absence de virus. Des fragments viraux peuvent persister dans vos tissus des mois après l'infection et alimenter le Covid long.">
+  <meta property="og:url" content="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Persistance antigénique SARS-CoV-2 : pourquoi votre corps garde une trace du virus après la guérison",
+        "datePublished": "2026-03-15",
+        "dateModified": "2026-03-15",
+        "author": {
+          "@type": "Person",
+          "name": "Dr Rémy Honoré",
+          "jobTitle": "Docteur en pharmacie, nutrithérapeute"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "myBoussole",
+          "url": "https://www.myboussole.fr"
+        },
+        "image": "https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/hero.jpg",
+        "description": "PCR négatif ne veut pas dire absence de virus. Des fragments viraux peuvent persister dans vos tissus des mois après l'infection et alimenter le Covid long."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.myboussole.fr" },
+          { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://www.myboussole.fr/articles/" },
+          { "@type": "ListItem", "position": 3, "name": "Persistance antigénique SARS-CoV-2", "item": "https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Peut-on avoir du Covid long avec une PCR négative ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. La PCR nasopharyngée ne détecte que le virus actif dans les voies respiratoires supérieures. Des fragments viraux — ARN ou protéines — peuvent persister dans d'autres tissus (intestin, ganglions, cerveau) bien après la négativation de la PCR."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels organes peuvent garder des traces du SARS-CoV-2 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Des études ont détecté des antigènes viraux dans l'intestin, les ganglions lymphatiques, la rate, le cerveau, le cœur, les poumons, le foie, les reins et la peau, parfois jusqu'à 14 mois après l'infection initiale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment la persistance antigénique provoque-t-elle des symptômes ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les fragments viraux continuent à stimuler le système immunitaire, entretenant une inflammation de bas grade. Cela peut épuiser les lymphocytes T (exhaustion), activer les mastocytes, perturber la barrière intestinale et entretenir une neuroinflammation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Typographie -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --forest: #2D5016;
+      --forest-dark: #1e3a0f;
+      --ink: #06172D;
+      --sand: #F8F6F0;
+      --muted: #6B7280;
+      --border: rgba(6,23,45,0.08);
+      --accent: #C9B9D9;
+      --accent2: #E8B7C8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--ink);
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, #F8F6F0, #F3F0E8);
+      min-height: 100vh;
+    }
+
+    /* === SKIP LINK === */
+    .skip-link {
+      position: absolute; top: -999px; left: -999px;
+      background: var(--forest); color: #fff;
+      padding: 8px 16px; border-radius: 4px;
+      font-weight: 600; z-index: 9999; text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; left: 8px; }
+
+    /* === HEADER === */
+    .site-header {
+      background: rgba(248,246,240,0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(6,23,45,0.06);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+    }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--forest); text-decoration: none; }
+    .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
+    .topbar-nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
+    .topbar-nav a:hover { opacity: 1; }
+    .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
+    .btn-primary { background: var(--forest); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--forest-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    @media (max-width: 640px) {
+      .topbar-nav, .topbar-cta { display: none; }
+      .mobile-menu-btn { display: flex; grid-column: 3; justify-self: end; }
+    }
+    .mobile-nav { display: none; flex-direction: column; background: rgba(248,246,240,0.98); border-bottom: 1px solid rgba(6,23,45,0.08); padding: 12px 24px 16px; gap: 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 6px 0; }
+
+    /* === LAYOUT === */
+    .article-wrapper { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-card {
+      background: rgba(255,255,255,.92);
+      border-radius: 22px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.12);
+      padding: clamp(28px, 4vw, 48px);
+    }
+
+    /* === HERO IMAGE === */
+    .hero-img {
+      width: 100%; aspect-ratio: 1.91/1;
+      object-fit: cover; border-radius: 14px;
+      margin: 28px 0 32px;
+      display: block;
+    }
+
+    /* === TYPOGRAPHIE ARTICLE === */
+    h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--ink); }
+    .lead { font-size: 18px; line-height: 1.7; color: #374151; margin-bottom: 32px; font-weight: 400; }
+    h2 { font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; margin: 40px 0 16px; color: var(--ink); padding-top: 8px; }
+    h3 { font-size: 18px; font-weight: 600; margin: 28px 0 12px; color: var(--ink); }
+    p { margin-bottom: 16px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--forest); }
+    a:hover { text-decoration: underline; }
+    sup a { color: var(--forest); font-size: 12px; font-weight: 600; text-decoration: none; }
+    sup a:hover { text-decoration: underline; }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+
+    /* === GLOSSAIRE === */
+    .glossaire-bilingue {
+      background: rgba(201,185,217,.15);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0 32px;
+    }
+    .glossaire-bilingue h3 { margin: 0 0 10px; font-size: 15px; font-weight: 700; }
+    .glossaire-bilingue ul { margin: 0; padding-left: 20px; }
+    .glossaire-bilingue li { font-size: 14px; color: #374151; margin-bottom: 4px; }
+
+    /* === SOMMAIRE === */
+    .sommaire {
+      background: rgba(45,80,22,.06);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin: 0 0 36px;
+    }
+    .sommaire h3 { font-size: 15px; font-weight: 700; margin: 0 0 12px; color: var(--forest); }
+    .sommaire ol { margin: 0; padding-left: 20px; }
+    .sommaire li { font-size: 14px; margin-bottom: 6px; }
+    .sommaire a { color: var(--forest); font-weight: 500; text-decoration: none; }
+    .sommaire a:hover { text-decoration: underline; }
+
+    /* === ENCADRÉS === */
+    .encadre-pharmd {
+      background: rgba(232,183,200,.15);
+      border: 1px solid rgba(232,183,200,.6);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .encadre-pharmd .encadre-titre {
+      font-size: 14px; font-weight: 700;
+      color: #7c3d52; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .encadre-pharmd p { margin-bottom: 8px; font-size: 15px; }
+    .encadre-pharmd p:last-child { margin-bottom: 0; }
+
+    .encadre-key {
+      background: rgba(45,80,22,.06);
+      border-left: 4px solid var(--forest);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .encadre-key strong { display: block; margin-bottom: 6px; color: var(--forest); }
+
+    .encadre-warning {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .encadre-warning strong { display: block; margin-bottom: 6px; color: #92400e; }
+
+    /* === ILLUSTRATION SVG === */
+    .illustration-container {
+      margin: 32px 0;
+      text-align: center;
+    }
+    .illustration-container svg { max-width: 100%; height: auto; }
+    .illustration-caption {
+      font-size: 13px; color: var(--muted);
+      margin-top: 10px; font-style: italic;
+      text-align: center;
+    }
+
+    /* === FAQ === */
+    .faq-section { margin: 40px 0 0; }
+    .faq-section h2 { margin-bottom: 20px; }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(248,246,240,.6);
+      transition: background .15s;
+    }
+    summary:hover { background: rgba(248,246,240,1); }
+    summary::after { content: '+'; font-size: 20px; color: var(--forest); font-weight: 300; flex-shrink: 0; }
+    details[open] summary::after { content: '−'; }
+    details > div { padding: 16px 20px; font-size: 15px; border-top: 1px solid var(--border); }
+
+    /* === CTA === */
+    .cta-inline {
+      background: rgba(45,80,22,.06);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cta-inline .cta-emoji { font-size: 28px; flex-shrink: 0; }
+    .cta-inline p { margin: 0; font-size: 15px; line-height: 1.6; }
+    .cta-inline a { color: var(--forest); font-weight: 600; }
+
+    .cta-principal {
+      background: linear-gradient(135deg, #2D5016, #3d6b1e);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 40px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-principal h3 { color: #fff; margin: 0 0 12px; font-size: 20px; }
+    .cta-principal p { color: rgba(255,255,255,.85); margin-bottom: 20px; font-size: 15px; }
+    .cta-principal a.btn-cta {
+      display: inline-block;
+      background: #fff;
+      color: var(--forest);
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .cta-principal a.btn-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+
+    /* === PARTAGE === */
+    .share-section { margin: 32px 0; text-align: center; }
+    .share-section p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .share-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: opacity .15s;
+    }
+    .share-btn:hover { opacity: .8; }
+    .share-btn.fb { background: #1877F2; color: #fff; }
+    .share-btn.tw { background: #000; color: #fff; }
+    .share-btn.copy { background: var(--forest); color: #fff; cursor: pointer; border: none; font-family: inherit; }
+
+    /* === SOURCES === */
+    .sources-section { margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--border); }
+    .sources-section h2 { font-size: 18px; margin-bottom: 16px; }
+    .sources-list { padding-left: 20px; }
+    .sources-list li { font-size: 13px; margin-bottom: 10px; color: #374151; line-height: 1.6; }
+    .sources-list a { color: var(--forest); }
+
+    /* === FOOTER ARTICLE === */
+    .article-footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .article-footer a { color: var(--muted); }
+
+    /* === NIVEAU DE PREUVE BADGE === */
+    .badge-preuve {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      background: rgba(45,80,22,.1); color: var(--forest);
+      margin-left: 6px; vertical-align: middle;
+    }
+
+    @media (max-width: 640px) {
+      .cta-inline { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<header class="site-header">
+  <nav class="topbar">
+    <a href="https://www.myboussole.fr" class="topbar-logo">🧭 myboussole</a>
+    <div class="topbar-nav">
+      <a href="https://www.myboussole.fr/articles/">Articles</a>
+      <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
+    </div>
+    <div class="topbar-cta">
+      <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <nav class="mobile-nav">
+    <a href="https://www.myboussole.fr/articles/">Articles</a>
+    <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
+    <a href="https://app.myboussole.fr">Essayer Boussole</a>
+  </nav>
+</header>
+
+<main id="main-content" class="article-wrapper">
+  <div class="article-card">
+
+    <h1>PCR négatif ≠ guéri : ce que la persistance antigénique explique dans le Covid long</h1>
+
+    <p class="lead">
+      Votre test PCR est négatif depuis des mois. Et pourtant : fatigue écrasante, brouillard mental, douleurs musculaires. Est-ce que vous inventez ? Non. Des données scientifiques solides montrent que le SARS-CoV-2 peut laisser des fragments dans vos tissus bien après la négativation des tests — et que ces fragments continuent à déclencher une réponse immunitaire.
+    </p>
+
+    <!-- GLOSSAIRE BILINGUE -->
+    <div class="glossaire-bilingue">
+      <h3>📖 Termes de référence</h3>
+      <ul>
+        <li>Covid long (CL) = Post-acute sequelae of SARS-CoV-2 infection (PASC)</li>
+        <li>Persistance antigénique = Antigen persistence (AP)</li>
+        <li>Réservoir viral = Viral reservoir (VR)</li>
+        <li>Protéine spike = Spike glycoprotein (S-protein)</li>
+        <li>Protéine de nucléocapside = Nucleocapsid protein (NP)</li>
+        <li>Épuisement lymphocytaire = T cell exhaustion</li>
+        <li>ARN viral = viral RNA (vRNA)</li>
+      </ul>
+    </div>
+
+    <!-- SOMMAIRE -->
+    <nav class="sommaire" aria-label="Sommaire de l'article">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#definition">Ce que veut dire « persistance antigénique »</a></li>
+        <li><a href="#où">Où se cachent ces fragments viraux ?</a></li>
+        <li><a href="#mecanismes">Comment ils entretiennent les symptômes</a></li>
+        <li><a href="#illustration">Le cercle vicieux immunitaire (schéma)</a></li>
+        <li><a href="#biomarqueurs">Peut-on le détecter ?</a></li>
+        <li><a href="#pistes">Pistes nutritionnelles explorées en recherche</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- IMAGE HERO (placeholder) -->
+    <img
+      src="/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/hero.jpg"
+      alt="Illustration conceptuelle : fragments viraux persistant dans des cellules tissulaires après infection"
+      class="hero-img"
+      loading="eager"
+      fetchpriority="high"
+      width="1200"
+      height="628"
+      onerror="this.style.display='none'"
+    >
+
+    <!-- ===== SECTION 1 ===== -->
+    <h2 id="definition">Ce que veut dire « persistance antigénique »</h2>
+
+    <p>
+      Une infection virale suit normalement un schéma simple : le virus entre, se réplique, le système immunitaire l'élimine, les tests deviennent négatifs. Terminé. Mais avec le SARS-CoV-2, ce schéma est parfois incomplet.
+    </p>
+
+    <p>
+      La <strong>persistance antigénique</strong> désigne la présence durable de fragments du virus — protéines ou ARN viral — dans des tissus de l'organisme, alors même que les tests de détection virale standard (PCR nasopharyngée, antigénique) sont négatifs. Ce n'est pas une réplication virale active au sens classique : c'est une <em>empreinte biologique résiduelle</em> qui continue à interagir avec le système immunitaire.
+    </p>
+
+    <div class="encadre-key">
+      <strong>💡 Distinction importante</strong>
+      <p>PCR négative = pas de virus actif détectable dans les voies respiratoires supérieures. Cela ne dit rien sur la présence de fragments viraux dans l'intestin, les ganglions, le cerveau ou d'autres tissus profonds.</p>
+    </div>
+
+    <p>
+      Cette distinction est fondamentale. Elle explique un paradoxe clinique vécu par des millions de personnes dans le monde : des symptômes sévères et persistants, en l'absence de toute positivité virologique. Selon une revue publiée dans <em>Nature Medicine</em> en 2024 co-signée par Akiko Iwasaki (Yale), le Covid long touche environ 400 millions de personnes dans le monde et représente un impact économique estimé à 1 000 milliards de dollars annuels.<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup>
+    </p>
+
+    <!-- ===== SECTION 2 ===== -->
+    <h2 id="où">Où se cachent ces fragments viraux ?</h2>
+
+    <p>
+      Ce n'est plus une hypothèse. Plusieurs équipes de recherche ont documenté la présence de matériel viral dans des tissus obtenus par biopsie, autopsie ou analyse de selles, chez des personnes présentant un Covid long.
+    </p>
+
+    <h3>Les réservoirs documentés</h3>
+
+    <p>
+      Une revue exhaustive publiée dans <em>Viruses</em> (2025) par l'équipe de l'Université de Californie Irvine identifie plusieurs organes comme réservoirs potentiels : intestin grêle et côlon, ganglions lymphatiques mésentériques, rate, système nerveux central, cœur, poumons, foie, reins et peau.<sup><a href="#source-2" aria-label="Source 2">[2]</a></sup>
+    </p>
+
+    <p>
+      Sur le plan méthodologique, ces fragments ont été mis en évidence par :
+    </p>
+    <ul>
+      <li><strong>Immunohistochimie multiplex</strong> : détection directe de protéines virales (nucléocapside, spike) dans les cellules tissulaires</li>
+      <li><strong>RNAscope</strong> : détection de l'ARN viral in situ dans les coupes tissulaires</li>
+      <li><strong>Réponses immunitaires spécifiques</strong> : présence de lymphocytes T et B encore activés contre le virus, signature indirecte d'une stimulation antigénique continue</li>
+    </ul>
+
+    <p>
+      Une étude de cas publiée dans <em>Frontiers in Immunology</em> (2022) a détecté la protéine de nucléocapside dans l'appendice, la peau et le tissu mammaire de deux personnes, respectivement 163 et 426 jours après le début des symptômes — avec une PCR négative.<sup><a href="#source-3" aria-label="Source 3">[3]</a></sup> La protéine virale co-localisait avec le marqueur macrophagique CD68, suggérant que les macrophages pourraient servir de vecteurs de persistance et de dissémination tissulaire.
+    </p>
+
+    <div class="encadre-warning">
+      <strong>⚠️ Niveau de preuve à contextualiser</strong>
+      <p>La majorité des données sur les réservoirs tissulaires provient d'études observationnelles, de séries de cas et de biopsies sur des populations limitées. Ces données sont convergentes mais ne permettent pas encore d'établir une relation causale directe entre la persistance antigénique et chaque symptôme du Covid long. Des études longitudinales de grande ampleur sont en cours.</p>
+    </div>
+
+    <!-- ===== SECTION 3 ===== -->
+    <h2 id="mecanismes">Comment ces fragments entretiennent les symptômes</h2>
+
+    <p>
+      La simple présence de fragments viraux ne suffit pas à expliquer les symptômes — encore faut-il comprendre par quels mécanismes ils perturbent la physiologie normale. Plusieurs voies ont été identifiées.
+    </p>
+
+    <h3>1. L'épuisement lymphocytaire (T cell exhaustion)</h3>
+
+    <p>
+      Quand le système immunitaire est exposé en continu à des antigènes viraux, les lymphocytes T CD4 et CD8 sont soumis à une stimulation chronique. Ils entrent progressivement dans un état dysfonctionnel appelé <em>épuisement</em> : ils perdent leur capacité à proliférer et à éliminer les cellules infectées. Ce phénomène, documenté dans les infections chroniques (VHC, VIH), est désormais suspecté dans le Covid long. La revue de BenMohamed et al. (2025) explore d'ailleurs des stratégies d'immunothérapie cellulaire ciblant spécifiquement ces lymphocytes T épuisés.<sup><a href="#source-2" aria-label="Source 2">[2]</a></sup>
+    </p>
+
+    <h3>2. L'inflammation chronique de bas grade</h3>
+
+    <p>
+      Les fragments viraux — notamment la protéine spike — peuvent activer les récepteurs de danger (PRR) des cellules immunitaires résidentes, entretenant une production continue de cytokines pro-inflammatoires (IL-6, TNF-α, IFN-β). Cette inflammation de bas grade, sub-clinique au sens classique, suffit à induire fatigue, douleurs et brouillard mental.
+    </p>
+
+    <h3>3. La dysfonction endothéliale et les microthrombus</h3>
+
+    <p>
+      La protéine spike interagit avec le récepteur ACE2 exprimé sur les cellules endothéliales vasculaires. Des données suggèrent que sa persistance peut maintenir un état d'activation endothéliale, favorisant la formation de microthrombus, une réduction de la biodisponibilité de l'oxyde nitrique (NO) et une hypoxie tissulaire de bas grade.<sup><a href="#source-4" aria-label="Source 4">[4]</a></sup>
+    </p>
+
+    <h3>4. L'activation des mastocytes</h3>
+
+    <p>
+      Des données convergentes — bien que encore préliminaires — suggèrent que les fragments viraux persistants peuvent activer directement ou indirectement les mastocytes tissulaires, contribuant à l'instabilité mastocytaire observée dans un sous-groupe de personnes avec Covid long (chevauchement SAMA/Covid long).
+    </p>
+
+    <h3>5. L'impact sur l'axe intestin-cerveau</h3>
+
+    <p>
+      L'intestin est le réservoir le plus documenté. La présence d'ARN viral et de protéines virales dans la muqueuse intestinale peut altérer le microbiome, augmenter la perméabilité de la barrière intestinale et stimuler en continu le système immunitaire entérique — avec des répercussions potentielles sur le système nerveux entérique et la signalisation vagale vers le cerveau.
+    </p>
+
+    <!-- ===== ILLUSTRATION SVG ===== -->
+    <h2 id="illustration">Le cercle vicieux immunitaire</h2>
+
+    <div class="illustration-container">
+      <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma du cercle vicieux entre persistance antigénique et symptômes du Covid long">
+
+        <!-- Background -->
+        <rect width="700" height="420" fill="#fafaf8" rx="16"/>
+
+        <!-- Titre -->
+        <text x="350" y="34" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#06172D">Persistance antigénique → Cercle vicieux inflammatoire</text>
+
+        <!-- Nodes -->
+        <!-- 1. Réservoir viral -->
+        <g transform="translate(350, 95)">
+          <ellipse cx="0" cy="0" rx="95" ry="40" fill="#EDE0F5" stroke="#9B72CF" stroke-width="2"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#5B2D8E">Réservoir viral</text>
+          <text x="0" y="10" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5B2D8E">fragments spike/NP</text>
+        </g>
+
+        <!-- 2. Stimulation immunitaire -->
+        <g transform="translate(580, 220)">
+          <ellipse cx="0" cy="0" rx="90" ry="38" fill="#FDE8EE" stroke="#D9547A" stroke-width="2"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#8B1A3A">Stimulation immune</text>
+          <text x="0" y="8" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8B1A3A">continue (PRR)</text>
+        </g>
+
+        <!-- 3. Inflammation bas grade -->
+        <g transform="translate(480, 355)">
+          <ellipse cx="0" cy="0" rx="95" ry="38" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#92400E">Inflammation</text>
+          <text x="0" y="8" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400E">IL-6, TNF-α, IFN-β</text>
+        </g>
+
+        <!-- 4. Épuisement LT -->
+        <g transform="translate(220, 355)">
+          <ellipse cx="0" cy="0" rx="95" ry="38" fill="#D1FAE5" stroke="#059669" stroke-width="2"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#065F46">Épuisement LT</text>
+          <text x="0" y="8" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#065F46">CD4/CD8 dysfonctionnels</text>
+        </g>
+
+        <!-- 5. Symptômes -->
+        <g transform="translate(120, 220)">
+          <ellipse cx="0" cy="0" rx="85" ry="38" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#1E3A8A">Symptômes</text>
+          <text x="0" y="8" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1E3A8A">fatigue, brouillard, douleurs</text>
+        </g>
+
+        <!-- Flèches circulaires -->
+        <!-- 1→2 -->
+        <path d="M 440 115 Q 540 130 570 185" fill="none" stroke="#9B72CF" stroke-width="2" marker-end="url(#arrow-purple)"/>
+        <!-- 2→3 -->
+        <path d="M 570 255 Q 570 310 570 320" fill="none" stroke="#D9547A" stroke-width="2" marker-end="url(#arrow-pink)"/>
+        <!-- 3→4 -->
+        <path d="M 385 360 Q 320 370 315 360" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrow-amber)"/>
+        <!-- 4→5 -->
+        <path d="M 130 320 Q 100 290 130 258" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrow-green)"/>
+        <!-- 5→1 (boucle retour) -->
+        <path d="M 170 200 Q 200 130 258 108" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+        <!-- Labels flèches -->
+        <text x="540" y="148" font-family="sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">active</text>
+        <text x="600" y="300" font-family="sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">génère</text>
+        <text x="352" y="384" font-family="sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">induit</text>
+        <text x="88" y="295" font-family="sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">provoque</text>
+        <text x="185" y="145" font-family="sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">entretient</text>
+
+        <!-- Defs flèches -->
+        <defs>
+          <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#9B72CF"/>
+          </marker>
+          <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#D9547A"/>
+          </marker>
+          <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
+          </marker>
+          <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#059669"/>
+          </marker>
+          <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#2563EB"/>
+          </marker>
+        </defs>
+      </svg>
+      <p class="illustration-caption">Schéma simplifié du cercle vicieux immunologique dans le Covid long — mécanismes hypothétiques convergents selon les données disponibles (2022-2025)</p>
+    </div>
+
+    <!-- ===== SECTION 4 ===== -->
+    <h2 id="biomarqueurs">Peut-on détecter la persistance antigénique ?</h2>
+
+    <p>
+      C'est là que la question devient cliniquement délicate. Il n'existe pas, à ce jour, de test standardisé, remboursé et recommandé en routine pour détecter la persistance antigénique. Les approches documentées dans la littérature restent du domaine de la recherche.
+    </p>
+
+    <h3>Marqueurs indirects (accessibles en pratique)</h3>
+
+    <p>
+      Des données suggèrent que la persistance antigénique laisse des traces immunologiques mesurables :
+    </p>
+    <ul>
+      <li><strong>Réponses T spécifiques élevées tardives</strong> : des lymphocytes T encore fortement activés contre les protéines virales (spike, nucléocapside, membrane) des mois ou années après l'infection constituent un signal indirect de stimulation antigénique continue.<sup><a href="#source-5" aria-label="Source 5">[5]</a></sup></li>
+      <li><strong>IgG anti-spike persistantes à taux élevé</strong> : chez les personnes avec Covid long, des taux d'anticorps IgG anti-spike plus élevés que chez les personnes convalescentes sans symptômes ont été observés à 3 mois post-infection — notamment chez les femmes.<sup><a href="#source-6" aria-label="Source 6">[6]</a></sup></li>
+      <li><strong>Anticorps anti-TPO élevés</strong> : une étude transversale (Matula et al., 2024) a identifié une association statistiquement significative entre des taux élevés d'anti-TPO et la présence de Covid long, possiblement en lien avec une activation immunitaire chronique.<sup><a href="#source-5" aria-label="Source 5">[5]</a></sup></li>
+    </ul>
+
+    <div class="encadre-pharmd">
+      <div class="encadre-titre">🔬 L'œil du Docteur en pharmacie</div>
+      <p><strong>Ces biomarqueurs ne sont pas diagnostiques.</strong> Ils reflètent une activation immunitaire qui peut avoir d'autres causes (autoimmunité préexistante, réactivation herpétique, etc.). Leur interprétation nécessite un contexte clinique complet. Les résultats des études citées proviennent de cohortes de taille limitée (16 à 51 participants pour les principales) et ne permettent pas de généraliser à l'ensemble des personnes avec Covid long.</p>
+      <p>La recherche de marqueurs biologiques du Covid long est un domaine en évolution rapide. En parler à votre professionnel de santé avant toute interprétation d'un résultat d'analyse.</p>
+    </div>
+
+    <h3>Le problème de la biopsie</h3>
+
+    <p>
+      La mise en évidence directe des réservoirs viraux nécessite des biopsies tissulaires — une démarche invasive, non standardisée et actuellement réservée à la recherche. Le tractus gastro-intestinal (accessible par coloscopie ou biopsie duodénale lors d'une gastroscopie) est le territoire le plus exploré, mais les protocoles ne sont pas encore intégrés dans les recommandations cliniques.
+    </p>
+
+    <!-- CTA INLINE -->
+    <div class="cta-inline">
+      <span class="cta-emoji">🧭</span>
+      <p>Vous suivez un Covid long et voulez structurer l'observation de vos symptômes dans le temps ? <a href="https://app.myboussole.fr">Boussole</a> vous permet de suivre 4 indicateurs clés (énergie, sommeil, confort physique, clarté mentale) sur 30 jours, pour mieux communiquer avec votre équipe soignante.</p>
+    </div>
+
+    <!-- ===== SECTION 5 ===== -->
+    <h2 id="pistes">Pistes nutritionnelles explorées en recherche</h2>
+
+    <p>
+      Aucune intervention nutritionnelle n'a démontré à ce jour d'efficacité spécifique sur la persistance antigénique — soyons clairs sur ce point. Ce qui suit décrit des mécanismes biologiques explorés en recherche, sans constituer une recommandation de supplémentation.
+    </p>
+
+    <p>
+      L'axe de recherche principal concerne le soutien de l'immunité antivirale et la réduction de l'inflammation chronique de bas grade :
+    </p>
+
+    <ul>
+      <li>
+        <strong>Quercétine</strong> : flavonoïde dont des données in vitro suggèrent un effet inhibiteur sur l'entrée et la réplication de plusieurs virus. Son mécanisme d'action inclut une inhibition de la protéase 3CL-pro du SARS-CoV-2 en modèle expérimental. <span class="badge-preuve">Niveau in vitro</span>
+      </li>
+      <li>
+        <strong>N-acétylcystéine (NAC)</strong> : précurseur du glutathion, dont un rôle dans la réduction du stress oxydatif associé à l'inflammation virale chronique est documenté. Exploré dans plusieurs essais sur le Covid aigu, résultats mitigés. <span class="badge-preuve">Essais préliminaires</span>
+      </li>
+      <li>
+        <strong>Oméga-3 (EPA/DHA)</strong> : leurs métabolites (résolvines, protectines) modulent la résolution de l'inflammation. Des données observationnelles associent un apport élevé en oméga-3 à une réduction du risque de Covid long sévère, sans établir de causalité. <span class="badge-preuve">Observationnel</span>
+      </li>
+      <li>
+        <strong>Soutien de l'axe intestinal</strong> : compte tenu de la place centrale du tractus gastro-intestinal comme réservoir viral, des approches visant à renforcer la barrière intestinale (glutamine, zinc, probiotiques spécifiques) sont explorées, sans protocole validé à ce jour. <span class="badge-preuve">Hypothèse mécaniste</span>
+      </li>
+    </ul>
+
+    <div class="encadre-warning">
+      <strong>⚠️ Ce que la science ne sait pas encore</strong>
+      <p>Aucun complément alimentaire ni approche nutritionnelle n'a démontré d'efficacité sur l'élimination des réservoirs viraux dans le Covid long. Les essais cliniques en cours (notamment sur les antiviraux comme le Paxlovid) cherchent à réduire la charge antigénique résiduelle, avec des résultats préliminaires attendus en 2025-2026.</p>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" aria-label="Questions fréquentes">
+      <h2 id="faq">Questions fréquentes</h2>
+
+      <details>
+        <summary>Peut-on avoir du Covid long avec une PCR négative depuis longtemps ?</summary>
+        <div>
+          <p>Oui. La PCR nasopharyngée détecte uniquement le virus actif dans les voies respiratoires supérieures. Elle ne dit rien sur la présence de fragments viraux dans les tissus profonds. Des données montrent que des personnes peuvent présenter des antigènes viraux détectables par biopsie tissulaire des mois à plus d'un an après la négativation de leur PCR.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quels organes peuvent garder des traces du SARS-CoV-2 ?</summary>
+        <div>
+          <p>Les réservoirs les mieux documentés sont le tractus gastro-intestinal (intestin grêle, côlon), les ganglions lymphatiques mésentériques, et le système nerveux central. Des fragments viraux ont également été retrouvés dans la rate, le cœur, les poumons, le foie, les reins et la peau dans des études de biopsie et d'autopsie.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>La vaccination peut-elle aider à réduire la persistance antigénique ?</summary>
+        <div>
+          <p>C'est une question de recherche active. Une étude préliminaire du groupe d'Akiko Iwasaki (Yale, 2024) sur 16 personnes avec Covid long a montré qu'après vaccination, 10 sur 16 rapportaient une amélioration de leur état de santé à 12 semaines, accompagnée d'une augmentation des anticorps IgG anti-spike et des lymphocytes T spécifiques. Cependant, cette étude est un preprint avec une cohorte très limitée, et les mécanismes ne sont pas établis. La vaccination n'est pas une approche thérapeutique validée pour le Covid long à ce jour.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Y a-t-il des essais cliniques en cours sur ce sujet ?</summary>
+        <div>
+          <p>Oui. Plusieurs essais évaluent l'impact d'antiviraux (nirmatrelvir/ritonavir — Paxlovid) sur la réduction de la charge virale résiduelle dans le Covid long. D'autres explorent des approches immunomodulatrices. Des résultats intermédiaires sont attendus pour 2025-2026. Pour les essais actifs, la base ClinicalTrials.gov (NIH) est la référence.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Que faire si je me reconnais dans ce tableau clinique ?</summary>
+        <div>
+          <p>En parler à votre médecin ou professionnel de santé en lui apportant des données objectives sur vos symptômes (évolution dans le temps, facteurs aggravants, fenêtres d'amélioration). Des consultations spécialisées Covid long existent dans plusieurs CHU français. Le suivi longitudinal de vos indicateurs de bien-être peut aider à objectiver votre situation.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- CTA PRINCIPAL -->
+    <div class="cta-principal">
+      <h3>🧭 Suivez votre récupération, semaine après semaine</h3>
+      <p>Boussole est une application gratuite conçue pour les personnes vivant avec une condition chronique. Énergie, sommeil, confort physique, clarté mentale : 4 indicateurs, 2 minutes par jour, 30 jours de données pour voir votre trajectoire.</p>
+      <a href="https://app.myboussole.fr" class="btn-cta">Essayer Boussole gratuitement →</a>
+    </div>
+
+    <!-- PARTAGE -->
+    <div class="share-section">
+      <p>Cet article vous a été utile ? Partagez-le avec quelqu'un qui en a besoin.</p>
+      <div class="share-btns">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/" target="_blank" rel="noopener" class="share-btn fb" aria-label="Partager sur Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/&text=PCR+négatif+≠+guéri+%3A+la+persistance+antigénique+expliquée+%23CovidLong" target="_blank" rel="noopener" class="share-btn tw" aria-label="Partager sur Twitter/X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+        <button class="share-btn copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copié !';setTimeout(()=>{this.innerHTML='🔗 Copier le lien';},2000)})" aria-label="Copier le lien">
+          🔗 Copier le lien
+        </button>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <section class="sources-section" aria-label="Sources scientifiques">
+      <h2>Sources</h2>
+      <ol class="sources-list">
+        <li id="source-1">Al-Aly Z, Davis H, McCorkell L, Iwasaki A, Topol EJ, et al. <em>Long COVID science, research and policy</em>. Nature Medicine. 2024;30(8):2148-2164.
+          <a href="https://doi.org/10.1038/s41591-024-03173-6" target="_blank" rel="noopener">Al-Aly et al., 2024 — PubMed</a>
+        </li>
+        <li id="source-2">Prakash S, Karan S, Lekbach Y, BenMohamed L, et al. <em>Insights into Persistent SARS-CoV-2 Reservoirs in Chronic Long COVID</em>. Viruses. 2025;17(10).
+          <a href="https://doi.org/10.3390/v17101310" target="_blank" rel="noopener">Prakash et al., 2025 — PubMed</a>
+        </li>
+        <li id="source-3">Goh D, Lim JCT, Bilbao Fernáindez S, et al. <em>Case report: Persistence of residual antigen and RNA of the SARS-CoV-2 virus in tissues of two patients with long COVID</em>. Frontiers in Immunology. 2022;13:939989.
+          <a href="https://doi.org/10.3389/fimmu.2022.939989" target="_blank" rel="noopener">Goh et al., 2022 — PubMed</a>
+        </li>
+        <li id="source-4">Santoro L, Zaccone V, Falsetti L, et al. <em>Role of Endothelium in Cardiovascular Sequelae of Long COVID</em>. Biomedicines. 2023;11(8).
+          <a href="https://doi.org/10.3390/biomedicines11082239" target="_blank" rel="noopener">Santoro et al., 2023 — PubMed</a>
+        </li>
+        <li id="source-5">Matula Z, Király V, Bekő G, et al. <em>High prevalence of long COVID in anti-TPO positive euthyroid individuals with strongly elevated SARS-CoV-2-specific T cell responses</em>. Frontiers in Immunology. 2024;15:1448659.
+          <a href="https://doi.org/10.3389/fimmu.2024.1448659" target="_blank" rel="noopener">Matula et al., 2024 — PubMed</a>
+        </li>
+        <li id="source-6">Grady CB, Bhattacharjee B, Silva J, Iwasaki A, et al. <em>Impact of COVID-19 vaccination on symptoms and immune phenotypes in vaccine-naïve individuals with Long COVID</em>. medRxiv (preprint). 2024.
+          <a href="https://doi.org/10.1101/2024.01.11.24300929" target="_blank" rel="noopener">Grady et al., 2024 — PubMed (preprint non évalué par les pairs)</a>
+        </li>
+        <li id="source-7">Limoges MA, Quenum AJI, Ramanathan S, et al. <em>SARS-CoV-2 spike antigen-specific B cell and antibody responses in pre-vaccination period COVID-19 convalescent males and females with or without post-covid condition</em>. Frontiers in Immunology. 2023;14:1223936.
+          <a href="https://doi.org/10.3389/fimmu.2023.1223936" target="_blank" rel="noopener">Limoges et al., 2023 — PubMed</a>
+        </li>
+      </ol>
+    </section>
+
+    <footer class="article-footer">
+      <p>© 2026 <a href="https://www.myboussole.fr">myBoussole</a> · Dr Rémy Honoré, Docteur en pharmacie et nutrithérapeute</p>
+      <p>Information à visée éducative, non substituable à un avis médical individualisé.</p>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>
