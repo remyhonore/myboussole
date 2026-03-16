@@ -215,6 +215,21 @@ Chaque grande section mécaniste doit avoir au moins 1 illustration interne. Art
 
 ## 8. Sources — format obligatoire
 
+### 🔴 Règle critique : vérification obligatoire des PMIDs
+
+**Avant toute intégration d'un PMID dans un article, sans exception :**
+1. Appeler `PubMed:get_article_metadata` avec le PMID
+2. Vérifier que le **titre retourné par PubMed** correspond au **titre affiché dans l'article**
+3. Si le titre ne correspond pas → PMID faux → bloquer l'article, ne pas déployer
+4. Un PMID faux sur un article publié = erreur de crédibilité grave
+
+**Pourquoi cette règle existe :**
+Un audit réel (16/03/2026) a révélé que 5 PMIDs sur 8 dans un article publié pointaient vers des articles sans aucun rapport avec le sujet (physique des matériaux, chirurgie ORL, biologie de la drosophile). Origine : hallucination LLM lors de la rédaction. Les PMIDs existaient dans PubMed — mais ne correspondaient pas aux titres affichés.
+
+**Règle absolue : zéro PMID non vérifié via PubMed MCP dans un article publié.**
+
+---
+
 **Appel dans le texte :**
 ```html
 <sup><a href="#source-N" aria-label="Source N">[N]</a></sup>
@@ -290,6 +305,7 @@ Avant toute soumission :
 2. **Examens** : niveau de recommandation précisé (systématique / selon contexte / non routinier) ?
 3. **Causalité** : "signal documenté" vs "association rapportée" vs "mécanisme suspecté" vs "preuve établie" ?
 4. **Sources** : toute affirmation mécaniste sourcée (PubMed, guideline) ?
+     → **Vérification PMID obligatoire** : appeler `PubMed:get_article_metadata` sur chaque PMID et confirmer que le titre retourné = titre affiché dans l'article. Aucune exception. Un PMID non vérifié = article non publiable.
 5. **Recommandations** : conformes HAS/NICE ou positionnement médecine fonctionnelle explicité ?
 
 ---
