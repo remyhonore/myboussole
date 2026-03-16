@@ -16,6 +16,23 @@ Avant de rédiger quoi que ce soit :
 2. Vérifier les sources PubMed existantes via PubMed MCP
 3. Vérifier la roadmap éditoriale Notion (page 07) pour le statut éditorial du sujet
 
+## 0bis. Audit obligatoire avant toute modification d'article existant
+
+Avant de modifier un article déjà déployé (correction, ajout de section, update front matter, fix CSS…) :
+
+1. Fetcher l'article live : web_fetch https://www.myboussole.fr/articles/[slug]/
+2. Vérifier avant de toucher au code :
+   - H1 présent et cohérent avec le titre front matter
+   - Image hero accessible (pas de 404)
+   - Canonical présent et correct
+   - Aucun placeholder visible ("TODO", "à compléter", "lorem")
+   - Footer 2 lignes présent (copyright + disclaimer éducatif)
+   - Noms de médicaments = marché France uniquement (ANSM/Vidal)
+3. Documenter les anomalies dans le chat avant de commencer
+4. Corriger les anomalies dans le même commit que la modification demandée
+
+**Principe :** toute session qui touche un article repart avec cet article dans un état meilleur qu'avant — jamais neutre, jamais dégradé.
+
 ---
 
 ## 1. Template de référence absolu
