@@ -179,6 +179,9 @@ def collect_articles():
         if title == "Titre de l'article" or slug == "mon-article":
             continue
 
+        if fm.get("draft", "").lower() == "true":
+            continue
+
         items.append({
             "dir": p.name,
             "slug": slug,
