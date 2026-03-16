@@ -229,6 +229,20 @@ Chaque `[N]` dans le texte → entrée `id="source-N"` dans la liste. Sources HA
 ```
 Corps du texte = terme français seul. Jamais le sigle anglophone seul.
 
+**Noms de médicaments — marché français uniquement**
+
+Toujours utiliser le nom commercial autorisé en France (ANSM / base Vidal). Jamais le nom FDA américain, ni le nom d'un autre pays européen.
+
+| DCI | ❌ Nom étranger | ✅ Nom France |
+|---|---|---|
+| Escitalopram | Cipralex® (UK/BE), Lexapro® (USA) | Seroplex® |
+| Zolpidem | Ambien® (USA) | Stilnox® |
+| Vortioxétine | Trintellix® (USA) | Brintellix® |
+| Sertraline | Zoloft® (identique FR/USA) | Zoloft® ✅ |
+| Alprazolam | Xanax® (identique FR/USA) | Xanax® ✅ |
+
+Règle opérationnelle : avant de nommer un médicament dans un article, vérifier sur base.vidal.fr ou ansm.sante.fr. En cas de doute, utiliser uniquement la DCI sans nom commercial.
+
 **Termes interdits :** "PharmD" seul dans les articles, "Fatigue surrénalienne", "Leaky gut", "Détox", "Terrain" (sans sourçage), "Le Covid long cause X" (causalité).
 
 ---
