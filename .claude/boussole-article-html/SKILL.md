@@ -91,10 +91,29 @@ image: "/articles/[slug]/[nom-image-hero].jpg"
 <meta name="twitter:card" content="summary_large_image">
 ```
 
+**Liens externes — règle absolue :**
+Tout lien `target="_blank"` doit avoir `rel="noopener noreferrer"` (pas seulement `rel="noopener"`).
+Appliquer à : tous les liens sources PubMed, tous les boutons de partage (Facebook, LinkedIn), toute URL externe.
+
 **Schema.org JSON-LD (3 types dans un seul `<script>`) :**
-- `Article` (headline, datePublished, dateModified, author, publisher)
+- `Article` (headline, datePublished, dateModified, author, publisher, wordCount, inLanguage: "fr", mainEntityOfPage pointant vers l'URL canonique)
 - `BreadcrumbList` (3 niveaux : Accueil > Articles > titre)
 - `FAQPage` (si FAQ présente — reprendre les Q/R exactes)
+
+**Exemple de bloc Article complet :**
+```json
+{
+  "@type": "Article",
+  "headline": "[titre]",
+  "datePublished": "AAAA-MM-JJ",
+  "dateModified": "AAAA-MM-JJ",
+  "author": { "@type": "Person", "name": "Dr Rémy Honoré" },
+  "publisher": { "@type": "Organization", "name": "myBoussole" },
+  "wordCount": 2500,
+  "inLanguage": "fr",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.myboussole.fr/articles/[slug]/" }
+}
+```
 
 **Typographie :**
 ```html
@@ -183,14 +202,24 @@ body {
 1. Skip link : <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 2. H1 (mots-clés identiques au <title>)
 3. Chapeau (lead) — 2-3 phrases max
-4. Encadré glossaire bilingue (si termes FR/EN — voir §9)
-5. Sommaire ancré (si article ≥ 6 min)
+4. Encadré glossaire bilingue (si termes FR/EN — voir §9) — titre en `<p class="section-label">`, JAMAIS en `<h3>` (brise la hiérarchie H1→H3)
+5. Sommaire ancré (si article ≥ 6 min) — titre en `<p class="section-label">`, JAMAIS en `<h3>`
 6. Image hero
 7. Corps de l'article (H2 avec id= pour ancres)
 8. Micro-CTA Boussole (inline, avant le CTA principal)
 9. FAQ (éléments <details>/<summary>)
 10. CTA Boussole principal
 11. Boutons de partage
+
+**CSS `.section-label` (glossaire + sommaire) :**
+```css
+.section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+```
+
+⚠️ Le titre du bloc CTA ne doit jamais être un `<h2>` ou `<h3>`. Utiliser `<p class="cta-title">` avec le CSS suivant :
+```css
+.cta-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+```
 12. Sources (liste numérotée)
 13. Footer article
 ```
@@ -199,7 +228,8 @@ body {
 
 ## 7. Règles illustrations
 
-**Image hero :** JPEG, ratio 1.91:1 (1200×630px), < 200 Ko. Ideogram ou Canva. `loading="eager"` + `fetchpriority="high"`.
+**Image hero :** JPEG, ratio 1.91:1 (1200×630px), < 200 Ko. Ideogram ou Canva. `loading="lazy"` + `decoding="async"`.
+(La hero n'est pas au-dessus de la ligne de flottaison sur mobile — eager est contre-productif.)
 
 **CSS image hero (règle figée 14/03/2026) :**
 ```css
@@ -238,7 +268,7 @@ Un audit réel (16/03/2026) a révélé que 5 PMIDs sur 8 dans un article publi�
 **Liste en bas de page :**
 ```html
 <ol class="sources-list">
-  <li id="source-1">Auteur et al. <em>Titre</em>. Journal. Année. <a href="https://pubmed.ncbi.nlm.nih.gov/PMID/" target="_blank" rel="noopener">Auteur et al., Année — PubMed</a></li>
+  <li id="source-1">Auteur et al. <em>Titre</em>. Journal. Année. <a href="https://pubmed.ncbi.nlm.nih.gov/PMID/" target="_blank" rel="noopener noreferrer">Auteur et al., Année — PubMed</a></li>
 </ol>
 ```
 
@@ -253,7 +283,7 @@ Chaque `[N]` dans le texte → entrée `id="source-N"` dans la liste. Sources HA
 **Glossaire bilingue** (placer après le lead, avant le premier H2) :
 ```html
 <div class="glossaire-bilingue">
-  <h3>📖 Termes de référence</h3>
+  <p class="section-label">📖 Termes de référence</p>
   <ul>
     <li>Terme français (SIGLE FR) = English term (EN)</li>
   </ul>
@@ -336,3 +366,19 @@ CSS à inclure dans `<style>` :
 
 ❌ INTERDIT : footer 1 ligne seule, encadré jaune en footer, `height` fixe sur `.hero-img`
 ❌ INTERDIT : disclaimer dans un `<div>` coloré — texte simple sous le copyright uniquement
+
+---
+
+## 14. Corrections SEO récurrentes — checklist post-audit
+
+Ces erreurs reviennent à chaque article. Les corriger en amont lors de la rédaction, pas après déploiement.
+
+| Erreur récurrente | Règle |
+|---|---|
+| H1 → H3 direct (glossaire, sommaire) | Toujours `<p class="section-label">`, jamais `<h3>` sans H2 parent |
+| SVG sans ARIA | Chaque `<svg>` doit avoir `role="img"` + `aria-label` + `<title>` comme premier enfant |
+| `rel="noopener"` seul | Toujours `rel="noopener noreferrer"` sur tout `target="_blank"` |
+| Schema Article incomplet | Ajouter `wordCount`, `inLanguage`, `mainEntityOfPage` à chaque article |
+| `loading="eager"` sur hero | Utiliser `loading="lazy" decoding="async"` |
+| H3 dans bloc CTA | Utiliser `<p class="cta-title">` |
+| Cohérence sommaire ↔ H2 | Le texte du lien dans le sommaire doit être identique au H2 cible |
