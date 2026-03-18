@@ -49,7 +49,13 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
         "url": "https://www.myboussole.fr"
       },
       "image": "https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/hero.jpg",
-      "description": "Le collagène vasculaire joue un rôle structurel clé dans la dysautonomie du Covid long. Mécanismes, vulnérabilités et pistes nutritionnelles documentées."
+      "description": "Le collagène vasculaire joue un rôle structurel clé dans la dysautonomie du Covid long. Mécanismes, vulnérabilités et pistes nutritionnelles documentées.",
+      "wordCount": 2500,
+      "inLanguage": "fr",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/"
+      }
     },
     {
       "@context": "https://schema.org",
@@ -191,6 +197,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     /* Sommaire */
     .sommaire { background: rgba(248,246,240,.8); border: 1px solid rgba(6,23,45,.08); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 36px; }
     .sommaire h3 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
     .sommaire ol { padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
     .sommaire a { font-size: 14px; color: var(--forest); text-decoration: none; font-weight: 500; }
     .sommaire a:hover { text-decoration: underline; }
@@ -253,6 +260,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     .cta-block { background: linear-gradient(135deg, var(--forest), var(--forest-dark)); border-radius: 18px; padding: 32px 28px; margin: 40px 0 32px; text-align: center; color: #fff; }
     .cta-block h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
     .cta-block p { font-size: 15px; opacity: .88; margin-bottom: 22px; }
+    .cta-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
     .btn-cta { display: inline-block; background: #fff; color: var(--forest); font-size: 15px; font-weight: 700; padding: 12px 28px; border-radius: 10px; text-decoration: none; transition: transform .15s, box-shadow .15s; }
     .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
 
@@ -327,7 +335,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     <p class="lead">On parle beaucoup du système nerveux autonome, des autoanticorps, de la neuroinflammation pour expliquer la dysautonomie du Covid long. Le collagène, lui, reste rarement nommé. Pourtant, des données suggèrent qu'il joue un rôle structurel dans la fragilité vasculaire et l'instabilité orthostatique que décrivent de nombreuses personnes après l'infection — et que sa synthèse peut être perturbée à plusieurs niveaux.</p>
 
     <div class="glossaire-bilingue">
-      <h3>📖 Termes de référence</h3>
+      <p class="section-label">📖 Termes de référence</p>
       <ul>
         <li>Dysautonomie du Covid long (DCL) = Long COVID autonomic dysfunction</li>
         <li>Syndrome de tachycardie orthostatique posturale (STOP) = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
@@ -340,11 +348,11 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     </div>
 
     <nav class="sommaire" aria-label="Sommaire de l'article">
-      <h3>Sommaire</h3>
+      <p class="section-label">Sommaire</p>
       <ol>
         <li><a href="#role-collagene-sna">Le collagène, tissu de soutien du système vasculaire autonome</a></li>
         <li><a href="#covid-ecm">Covid long : quand TGF-bêta remodèle la matrice</a></li>
-        <li><a href="#vulnerabilite-sha">Hypermobilité : acquise ou préexistante ?</a></li>
+        <li><a href="#vulnerabilite-sha">Hypermobilité et Covid long : acquise ou préexistante ?</a></li>
         <li><a href="#elastine-mcas">L'élastine et les mastocytes : un mécanisme sous-estimé</a></li>
         <li><a href="#consequences-pratiques">De la biologie aux symptômes : orthostatisme, VFC, fatigue</a></li>
         <li><a href="#pistes-nutritionnelles">Pistes nutritionnelles : les cofacteurs de la synthèse</a></li>
@@ -357,8 +365,8 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
       alt="Représentation schématique d'une paroi vasculaire et de fibres de collagène"
       class="hero-img"
       width="1200" height="630"
-      loading="eager"
-      fetchpriority="high"
+      loading="lazy"
+      decoding="async"
     >
 
     <!-- ─── SECTION 1 ─── -->
@@ -370,6 +378,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
 
     <div class="illustration-block" aria-label="Schéma simplifié de la paroi vasculaire et rôle du collagène">
       <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Structure d'une paroi veineuse : couches et collagène">
+        <title>Structure d'une paroi veineuse : couches et collagène</title>
         <defs>
           <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#F8F6F0;stop-opacity:1"/>
@@ -415,6 +424,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
 
     <div class="illustration-block" aria-label="Voie TGF-bêta et dépôt de collagène">
       <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cascade TGF-beta vers depot de collagene post-COVID">
+        <title>Cascade TGF-bêta vers dépôt de collagène post-COVID</title>
         <rect width="680" height="160" rx="12" fill="rgba(248,246,240,.9)"/>
         <!-- Noeuds -->
         <rect x="20" y="55" width="120" height="40" rx="10" fill="rgba(45,106,79,.12)" stroke="rgba(45,106,79,.4)" stroke-width="1.5"/>
@@ -492,6 +502,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
 
     <div class="illustration-block" aria-label="Mécanisme MCAS et dégradation de l'élastine vasculaire">
       <svg viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cascade mastocyte-elastase-dilatation vasculaire">
+        <title>Cascade mastocyte-élastase-dilatation vasculaire</title>
         <rect width="680" height="170" rx="12" fill="rgba(248,246,240,.9)"/>
         <rect x="18" y="60" width="130" height="42" rx="10" fill="rgba(232,183,200,.3)" stroke="rgba(200,140,160,.5)" stroke-width="1.5"/>
         <text x="83" y="77" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700" fill="#7a3a50">SARS-CoV-2</text>
@@ -630,7 +641,7 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
 
     <!-- ─── CTA PRINCIPAL ─── -->
     <div class="cta-block">
-      <h3>Suivre votre SNA au quotidien</h3>
+      <p class="cta-title">Suivre votre SNA au quotidien</p>
       <p>Boussole enregistre votre fréquence cardiaque au repos, votre VFC/RMSSD, vos mesures tensionnelles et vos scores bien-être — pour visualiser l'évolution de votre système nerveux autonome dans le temps.</p>
       <a href="https://app.myboussole.fr" class="btn-cta">Essayer gratuitement</a>
     </div>
@@ -641,13 +652,13 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
       <div class="share-buttons">
         <a
           href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/"
-          target="_blank" rel="noopener"
+          target="_blank" rel="noopener noreferrer"
           class="share-btn share-fb"
           aria-label="Partager sur Facebook"
         >Facebook</a>
         <a
           href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/"
-          target="_blank" rel="noopener"
+          target="_blank" rel="noopener noreferrer"
           class="share-btn share-li"
           aria-label="Partager sur LinkedIn"
         >LinkedIn</a>
@@ -664,31 +675,31 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
       <h2>Sources</h2>
       <ol class="sources-list">
         <li id="source-1">Schnekenberg L et al. <em>Assessment and Therapeutic Modulation of Heart Rate Variability: Potential Implications in Patients with COVID-19</em>. J Cardiovasc Dev Dis. 2023.
-          <a href="https://doi.org/10.3390/jcdd10070297" target="_blank" rel="noopener">Schnekenberg et al., 2023 — PubMed</a>
+          <a href="https://doi.org/10.3390/jcdd10070297" target="_blank" rel="noopener noreferrer">Schnekenberg et al., 2023 — PubMed</a>
         </li>
         <li id="source-2">Vaz de Paula CB et al. <em>COVID-19: Immunohistochemical Analysis of TGF-beta Signaling Pathways in Pulmonary Fibrosis</em>. Int J Mol Sci. 2021.
-          <a href="https://doi.org/10.3390/ijms23010168" target="_blank" rel="noopener">Vaz de Paula et al., 2021 — PubMed</a>
+          <a href="https://doi.org/10.3390/ijms23010168" target="_blank" rel="noopener noreferrer">Vaz de Paula et al., 2021 — PubMed</a>
         </li>
         <li id="source-3">Mukhatayev Z et al. <em>CTHRC1: An Emerging Hallmark of Pathogenic Fibroblasts in Lung Fibrosis</em>. Cells. 2024.
-          <a href="https://doi.org/10.3390/cells13110946" target="_blank" rel="noopener">Mukhatayev et al., 2024 — PubMed</a>
+          <a href="https://doi.org/10.3390/cells13110946" target="_blank" rel="noopener noreferrer">Mukhatayev et al., 2024 — PubMed</a>
         </li>
         <li id="source-4">Wilson GN. <em>A Clinical Qualification Protocol Highlights Overlapping Genomic Influences and Neuro-Autonomic Mechanisms in Ehlers-Danlos and Long COVID-19 Syndromes</em>. Curr Issues Mol Biol. 2023.
-          <a href="https://doi.org/10.3390/cimb45070379" target="_blank" rel="noopener">Wilson, 2023 — PubMed</a>
+          <a href="https://doi.org/10.3390/cimb45070379" target="_blank" rel="noopener noreferrer">Wilson, 2023 — PubMed</a>
         </li>
         <li id="source-5">Vasta JD &amp; Raines RT. <em>Human Collagen Prolyl 4-Hydroxylase Is Activated by Ligands for Its Iron Center</em>. Biochemistry. 2016.
-          <a href="https://doi.org/10.1021/acs.biochem.6b00251" target="_blank" rel="noopener">Vasta &amp; Raines, 2016 — PubMed</a>
+          <a href="https://doi.org/10.1021/acs.biochem.6b00251" target="_blank" rel="noopener noreferrer">Vasta &amp; Raines, 2016 — PubMed</a>
         </li>
         <li id="source-6">Treadwell JR et al. <em>Treatments for Long COVID autonomic dysfunction: a scoping review</em>. Clin Auton Res. 2024.
-          <a href="https://doi.org/10.1007/s10286-024-01081-w" target="_blank" rel="noopener">Treadwell et al., 2024 — PubMed</a>
+          <a href="https://doi.org/10.1007/s10286-024-01081-w" target="_blank" rel="noopener noreferrer">Treadwell et al., 2024 — PubMed</a>
         </li>
         <li id="source-7">Cimmino L et al. <em>Vitamin C in Stem Cell Reprogramming and Cancer</em>. Trends Cell Biol. 2018.
-          <a href="https://doi.org/10.1016/j.tcb.2018.04.001" target="_blank" rel="noopener">Cimmino et al., 2018 — PubMed</a>
+          <a href="https://doi.org/10.1016/j.tcb.2018.04.001" target="_blank" rel="noopener noreferrer">Cimmino et al., 2018 — PubMed</a>
         </li>
         <li id="source-8">Batiha GE et al. <em>Pathophysiology of Post-COVID syndromes: a new perspective.</em> Virol J. 2022.
-          <a href="https://doi.org/10.1186/s12985-022-01891-2" target="_blank" rel="noopener">Batiha et al., 2022 — PubMed</a>
+          <a href="https://doi.org/10.1186/s12985-022-01891-2" target="_blank" rel="noopener noreferrer">Batiha et al., 2022 — PubMed</a>
         </li>
         <li id="source-9">Gilmer G et al. <em>The Effect of Sex Hormones on Joint Ligament Properties: A Systematic Review and Meta-analysis.</em> Am J Sports Med. 2025.
-          <a href="https://doi.org/10.1177/03635465241310145" target="_blank" rel="noopener">Gilmer et al., 2025 — PubMed</a>
+          <a href="https://doi.org/10.1177/03635465241310145" target="_blank" rel="noopener noreferrer">Gilmer et al., 2025 — PubMed</a>
         </li>
       </ol>
     </div>
