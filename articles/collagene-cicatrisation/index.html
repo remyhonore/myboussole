@@ -18,13 +18,29 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
   <link rel="canonical" href="https://www.myboussole.fr/articles/collagene-cicatrisation/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+  <!-- Meta robots -->
+  <meta name="robots" content="index, follow">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Collagène et cicatrisation : ce que dit vraiment la science">
   <meta property="og:description" content="Collagène hydrolysé, vitamine C et récupération musculaire : mécanismes, données cliniques et repères pratiques.">
   <meta property="og:url" content="https://www.myboussole.fr/articles/collagene-cicatrisation/" />
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://www.myboussole.fr/articles/collagene-cicatrisation/hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Trail runner assis sur un rocher en forêt, massant son mollet après l'effort, lumière dorée filtrant entre les arbres">
+  <meta property="article:published_time" content="2026-03-18T00:00:00+01:00">
+  <meta property="article:author" content="Dr Rémy Honoré">
+  <meta property="article:section" content="Micronutrition">
+  <meta property="article:tag" content="Collagène">
+  <meta property="article:tag" content="Cicatrisation">
+  <meta property="article:tag" content="Récupération">
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Collagène et cicatrisation : ce que dit vraiment la science">
+  <meta name="twitter:description" content="Collagène hydrolysé, vitamine C et récupération musculaire : mécanismes, données cliniques et repères pratiques.">
+  <meta name="twitter:image" content="https://www.myboussole.fr/articles/collagene-cicatrisation/hero.jpg">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -32,21 +48,38 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
     {
       "@context": "https://schema.org",
       "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.myboussole.fr/articles/collagene-cicatrisation/"
+      },
       "headline": "Collagène et cicatrisation : ce que dit vraiment la science",
       "datePublished": "2026-03-18",
       "dateModified": "2026-03-18",
+      "wordCount": 1500,
       "author": {
         "@type": "Person",
         "name": "Dr Rémy Honoré",
-        "jobTitle": "Docteur en pharmacie et nutrithérapeute"
+        "jobTitle": "Docteur en pharmacie et nutrithérapeute",
+        "sameAs": "https://www.myboussole.fr"
       },
       "publisher": {
         "@type": "Organization",
         "name": "myBoussole",
-        "url": "https://www.myboussole.fr"
+        "url": "https://www.myboussole.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.myboussole.fr/favicon.png",
+          "width": 512,
+          "height": 512
+        }
       },
       "description": "Collagène hydrolysé, vitamine C et récupération musculaire : mécanismes, données cliniques et repères pratiques.",
-      "image": "https://www.myboussole.fr/articles/collagene-cicatrisation/hero.jpg"
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.myboussole.fr/articles/collagene-cicatrisation/hero.jpg",
+        "width": 1200,
+        "height": 630
+      }
     },
     {
       "@context": "https://schema.org",
@@ -84,12 +117,29 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
             "@type": "Answer",
             "text": "La vitamine C est un cofacteur indispensable des enzymes prolyl-hydroxylase et lysyl-hydroxylase, qui catalysent la réticulation des chaînes de procollagène. Sans un apport suffisant en vitamine C, la maturation du collagène est altérée — mécanisme établi depuis les travaux fondateurs sur le scorbut."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre collagène hydrolysé et gélatine ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La gélatine est du collagène partiellement dénaturé par la chaleur, soluble dans l'eau chaude. Le collagène hydrolysé est entièrement hydrolysé en peptides courts, soluble à toute température et plus facilement absorbé. Les deux formes fournissent les mêmes acides aminés précurseurs (glycine, proline, hydroxyproline). La gélatine enrichie en vitamine C a été utilisée dans l'étude de Shaw et al. 2017 ; les peptides de collagène sont la forme la plus couramment utilisée dans les études récentes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le collagène de type I est-il différent du type II pour les articulations ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le collagène de type II est spécifique du cartilage articulaire et représente 90 à 95 % de son collagène. Les études sur l'arthrose utilisent principalement du collagène de type II (souvent non-dénaturé, UC-II). Le collagène de types I et III, présent dans la majorité des compléments courants, est davantage pertinent pour les tendons, ligaments, peau et aponévroses. Il est important de choisir le type adapté à l'objectif, en lien avec un professionnel de santé."
+          }
         }
       ]
     }
   ]
   </script>
 
+  <link rel="preload" as="image" href="/articles/collagene-cicatrisation/hero.jpg" fetchpriority="high">
   <!-- Typographie -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
@@ -168,13 +218,13 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
 
     /* Glossaire */
     .glossaire-bilingue { background: #f8faf9; border: 1px solid var(--green-light); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
-    .glossaire-bilingue h3 { margin-top: 0; font-size: 0.95rem; color: var(--forest); text-transform: uppercase; letter-spacing: 0.04em; }
+    .glossaire-bilingue h2 { margin-top: 0; font-size: 0.95rem; color: var(--forest); text-transform: uppercase; letter-spacing: 0.04em; border: none; padding: 0; }
     .glossaire-bilingue ul { margin-bottom: 0; }
     .glossaire-bilingue li { font-size: 0.9rem; color: #4b5563; }
 
     /* Sommaire */
     .sommaire { background: rgba(45,106,79,0.05); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; }
-    .sommaire h3 { margin-top: 0; margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .sommaire h2 { margin-top: 0; margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border: none; padding: 0; }
     .sommaire ol { margin-bottom: 0; }
     .sommaire li a { color: var(--forest); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
     .sommaire li a:hover { text-decoration: underline; }
@@ -294,7 +344,7 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       <div class="article-meta">
         <span>Dr Rémy Honoré</span>
         <span>·</span>
-        <span>18 mars 2026</span>
+        <time datetime="2026-03-18">18 mars 2026</time>
         <span>·</span>
         <span>8 min de lecture</span>
         <span class="tag-pill">Micronutrition</span>
@@ -306,7 +356,7 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       </p>
 
       <div class="glossaire-bilingue">
-        <h3>📖 Termes de référence</h3>
+        <h2 class="glossaire-title">📖 Termes de référence</h2>
         <ul>
           <li>Collagène hydrolysé (peptides de collagène) = Hydrolyzed Collagen / Collagen Peptides (CP)</li>
           <li>Prolyl-hydroxylase = enzyme clé de la maturation du collagène, cofacteur-dépendante de la vitamine C</li>
@@ -316,7 +366,7 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       </div>
 
       <nav class="sommaire" aria-label="Sommaire de l'article">
-        <h3>Sommaire</h3>
+        <h2 class="sommaire-title">Sommaire</h2>
         <ol>
           <li><a href="#quest-ce-que-collagene">Qu'est-ce que le collagène — et pourquoi en parle-t-on ?</a></li>
           <li><a href="#mecanismes">Les mécanismes établis : vitamine C, prolyl-hydroxylase et réticulation</a></li>
@@ -329,12 +379,12 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
 
       <img
         src="/articles/collagene-cicatrisation/hero.jpg"
-        alt="Illustration scientifique de fibres de collagène en réseau tridimensionnel"
+        alt="Trail runner assis sur un rocher en forêt, massant son mollet après l'effort, lumière dorée filtrant entre les arbres"
         class="hero-img"
-        loading="eager"
-        fetchpriority="high"
         width="1200"
         height="630"
+        loading="eager"
+        fetchpriority="high"
       >
 
       <!-- SECTION 1 -->
@@ -652,9 +702,9 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       <div class="partage">
         <p>Cet article t'a été utile ? Partage-le :</p>
         <div class="btns-partage">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/collagene-cicatrisation/" target="_blank" rel="noopener" class="btn-partage btn-partage-fb">Facebook</a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/collagene-cicatrisation/" target="_blank" rel="noopener" class="btn-partage btn-partage-li">LinkedIn</a>
-          <button class="btn-partage btn-partage-copy" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Lien copié ✓'">Copier le lien</button>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/collagene-cicatrisation/" target="_blank" rel="noopener noreferrer" aria-label="Partager sur Facebook (ouvre un nouvel onglet)" class="btn-partage btn-partage-fb">Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/collagene-cicatrisation/" target="_blank" rel="noopener noreferrer" aria-label="Partager sur LinkedIn (ouvre un nouvel onglet)" class="btn-partage btn-partage-li">LinkedIn</a>
+          <button class="btn-partage btn-partage-copy" aria-label="Copier le lien de l'article" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Lien copié ✓'">Copier le lien</button>
         </div>
       </div>
 
@@ -662,9 +712,9 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       <div class="sources-section">
         <h3>📚 Sources</h3>
         <ol class="sources-list">
-          <li id="source-1">Shaw G, Lee-Barthel A, Ross ML, Wang B, Baar K. <em>Vitamin C-enriched gelatin supplementation before intermittent activity augments collagen synthesis.</em> Am J Clin Nutr. 2017;105(1):136–143. <a href="https://doi.org/10.3945/ajcn.116.138594" target="_blank" rel="noopener">Shaw et al., 2017 — PubMed PMID 27852613</a></li>
-          <li id="source-2">Bischof K, Moitzi AM, Stafilidis S, König D. <em>Impact of Collagen Peptide Supplementation in Combination with Long-Term Physical Training on Strength, Musculotendinous Remodeling, Functional Recovery, and Body Composition in Healthy Adults: A Systematic Review with Meta-analysis.</em> Sports Med. 2024;54(11):2865–2888. <a href="https://doi.org/10.1007/s40279-024-02079-0" target="_blank" rel="noopener">Bischof et al., 2024 — PubMed PMID 39060741</a></li>
-          <li id="source-3">Mussini E, Hutton JJ, Udenfriend S. <em>Collagen proline hydroxylase in wound healing, granuloma formation, scurvy, and growth.</em> Science. 1967;157(3791):927–929. <a href="https://doi.org/10.1126/science.157.3791.927" target="_blank" rel="noopener">Mussini et al., 1967 — PubMed PMID 4378050</a></li>
+          <li id="source-1">Shaw G, Lee-Barthel A, Ross ML, Wang B, Baar K. <em>Vitamin C-enriched gelatin supplementation before intermittent activity augments collagen synthesis.</em> Am J Clin Nutr. 2017;105(1):136–143. <a href="https://doi.org/10.3945/ajcn.116.138594" target="_blank" rel="noopener noreferrer" aria-label="Shaw et al. 2017, PubMed PMID 27852613 (ouvre un nouvel onglet)">Shaw et al., 2017 — PubMed PMID 27852613</a></li>
+          <li id="source-2">Bischof K, Moitzi AM, Stafilidis S, König D. <em>Impact of Collagen Peptide Supplementation in Combination with Long-Term Physical Training on Strength, Musculotendinous Remodeling, Functional Recovery, and Body Composition in Healthy Adults: A Systematic Review with Meta-analysis.</em> Sports Med. 2024;54(11):2865–2888. <a href="https://doi.org/10.1007/s40279-024-02079-0" target="_blank" rel="noopener noreferrer" aria-label="Bischof et al. 2024, PubMed PMID 39060741 (ouvre un nouvel onglet)">Bischof et al., 2024 — PubMed PMID 39060741</a></li>
+          <li id="source-3">Mussini E, Hutton JJ, Udenfriend S. <em>Collagen proline hydroxylase in wound healing, granuloma formation, scurvy, and growth.</em> Science. 1967;157(3791):927–929. <a href="https://doi.org/10.1126/science.157.3791.927" target="_blank" rel="noopener noreferrer" aria-label="Mussini et al. 1967, PubMed PMID 4378050 (ouvre un nouvel onglet)">Mussini et al., 1967 — PubMed PMID 4378050</a></li>
         </ol>
       </div>
 
