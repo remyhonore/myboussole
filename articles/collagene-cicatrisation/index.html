@@ -220,10 +220,14 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
     .lead { font-size: 1.1rem; font-weight: 500; color: #374151; line-height: 1.65; margin-bottom: 28px; padding: 20px 24px; background: rgba(45,106,79,0.06); border-left: 4px solid var(--forest); border-radius: 0 10px 10px 0; }
 
     /* Glossaire */
-    .glossaire-bilingue { background: #f8faf9; border: 1px solid var(--green-light); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
-    .glossaire-bilingue h2 { margin-top: 0; font-size: 0.95rem; color: var(--forest); text-transform: uppercase; letter-spacing: 0.04em; border: none; padding: 0; }
-    .glossaire-bilingue ul { margin-bottom: 0; }
-    .glossaire-bilingue li { font-size: 0.9rem; color: #4b5563; }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
 
     /* Sommaire */
     .sommaire { background: rgba(45,106,79,0.05); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; }
@@ -366,15 +370,17 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
         Le collagène hydrolysé connaît un engouement croissant dans les domaines du sport et de la santé. Mais que disent réellement les données disponibles ? Quels mécanismes sont établis, lesquels restent spéculatifs ? Cet article démêle les preuves des hypothèses, avec l'angle d'un Docteur en pharmacie.
       </p>
 
-      <div class="glossaire-bilingue">
-        <h2 class="glossaire-title">📖 Termes de référence</h2>
-        <ul>
-          <li>Collagène hydrolysé (peptides de collagène) = Hydrolyzed Collagen / Collagen Peptides (CP)</li>
-          <li>Prolyl-hydroxylase = enzyme clé de la maturation du collagène, cofacteur-dépendante de la vitamine C</li>
-          <li>Tissu myo-aponévrotique = tissu musculaire + aponévrose (membrane conjonctive entourant le muscle)</li>
-          <li>Lésion de grade 2 = déchirure partielle des fibres (continuité musculaire préservée, cicatrisation 6–8 semaines)</li>
-        </ul>
-      </div>
+      <details class="glossaire-accordion">
+        <summary>📖 Termes de référence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li>Collagène hydrolysé (peptides de collagène) = Hydrolyzed Collagen / Collagen Peptides (CP)</li>
+            <li>Prolyl-hydroxylase = enzyme clé de la maturation du collagène, cofacteur-dépendante de la vitamine C</li>
+            <li>Tissu myo-aponévrotique = tissu musculaire + aponévrose (membrane conjonctive entourant le muscle)</li>
+            <li>Lésion de grade 2 = déchirure partielle des fibres (continuité musculaire préservée, cicatrisation 6–8 semaines)</li>
+          </ul>
+        </div>
+      </details>
 
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

@@ -67,10 +67,14 @@ image: "/articles/choline-fatigue-chronique-covid-long/hero.jpg"
     sup a:hover{text-decoration:underline}
     strong{font-weight:700}
     em{font-style:italic}
-    .glossaire-bilingue{background:rgba(201,185,217,.15);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:18px 22px;margin:24px 0 32px}
-    .glossaire-bilingue h3{margin:0 0 10px;font-size:15px;font-weight:700}
-    .glossaire-bilingue ul{margin:0;padding-left:20px}
-    .glossaire-bilingue li{font-size:14px;color:#374151;margin-bottom:4px}
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
     .sommaire{background:rgba(45,80,22,.06);border-radius:12px;padding:22px 26px;margin:0 0 36px}
     .sommaire h3{font-size:15px;font-weight:700;margin:0 0 12px;color:var(--forest)}
     .sommaire ol{margin:0;padding-left:20px}
@@ -160,17 +164,19 @@ image: "/articles/choline-fatigue-chronique-covid-long/hero.jpg"
 
     <p class="lead">Votre bilan sanguin est normal. Votre médecin ne trouve rien. Et pourtant, vous êtes épuisée — cognitivement, musculairement, de façon inexpliquée. La choline est un nutriment que votre corps ne sait pas fabriquer en quantité suffisante seul, et que la majorité des adultes consomment trop peu. Son rôle dans la production d'énergie cellulaire, la transmission nerveuse et l'intégrité des membranes est documenté. Son implication possible dans certains tableaux de fatigue chronique et dans le Covid long fait actuellement l'objet d'hypothèses mécanistiques et d'un intérêt croissant.</p>
 
-    <div class="glossaire-bilingue">
-      <h3>📖 Termes de référence</h3>
-      <ul>
-        <li>Choline = nutriment essentiel, précurseur de l'acétylcholine et de la phosphatidylcholine</li>
-        <li>Acétylcholine (ACh) = neurotransmetteur cholinergique</li>
-        <li>Phosphatidylcholine (PC) = phospholipide membranaire majeur</li>
-        <li>Voie PEMT = Phosphatidylethanolamine N-méthyltransférase, synthèse endogène de PC</li>
-        <li>Citicoline = CDP-choline, forme pharmaceutique de la choline</li>
-        <li>Voie cholinergique anti-inflammatoire = Cholinergic Anti-inflammatory Pathway (CAP)</li>
-      </ul>
-    </div>
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Choline = nutriment essentiel, précurseur de l'acétylcholine et de la phosphatidylcholine</li>
+          <li>Acétylcholine (ACh) = neurotransmetteur cholinergique</li>
+          <li>Phosphatidylcholine (PC) = phospholipide membranaire majeur</li>
+          <li>Voie PEMT = Phosphatidylethanolamine N-méthyltransférase, synthèse endogène de PC</li>
+          <li>Citicoline = CDP-choline, forme pharmaceutique de la choline</li>
+          <li>Voie cholinergique anti-inflammatoire = Cholinergic Anti-inflammatory Pathway (CAP)</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

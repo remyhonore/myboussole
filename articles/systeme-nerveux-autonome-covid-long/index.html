@@ -175,10 +175,14 @@ image: "/articles/systeme-nerveux-autonome-covid-long/illustration-sna-covid-lon
     .lead { font-size: 18px; line-height: 1.7; color: #2c2c3e; margin-bottom: 24px; padding-left: 14px; border-left: 3px solid var(--forest); }
 
     /* Glossaire bilingue */
-    .glossaire-bilingue { background: rgba(45,106,79,.06); border-radius: 12px; padding: 18px 22px; margin: 24px 0; border-left: 4px solid var(--forest); }
-    .glossaire-bilingue h3 { font-size: 15px; color: var(--forest-dark); margin: 0 0 10px 0; font-weight: 700; border: none; padding: 0; }
-    .glossaire-bilingue ul { margin: 0; padding-left: 18px; }
-    .glossaire-bilingue li { font-size: 14px; color: #374151; margin-bottom: 5px; }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
 
     /* Sommaire */
     .toc { background: rgba(248,246,240,.8); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin: 32px 0; }
@@ -290,17 +294,19 @@ image: "/articles/systeme-nerveux-autonome-covid-long/illustration-sna-covid-lon
 
     <p class="lead">Palpitations au lever du lit, épuisement brutal après un effort minime, sensation de «&nbsp;brouillard&nbsp;» permanent, digestion capricieuse — beaucoup de personnes avec un Covid long reconnaissent ce tableau. Ces symptômes apparemment disparates ont souvent une origine commune&nbsp;: un dérèglement du système nerveux autonome, documenté dans plusieurs études récentes à Harvard, Vanderbilt et Hambourg.</p>
 
-    <div class="glossaire-bilingue">
-      <h3>📖 Termes de référence</h3>
-      <ul>
-        <li>Système nerveux autonome (SNA) = Autonomic nervous system (ANS)</li>
-        <li>Dysautonomie (DYSAUT) = Dysautonomia</li>
-        <li>Syndrome de tachycardie orthostatique posturale (STOP) = Postural orthostatic tachycardia syndrome (POTS)</li>
-        <li>Variabilité de la fréquence cardiaque (VFC) = Heart rate variability (HRV)</li>
-        <li>Neuropathie des petites fibres (NPF) = Small fiber neuropathy (SFN)</li>
-        <li>Séquelles post-aiguës du SARS-CoV-2 (SPAS) = Post-acute sequelae of SARS-CoV-2 (PASC)</li>
-      </ul>
-    </div>
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Système nerveux autonome (SNA) = Autonomic nervous system (ANS)</li>
+          <li>Dysautonomie (DYSAUT) = Dysautonomia</li>
+          <li>Syndrome de tachycardie orthostatique posturale (STOP) = Postural orthostatic tachycardia syndrome (POTS)</li>
+          <li>Variabilité de la fréquence cardiaque (VFC) = Heart rate variability (HRV)</li>
+          <li>Neuropathie des petites fibres (NPF) = Small fiber neuropathy (SFN)</li>
+          <li>Séquelles post-aiguës du SARS-CoV-2 (SPAS) = Post-acute sequelae of SARS-CoV-2 (PASC)</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

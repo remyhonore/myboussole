@@ -508,10 +508,14 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
     .article-header { animation: fadeUp .5s ease both; }
     .hero-img-wrap  { animation: fadeUp .5s .1s ease both; }
 
-    .glossaire-bilingue { background: #f0f7f4; border-left: 3px solid #085041; border-radius: 8px; padding: 16px 20px; margin: 0 0 28px; }
-    .glossaire-bilingue h3 { font-size: 14px; font-weight: 700; color: #085041; margin: 0 0 10px; }
-    .glossaire-bilingue ul { margin: 0; padding-left: 18px; }
-    .glossaire-bilingue li { font-size: 14px; color: #444; margin-bottom: 4px; }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
     .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
     .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
@@ -575,13 +579,15 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         </div>
       </header>
 
-      <div class="glossaire-bilingue">
-        <h3>&#128214; Termes de r&#233;f&#233;rence</h3>
-        <ul>
-          <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
-          <li><strong>Antagoniste des r&#233;cepteurs aux or&#233;xines &#224; double action (DORA)</strong> = Dual Orexin Receptor Antagonist (DORA)</li>
-        </ul>
-      </div>
+      <details class="glossaire-accordion">
+        <summary>&#128214; Termes de r&#233;f&#233;rence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+            <li><strong>Antagoniste des r&#233;cepteurs aux or&#233;xines &#224; double action (DORA)</strong> = Dual Orexin Receptor Antagonist (DORA)</li>
+          </ul>
+        </div>
+      </details>
 
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

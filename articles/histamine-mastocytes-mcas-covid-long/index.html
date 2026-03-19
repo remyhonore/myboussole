@@ -94,10 +94,14 @@ image: "/articles/histamine-mastocytes-mcas-covid-long/illustration-histamine.jp
     li { margin-bottom: 8px; }
     .callout { background: #f0f7f4; border-left: 4px solid var(--color-accent); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; }
     .callout strong { color: var(--color-accent-2); display: block; margin-bottom: 6px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.04em; }
-    .glossaire-bilingue { background: #f0f7f4; border-left: 3px solid #085041; border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
-    .glossaire-bilingue h3 { font-size: 14px; font-weight: 700; color: #085041; margin: 0 0 10px; }
-    .glossaire-bilingue ul { margin: 0; padding-left: 18px; }
-    .glossaire-bilingue li { font-size: 14px; color: #444; margin-bottom: 4px; }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
     .pharmd-box { background: #EEF4FF; border: 1.5px solid #c7d9f8; border-radius: 14px; padding: 20px 24px; margin: 32px 0; }
     .pharmd-box .pharmd-label { font-size: 13px; font-weight: 700; color: #3b6fce; margin-bottom: 8px; display: block; }
     .pharmd-box p { margin-bottom: 8px; font-size: 15px; }
@@ -193,14 +197,16 @@ image: "/articles/histamine-mastocytes-mcas-covid-long/illustration-histamine.jp
       </p>
 
 
-      <div class="glossaire-bilingue">
-        <h3>ð Termes de référence</h3>
-        <ul>
-          <li><strong>Syndrome d'Activation des Mastocytes (SAMA)</strong> = Mast Cell Activation Syndrome (MCAS)</li>
-          <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
-          <li><strong>Malaise post-effort (MPE)</strong> = Post-Exertional Malaise (PEM)</li>
-        </ul>
-      </div>
+      <details class="glossaire-accordion">
+        <summary>ð Termes de référence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li><strong>Syndrome d'Activation des Mastocytes (SAMA)</strong> = Mast Cell Activation Syndrome (MCAS)</li>
+            <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+            <li><strong>Malaise post-effort (MPE)</strong> = Post-Exertional Malaise (PEM)</li>
+          </ul>
+        </div>
+      </details>
 
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

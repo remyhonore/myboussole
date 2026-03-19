@@ -115,9 +115,14 @@ image: "/articles/phenotypage-cyp-metabolisme-medicaments/hero.jpg"
     sup a{color:var(--forest);font-size:.75rem}
     strong{font-weight:700}
     .article-lead{font-size:1.1rem;color:#374151;border-left:3px solid var(--forest);padding-left:16px;margin-bottom:28px;font-weight:500}
-    .glossaire-bilingue{background:#f0f7f0;border-radius:12px;padding:20px 24px;margin:24px 0}
-    .glossaire-bilingue h3{margin-top:0}
-    .glossaire-bilingue ul{margin:8px 0 0 16px}
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
     .sommaire{background:#f8f6f0;border-radius:12px;padding:20px 24px;margin:28px 0}
     .sommaire h3{margin-top:0;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
     .sommaire ol{margin:8px 0 0 20px}
@@ -201,17 +206,19 @@ image: "/articles/phenotypage-cyp-metabolisme-medicaments/hero.jpg"
 
     <p class="article-lead">Deux personnes prennent le même antidépresseur à la même dose. L'une répond bien, l'autre accumule des effets indésirables intolérables. Ce n'est pas une question de sensibilité psychologique — c'est une différence enzymatique inscrite dans leur ADN. Voici ce que les enzymes CYP font dans votre foie, et pourquoi votre profil change tout.</p>
 
-    <div class="glossaire-bilingue">
-      <h3>📖 Termes de référence</h3>
-      <ul>
-        <li>Cytochrome P450 (CYP) = Cytochrome P450 enzymes (EN)</li>
-        <li>Phénotypage = Phenotyping (EN)</li>
-        <li>Métaboliseur lent (ML) = Poor Metabolizer (PM)</li>
-        <li>Métaboliseur rapide (MR) = Extensive Metabolizer (EM)</li>
-        <li>Métaboliseur ultra-rapide (MUR) = Ultra-Rapid Metabolizer (UM)</li>
-        <li>Médicament sonde = Probe drug (EN)</li>
-      </ul>
-    </div>
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Cytochrome P450 (CYP) = Cytochrome P450 enzymes (EN)</li>
+          <li>Phénotypage = Phenotyping (EN)</li>
+          <li>Métaboliseur lent (ML) = Poor Metabolizer (PM)</li>
+          <li>Métaboliseur rapide (MR) = Extensive Metabolizer (EM)</li>
+          <li>Métaboliseur ultra-rapide (MUR) = Ultra-Rapid Metabolizer (UM)</li>
+          <li>Médicament sonde = Probe drug (EN)</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

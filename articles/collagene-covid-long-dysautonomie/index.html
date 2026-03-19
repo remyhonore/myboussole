@@ -193,10 +193,14 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     .lead { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 28px; border-left: 3px solid var(--sage); padding-left: 18px; }
 
     /* Glossaire */
-    .glossaire-bilingue { background: rgba(110,135,125,.08); border: 1px solid rgba(110,135,125,.25); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 32px; }
-    .glossaire-bilingue h3 { font-size: 14px; font-weight: 700; color: var(--forest); margin-bottom: 10px; }
-    .glossaire-bilingue ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .glossaire-bilingue li { font-size: 13.5px; color: var(--ink-soft); }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
 
     /* Sommaire */
     .sommaire { background: rgba(248,246,240,.8); border: 1px solid rgba(6,23,45,.08); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 36px; }
@@ -346,18 +350,20 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
 
     <p class="lead">On parle beaucoup du système nerveux autonome, des autoanticorps, de la neuroinflammation pour expliquer la dysautonomie du Covid long. Le collagène, lui, reste rarement nommé. Pourtant, des données suggèrent qu'il joue un rôle structurel dans la fragilité vasculaire et l'instabilité orthostatique que décrivent de nombreuses personnes après l'infection — et que sa synthèse peut être perturbée à plusieurs niveaux.</p>
 
-    <div class="glossaire-bilingue">
-      <p class="section-label">📖 Termes de référence</p>
-      <ul>
-        <li>Dysautonomie du Covid long (DCL) = Long COVID autonomic dysfunction</li>
-        <li>Syndrome de tachycardie orthostatique posturale (STOP) = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
-        <li>Matrice extracellulaire (MEC) = Extracellular matrix (ECM)</li>
-        <li>Facteur de croissance transformant beta (TGF-bêta) = Transforming growth factor beta (TGF-beta)</li>
-        <li>Syndrome d'hypermobilité articulaire (SHA) = Hypermobile Ehlers-Danlos syndrome (hEDS)</li>
-        <li>Malaise post-effort (MPE) = Post-exertional malaise (PEM)</li>
-        <li>Variabilité de la fréquence cardiaque (VFC) = Heart rate variability (HRV)</li>
-      </ul>
-    </div>
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Dysautonomie du Covid long (DCL) = Long COVID autonomic dysfunction</li>
+          <li>Syndrome de tachycardie orthostatique posturale (STOP) = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Matrice extracellulaire (MEC) = Extracellular matrix (ECM)</li>
+          <li>Facteur de croissance transformant beta (TGF-bêta) = Transforming growth factor beta (TGF-beta)</li>
+          <li>Syndrome d'hypermobilité articulaire (SHA) = Hypermobile Ehlers-Danlos syndrome (hEDS)</li>
+          <li>Malaise post-effort (MPE) = Post-exertional malaise (PEM)</li>
+          <li>Variabilité de la fréquence cardiaque (VFC) = Heart rate variability (HRV)</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

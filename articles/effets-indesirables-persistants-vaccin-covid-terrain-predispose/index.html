@@ -183,15 +183,14 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
     .disclaimer strong { display: block; margin-bottom: 6px; font-size: 0.95rem; }
 
     /* Glossaire */
-    .glossaire-bilingue {
-      background: rgba(45,80,22,0.06);
-      border-radius: var(--radius);
-      padding: 18px 22px;
-      margin-bottom: 32px;
-    }
-    .glossaire-bilingue h3 { margin-top: 0; font-size: 1rem; }
-    .glossaire-bilingue ul { margin-bottom: 0; }
-    .glossaire-bilingue li { font-size: 0.9rem; color: var(--muted); }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
 
     /* Sommaire */
     .sommaire {
@@ -423,16 +422,18 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
       </div>
 
       <!-- Glossaire bilingue -->
-      <div class="glossaire-bilingue">
-        <h3>📖 Termes de référence</h3>
-        <ul>
-          <li>Syndrome de tachycardie orthostatique posturale (POTS) = Postural Orthostatic Tachycardia Syndrome (EN)</li>
-          <li>Syndrome d'activation mastocytaire (SAM) = Mast Cell Activation Syndrome / MCAS (EN)</li>
-          <li>Syndrome post-vaccinal aigu (SPVA) = Post-Acute COVID-19 Vaccination Syndrome / PACVS (EN)</li>
-          <li>Troubles autonomiques cardiovasculaires (TAC) = Cardiovascular Autonomic Disorders / CAD (EN)</li>
-          <li>Espèces réactives de l'oxygène mitochondrial (ERO-m) = Mitochondrial Reactive Oxygen Species / mtROS (EN)</li>
-        </ul>
-      </div>
+      <details class="glossaire-accordion">
+        <summary>📖 Termes de référence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li>Syndrome de tachycardie orthostatique posturale (POTS) = Postural Orthostatic Tachycardia Syndrome (EN)</li>
+            <li>Syndrome d'activation mastocytaire (SAM) = Mast Cell Activation Syndrome / MCAS (EN)</li>
+            <li>Syndrome post-vaccinal aigu (SPVA) = Post-Acute COVID-19 Vaccination Syndrome / PACVS (EN)</li>
+            <li>Troubles autonomiques cardiovasculaires (TAC) = Cardiovascular Autonomic Disorders / CAD (EN)</li>
+            <li>Espèces réactives de l'oxygène mitochondrial (ERO-m) = Mitochondrial Reactive Oxygen Species / mtROS (EN)</li>
+          </ul>
+        </div>
+      </details>
 
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>

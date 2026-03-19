@@ -157,9 +157,14 @@ draft: true
     .section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
 
     /* GLOSSAIRE */
-    .glossaire-bilingue { background: #f0f4f1; border-left: 3px solid var(--forest); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; }
-    .glossaire-bilingue ul { margin: 8px 0 0 16px; }
-    .glossaire-bilingue li { font-size: 14px; color: #3a3a4f; margin-bottom: 6px; }
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::-webkit-details-marker { display: none; }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
 
     /* SOMMAIRE */
     .sommaire { background: #faf8f3; border: 1px solid rgba(45,85,67,.15); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
@@ -270,15 +275,17 @@ draft: true
 
     <p class="lead">L'existence du Covid long pédiatrique n'est plus contestée. Ce qui reste ouvert, c'est sa mesure précise et sa prise en charge. Voici un état des lieux honnête des données disponibles jusqu'en mars 2026, avec leurs forces et leurs limites.</p>
 
-    <div class="glossaire-bilingue">
-      <p class="section-label">📖 Termes de référence</p>
-      <ul>
-        <li>Affection post-COVID-19 (APC) = Post-COVID condition (PCC)</li>
-        <li>Malaise post-effort (MPE) = Post-exertional malaise (PEM)</li>
-        <li>Syndrome inflammatoire multisystémique pédiatrique (PIMS) = Multisystem Inflammatory Syndrome in Children (MIS-C)</li>
-        <li>Dossiers de soins électroniques (DSE) = Electronic Health Records (EHR)</li>
-      </ul>
-    </div>
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Affection post-COVID-19 (APC) = Post-COVID condition (PCC)</li>
+          <li>Malaise post-effort (MPE) = Post-exertional malaise (PEM)</li>
+          <li>Syndrome inflammatoire multisystémique pédiatrique (PIMS) = Multisystem Inflammatory Syndrome in Children (MIS-C)</li>
+          <li>Dossiers de soins électroniques (DSE) = Electronic Health Records (EHR)</li>
+        </ul>
+      </div>
+    </details>
 
     <!-- SYNTHÈSE RAPIDE -->
     <div class="synthese-rapide">
