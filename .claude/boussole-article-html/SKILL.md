@@ -70,6 +70,8 @@ image: "/articles/[slug]/[nom-image-hero].jpg"
 --- -->
 ```
 
+> Format étendu supporté : `"AAAA-MM-JJTHH:MM"` — utiliser si deux articles sont publiés le même jour pour contrôler l'ordre d'affichage dans le listing (`generate_content.py` trie par datetime, commit 1ff5c38).
+
 ---
 
 ## 3. `<head>` — balises obligatoires
@@ -291,6 +293,16 @@ Chaque `[N]` dans le texte → entrée `id="source-N"` dans la liste. Sources HA
 ```
 Corps du texte = terme français seul. Jamais le sigle anglophone seul.
 
+**Bloc synthesis obligatoire (depuis 19/03/2026) :**
+Placer `<div class="article-synthesis">` après le glossaire bilingue, avant le premier `<h2>`. Titre fixe : `🧭 L'essentiel en 30 secondes` · 3 points max · niveau de preuve ≤ corps du texte (§11b) · pas de CTA.
+CSS final (commits 488f1ea + d6207cd) :
+```css
+.article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
+.synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
+.synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
+.synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+```
+
 **Noms de médicaments — marché français uniquement**
 
 Toujours utiliser le nom commercial autorisé en France (ANSM / base Vidal). Jamais le nom FDA américain, ni le nom d'un autre pays européen.
@@ -382,3 +394,5 @@ Ces erreurs reviennent à chaque article. Les corriger en amont lors de la réda
 | `loading="eager"` sur hero | Utiliser `loading="lazy" decoding="async"` |
 | H3 dans bloc CTA | Utiliser `<p class="cta-title">` |
 | Cohérence sommaire ↔ H2 | Le texte du lien dans le sommaire doit être identique au H2 cible |
+| `.site-footer` dans le CSS | Toujours nommer `.article-footer` — le HTML utilise `class="article-footer"`. Vérifier : `grep 'site-footer\|article-footer' articles/{slug}/index.html` |
+| `date:` sans heure | Format `"AAAA-MM-JJTHH:MM"` supporté — obligatoire si 2 articles le même jour |
