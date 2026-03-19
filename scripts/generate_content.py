@@ -107,11 +107,16 @@ def parse_html_meta(html: str) -> dict:
     h1 = re.sub(r"<[^>]+>", "", h1).strip()
     return {"title": title or h1, "description": desc}
 
-def parse_date(s: str) -> datetime.date | None:
-    try:
-        return datetime.date.fromisoformat(s)
-    except Exception:
+def parse_date(s: str) -> datetime.datetime | None:
+    if not s:
         return None
+    s = s.strip().strip('"')
+    for fmt in ("%Y-%m-%dT%H:%M", "%Y-%m-%d"):
+        try:
+            return datetime.datetime.strptime(s, fmt)
+        except ValueError:
+            continue
+    return None
 
 def git_lastmod_date(path: str) -> datetime.date | None:
     # needs full history => CI must use checkout fetch-depth: 0
@@ -199,8 +204,8 @@ def collect_articles():
 
     # sort: date desc, then slug asc
     def sort_key(it):
-        d = it["date"] or datetime.date(1970, 1, 1)
-        return (-d.toordinal(), it["slug"])
+        d = it["date"] or datetime.datetime(1970, 1, 1)
+        return (-d.timestamp(), it["slug"])
     items.sort(key=sort_key)
     return items
 
@@ -266,7 +271,7 @@ def write_sitemap(items):
 
     def add_url(loc: str, lastmod: datetime.date | None):
         if lastmod:
-            url_lines.append(f"  <url><loc>{loc}</loc><lastmod>{lastmod.isoformat()}</lastmod></url>")
+            url_lines.append(f"  <url><loc>{loc}</loc><lastmod>{lastmod.strftime('%Y-%m-%d')}</lastmod></url>")
         else:
             url_lines.append(f"  <url><loc>{loc}</loc></url>")
 
