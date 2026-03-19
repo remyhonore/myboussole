@@ -122,10 +122,14 @@ image: "/articles/choline-fatigue-chronique-covid-long/hero.jpg"
     .np-suggere{background:rgba(201,185,217,.3);color:#5B2D8E}
     .np-speculatif{background:rgba(232,183,200,.3);color:#7c3d52}
     @media(max-width:640px){.cta-inline{flex-direction:column;text-align:center}}
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -169,12 +173,37 @@ image: "/articles/choline-fatigue-chronique-covid-long/hero.jpg"
     </div>
 
     <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>La choline est un précurseur de l'acétylcholine et du phosphatidylcholine membranaire — deux éléments impliqués dans la fonction cognitive et l'intégrité mitochondriale.</li>
-    <li>Des données suggèrent des besoins accrus en choline dans les contextes de fatigue chronique et de Covid long, notamment via le cycle de méthylation (voie PEMT).</li>
-    <li>Les principales sources alimentaires sont les œufs, le foie et les légumineuses — un apport insuffisant peut contribuer aux symptômes cognitifs chez certaines personnes.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧠</span>
+      <div>
+        <p class="synthesis-card-title">Précurseur clé</p>
+        <p class="synthesis-card-text">La choline est indispensable à la production d'acétylcholine (cognition) et de phosphatidylcholine membranaire (intégrité mitochondriale).</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Besoins accrus</p>
+        <p class="synthesis-card-text">Des données suggèrent des besoins en choline plus élevés dans la fatigue chronique et le Covid long, notamment via la voie PEMT du cycle de méthylation.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🥚</span>
+      <div>
+        <p class="synthesis-card-title">Sources alimentaires prioritaires</p>
+        <p class="synthesis-card-text">Œufs, foie et légumineuses sont les meilleures sources — un apport insuffisant peut contribuer aux symptômes cognitifs chez certaines personnes.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Lien avec la méthylation</p>
+        <p class="synthesis-card-text">La choline est aussi un donneur de méthyle — son optimisation s'inscrit dans une approche globale du cycle de méthylation, avec B9 et B12.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
     <nav class="sommaire" aria-label="Sommaire de l'article">

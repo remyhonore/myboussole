@@ -120,10 +120,14 @@ image: "/articles/fatigue-mentale-symptomes-corporels-axe-hpa-cortisol/hero.jpg"
     .article-footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);text-align:center;font-size:13px;color:var(--muted)}
     .article-footer a{color:var(--muted)}
     @media(max-width:640px){.cta-inline{flex-direction:column;text-align:center}}
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -168,12 +172,37 @@ image: "/articles/fatigue-mentale-symptomes-corporels-axe-hpa-cortisol/hero.jpg"
     </div>
 
     <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>La fatigue mentale intense peut se manifester par des symptômes physiques (douleurs, troubles digestifs, réactions cutanées) via l'axe HPA et le système nerveux autonome.</li>
-    <li>Une dérégulation du cortisol et une hypersensibilité du système nerveux central sont associées à cette somatisation — sans que ces symptômes soient "dans la tête".</li>
-    <li>Reconnaître le lien corps-cerveau permet d'orienter la prise en charge vers les causes profondes plutôt que vers le traitement isolé de chaque symptôme.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧠</span>
+      <div>
+        <p class="synthesis-card-title">Cerveau → corps</p>
+        <p class="synthesis-card-text">La fatigue mentale intense peut se manifester par des symptômes physiques (douleurs, troubles digestifs, réactions cutanées) via l'axe HPA et le SNA.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">Cortisol dérégulé</p>
+        <p class="synthesis-card-text">Une dérégulation du cortisol et une hypersensibilité du SNC sont associées à cette somatisation — sans que ces symptômes soient "dans la tête".</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💡</span>
+      <div>
+        <p class="synthesis-card-title">Causes profondes d'abord</p>
+        <p class="synthesis-card-text">Reconnaître le lien corps-cerveau permet d'orienter la prise en charge vers les mécanismes sous-jacents plutôt que de traiter chaque symptôme isolément.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Axe HPA, un levier concret</p>
+        <p class="synthesis-card-text">Des interventions ciblées sur le rythme circadien, la gestion du stress et la nutrition peuvent moduler l'axe HPA et réduire la somatisation.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
     <nav class="sommaire" aria-label="Sommaire de l'article">

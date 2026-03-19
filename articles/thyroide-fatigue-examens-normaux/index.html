@@ -310,10 +310,14 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
       .article-header h1 { font-size: 22px; }
     }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--color-accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -389,12 +393,37 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
       <div class="prose">
 
         <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Une TSH et une T4L normales n'excluent pas un problème thyroïdien — la conversion T4→T3 peut être insuffisante sans que le bilan standard le détecte.</li>
-    <li>Hashimoto peut progresser silencieusement pendant des années avec des anticorps anti-TPO élevés et une TSH encore normale — c'est la phase euthyroïdienne.</li>
-    <li>Le Covid long est associé à une élévation des anti-TPO chez des personnes sans antécédent thyroïdien — une surveillance à 6-12 mois post-infection peut être justifiée.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">TSH normale ≠ thyroïde OK</p>
+        <p class="synthesis-card-text">Une TSH et une T4L normales n'excluent pas un problème thyroïdien — la conversion T4→T3 peut être insuffisante sans que le bilan standard le détecte.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧬</span>
+      <div>
+        <p class="synthesis-card-title">Hashimoto silencieux</p>
+        <p class="synthesis-card-text">Hashimoto peut progresser pendant des années avec des anti-TPO élevés et une TSH encore normale — c'est la phase euthyroïdienne souvent manquée.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">⚠️</span>
+      <div>
+        <p class="synthesis-card-title">Covid long et thyroïde</p>
+        <p class="synthesis-card-text">Le Covid long est associé à une élévation des anti-TPO chez des personnes sans antécédent thyroïdien — une surveillance à 6-12 mois peut être justifiée.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Bilan approfondi si doute</p>
+        <p class="synthesis-card-text">En cas de symptômes persistants malgré bilan standard normal, demander T3 libre, anti-TPO et ratio T3/rT3 peut révéler une piste thérapeutique.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
         <h2 id="thyroide-hormones">La thyroïde en 3 minutes : ce que font vraiment ces hormones</h2>

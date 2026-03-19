@@ -140,10 +140,14 @@ image: "/articles/histamine-mastocytes-mcas-covid-long/illustration-histamine.jp
     .article-footer { text-align: center; padding: 32px 24px; font-size: 14px; color: var(--color-text-muted); }
     .article-footer a { color: var(--color-accent); text-decoration: none; }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--color-accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -199,12 +203,37 @@ image: "/articles/histamine-mastocytes-mcas-covid-long/illustration-histamine.jp
       </div>
 
       <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le syndrome d'activation mastocytaire (SAMA) est associé au Covid long chez certaines personnes — les mastocytes libèrent des médiateurs inflammatoires (histamine, tryptase) en réponse à des déclencheurs variés.</li>
-    <li>Les symptômes peuvent être multisystémiques : flush, fatigue, douleurs, troubles digestifs, réactions cutanées — sans allergène classique identifiable.</li>
-    <li>Un régime pauvre en histamine et certaines approches nutritionnelles peuvent contribuer à réduire la charge symptomatique chez certaines personnes, sans constituer un traitement de fond.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">⚠️</span>
+      <div>
+        <p class="synthesis-card-title">SAMA et Covid long</p>
+        <p class="synthesis-card-text">Le syndrome d'activation mastocytaire est associé au Covid long chez certaines personnes — les mastocytes libèrent histamine et tryptase en réponse à des déclencheurs variés.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Symptômes multisystémiques</p>
+        <p class="synthesis-card-text">Flush, fatigue, douleurs, troubles digestifs et réactions cutanées — sans allergène classique identifiable, ce tableau oriente vers une piste mastocytaire.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🥗</span>
+      <div>
+        <p class="synthesis-card-title">Régime pauvre en histamine</p>
+        <p class="synthesis-card-text">Un régime adapté et certaines approches nutritionnelles peuvent réduire la charge symptomatique chez certaines personnes, sans constituer un traitement de fond.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Identifier les déclencheurs</p>
+        <p class="synthesis-card-text">Tenir un journal alimentaire et symptomatique permet d'identifier les déclencheurs individuels (aliments, stress, chaleur) et de les éviter progressivement.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
       <h2>L'histamine : bien plus qu'une molécule d'allergie</h2>

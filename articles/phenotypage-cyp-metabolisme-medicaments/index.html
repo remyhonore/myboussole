@@ -161,10 +161,14 @@ image: "/articles/phenotypage-cyp-metabolisme-medicaments/hero.jpg"
     .article-footer{text-align:center;padding:32px 24px;font-size:.85rem;color:var(--muted)}
     .article-footer a{color:var(--forest)}
     .article-meta{font-size:13px;color:#888;margin:-8px 0 20px}
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -210,12 +214,37 @@ image: "/articles/phenotypage-cyp-metabolisme-medicaments/hero.jpg"
     </div>
 
     <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le métabolisme des médicaments varie considérablement d'une personne à l'autre selon son profil enzymatique CYP — ce qui explique des efficacités ou des effets indésirables très différents à posologie identique.</li>
-    <li>Les principaux enzymes concernés (CYP2D6, CYP2C19, CYP3A4) sont codés par des gènes polymorphes — on distingue métaboliseurs lents, normaux, rapides et ultra-rapides.</li>
-    <li>En pratique, certains médicaments fréquents (antidépresseurs, opioïdes, anticoagulants) sont directement concernés — un phénotypage ou génotypage peut orienter le choix thérapeutique dans les situations complexes.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💊</span>
+      <div>
+        <p class="synthesis-card-title">Métabolisme variable</p>
+        <p class="synthesis-card-text">L'efficacité et les effets indésirables des médicaments varient considérablement selon le profil enzymatique CYP — à posologie identique, les résultats peuvent être opposés.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧬</span>
+      <div>
+        <p class="synthesis-card-title">4 profils métaboliques</p>
+        <p class="synthesis-card-text">CYP2D6, CYP2C19 et CYP3A4 sont codés par des gènes polymorphes — on distingue métaboliseurs lents, normaux, rapides et ultra-rapides.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📋</span>
+      <div>
+        <p class="synthesis-card-title">Médicaments concernés</p>
+        <p class="synthesis-card-text">Antidépresseurs, opioïdes et anticoagulants sont directement impactés — un phénotypage peut éviter des essais/erreurs thérapeutiques longs et délétères.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Quand demander un test ?</p>
+        <p class="synthesis-card-text">En cas d'effets indésirables inhabituels ou d'inefficacité inexpliquée, un génotypage CYP peut orienter le choix thérapeutique dans les situations complexes.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
     <nav class="sommaire" aria-label="Sommaire">

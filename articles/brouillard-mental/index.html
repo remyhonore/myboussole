@@ -163,10 +163,14 @@ tags: ["Neuromédiateurs", "Mitochondries"]
     .glossaire-bilingue ul { margin: 0; padding-left: 18px; }
     .glossaire-bilingue li { font-size: 14px; color: #444; margin-bottom: 4px; }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--color-accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -227,12 +231,37 @@ tags: ["Neuromédiateurs", "Mitochondries"]
   </div>
 
   <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le brouillard mental dans le Covid long et la fibromyalgie n'est pas un symptôme psychologique — des mécanismes neuroinflammation, d'hypoperfusion cérébrale et de dysfonction mitochondriale sont documentés.</li>
-    <li>L'activation microgliale, la dysautonomie et le déficit en acétylcholine peuvent contribuer à altérer la clarté cognitive chez certaines personnes.</li>
-    <li>Suivre la clarté mentale au quotidien permet d'identifier les déclencheurs et les fenêtres de récupération — une information plus utile qu'une évaluation ponctuelle en consultation.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧠</span>
+      <div>
+        <p class="synthesis-card-title">Biologie, pas psychologie</p>
+        <p class="synthesis-card-text">Le brouillard mental dans le Covid long et la fibromyalgie est documenté — neuroinflammation, hypoperfusion cérébrale et dysfonction mitochondriale en sont les mécanismes.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Microglie, SNA, acétylcholine</p>
+        <p class="synthesis-card-text">L'activation microgliale, la dysautonomie et le déficit en acétylcholine peuvent altérer la clarté cognitive de façon mesurable.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">Suivre la clarté mentale</p>
+        <p class="synthesis-card-text">Un suivi quotidien de la clarté cognitive permet d'identifier des déclencheurs et des fenêtres de récupération invisibles autrement.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💡</span>
+      <div>
+        <p class="synthesis-card-title">Données > évaluation ponctuelle</p>
+        <p class="synthesis-card-text">Une série temporelle de symptômes cognitifs est plus utile qu'un test ponctuel en consultation pour orienter une prise en charge personnalisée.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
   <h2 id="ce-que-vous-ressentez">Ce que vous ressentez a un nom, et une biologie</h2>

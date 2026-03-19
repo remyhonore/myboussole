@@ -513,10 +513,14 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
     .glossaire-bilingue ul { margin: 0; padding-left: 18px; }
     .glossaire-bilingue li { font-size: 14px; color: #444; margin-bottom: 4px; }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 
@@ -580,12 +584,37 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
       </div>
 
       <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Quviviq (daridorexant) est un antagoniste des récepteurs à l'orexine — il agit sur le circuit veille/sommeil en bloquant le signal d'éveil plutôt qu'en induisant une sédation non spécifique.</li>
-    <li>Son profil pharmacologique le distingue des benzodiazépines et Z-drugs : moins de dépendance, moins d'effet sur l'architecture du sommeil, moins de rebond à l'arrêt.</li>
-    <li>Il est indiqué dans l'insomnie de maintien (réveils nocturnes) — un tableau fréquent dans le Covid long, la fibromyalgie et les conditions avec hyperactivation du SNA.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💤</span>
+      <div>
+        <p class="synthesis-card-title">Mécanisme orexinergique</p>
+        <p class="synthesis-card-text">Quviviq (daridorexant) bloque le signal d'éveil orexinergique plutôt que d'induire une sédation non spécifique — une différence d'action fondamentale.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">Profil favorable vs BZD</p>
+        <p class="synthesis-card-text">Moins de dépendance, moins d'effets sur l'architecture du sommeil et moins de rebond à l'arrêt comparé aux benzodiazépines et Z-drugs.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🎯</span>
+      <div>
+        <p class="synthesis-card-title">Insomnie de maintien</p>
+        <p class="synthesis-card-text">Indiqué spécifiquement pour les réveils nocturnes — un tableau fréquent dans le Covid long, la fibromyalgie et les conditions avec hyperactivation du SNA.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Décision médicale individualisée</p>
+        <p class="synthesis-card-text">Comme tout traitement hypnotique, l'indication doit être posée en concertation avec un médecin, en tenant compte du tableau clinique global.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
       <!-- SOMMAIRE -->

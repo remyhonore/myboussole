@@ -475,10 +475,14 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
     .share-fb { background: #1877F2; color: #fff; }
     .share-copy { background: var(--sage-light); color: var(--navy); cursor: pointer; border: none; font-family: inherit; }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--color-accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -547,12 +551,37 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
 
 
       <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>La méthylation est un processus biochimique central qui régule la production de neurotransmetteurs, l'expression génique et la détoxification — il dépend du SAM (S-adénosylméthionine) comme donneur de méthyle.</li>
-    <li>Un déficit en cofacteurs (vitamine B9, B12, B6, choline) peut ralentir ce cycle et contribuer à des symptômes cognitifs, thymiques et énergétiques chez certaines personnes.</li>
-    <li>Les variants génétiques MTHFR sont associés à une efficacité réduite de cette voie — leur impact clinique dépend du contexte nutritionnel global, pas du génotype seul.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Le SAM, donneur universel</p>
+        <p class="synthesis-card-text">La méthylation repose sur le SAM (S-adénosylméthionine) pour réguler neurotransmetteurs, expression génique et détoxification — des milliards de fois par seconde.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💊</span>
+      <div>
+        <p class="synthesis-card-title">Cofacteurs indispensables</p>
+        <p class="synthesis-card-text">Un déficit en B9, B12, B6 ou choline peut ralentir ce cycle et contribuer à des symptômes cognitifs, thymiques et énergétiques.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧬</span>
+      <div>
+        <p class="synthesis-card-title">MTHFR : contexte avant génotype</p>
+        <p class="synthesis-card-text">Les variants MTHFR réduisent l'efficacité de la voie, mais leur impact clinique dépend du contexte nutritionnel global — pas du génotype seul.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Approche nutritionnelle ciblée</p>
+        <p class="synthesis-card-text">Optimiser les apports en cofacteurs de méthylation peut améliorer la clarté mentale et l'énergie chez les personnes avec un cycle déficient.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
       <!-- ── SECTION 1 ── -->

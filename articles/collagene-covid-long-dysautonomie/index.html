@@ -289,10 +289,14 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     .article-footer { margin-top: 40px; border-top: 1px solid rgba(6,23,45,.08); padding-top: 20px; font-size: 13px; color: var(--ink-soft); text-align: center; line-height: 1.8; }
     .article-footer a { color: var(--sage); text-decoration: none; }
     .article-footer a:hover { text-decoration: underline; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -356,12 +360,37 @@ image: "/articles/collagene-covid-long-dysautonomie/hero.jpg"
     </div>
 
     <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le SARS-CoV-2 peut affecter le tissu conjonctif et les parois vasculaires — des altérations de la matrice extracellulaire sont documentées dans certains tableaux de Covid long.</li>
-    <li>La dysautonomie associée (POTS, hypotension orthostatique) peut être liée en partie à une fragilité vasculaire et à une atteinte du tissu de soutien du système nerveux autonome.</li>
-    <li>Un apport suffisant en cofacteurs du collagène (vitamine C, zinc, glycine) peut soutenir la réparation tissulaire — sans remplacer une prise en charge médicale si nécessaire.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Tissu conjonctif atteint</p>
+        <p class="synthesis-card-text">Le SARS-CoV-2 peut affecter les parois vasculaires et la matrice extracellulaire — des altérations du tissu conjonctif sont documentées dans certains tableaux de Covid long.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💉</span>
+      <div>
+        <p class="synthesis-card-title">Fragilité vasculaire et POTS</p>
+        <p class="synthesis-card-text">La dysautonomie (POTS, hypotension orthostatique) peut être liée à une fragilité vasculaire et à une atteinte du tissu de soutien du SNA.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧪</span>
+      <div>
+        <p class="synthesis-card-title">Cofacteurs du collagène</p>
+        <p class="synthesis-card-text">Vitamine C, zinc et glycine sont indispensables à la synthèse du collagène — un apport suffisant peut soutenir la réparation tissulaire.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Complément, pas substitut</p>
+        <p class="synthesis-card-text">L'optimisation nutritionnelle complète, sans remplacer, une prise en charge médicale adaptée si une dysautonomie sévère est présente.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
     <nav class="sommaire" aria-label="Sommaire de l'article">

@@ -134,10 +134,14 @@ tags: ["Pacing", "Mitochondries"]
       .mobile-nav a { padding: 12px 24px; font-size: 15px; color: var(--color-text); text-decoration: none; }
     }
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--color-accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -189,12 +193,37 @@ tags: ["Pacing", "Mitochondries"]
   </nav>
 
   <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le pacing est une stratégie de gestion de l'énergie qui consiste à rester sous son seuil d'effort pour éviter le malaise post-effort (MPE) — il est recommandé en première intention dans le Covid long et la fibromyalgie.</li>
-    <li>Contrairement à la rééducation progressive classique, forcer l'effort au-delà du seuil peut aggraver durablement l'état chez les personnes présentant un MPE.</li>
-    <li>Suivre ses métriques quotidiennes (énergie, fréquence cardiaque, clarté mentale) aide à identifier son enveloppe énergétique réelle et à calibrer ses activités.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">⚡</span>
+      <div>
+        <p class="synthesis-card-title">Rester sous le seuil</p>
+        <p class="synthesis-card-text">Le pacing consiste à ne jamais dépasser son enveloppe énergétique pour éviter le malaise post-effort (MPE) — recommandé en première intention dans le Covid long.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">⚠️</span>
+      <div>
+        <p class="synthesis-card-title">Forcer aggrave</p>
+        <p class="synthesis-card-text">Contrairement à la rééducation progressive classique, pousser au-delà du seuil peut aggraver durablement l'état chez les personnes avec un MPE.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">Métriques quotidiennes</p>
+        <p class="synthesis-card-text">Suivre énergie, fréquence cardiaque et clarté mentale au quotidien aide à calibrer son enveloppe énergétique réelle et à ajuster ses activités.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Stratégie, pas abandon</p>
+        <p class="synthesis-card-text">Le pacing n'est pas du déconditionnement — c'est une gestion active de l'énergie qui permet de maintenir une qualité de vie sans cycles crash/récupération.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
   <h2 id="crash-pas-de-faiblesse">Ce que l'on appelle "crash" n'est pas de la faiblesse</h2>

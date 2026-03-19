@@ -358,10 +358,14 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
     /* Footer */
     .article-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 0.82rem; color: var(--muted); text-align: center; }
     .article-footer a { color: var(--forest); text-decoration: none; }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -431,12 +435,37 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
       </div>
 
       <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Chez certaines personnes présentant un terrain prédisposé (SAMA, variante génétique, pathologie auto-immune latente), des effets indésirables persistants post-vaccin COVID ont été rapportés.</li>
-    <li>Les mécanismes étudiés incluent une activation mastocytaire, une réponse inflammatoire prolongée et des interférences avec le système nerveux autonome.</li>
-    <li>Ces situations restent rares et documentées dans une littérature encore émergente — leur reconnaissance ne remet pas en question le rapport bénéfice/risque vaccinal à l'échelle populationnelle.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">⚠️</span>
+      <div>
+        <p class="synthesis-card-title">Terrain prédisposé</p>
+        <p class="synthesis-card-text">Chez certaines personnes (SAMA, variant génétique, pathologie auto-immune latente), des effets indésirables persistants post-vaccin COVID ont été rapportés.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">Mécanismes étudiés</p>
+        <p class="synthesis-card-text">Activation mastocytaire, réponse inflammatoire prolongée et interférences avec le système nerveux autonome sont les pistes les plus documentées.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📋</span>
+      <div>
+        <p class="synthesis-card-title">Littérature émergente</p>
+        <p class="synthesis-card-text">Ces situations restent rares et décrites dans une littérature encore incomplète — leur reconnaissance ne remet pas en question le rapport bénéfice/risque vaccinal global.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Approche individualisée</p>
+        <p class="synthesis-card-text">Face à des symptômes persistants post-vaccin, une exploration du terrain (bilan immuno, mastocytes, SNA) peut orienter une prise en charge adaptée.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
       <!-- Sommaire -->

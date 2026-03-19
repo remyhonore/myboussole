@@ -304,10 +304,14 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
     @media (max-width: 600px) {
       .article-wrapper { padding: 24px 16px 60px; }
     }
-    .article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-    .synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-    .synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-    .synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
   </style>
 </head>
 <body>
@@ -373,12 +377,37 @@ image: "/articles/collagene-cicatrisation/hero.jpg"
       </div>
 
       <div class="article-synthesis">
-  <p class="synthesis-label">🧭 L'essentiel en 30 secondes</p>
-  <ul class="synthesis-list">
-    <li>Le collagène représente environ 30 % des protéines corporelles — il structure la peau, les tendons, les os et les parois vasculaires.</li>
-    <li>Sa synthèse dépend de cofacteurs précis : vitamine C, zinc, cuivre et glycine — un déficit en l'un d'eux peut ralentir la cicatrisation.</li>
-    <li>Les données sur la supplémentation orale en collagène hydrolysé sont encourageantes pour la peau et les articulations, avec un niveau de preuve modéré.</li>
-  </ul>
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🏗️</span>
+      <div>
+        <p class="synthesis-card-title">Protéine structurelle majeure</p>
+        <p class="synthesis-card-text">Le collagène représente environ 30 % des protéines corporelles — il structure la peau, les tendons, les os et les parois vasculaires.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧪</span>
+      <div>
+        <p class="synthesis-card-title">Cofacteurs indispensables</p>
+        <p class="synthesis-card-text">La synthèse du collagène dépend de la vitamine C, du zinc, du cuivre et de la glycine — un déficit en l'un d'eux peut ralentir la cicatrisation.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">Preuves en supplémentation</p>
+        <p class="synthesis-card-text">Les données sur le collagène hydrolysé oral sont encourageantes pour la peau et les articulations, avec un niveau de preuve modéré mais croissant.</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">Alimentation d'abord</p>
+        <p class="synthesis-card-text">Bouillon d'os, gélatine, œufs et agrumes couvrent une part des besoins — la supplémentation vient en complément d'une alimentation déjà riche en précurseurs.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
       <nav class="sommaire" aria-label="Sommaire de l'article">
