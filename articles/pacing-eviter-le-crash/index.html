@@ -142,6 +142,13 @@ tags: ["Pacing", "Mitochondries"]
     .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
     .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
     .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
+    .glossaire-accordion{margin-bottom:20px;}
+    .glossaire-accordion summary{font-size:13px;font-weight:700;color:var(--color-accent);cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(45,106,79,0.05);border-radius:8px;border:1px solid rgba(45,106,79,0.15);}
+    .glossaire-accordion summary::after{content:"+";font-size:16px;margin-left:auto;}
+    .glossaire-accordion[open] summary::after{content:"−";}
+    .glossaire-accordion .glossaire-bilingue{background:rgba(110,135,125,0.07);border-radius:0 0 8px 8px;padding:14px 18px;margin-top:-1px;border:1px solid rgba(45,106,79,0.15);border-top:none;}
+    .glossaire-bilingue ul{padding-left:18px;margin:0;}
+    .glossaire-bilingue li{font-size:14px;margin-bottom:4px;color:var(--color-text);}
   </style>
 </head>
 <body>
@@ -191,6 +198,17 @@ tags: ["Pacing", "Mitochondries"]
       <li><a href="#reconnaitre-ses-signaux" style="color:#2d6a4f;text-decoration:none;">Reconnaître ses signaux précurseurs</a></li>
     </ol>
   </nav>
+
+<details class="glossaire-accordion">
+  <summary>📖 Termes de référence</summary>
+  <div class="glossaire-bilingue"><ul>
+    <li>Pacing = Energy management / Pacing (EN)</li>
+    <li>Malaise post-effort (MPE) = Post-exertional malaise (PEM)</li>
+    <li>Enveloppe énergétique = Energy envelope (EN)</li>
+    <li>Seuil anaérobie = Anaerobic threshold (AT)</li>
+    <li>ME/SFC = Myalgic encephalomyelitis / Chronic fatigue syndrome (ME/CFS)</li>
+  </ul></div>
+</details>
 
   <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
@@ -300,11 +318,30 @@ tags: ["Pacing", "Mitochondries"]
 
   <p>Les repérer, c'est pouvoir s'arrêter avant de franchir le seuil — et éviter le J+1/J+2 difficile.</p>
 
+  <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Le pacing — gestion de l'enveloppe énergétique pour éviter le dépassement du seuil anaérobie — est la stratégie la mieux étayée pour prévenir le malaise post-effort dans le ME/CFS et le Covid long selon les guidelines NICE 2021.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> La définition précise du seuil d'effort individuel et les outils de mesure optimaux (VFC, fréquence cardiaque, score subjectif) restent à standardiser. L'efficacité à long terme du pacing seul est difficile à isoler dans les études existantes.</p>
+</div>
+
   <div class="cta-boussole">
     <h3>🧭 Suivre l'énergie pour calibrer le pacing</h3>
     <p>Boussole vous permet de noter chaque jour votre énergie et votre confort physique sur 10. En suivant ces métriques sur 30 jours, il devient possible d'identifier les patterns de crash, votre seuil personnel d'activité tolérable, et les corrélations entre type d'effort et intensité du rebond. Ces données, objectivées, peuvent être partagées avec un professionnel de santé.</p>
     <a href="https://app.myboussole.fr" class="btn-cta">Essayer Boussole gratuitement</a>
   </div>
+
+  <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/pacing-eviter-le-crash/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/pacing-eviter-le-crash/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-pacing"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/pacing-eviter-le-crash/';var b=document.getElementById('copy-btn-pacing');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
   <div class="sources">
     <h3>Sources</h3>

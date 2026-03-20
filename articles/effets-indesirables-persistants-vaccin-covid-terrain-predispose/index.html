@@ -422,19 +422,6 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
       </div>
 
       <!-- Glossaire bilingue -->
-      <details class="glossaire-accordion">
-        <summary>📖 Termes de référence</summary>
-        <div class="glossaire-bilingue">
-          <ul>
-            <li>Syndrome de tachycardie orthostatique posturale (POTS) = Postural Orthostatic Tachycardia Syndrome (EN)</li>
-            <li>Syndrome d'activation mastocytaire (SAM) = Mast Cell Activation Syndrome / MCAS (EN)</li>
-            <li>Syndrome post-vaccinal aigu (SPVA) = Post-Acute COVID-19 Vaccination Syndrome / PACVS (EN)</li>
-            <li>Troubles autonomiques cardiovasculaires (TAC) = Cardiovascular Autonomic Disorders / CAD (EN)</li>
-            <li>Espèces réactives de l'oxygène mitochondrial (ERO-m) = Mitochondrial Reactive Oxygen Species / mtROS (EN)</li>
-          </ul>
-        </div>
-      </details>
-
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
   <div class="synthesis-grid">
@@ -481,6 +468,19 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
           <li><a href="#faq">Questions fréquentes</a></li>
         </ol>
       </nav>
+
+      <details class="glossaire-accordion">
+        <summary>📖 Termes de référence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li>Syndrome de tachycardie orthostatique posturale (POTS) = Postural Orthostatic Tachycardia Syndrome (EN)</li>
+            <li>Syndrome d'activation mastocytaire (SAM) = Mast Cell Activation Syndrome / MCAS (EN)</li>
+            <li>Syndrome post-vaccinal aigu (SPVA) = Post-Acute COVID-19 Vaccination Syndrome / PACVS (EN)</li>
+            <li>Troubles autonomiques cardiovasculaires (TAC) = Cardiovascular Autonomic Disorders / CAD (EN)</li>
+            <li>Espèces réactives de l'oxygène mitochondrial (ERO-m) = Mitochondrial Reactive Oxygen Species / mtROS (EN)</li>
+          </ul>
+        </div>
+      </details>
 
       <img
         src="/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/hero.jpg"
@@ -715,6 +715,12 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
         </details>
       </section>
 
+      <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Des effets indésirables persistants post-vaccinaux ont été documentés dans des registres de pharmacovigilance, avec une fréquence faible mais non nulle. Leur association avec un terrain préexistant (MCAS, dysautonomie) est biologiquement plausible.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> La physiopathologie exacte des effets post-vaccinaux persistants reste en cours d'investigation. La distinction avec une réactivation du Covid long ou une décompensation d'une condition préexistante est souvent difficile cliniquement.</p>
+</div>
+
       <!-- CTA principal -->
       <div class="cta-principal">
         <h3>🧭 Suivre son énergie, pas ses peurs</h3>
@@ -722,18 +728,18 @@ image: "/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispos
         <a href="https://app.myboussole.fr" class="cta-btn-blanc">Essayer Boussole — c'est gratuit</a>
       </div>
 
-      <!-- Partage -->
-      <div class="partage">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/" target="_blank" rel="noopener" class="btn-partage btn-fb" aria-label="Partager sur Facebook">
-          📘 Partager
-        </a>
-        <a href="https://twitter.com/intent/tweet?url=https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/&text=Effets+ind%C3%A9sirables+persistants+post-vaccin+COVID+%3A+quand+un+terrain+fragile+se+d%C3%A9compense" target="_blank" rel="noopener" class="btn-partage btn-tw" aria-label="Partager sur X">
-          𝕏 Partager
-        </a>
-        <button class="btn-partage btn-copy" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✅ Lien copié !'" aria-label="Copier le lien">
-          🔗 Copier le lien
-        </button>
-      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-effets"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/';var b=document.getElementById('copy-btn-effets');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
       <!-- Sources -->
       <section aria-labelledby="sources-titre">

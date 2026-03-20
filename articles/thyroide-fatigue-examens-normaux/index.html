@@ -318,6 +318,13 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
     .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
     .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
     .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
+    .glossaire-accordion{margin-bottom:20px;}
+    .glossaire-accordion summary{font-size:13px;font-weight:700;color:var(--forest);cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(45,106,79,0.05);border-radius:8px;border:1px solid rgba(45,106,79,0.15);}
+    .glossaire-accordion summary::after{content:"+";font-size:16px;margin-left:auto;}
+    .glossaire-accordion[open] summary::after{content:"−";}
+    .glossaire-accordion .glossaire-bilingue{background:rgba(110,135,125,0.07);border-radius:0 0 8px 8px;padding:14px 18px;margin-top:-1px;border:1px solid rgba(45,106,79,0.15);border-top:none;}
+    .glossaire-bilingue ul{padding-left:18px;margin:0;}
+    .glossaire-bilingue li{font-size:14px;margin-bottom:4px;color:var(--ink);}
   </style>
 </head>
 <body>
@@ -375,6 +382,17 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
           <li><a href="#faq-title" style="color:#2d6a4f;text-decoration:none;">Questions fréquentes</a></li>
         </ol>
       </nav>
+
+      <details class="glossaire-accordion">
+        <summary>📖 Termes de référence</summary>
+        <div class="glossaire-bilingue"><ul>
+          <li>TSH (Thyréostimuline) = Thyroid-stimulating hormone (EN)</li>
+          <li>T3 libre (T3L) = Free triiodothyronine (fT3)</li>
+          <li>T4 libre (T4L) = Free thyroxine (fT4)</li>
+          <li>Hypothyroïdie infraclinique = Subclinical hypothyroidism (EN)</li>
+          <li>Déiodinase = Deiodinase enzyme (EN)</li>
+        </ul></div>
+      </details>
 
       <!-- Hero image -->
       <figure class="article-figure">
@@ -612,6 +630,12 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
         </details>
       </section>
 
+      <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> La dysfonction thyroïdienne infraclinique et les variations de T3 libre sont associées à des symptômes de fatigue dans des études observationnelles. L'axe thyroïdien peut être modulé par l'inflammation chronique et la dysrégulation de l'axe HPA.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> Le diagnostic de dysfonction thyroïdienne "fonctionnelle" hors des seuils TSH classiques reste controversé. La supplémentation en T3 hors hypothyroïdie avérée n'est pas recommandée en pratique standard et nécessite un suivi spécialisé.</p>
+</div>
+
       <!-- CTA Boussole -->
       <aside aria-label="Découvrir Boussole">
         <div class="cta-boussole">
@@ -628,29 +652,18 @@ image: "/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.j
         </div>
       </aside>
 
-      <!-- Partage -->
-      <div class="share-section">
-        <div class="share-title">Partager cet article</div>
-        <div class="share-buttons">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/"
-            target="_blank" rel="noopener"
-            class="btn-share btn-share-fb"
-            aria-label="Partager sur Facebook"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            Facebook
-          </a>
-          <button
-            class="btn-share btn-share-copy"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Lien copié';setTimeout(()=>{this.innerHTML='<svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'currentColor\'><path d=\'M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z\'/></svg> Copier le lien';},2200)}"
-            aria-label="Copier le lien de l'article"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            Copier le lien
-          </button>
-        </div>
-      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-thyroide"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/';var b=document.getElementById('copy-btn-thyroide');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
       <!-- Sources -->
       <div class="sources">

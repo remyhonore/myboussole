@@ -684,25 +684,30 @@ author: "Dr Rémy Honoré"
 
   </section>
 
+  <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Le pacing et la gestion de l'effort sont les approches les mieux documentées pour réduire le malaise post-effort dans le Covid long et le ME/CFS. Plusieurs guidelines internationales les recommandent.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> Les protocoles de réhabilitation optimaux varient selon les sous-types de Covid long. L'absence d'essais randomisés de grande taille limite les recommandations de grade élevé.</p>
+</div>
+
   <aside class="cta-boussole" aria-label="Découvrir Boussole">
     <h3>🧭 Boussole</h3>
     <p>C'est pour ça que j'ai créé Boussole : un outil gratuit, 100 % privé, sans compte, pour noter tes 4 indicateurs de bien-être chaque jour (énergie, sommeil, confort physique, clarté mentale) et repérer tes patterns sur 30 jours. Un PDF à montrer à ton praticien. Pas un diagnostic. Un point de départ.</p>
     <a href="https://app.myboussole.fr" class="btn-cta">Essayer Boussole</a>
   </aside>
 
-  <div class="share-block">
-    <p class="share-intro">Si ton entourage ne comprend pas ce que tu vis, cet article est aussi fait pour être partagé avec eux.</p>
-    <div class="share-buttons">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.myboussole.fr%2Farticles%2Fcovid-long-que-faire%2F" target="_blank" rel="noopener" class="btn-share btn-share-fb" aria-label="Partager sur Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-        Partager
-      </a>
-      <button class="btn-share btn-share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Lien copié';setTimeout(()=>{this.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\' aria-hidden=\'true\'><rect x=\'9\' y=\'9\' width=\'13\' height=\'13\' rx=\'2\' ry=\'2\'></rect><path d=\'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\'></path></svg> Copier le lien';},2000)})" aria-label="Copier le lien de l'article">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        Copier le lien
-      </button>
-    </div>
-  </div>
+  <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/covid-long-que-faire/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/covid-long-que-faire/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-covid-faire"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/covid-long-que-faire/';var b=document.getElementById('copy-btn-covid-faire');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
 </article>
 

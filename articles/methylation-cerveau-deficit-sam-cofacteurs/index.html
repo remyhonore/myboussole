@@ -483,6 +483,13 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
     .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
     .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
     .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
+    .glossaire-accordion{margin-bottom:20px;}
+    .glossaire-accordion summary{font-size:13px;font-weight:700;color:var(--forest);cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(45,106,79,0.05);border-radius:8px;border:1px solid rgba(45,106,79,0.15);}
+    .glossaire-accordion summary::after{content:"+";font-size:16px;margin-left:auto;}
+    .glossaire-accordion[open] summary::after{content:"−";}
+    .glossaire-accordion .glossaire-bilingue{background:rgba(110,135,125,0.07);border-radius:0 0 8px 8px;padding:14px 18px;margin-top:-1px;border:1px solid rgba(45,106,79,0.15);border-top:none;}
+    .glossaire-bilingue ul{padding-left:18px;margin:0;}
+    .glossaire-bilingue li{font-size:14px;margin-bottom:4px;color:var(--ink);}
   </style>
 </head>
 <body>
@@ -544,6 +551,17 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
           <li><a href="#sources">Sources scientifiques</a></li>
         </ol>
       </nav>
+
+<details class="glossaire-accordion">
+  <summary>📖 Termes de référence</summary>
+  <div class="glossaire-bilingue"><ul>
+    <li>Méthylation = Methylation (EN)</li>
+    <li>SAM (S-adénosylméthionine) = SAMe — S-adenosylmethionine (EN)</li>
+    <li>MTHFR = Methylenetetrahydrofolate reductase (EN)</li>
+    <li>Homocystéine = Homocysteine (EN)</li>
+    <li>Méthylcobalamine (B12 active) = Methylcobalamin (EN)</li>
+  </ul></div>
+</details>
 
       <p class="lead">Tu manges correctement, tu dors suffisamment — du moins tu essaies —, tu limites les efforts. Et malgré tout, le brouillard mental persiste, la fatigue revient chaque matin, le sommeil reste fragile. Et si ces symptômes en apparence distincts avaient une origine commune ?</p>
 
@@ -831,6 +849,12 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
       <p>Ces examens peuvent etre demandes par un medecin ou un pharmacien biologiste. Ils ne confirment pas a eux seuls un deficit de methylation, mais ils orientent la reflexion.</p>
 
 
+      <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> La méthylation est un processus biochimique fondamental documenté. Les déficits en cofacteurs (B12, folates, SAM) sont mesurables et associés à des dysfonctions neurologiques dans plusieurs études observationnelles.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> Le lien entre déficit de méthylation et symptômes cognitifs spécifiques du Covid long reste à démontrer en cohorte prospective. Les effets de la supplémentation varient selon le profil génétique individuel (MTHFR, COMT).</p>
+</div>
+
       <!-- ── CTA ── -->
       <div class="cta-box">
         <h3>Suivre l'impact avec Boussole</h3>
@@ -857,10 +881,18 @@ image: "/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotr
       </div>
 
       <!-- Share -->
-      <div class="share-bar">
-        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/" target="_blank" rel="noopener">Partager sur Facebook</a>
-        <button class="share-btn share-copy" onclick="navigator.clipboard.writeText('https://myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/').then(()=>this.textContent='Lien copie !')">Copier le lien</button>
-      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-methylation"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/';var b=document.getElementById('copy-btn-methylation');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
       <!-- Disclaimer -->
       <div class="disclaimer">

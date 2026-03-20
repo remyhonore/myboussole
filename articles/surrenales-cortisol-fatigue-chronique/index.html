@@ -210,6 +210,13 @@ image: "/articles/surrenales-cortisol-fatigue-chronique/hero.jpg"
     .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
     .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
     .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+    .glossaire-accordion{margin-bottom:20px;}
+    .glossaire-accordion summary{font-size:13px;font-weight:700;color:var(--forest);cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(45,106,79,0.05);border-radius:8px;border:1px solid rgba(45,106,79,0.15);}
+    .glossaire-accordion summary::after{content:"+";font-size:16px;margin-left:auto;}
+    .glossaire-accordion[open] summary::after{content:"−";}
+    .glossaire-accordion .glossaire-bilingue{background:rgba(110,135,125,0.07);border-radius:0 0 8px 8px;padding:14px 18px;margin-top:-1px;border:1px solid rgba(45,106,79,0.15);border-top:none;}
+    .glossaire-bilingue ul{padding-left:18px;margin:0;}
+    .glossaire-bilingue li{font-size:14px;margin-bottom:4px;color:var(--ink);}
   </style>
 </head>
 
@@ -295,6 +302,17 @@ image: "/articles/surrenales-cortisol-fatigue-chronique/hero.jpg"
     </div>
   </div>
 </div>
+
+      <details class="glossaire-accordion">
+        <summary>📖 Termes de référence</summary>
+        <div class="glossaire-bilingue"><ul>
+          <li>Axe corticosurrénalien = HPA axis — Hypothalamic-Pituitary-Adrenal (EN)</li>
+          <li>Cortisol = Cortisol — glucocorticoïde principal (EN)</li>
+          <li>ACTH = Adrenocorticotropic hormone (EN)</li>
+          <li>Rythme circadien = Circadian rhythm (EN)</li>
+          <li>Charge allostatique = Allostatic load (EN)</li>
+        </ul></div>
+      </details>
 
       <!-- Section 1 -->
       <h2 id="cortisol-adaptation">Le cortisol : une hormone d'adaptation, pas de stress</h2>
@@ -590,6 +608,12 @@ image: "/articles/surrenales-cortisol-fatigue-chronique/hero.jpg"
         Tenir un relevé quotidien de l'énergie au réveil, du niveau d'énergie en cours de journée, de la qualité du sommeil et du confort physique permet, sur 4 à 6 semaines, de faire apparaître des patterns que le ressenti global masque. C'est aussi la base d'une conversation productive avec un professionnel de santé.
       </p>
 
+      <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Les anomalies du profil circadien du cortisol sont documentées dans le ME/CFS et chez certains patients Covid long. L'axe HPA joue un rôle avéré dans la régulation de l'énergie et de la réponse au stress.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> La notion de "fatigue surrénalienne" au sens pathologique n'est pas reconnue comme entité diagnostique par les sociétés savantes d'endocrinologie. Les données sur la supplémentation en cortisol ou précurseurs dans le Covid long sont insuffisantes pour conclure.</p>
+</div>
+
       <div class="cta-boussole">
         <h3>🧭 Boussole</h3>
         <p>Boussole est un outil gratuit et 100 % privé pour noter chaque jour ton énergie, ton sommeil, ton confort physique et ta clarté mentale. En 30 jours, les patterns deviennent visibles — y compris le profil énergie matin/soir qui peut orienter une exploration de l'axe HPA.</p>
@@ -629,12 +653,18 @@ image: "/articles/surrenales-cortisol-fatigue-chronique/hero.jpg"
         </details>
       </section>
 
-      <!-- Partage -->
-      <div class="share-section">
-        <p style="width:100%; font-size:0.92rem; color:var(--muted);">Si vous connaissez quelqu'un qui se reconnaît dans ce tableau — épuisée le matin, alerte le soir — partagez-lui cet article.</p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/" class="share-btn share-fb" target="_blank" rel="noopener noreferrer">Partager sur Facebook</a>
-        <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='✓ Copié !';setTimeout(()=>{this.textContent='Copier le lien'},2000)})">Copier le lien</button>
-      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-surrenales"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/';var b=document.getElementById('copy-btn-surrenales');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
       <!-- Sources -->
       <section class="sources-section" aria-label="Sources scientifiques">

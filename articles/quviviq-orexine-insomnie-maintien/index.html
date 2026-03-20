@@ -579,16 +579,6 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         </div>
       </header>
 
-      <details class="glossaire-accordion">
-        <summary>&#128214; Termes de r&#233;f&#233;rence</summary>
-        <div class="glossaire-bilingue">
-          <ul>
-            <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
-            <li><strong>Antagoniste des r&#233;cepteurs aux or&#233;xines &#224; double action (DORA)</strong> = Dual Orexin Receptor Antagonist (DORA)</li>
-          </ul>
-        </div>
-      </details>
-
       <div class="article-synthesis">
   <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
   <div class="synthesis-grid">
@@ -636,6 +626,16 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
           <li><a href="#sources">Sources</a></li>
         </ol>
       </nav>
+
+      <details class="glossaire-accordion">
+        <summary>&#128214; Termes de r&#233;f&#233;rence</summary>
+        <div class="glossaire-bilingue">
+          <ul>
+            <li><strong>Syndrome de tachycardie orthostatique posturale (POTS)</strong> = Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+            <li><strong>Antagoniste des r&#233;cepteurs aux or&#233;xines &#224; double action (DORA)</strong> = Dual Orexin Receptor Antagonist (DORA)</li>
+          </ul>
+        </div>
+      </details>
 
       <!-- IMAGE HERO -->
       <figure class="hero-img-wrap" aria-label="Illustration — réveil nocturne">
@@ -810,6 +810,12 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
           </details>
         </section>
 
+        <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Le daridorexant (Quviviq) est un antagoniste des récepteurs à l'orexine (DORA) dont l'efficacité sur l'insomnie de maintien est validée par des RCT et son AMM européenne. Son profil pharmacocinétique est documenté (CYP3A4).</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> Les données spécifiques à l'insomnie dans le Covid long et la dysautonomie restent limitées. Le bénéfice du daridorexant dans ce contexte autonome particulier n'a pas été évalué en essai dédié.</p>
+</div>
+
         <!-- CTA FINAL -->
         <aside class="cta-boussole" aria-label="Découvrir Boussole">
           <h2>🧭 Suivre votre sommeil avec Boussole</h2>
@@ -818,17 +824,18 @@ image: "/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg"
         </aside>
 
         <!-- PARTAGE -->
-        <div class="share-row">
-          <span class="share-label">Partager :</span>
-          <a class="share-btn share-fb"
-             href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/"
-             rel="noopener" aria-label="Partager sur Facebook">
-            📘 Facebook
-          </a>
-          <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='✅ Copié !')">
-            🔗 Copier le lien
-          </button>
-        </div>
+        <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-quviviq"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/';var b=document.getElementById('copy-btn-quviviq');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
         <!-- SOURCES -->
         <section class="sources-section" aria-labelledby="sources-title">

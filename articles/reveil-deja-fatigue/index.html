@@ -359,6 +359,13 @@ image: "/articles/reveil-deja-fatigue/desynchronisation-matinale-cortisol-sympat
     .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
     .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 5px; }
     .synthesis-card-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.55; margin: 0; }
+    .glossaire-accordion{margin-bottom:20px;}
+    .glossaire-accordion summary{font-size:13px;font-weight:700;color:var(--color-accent);cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(45,106,79,0.05);border-radius:8px;border:1px solid rgba(45,106,79,0.15);}
+    .glossaire-accordion summary::after{content:"+";font-size:16px;margin-left:auto;}
+    .glossaire-accordion[open] summary::after{content:"−";}
+    .glossaire-accordion .glossaire-bilingue{background:rgba(110,135,125,0.07);border-radius:0 0 8px 8px;padding:14px 18px;margin-top:-1px;border:1px solid rgba(45,106,79,0.15);border-top:none;}
+    .glossaire-bilingue ul{padding-left:18px;margin:0;}
+    .glossaire-bilingue li{font-size:14px;margin-bottom:4px;color:var(--color-text);}
   </style>
 </head>
 <body>
@@ -411,6 +418,16 @@ image: "/articles/reveil-deja-fatigue/desynchronisation-matinale-cortisol-sympat
       <li><a href="#ce-quon-peut-faire" style="color:#2d6a4f;text-decoration:none;">Ce qu'on peut faire</a></li>
     </ol>
   </nav>
+
+<details class="glossaire-accordion">
+  <summary>📖 Termes de référence</summary>
+  <div class="glossaire-bilingue"><ul>
+    <li>Sommeil lent profond (SLP) = Slow-wave sleep (SWS / N3)</li>
+    <li>Variabilité de la fréquence cardiaque (VFC) = Heart rate variability (HRV)</li>
+    <li>Réveil non restaurateur = Non-restorative sleep (NRS)</li>
+    <li>Dysautonomie = Dysautonomia / Autonomic dysfunction (EN)</li>
+  </ul></div>
+</details>
 
   <p>Ce n'est pas un problème de motivation, ni un manque de volonté. C'est souvent un problème de <strong>synchronisation entre plusieurs systèmes biologiques</strong> qui, d'ordinaire, travaillent ensemble.</p>
 
@@ -535,12 +552,31 @@ image: "/articles/reveil-deja-fatigue/desynchronisation-matinale-cortisol-sympat
     </li>
   </ul>
 
+  <div style="background:rgba(6,23,45,0.04);border:1px solid rgba(6,23,45,0.10);border-radius:12px;padding:22px 26px;margin:36px 0;">
+  <p style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--navy,#06172d);margin-bottom:12px;">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p style="font-size:15px;line-height:1.7;margin-bottom:10px;"><strong>[ÉTABLI]</strong> Le réveil non restaurateur est un symptôme central du Covid long et du ME/CFS, documenté dans de nombreuses cohortes. Son association avec la dysautonomie nocturne et la réduction du sommeil lent profond est cohérente avec les données disponibles.</p>
+  <p style="font-size:15px;line-height:1.7;margin:0;"><strong>[SPÉCULATIF]</strong> Les mécanismes précis et les interventions efficaces sur ce symptôme spécifique manquent de validation en RCT dans le contexte Covid long. Les approches ciblant le tonus vagal sont prometteuses mais encore préliminaires.</p>
+</div>
+
   <!-- ── CTA ── -->
   <div class="cta-boussole">
     <h3>🧭 Suivre son réveil pour y voir plus clair</h3>
     <p>Boussole vous permet de noter chaque jour votre énergie, votre sommeil et votre confort physique. Pas pour poser un diagnostic, mais pour <strong>objectiver ce que vous ressentez</strong> et rendre ces données utiles lors d'une consultation.</p>
     <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole gratuitement</a>
   </div>
+
+  <div style="display:flex;gap:12px;align-items:center;margin:28px 0;flex-wrap:wrap;">
+  <span style="font-size:14px;font-weight:600;color:#6b7a8d;">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/reveil-deja-fatigue/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#1877f2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/reveil-deja-fatigue/"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;background:#0a66c2;color:#fff;"
+     target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button id="copy-btn-reveil"
+     onclick="(function(){var u='https://www.myboussole.fr/articles/reveil-deja-fatigue/';var b=document.getElementById('copy-btn-reveil');navigator.clipboard.writeText(u).then(function(){b.textContent='Lien copié !';b.style.background='#2d6a4f';b.style.color='#fff';setTimeout(function(){b.textContent='Copier le lien';b.style.background='';b.style.color='';},2000)}).catch(function(){var e=document.createElement('textarea');e.value=u;document.body.appendChild(e);e.select();document.execCommand('copy');document.body.removeChild(e);b.textContent='Lien copié !';setTimeout(function(){b.textContent='Copier le lien';},2000)});})()"
+     style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;background:rgba(6,23,45,0.07);color:#1a2535;border:1px solid rgba(6,23,45,0.15);cursor:pointer;font-family:inherit;">Copier le lien</button>
+</div>
 
   <!-- ── SOURCES ── -->
   <div class="sources">
