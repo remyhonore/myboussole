@@ -204,30 +204,153 @@ body {
 1. Skip link : <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 2. H1 (mots-clés identiques au <title>)
 3. Chapeau (lead) — 2-3 phrases max
-4. Encadré glossaire bilingue (si termes FR/EN — voir §9) — titre en `<p class="section-label">`, JAMAIS en `<h3>` (brise la hiérarchie H1→H3)
-5. Sommaire ancré (si article ≥ 6 min) — titre en `<p class="section-label">`, JAMAIS en `<h3>`
-6. Image hero
-7. Corps de l'article (H2 avec id= pour ancres)
-8. Micro-CTA Boussole (inline, avant le CTA principal)
-9. FAQ (éléments <details>/<summary>)
-10. CTA Boussole principal
-11. Boutons de partage
+4. Glossaire bilingue en accordéon (si termes FR/EN) — voir §6a
+5. Bloc synthesis grille 2×2 — voir §6b — OBLIGATOIRE
+6. Sommaire ancré (si article ≥ 6 min)
+7. Image hero (positionnée après le sommaire, pas en tête)
+8. Corps de l'article (H2 avec id= pour ancres)
+9. Micro-CTA Boussole (inline, avant le CTA principal)
+10. FAQ (éléments <details>/<summary>)
+11. CTA Boussole principal
+12. Boutons de partage (avant les sources)
+13. Sources (liste numérotée)
+14. Footer article
+```
 
-**CSS `.section-label` (glossaire + sommaire) :**
+**CSS obligatoire :**
 ```css
 .section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
-```
-
-⚠️ Le titre du bloc CTA ne doit jamais être un `<h2>` ou `<h3>`. Utiliser `<p class="cta-title">` avec le CSS suivant :
-```css
 .cta-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
-```
-12. Sources (liste numérotée)
-13. Footer article
 ```
 
 ---
 
+## 6a. Glossaire bilingue — accordéon discret
+
+**Règle :** Le glossaire n'est plus affiché en plein dès le haut de page. Il est placé dans un `<details>` fermé par défaut. Le lecteur expert passe, le lecteur débutant ouvre.
+
+**Position :** entre le lead (§3) et le bloc synthesis (§6b).
+
+**CSS obligatoire :**
+```css
+.glossaire-accordion { margin-bottom: 20px; }
+.glossaire-accordion summary {
+  font-size: 13px; font-weight: 700; color: var(--forest);
+  cursor: pointer; list-style: none; display: flex;
+  align-items: center; gap: 8px; padding: 10px 16px;
+  background: rgba(45,106,79,0.05); border-radius: 8px;
+  border: 1px solid rgba(45,106,79,0.15);
+}
+.glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+.glossaire-accordion[open] summary::after { content: "−"; }
+.glossaire-accordion .glossaire-bilingue {
+  background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px;
+  padding: 14px 18px; margin-top: -1px;
+  border: 1px solid rgba(45,106,79,0.15); border-top: none;
+}
+.glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+.glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
+```
+
+**HTML template :**
+```html
+<details class="glossaire-accordion">
+  <summary>📖 Termes de référence</summary>
+  <div class="glossaire-bilingue">
+    <ul>
+      <li>Terme français (SIGLE FR) = English term (EN)</li>
+      <li>Terme français (SIGLE FR) = English term (EN)</li>
+    </ul>
+  </div>
+</details>
+```
+
+**Ce qui est interdit :**
+- ❌ Glossaire en bloc ouvert en haut de page (ancien style `.glossaire-bilingue` direct)
+- ❌ Titre du glossaire en `<h3>` ou `<h2>`
+
+---
+
+## 6b. Bloc synthesis — grille 2×2 éditorial
+
+**Règle :** Tout article doit avoir un bloc synthesis. Jamais de liste à puces sur fond vert monochrome.
+
+**Position :** entre le glossaire accordéon (§6a) et le sommaire.
+
+**CSS obligatoire :**
+```css
+.article-synthesis {
+  background: rgba(45,106,79,0.06);
+  border: 1px solid rgba(45,106,79,0.18);
+  border-radius: 14px; padding: 22px 24px; margin-bottom: 36px;
+}
+.synthesis-label {
+  font-size: 12px; font-weight: 800; color: var(--forest);
+  text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px;
+}
+.synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+.synthesis-card {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #fff; border-radius: 10px; padding: 14px 16px;
+  box-shadow: 0 1px 6px rgba(6,23,45,0.06);
+}
+.synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+.synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+```
+
+**HTML template :**
+```html
+<div class="article-synthesis">
+  <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+  <div class="synthesis-grid">
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🔬</span>
+      <div>
+        <p class="synthesis-card-title">[Titre 2-4 mots]</p>
+        <p class="synthesis-card-text">[1-2 phrases. Niveau de preuve proportionnel.]</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">📊</span>
+      <div>
+        <p class="synthesis-card-title">[Titre 2-4 mots]</p>
+        <p class="synthesis-card-text">[1-2 phrases.]</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">💡</span>
+      <div>
+        <p class="synthesis-card-title">[Titre 2-4 mots]</p>
+        <p class="synthesis-card-text">[1-2 phrases.]</p>
+      </div>
+    </div>
+    <div class="synthesis-card">
+      <span class="synthesis-icon">🧭</span>
+      <div>
+        <p class="synthesis-card-title">[Titre 2-4 mots]</p>
+        <p class="synthesis-card-text">[1-2 phrases.]</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+**Règles de rédaction :**
+- Titres : 2-4 mots, affirmatifs, sans verbe conjugué
+- Texte : 1-2 phrases max, formulation proportionnelle au niveau de preuve (§11b)
+- Icônes selon sujet : 🔬 mécanisme · 📊 données · 💡 point clinique · 🧭 pratique · ⚡ signal · 🧬 biologie · 💊 pharmacologie · 📡 SNA · 🔋 énergie
+- Les 4 cartes doivent couvrir 4 angles distincts : mécanisme / données / clinique / pratique
+- Ne jamais copier les mêmes 4 cartes sur deux articles différents
+
+**Ce qui est interdit :**
+- ❌ `background: var(--forest)` sur `.article-synthesis` (ancien style vert plein)
+- ❌ `<ul class="synthesis-list">` avec `<li>` blancs sur fond vert
+- ❌ Plus de 2 phrases par carte
+- ❌ Titres de carte en `<h2>` ou `<h3>` — toujours `<p class="synthesis-card-title">`
+
+---
 ## 7. Règles illustrations
 
 **Image hero :** JPEG, ratio 1.91:1 (1200×630px), < 200 Ko. Ideogram ou Canva. `loading="lazy"` + `decoding="async"`.
