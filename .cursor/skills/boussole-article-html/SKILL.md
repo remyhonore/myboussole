@@ -210,8 +210,8 @@ body {
 7.  Image hero (positionnée après le glossaire)
 8.  Corps de l'article (H2 avec id= pour ancres)
 9.  Micro-CTA Boussole (inline, avant le CTA principal)
-10. FAQ (éléments <details>/<summary>)
-11. Bloc résumé épistémique — voir §6c — OBLIGATOIRE ← [20/03/2026]
+10. Bloc résumé épistémique §6c (🧩 Ce que l'on sait) — OBLIGATOIRE ← [20/03/2026]
+11. FAQ (éléments <details>/<summary>)
 12. CTA Boussole principal
 13. Boutons de partage (3 boutons : Facebook · LinkedIn · Copier le lien) ← [20/03/2026]
 14. Sources (liste numérotée)
@@ -354,11 +354,11 @@ body {
 
 ---
 
-## 6c. Bloc résumé épistémique — OBLIGATOIRE en fin d'article ← [20/03/2026]
+## 6c. Bloc résumé épistémique — OBLIGATOIRE ← [20/03/2026]
 
-**Règle :** Tout article doit se terminer (avant le CTA) par un bloc distinguant ce qui est établi de ce qui reste spéculatif. Objectif : rigueur scientifique visible, déculpabilisation du lecteur, transparence sur les limites.
+**Règle :** Tout article doit inclure un bloc distinguant ce qui est établi de ce qui reste spéculatif. Objectif : rigueur scientifique visible, déculpabilisation du lecteur, transparence sur les limites.
 
-**Position :** après la FAQ (§10), avant le CTA principal (§12).
+**Position :** AVANT la FAQ (§11), après le corps de l'article et le micro-CTA (§9). Ordre imposé : corps → micro-CTA → **résumé épistémique** → FAQ → CTA principal → boutons partage → sources → footer.
 
 **CSS obligatoire :**
 ```css
