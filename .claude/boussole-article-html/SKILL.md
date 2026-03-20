@@ -95,7 +95,7 @@ image: "/articles/[slug]/[nom-image-hero].jpg"
 
 **Liens externes — règle absolue :**
 Tout lien `target="_blank"` doit avoir `rel="noopener noreferrer"` (pas seulement `rel="noopener"`).
-Appliquer à : tous les liens sources PubMed, tous les boutons de partage (Facebook, LinkedIn), toute URL externe.
+Appliquer à : tous les liens sources PubMed, tous les boutons de partage (Facebook, LinkedIn, copier), toute URL externe.
 
 **Schema.org JSON-LD (3 types dans un seul `<script>`) :**
 - `Article` (headline, datePublished, dateModified, author, publisher, wordCount, inLanguage: "fr", mainEntityOfPage pointant vers l'URL canonique)
@@ -201,20 +201,21 @@ body {
 ## 6. Structure du contenu — ordre canonique
 
 ```
-1. Skip link : <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-2. H1 (mots-clés identiques au <title>)
-3. Chapeau (lead) — 2-3 phrases max
-4. Glossaire bilingue en accordéon (si termes FR/EN) — voir §6a
-5. Bloc synthesis grille 2×2 — voir §6b — OBLIGATOIRE
-6. Sommaire ancré (si article ≥ 6 min)
-7. Image hero (positionnée après le sommaire, pas en tête)
-8. Corps de l'article (H2 avec id= pour ancres)
-9. Micro-CTA Boussole (inline, avant le CTA principal)
+1.  Skip link : <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+2.  H1 (mots-clés identiques au <title>)
+3.  Chapeau (lead) — 2-3 phrases max
+4.  Bloc synthesis grille 2×2 — voir §6b — OBLIGATOIRE
+5.  Sommaire ancré (si article ≥ 6 min)
+6.  Glossaire bilingue en accordéon — voir §6a — APRÈS le sommaire ← [20/03/2026]
+7.  Image hero (positionnée après le glossaire)
+8.  Corps de l'article (H2 avec id= pour ancres)
+9.  Micro-CTA Boussole (inline, avant le CTA principal)
 10. FAQ (éléments <details>/<summary>)
-11. CTA Boussole principal
-12. Boutons de partage (avant les sources)
-13. Sources (liste numérotée)
-14. Footer article
+11. Bloc résumé épistémique — voir §6c — OBLIGATOIRE ← [20/03/2026]
+12. CTA Boussole principal
+13. Boutons de partage (3 boutons : Facebook · LinkedIn · Copier le lien) ← [20/03/2026]
+14. Sources (liste numérotée)
+15. Footer article
 ```
 
 **CSS obligatoire :**
@@ -227,9 +228,9 @@ body {
 
 ## 6a. Glossaire bilingue — accordéon discret
 
-**Règle :** Le glossaire n'est plus affiché en plein dès le haut de page. Il est placé dans un `<details>` fermé par défaut. Le lecteur expert passe, le lecteur débutant ouvre.
+**Règle :** Le glossaire est placé dans un `<details>` fermé par défaut, **après le sommaire** (pas avant). Le lecteur expert passe, le lecteur débutant ouvre.
 
-**Position :** entre le lead (§3) et le bloc synthesis (§6b).
+**Position :** après le sommaire (§5), avant l'image hero (§7). ← [20/03/2026]
 
 **CSS obligatoire :**
 ```css
@@ -266,7 +267,8 @@ body {
 ```
 
 **Ce qui est interdit :**
-- ❌ Glossaire en bloc ouvert en haut de page (ancien style `.glossaire-bilingue` direct)
+- ❌ Glossaire en bloc ouvert (ancien style `.glossaire-bilingue` direct)
+- ❌ Glossaire placé entre le lead et le synthesis (ancienne position — abandonnée 20/03/2026)
 - ❌ Titre du glossaire en `<h3>` ou `<h2>`
 
 ---
@@ -275,7 +277,7 @@ body {
 
 **Règle :** Tout article doit avoir un bloc synthesis. Jamais de liste à puces sur fond vert monochrome.
 
-**Position :** entre le glossaire accordéon (§6a) et le sommaire.
+**Position :** entre le lead (§3) et le sommaire (§5).
 
 **CSS obligatoire :**
 ```css
@@ -351,6 +353,106 @@ body {
 - ❌ Titres de carte en `<h2>` ou `<h3>` — toujours `<p class="synthesis-card-title">`
 
 ---
+
+## 6c. Bloc résumé épistémique — OBLIGATOIRE en fin d'article ← [20/03/2026]
+
+**Règle :** Tout article doit se terminer (avant le CTA) par un bloc distinguant ce qui est établi de ce qui reste spéculatif. Objectif : rigueur scientifique visible, déculpabilisation du lecteur, transparence sur les limites.
+
+**Position :** après la FAQ (§10), avant le CTA principal (§12).
+
+**CSS obligatoire :**
+```css
+.article-epistemic {
+  background: rgba(6,23,45,0.04);
+  border: 1px solid rgba(6,23,45,0.10);
+  border-radius: 12px; padding: 22px 26px; margin: 36px 0;
+}
+.epistemic-label {
+  font-size: 13px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--navy); margin-bottom: 12px;
+}
+```
+
+**HTML template :**
+```html
+<div class="article-epistemic">
+  <p class="epistemic-label">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+  <p>[Paragraphe 1 — ce qui est documenté : données, associations, preuves existantes avec niveau de preuve.]</p>
+  <p>[Paragraphe 2 — ce qui reste spéculatif ou non encore validé en RCT : mécanismes incertains, interventions préliminaires, limites de la littérature disponible.]</p>
+</div>
+```
+
+**Règles de rédaction :**
+- Toujours 2 paragraphes distincts : "ce qu'on sait" / "ce qui reste spéculatif"
+- Ne jamais écrire de faux équilibre — si les données sont solides, le dire
+- Niveau de preuve dans ce bloc ≤ niveau affiché dans le corps de l'article
+- Ne jamais terminer par une promesse ou un CTA implicite
+
+---
+
+## 6d. Boutons de partage — 3 boutons obligatoires ← [20/03/2026]
+
+**Règle :** 3 boutons systématiques : Facebook · LinkedIn · Copier le lien.
+
+**Position :** après les sources (§14), avant le footer (§15).
+
+**CSS obligatoire :**
+```css
+.share-block { display: flex; gap: 12px; align-items: center; margin: 28px 0; flex-wrap: wrap; }
+.share-label { font-size: 14px; font-weight: 600; color: var(--muted); }
+.share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
+.share-btn:hover { opacity: 0.85; }
+.share-fb { background: #1877f2; color: #fff; }
+.share-li { background: #0a66c2; color: #fff; }
+.share-copy { background: rgba(6,23,45,0.07); color: var(--ink); border: 1px solid rgba(6,23,45,0.15); cursor: pointer; font-family: inherit; }
+.share-copy:hover { background: rgba(6,23,45,0.12); }
+.share-copy.copied { background: var(--forest); color: #fff; border-color: var(--forest); }
+```
+
+**HTML template :**
+```html
+<div class="share-block">
+  <span class="share-label">Partager :</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/[slug]/"
+     class="share-btn share-fb" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/[slug]/"
+     class="share-btn share-li" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button class="share-btn share-copy" id="copy-btn" onclick="copyArticleLink()" aria-label="Copier le lien de l'article">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </svg>
+    <span id="copy-label">Copier le lien</span>
+  </button>
+</div>
+```
+
+**JS obligatoire (dans `<script>` en fin de `<body>`) :**
+```javascript
+function copyArticleLink() {
+  const btn = document.getElementById('copy-btn');
+  const label = document.getElementById('copy-label');
+  const url = 'https://www.myboussole.fr/articles/[slug]/';
+  navigator.clipboard.writeText(url).then(() => {
+    btn.classList.add('copied');
+    label.textContent = 'Lien copié !';
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copier le lien'; }, 2000);
+  }).catch(() => {
+    const el = document.createElement('textarea');
+    el.value = url; el.style.position = 'fixed'; el.style.opacity = '0';
+    document.body.appendChild(el); el.select(); document.execCommand('copy');
+    document.body.removeChild(el);
+    btn.classList.add('copied'); label.textContent = 'Lien copié !';
+    setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copier le lien'; }, 2000);
+  });
+}
+```
+
+**⚠️ Remplacer `[slug]` dans l'URL du bouton Copier ET dans la fonction JS.**
+
+---
+
 ## 7. Règles illustrations
 
 **Image hero :** JPEG, ratio 1.91:1 (1200×630px), < 200 Ko. Ideogram ou Canva. `loading="lazy"` + `decoding="async"`.
@@ -405,26 +507,8 @@ Chaque `[N]` dans le texte → entrée `id="source-N"` dans la liste. Sources HA
 
 **Encadrés expertise :** titre obligatoire `🔬 L'œil du Docteur en pharmacie` pour tout point pharmacologique ou clinique.
 
-**Glossaire bilingue** (placer après le lead, avant le premier H2) :
-```html
-<div class="glossaire-bilingue">
-  <p class="section-label">📖 Termes de référence</p>
-  <ul>
-    <li>Terme français (SIGLE FR) = English term (EN)</li>
-  </ul>
-</div>
-```
+**Glossaire bilingue :** voir §6a pour la position et le template complet (accordéon après le sommaire).
 Corps du texte = terme français seul. Jamais le sigle anglophone seul.
-
-**Bloc synthesis obligatoire (depuis 19/03/2026) :**
-Placer `<div class="article-synthesis">` après le glossaire bilingue, avant le premier `<h2>`. Titre fixe : `🧭 L'essentiel en 30 secondes` · 3 points max · niveau de preuve ≤ corps du texte (§11b) · pas de CTA.
-CSS final (commits 488f1ea + d6207cd) :
-```css
-.article-synthesis{background:#2d6a4f;border-radius:10px;padding:20px 24px 18px;margin:28px 0 36px;}
-.synthesis-label{font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;margin:0 0 14px;}
-.synthesis-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;}
-.synthesis-list li{font-size:15px;line-height:1.55;color:#ffffff;}
-```
 
 **Noms de médicaments — marché français uniquement**
 
@@ -473,19 +557,64 @@ Avant toute soumission :
      → **Vérification PMID obligatoire** : appeler `PubMed:get_article_metadata` sur chaque PMID et confirmer que le titre retourné = titre affiché dans l'article. Aucune exception. Un PMID non vérifié = article non publiable.
 5. **Recommandations** : conformes HAS/NICE ou positionnement médecine fonctionnelle explicité ?
 
+### 11b. Rigueur rédactionnelle — formulations calibrées
+
+Le niveau de preuve doit se refléter dans le vocabulaire. Ne jamais sur-affirmer ni sous-affirmer.
+
+| Niveau | Formulations autorisées | Formulations interdites |
+|---|---|---|
+| ✅ Solide (méta-analyse, RCT) | "montre que", "est associé à", "réduit significativement" | "prouve définitivement", "guérit" |
+| ⚠️ Probable (cohortes, observationnel) | "suggère que", "est cohérent avec", "est associé à" | "démontre", "confirme" |
+| 🔄 Spéculatif (mécanisme plausible, in vitro) | "pourrait", "est plausible", "le mécanisme proposé est" | "explique", "cause", "entraîne" |
+| ❌ Insuffisant | "on ne peut pas conclure", "les données sont insuffisantes" | toute affirmation directionnelle |
+
+**Règles additionnelles :**
+- Association ≠ causalité : ne jamais écrire "X cause Y" sans RCT
+- Animal ≠ humain : toujours préciser la population étudiée
+- Mécanisme ≠ efficacité clinique : un mécanisme plausible n'est pas une preuve d'effet
+- Deep research et Perplexity peuvent fournir de faux PMIDs — toujours vérifier avant intégration
+
 ---
 
-## 12. Après déploiement — checklist obligatoire
+## 12. Déploiement — règles obligatoires
 
+Le déploiement se fait EXCLUSIVEMENT via Claude Code.
+
+⚠️ **Source d'un fichier uploadé depuis claude.ai :**
+- Toujours `~/Downloads/[nom-du-fichier]` dans le prompt Claude Code
+- JAMAIS `/mnt/user-data/uploads/` — ce chemin n'existe pas en local sur le Mac
+
+**Template prompt Claude Code — déploiement fichier uploadé :**
+
+```
+Fichier source : ~/Downloads/index.html
+Destination : ~/Projects/myboussole/articles/[slug]/index.html
+
+1. Affiche : wc -l ~/Downloads/index.html
+2. Compare : diff ~/Downloads/index.html [destination]
+3. Copie : cp ~/Downloads/index.html [destination]
+4. Vérifie : wc -l [destination] && git -C ~/Projects/myboussole diff --stat
+5. git add [destination] && git commit -m "[type]: [description]" && git push origin main
+6. Confirme le hash. Si push échoue, affiche la commande de retry.
+```
+
+**Workflow déploiement standard :**
+
+```
+Bloc 1 — TERMINAL : cd ~/Projects/myboussole && claude
+Bloc 2 — CLAUDE CODE : [prompt structuré ci-dessus]
+```
+
+**Checklist post-déploiement :**
 1. Mettre à jour `sitemap.xml` (URL + `lastmod` = date du jour)
 2. Google Search Console : Inspection URL → Demander l'indexation
-3. Mettre à jour les articles existants pouvant pointer vers le nouvel article (maillage entrant, min 3 liens internes)
+3. Maillage entrant : min 3 liens internes vers le nouvel article
 4. Mettre à jour le statut dans la roadmap éditoriale Notion (page 07)
 5. Poster dans le Corpus Articles myboussole.fr Notion (page 09)
 
 ---
 
-## 13. Footer article — format obligatoire (figé 14/03/2026)
+## 14. Footer article — format obligatoire (figé 14/03/2026)
 
 ```html
 <footer class="article-footer">
@@ -504,7 +633,7 @@ CSS à inclure dans `<style>` :
 
 ---
 
-## 14. Corrections SEO récurrentes — checklist post-audit
+## 15. Corrections SEO récurrentes — checklist post-audit
 
 Ces erreurs reviennent à chaque article. Les corriger en amont lors de la rédaction, pas après déploiement.
 
@@ -519,3 +648,5 @@ Ces erreurs reviennent à chaque article. Les corriger en amont lors de la réda
 | Cohérence sommaire ↔ H2 | Le texte du lien dans le sommaire doit être identique au H2 cible |
 | `.site-footer` dans le CSS | Toujours nommer `.article-footer` — le HTML utilise `class="article-footer"`. Vérifier : `grep 'site-footer\|article-footer' articles/{slug}/index.html` |
 | `date:` sans heure | Format `"AAAA-MM-JJTHH:MM"` supporté — obligatoire si 2 articles le même jour |
+| Bouton copier sans fallback JS | Toujours inclure le `execCommand('copy')` fallback dans `copyArticleLink()` |
+| Glossaire avant le sommaire | Depuis 20/03/2026 : glossaire après le sommaire, pas avant |
