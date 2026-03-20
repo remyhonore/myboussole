@@ -16,13 +16,13 @@ draft: true
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pourquoi vous dormez 10h et vous réveillez épuisé — myboussole.fr</title>
   <meta name="description" content="Vous dormez beaucoup mais vous réveillez épuisé ? Dans le Covid long et la dysautonomie, c'est le système nerveux autonome qui empêche le sommeil restaurateur. Comprendre le mécanisme.">
-  <link rel="canonical" href="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/" />
+  <link rel="canonical" href="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Pourquoi vous dormez 10h et vous réveillez épuisé — myboussole.fr">
   <meta property="og:description" content="Vous dormez beaucoup mais vous réveillez épuisé ? Dans le Covid long et la dysautonomie, c'est le système nerveux autonome qui empêche le sommeil restaurateur.">
-  <meta property="og:url" content="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/" />
+  <meta property="og:url" content="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -146,6 +146,14 @@ draft: true
     .lead { font-size: 18px; font-weight: 500; line-height: 1.65; color: var(--ink); margin-bottom: 24px; opacity: 0.9; }
     .section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
     .cta-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    /* PREMIUM CTA TEASER */
+    .premium-cta { background: #fff; border: 2px solid rgba(45,106,79,0.25); border-radius: 14px; padding: 24px 28px; margin: 36px 0; display: flex; gap: 20px; align-items: center; }
+    .premium-cta-icon { font-size: 36px; flex-shrink: 0; }
+    .premium-cta-content { flex: 1; }
+    .premium-cta-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .premium-cta-text { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    @media (max-width: 560px) { .premium-cta { flex-direction: column; text-align: center; } }
+
     .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
     /* Glossaire accordéon */
@@ -591,13 +599,24 @@ draft: true
         le ME/CFS et le Covid long.
       </p>
 
-      <!-- CTA premium — dossier micronutrition dysautonomie (en cours d'écriture) -->
-      <div style="background:linear-gradient(135deg,rgba(45,106,79,0.08),rgba(45,106,79,0.04));border:1px solid rgba(45,106,79,0.22);border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
-        <span style="font-size:28px;flex-shrink:0;">🔬</span>
-        <div style="flex:1;min-width:200px;">
-          <p style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">Dossier · Micronutrition &amp; dysautonomie</p>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">14 composés analysés — créatine, CoQ10, magnésium, choline et plus — avec niveau de preuve réel dans le POTS, le ME/CFS et le Covid long.</p>
-          <a href="#" style="display:inline-block;background:var(--forest);color:#fff;font-size:13px;font-weight:700;padding:7px 16px;border-radius:8px;text-decoration:none;">Accéder au dossier · 2,99&nbsp;€</a>
+      <!-- CTA TEASER DOSSIER -->
+      <div class="premium-cta" id="teaser-dossier">
+        <span class="premium-cta-icon">🔬</span>
+        <div class="premium-cta-content">
+          <p class="premium-cta-title">Dossier en préparation · Micronutrition &amp; dysautonomie</p>
+          <p class="premium-cta-text">
+            20 composés analysés un par un — mécanismes moléculaires, études cliniques,
+            interactions médicamenteuses, limites de sécurité, combinaisons synergiques.
+            Accès unique à 2,99&nbsp;€, mis à jour régulièrement.
+          </p>
+          <div class="teaser-form">
+            <p style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;">Recevez un email dès que le dossier est disponible :</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <input type="email" id="teaser-email-1" placeholder="votre@email.com" aria-label="Adresse email" style="flex:1;min-width:200px;padding:10px 14px;border:1.5px solid rgba(45,106,79,0.3);border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
+              <button onclick="submitTeaser(1)" style="background:var(--forest);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">Me prévenir</button>
+            </div>
+            <p id="teaser-msg-1" style="font-size:12px;color:var(--forest);margin-top:6px;display:none;"></p>
+          </div>
         </div>
       </div>
 
@@ -782,6 +801,37 @@ draft: true
           label.textContent = 'Copier le lien';
         }, 2000);
       });
+    }
+  </script>
+
+  <script>
+    // Teaser dossier — inscription email Brevo (liste #6 "Lecteurs dossier premium")
+    function submitTeaser(n) {
+      const input = document.getElementById('teaser-email-' + n);
+      const msg = document.getElementById('teaser-msg-' + n);
+      const email = input.value.trim();
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        msg.textContent = 'Merci d\'entrer une adresse email valide.';
+        msg.style.color = '#92400e';
+        msg.style.display = 'block';
+        return;
+      }
+      const BREVO_FORM_URL = 'https://ffd96913.sibforms.com/serve/MUIFAJUmjQTMcr8EIjmLErqYjjECrQ73i0aPhf_n6tBk2T-Z5AzjIeTGaQAcaPFU0Gg_yPaV46hxNb6EtRVWlzHZOM4fH08S6nOFuz5CNcfhisSD5UFAsEOsTMl8w405AGiQRhn3MyOfmYSaCUtoAMGqVRzRXKkdXN2kjT-18CVH688z0YTCeL_NKQzYUcFCGw44EksGyMRhKlBtUw==';
+      const formData = new FormData();
+      formData.append('EMAIL', email);
+      fetch(BREVO_FORM_URL, { method: 'POST', body: formData, mode: 'no-cors' })
+        .then(() => showSuccess(input, msg))
+        .catch(() => showSuccess(input, msg));
+    }
+    function showSuccess(input, msg) {
+      input.disabled = true;
+      input.style.opacity = '0.5';
+      input.parentElement.querySelector('button').disabled = true;
+      input.parentElement.querySelector('button').textContent = '✓ Inscrit';
+      input.parentElement.querySelector('button').style.background = '#1b4332';
+      msg.textContent = 'Merci ! Vous serez informé dès que le dossier sera disponible.';
+      msg.style.color = 'var(--forest)';
+      msg.style.display = 'block';
     }
   </script>
 
