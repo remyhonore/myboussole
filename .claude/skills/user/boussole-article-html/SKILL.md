@@ -70,6 +70,8 @@ image: "/articles/[slug]/[nom-image-hero].jpg"
 --- -->
 ```
 
+**Règle déploiement :** Ne jamais utiliser `draft: true` dans un article poussé sur le repo. Le brouillon reste dans Notion (base 09). Quand un article est déployé sur le repo, il est déployé complet en une seule opération : article finalisé + sitemap + maillage entrant. Pas d'état intermédiaire "draft en ligne".
+
 > Format étendu supporté : `"AAAA-MM-JJTHH:MM"` — utiliser si deux articles sont publiés le même jour pour contrôler l'ordre d'affichage dans le listing (`generate_content.py` trie par datetime, commit 1ff5c38).
 
 ---
