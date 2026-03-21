@@ -1,0 +1,770 @@
+<!-- ---
+title: "\"Vos analyses sont revenues normales ?\" — Ce que votre bilan ne dit pas dans le Covid long"
+description: "NFS, ferritine, D-dimères, bilan hépatique : pourquoi un bilan standard peut sembler normal et masquer des anomalies réelles dans le Covid long."
+slug: "bilan-sanguin-covid-long"
+date: "2026-03-21T10:00"
+readingTime: "14 min"
+tags: ["Covid long", "Bilan biologique", "Inflammation", "Fatigue chronique"]
+author: "Dr Rémy Honoré"
+image: "/articles/bilan-sanguin-covid-long/hero.jpg"
+--- -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan sanguin Covid long : pourquoi "normal" ne veut pas dire "rien"</title>
+  <meta name="description" content="NFS, ferritine, D-dimères, bilan hépatique : pourquoi un bilan standard peut sembler normal et masquer des anomalies réelles dans le Covid long.">
+  <link rel="canonical" href="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta property="og:title" content="\"Vos analyses sont revenues normales ?\" — Ce que votre bilan ne dit pas dans le Covid long">
+  <meta property="og:description" content="NFS, ferritine, D-dimères, bilan hépatique : pourquoi un bilan standard peut sembler normal et masquer des anomalies réelles dans le Covid long.">
+  <meta property="og:url" content="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "\"Vos analyses sont revenues normales ?\" — Ce que votre bilan ne dit pas dans le Covid long",
+        "datePublished": "2026-03-21",
+        "dateModified": "2026-03-21",
+        "author": { "@type": "Person", "name": "Dr Rémy Honoré" },
+        "publisher": { "@type": "Organization", "name": "myBoussole" },
+        "wordCount": 2600,
+        "inLanguage": "fr",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.myboussole.fr/articles/bilan-sanguin-covid-long/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.myboussole.fr" },
+          { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://www.myboussole.fr/articles/" },
+          { "@type": "ListItem", "position": 3, "name": "Bilan sanguin Covid long", "item": "https://www.myboussole.fr/articles/bilan-sanguin-covid-long/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Est-ce que le Covid long peut exister même si toutes mes analyses sont normales ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Des études publiées entre 2022 et 2025 montrent que certaines anomalies biologiques du Covid long restent dans les valeurs de référence absolues des laboratoires, tout en représentant des déséquilibres fonctionnels significatifs. Un bilan standard ne suffit pas à explorer l'ensemble des mécanismes impliqués."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels examens sont pris en charge par l'Assurance maladie dans le Covid long ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La NFS (numération formule sanguine), la CRP, la ferritine, le bilan hépatique (ASAT, ALAT, GGT, phosphatases alcalines) et les D-dimères sont des examens remboursés par la Sécu lorsqu'ils sont prescrits par un médecin. Ce sont ces marqueurs qui sont détaillés dans cet article."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi la ferritine peut-elle être \"normale\" et pourtant problématique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les normes de laboratoire (habituellement 10–300 µg/L chez la femme) ont été établies sur des populations généralistes, pas sur des personnes en phase de Covid long. Une ferritine à 15 µg/L est dans la norme mais peut témoigner d'une carence fonctionnelle en fer. À l'inverse, une ferritine à 200 µg/L dans la norme haute peut refléter une inflammation chronique de bas grade persistante."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --forest: #2d6a4f;
+      --forest-dark: #1b4332;
+      --navy: #06172d;
+      --ink: #1a2b3c;
+      --muted: #6b7c93;
+      --sand: #f8f6f0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--ink);
+      line-height: 1.7;
+      background:
+        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%),
+        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%),
+        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%),
+        linear-gradient(180deg, #F8F6F0, #F3F0E8);
+      min-height: 100vh;
+    }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--forest); color: #fff; padding: 8px 16px; border-radius: 0 0 8px 0; text-decoration: none; font-weight: 600; z-index: 9999; }
+    .skip-link:focus { left: 0; }
+
+    /* HEADER */
+    .site-header { background: rgba(248,246,240,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(6,23,45,0.06); position: sticky; top: 0; z-index: 100; }
+    .topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--forest); text-decoration: none; }
+    .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
+    .topbar-nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
+    .topbar-nav a:hover { opacity: 1; }
+    .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
+    .btn-primary { background: var(--forest); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--forest-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    @media (max-width: 640px) { .topbar-nav, .topbar-cta { display: none; } .mobile-menu-btn { display: flex; grid-column: 3; justify-self: end; } }
+    .mobile-nav { display: none; flex-direction: column; background: rgba(248,246,240,0.98); border-bottom: 1px solid rgba(6,23,45,0.08); padding: 12px 24px 16px; gap: 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 6px 0; }
+
+    /* LAYOUT */
+    .article-wrapper { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-card { background: rgba(255,255,255,.92); border-radius: 22px; box-shadow: 0 22px 60px rgba(0,0,0,.12); padding: clamp(28px, 4vw, 48px); }
+
+    /* TYPO */
+    h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 18px; }
+    h2 { font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; color: var(--navy); margin: 40px 0 14px; }
+    h3 { font-size: 17px; font-weight: 700; color: var(--forest); margin: 28px 0 10px; }
+    p { margin-bottom: 16px; font-size: 16px; }
+    .lead { font-size: 17px; color: var(--muted); font-weight: 400; line-height: 1.75; margin-bottom: 28px; }
+    .section-label { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .cta-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    strong { color: var(--navy); font-weight: 700; }
+
+    /* SYNTHESIS */
+    .article-synthesis { background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.18); border-radius: 14px; padding: 22px 24px; margin-bottom: 36px; }
+    .synthesis-label { font-size: 12px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .synthesis-grid { grid-template-columns: 1fr; } }
+    .synthesis-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(6,23,45,0.06); }
+    .synthesis-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+    .synthesis-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .synthesis-card-text { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+    /* SOMMAIRE */
+    .toc { background: rgba(110,135,125,0.08); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; }
+    .toc-title { font-size: 13px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: var(--forest); text-decoration: none; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* GLOSSAIRE */
+    .glossaire-accordion { margin-bottom: 20px; }
+    .glossaire-accordion summary { font-size: 13px; font-weight: 700; color: var(--forest); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(45,106,79,0.05); border-radius: 8px; border: 1px solid rgba(45,106,79,0.15); }
+    .glossaire-accordion summary::after { content: "+"; font-size: 16px; margin-left: auto; }
+    .glossaire-accordion[open] summary::after { content: "−"; }
+    .glossaire-accordion .glossaire-bilingue { background: rgba(110,135,125,0.07); border-radius: 0 0 8px 8px; padding: 14px 18px; margin-top: -1px; border: 1px solid rgba(45,106,79,0.15); border-top: none; }
+    .glossaire-bilingue ul { padding-left: 18px; margin: 0; }
+    .glossaire-bilingue li { font-size: 14px; margin-bottom: 4px; color: var(--ink); }
+
+    /* HERO */
+    .hero-img { width: 100%; max-height: 340px; border-radius: 14px; margin: 28px 0 32px; display: block; object-fit: cover; object-position: center; }
+
+    /* ENCADRÉ EXPERTISE */
+    .expert-box { background: rgba(45,106,79,0.06); border-left: 4px solid var(--forest); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 28px 0; }
+    .expert-box-title { font-size: 13px; font-weight: 800; color: var(--forest); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .expert-box p { font-size: 15px; margin-bottom: 0; }
+
+    /* ENCADRÉ ALERTE */
+    .info-box { background: rgba(232,183,200,0.18); border: 1px solid rgba(232,183,200,0.5); border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
+    .info-box p { font-size: 15px; margin-bottom: 0; }
+
+    /* TABLEAU */
+    .bio-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .bio-table th { background: var(--forest); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    .bio-table td { padding: 10px 14px; border-bottom: 1px solid rgba(6,23,45,0.07); vertical-align: top; }
+    .bio-table tr:nth-child(even) td { background: rgba(110,135,125,0.05); }
+    .bio-table .tag-ok { color: #2d6a4f; font-weight: 700; }
+    .bio-table .tag-warn { color: #c0392b; font-weight: 700; }
+    .table-wrapper { overflow-x: auto; margin: 24px 0; border-radius: 10px; }
+
+    /* SVG */
+    .diagram-caption { font-size: 13px; color: var(--muted); text-align: center; margin: 8px 0 28px; font-style: italic; }
+
+    /* ÉPISTÉMIQUE */
+    .article-epistemic { background: rgba(6,23,45,0.04); border: 1px solid rgba(6,23,45,0.10); border-radius: 12px; padding: 22px 26px; margin: 36px 0; }
+    .epistemic-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--navy); margin-bottom: 12px; }
+
+    /* FAQ */
+    .faq-block { margin: 36px 0; }
+    .faq-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+    details.faq-item { border: 1px solid rgba(6,23,45,0.10); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+    details.faq-item summary { padding: 16px 20px; font-weight: 600; font-size: 15px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--navy); }
+    details.faq-item summary::after { content: "+"; font-size: 18px; color: var(--forest); flex-shrink: 0; }
+    details.faq-item[open] summary::after { content: "−"; }
+    details.faq-item .faq-answer { padding: 0 20px 16px; font-size: 15px; color: var(--ink); }
+
+    /* CTA */
+    .cta-block { background: linear-gradient(135deg, var(--forest), var(--forest-dark)); border-radius: 16px; padding: 28px 32px; margin: 36px 0; text-align: center; }
+    .cta-block p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: #fff; color: var(--forest); padding: 12px 28px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 15px; transition: opacity .15s; }
+    .cta-btn:hover { opacity: 0.9; }
+    .cta-guide { background: rgba(201,185,217,0.18); border: 1px solid rgba(201,185,217,0.5); border-radius: 14px; padding: 22px 26px; margin: 28px 0; }
+    .cta-guide-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .cta-guide p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+    .cta-guide-btn { display: inline-block; background: var(--navy); color: #fff; padding: 10px 22px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; }
+
+    /* SOURCES */
+    .sources-section { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(6,23,45,0.10); }
+    .sources-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .sources-list { padding-left: 20px; }
+    .sources-list li { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.55; }
+    .sources-list a { color: var(--forest); text-decoration: none; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    /* SHARE */
+    .share-block { display: flex; gap: 12px; align-items: center; margin: 28px 0; flex-wrap: wrap; }
+    .share-label { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity .15s; }
+    .share-btn:hover { opacity: 0.85; }
+    .share-fb { background: #1877f2; color: #fff; }
+    .share-li { background: #0a66c2; color: #fff; }
+    .share-copy { background: rgba(6,23,45,0.07); color: var(--ink); border: 1px solid rgba(6,23,45,0.15); cursor: pointer; font-family: inherit; }
+    .share-copy:hover { background: rgba(6,23,45,0.12); }
+    .share-copy.copied { background: var(--forest); color: #fff; border-color: var(--forest); }
+
+    /* FOOTER */
+    .article-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(6,23,45,0.08); font-size: 13px; color: var(--muted); }
+    .article-footer a { color: var(--forest); text-decoration: none; }
+    .footer-disclaimer { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<header class="site-header">
+  <nav class="topbar">
+    <a href="https://www.myboussole.fr" class="topbar-logo">🧭 myboussole</a>
+    <div class="topbar-nav">
+      <a href="https://www.myboussole.fr/articles/">Articles</a>
+      <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
+    </div>
+    <div class="topbar-cta">
+      <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <nav class="mobile-nav">
+    <a href="https://www.myboussole.fr/articles/">Articles</a>
+    <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
+    <a href="https://app.myboussole.fr">Essayer Boussole</a>
+  </nav>
+</header>
+
+<main id="main-content" class="article-wrapper">
+  <div class="article-card">
+
+    <h1>« Vos analyses sont revenues normales ? »<br>Ce que votre bilan ne dit pas dans le Covid long</h1>
+
+    <p class="lead">Vous êtes épuisée depuis des mois. Votre médecin prescrit un bilan sanguin. Résultat : tout est dans les normes. Pourtant, vous ne vous sentez pas normale. Ce décalage entre les chiffres et le ressenti n'est pas dans votre tête — il est dans les limites de ce qu'un bilan standard peut détecter dans le Covid long.</p>
+
+    <!-- SYNTHESIS -->
+    <div class="article-synthesis">
+      <p class="synthesis-label">⚡ L'essentiel en 4 points</p>
+      <div class="synthesis-grid">
+        <div class="synthesis-card">
+          <span class="synthesis-icon">🔬</span>
+          <div>
+            <p class="synthesis-card-title">Normes ≠ absence de problème</p>
+            <p class="synthesis-card-text">Des études publiées entre 2022 et 2025 suggèrent que certaines anomalies du Covid long restent dans les valeurs de référence absolues, tout en représentant des déséquilibres fonctionnels significatifs.</p>
+          </div>
+        </div>
+        <div class="synthesis-card">
+          <span class="synthesis-icon">📊</span>
+          <div>
+            <p class="synthesis-card-title">4 marqueurs Sécu à explorer</p>
+            <p class="synthesis-card-text">NFS, ferritine, D-dimères et bilan hépatique sont remboursés et prescrits en routine. Chacun raconte une partie de l'histoire — à condition de savoir lire entre les lignes.</p>
+          </div>
+        </div>
+        <div class="synthesis-card">
+          <span class="synthesis-icon">💡</span>
+          <div>
+            <p class="synthesis-card-title">Le pattern compte autant que la valeur</p>
+            <p class="synthesis-card-text">Dans la NFS notamment, une lymphopénie persistante peut rester dans les valeurs absolues normales mais signaler une dysrégulation immunitaire documentée dans le Covid long.</p>
+          </div>
+        </div>
+        <div class="synthesis-card">
+          <span class="synthesis-icon">🧭</span>
+          <div>
+            <p class="synthesis-card-title">Ce que vous pouvez demander</p>
+            <p class="synthesis-card-text">Des formulations concrètes pour orienter la conversation avec votre professionnel de santé — sans dépasser le rôle de ce bilan de base.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOMMAIRE -->
+    <nav class="toc" aria-label="Sommaire de l'article">
+      <p class="toc-title">📋 Sommaire</p>
+      <ol>
+        <li><a href="#nfs">NFS : quand les chiffres sont « normaux » mais le tableau ne l'est pas</a></li>
+        <li><a href="#ferritine">Ferritine : le marqueur à double tranchant</a></li>
+        <li><a href="#ddimeres">D-dimères : la coagulation silencieuse</a></li>
+        <li><a href="#foie">Bilan hépatique : l'organe oublié</a></li>
+        <li><a href="#oublies">Cinq marqueurs du bilan HAS souvent oubliés</a></li>
+        <li><a href="#demander">Ce que vous pouvez demander à votre médecin</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- GLOSSAIRE -->
+    <details class="glossaire-accordion">
+      <summary>📖 Termes de référence</summary>
+      <div class="glossaire-bilingue">
+        <ul>
+          <li>Numération formule sanguine (NFS) = Complete Blood Count (CBC)</li>
+          <li>Lymphopénie = Lymphopenia — diminution du nombre de lymphocytes</li>
+          <li>Rapport neutrophiles/lymphocytes (NLR) = Neutrophil-to-Lymphocyte Ratio</li>
+          <li>Ferritine = Ferritin — protéine de stockage du fer</li>
+          <li>D-dimères = D-dimer — fragment de dégradation de la fibrine (coagulation)</li>
+          <li>ASAT = Aspartate aminotransférase (enzyme hépatique et musculaire)</li>
+          <li>ALAT = Alanine aminotransférase (enzyme hépatique)</li>
+          <li>PASC = Post-Acute Sequelae of SARS-CoV-2 — Covid long (terme scientifique)</li>
+          <li>CRP = C-Reactive Protein — Protéine C Réactive, marqueur d'inflammation</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- HERO IMAGE -->
+    <img src="hero.jpg" alt="Tube de prélèvement sanguin et feuille de résultats d'analyse, symbolisant le bilan biologique dans le Covid long" class="hero-img" loading="lazy" decoding="async">
+
+    <!-- SECTION 1 : NFS -->
+    <h2 id="nfs">1. NFS : quand les chiffres sont « normaux » mais le tableau ne l'est pas</h2>
+
+    <p>La numération formule sanguine est l'examen de base prescrit dans presque toutes les situations. Dans le Covid long, elle peut sembler rassurante à première lecture — et pourtant, les données scientifiques disponibles invitent à regarder plus finement.</p>
+
+    <h3>La lymphopénie persistante : un signal discret</h3>
+
+    <p>Une diminution du nombre de lymphocytes (lymphopénie) est documentée dans le Covid long par plusieurs études.<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> Ce qui rend ce signal difficile à interpréter : <strong>la valeur absolue peut rester dans les bornes de référence du laboratoire</strong>, tout en étant basse par rapport à votre propre niveau habituel. Sans bilan antérieur de référence, ce glissement passe inaperçu.</p>
+
+    <p>Le mécanisme proposé est multifactoriel : épuisement des lymphocytes T par exposition prolongée à des antigènes viraux persistants, infiltration lymphocytaire dans les tissus, et possible effet de la tempête cytokinique initiale sur la survie des cellules immunitaires.<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup></p>
+
+    <!-- SVG 1 -->
+    <svg role="img" aria-label="Schéma montrant la lymphopénie dans le Covid long : les lymphocytes diminuent progressivement après l'infection aiguë et restent bas en phase chronique"
+         viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin:20px 0 4px;">
+      <title>Évolution des lymphocytes dans le Covid long : valeur dans les normes mais basse par rapport au niveau pré-infectieux</title>
+      <rect width="700" height="220" fill="#f8f6f0" rx="12"/>
+      <!-- Axes -->
+      <line x1="60" y1="30" x2="60" y2="180" stroke="#06172d" stroke-width="1.5"/>
+      <line x1="60" y1="180" x2="660" y2="180" stroke="#06172d" stroke-width="1.5"/>
+      <!-- Labels axes -->
+      <text x="360" y="210" text-anchor="middle" font-size="12" fill="#6b7c93" font-family="sans-serif">Temps après l'infection</text>
+      <text x="18" y="110" text-anchor="middle" font-size="12" fill="#6b7c93" font-family="sans-serif" transform="rotate(-90, 18, 110)">Lymphocytes</text>
+      <!-- Borne inférieure laboratoire -->
+      <line x1="60" y1="150" x2="660" y2="150" stroke="#c0392b" stroke-width="1" stroke-dasharray="6,4"/>
+      <text x="665" y="153" font-size="11" fill="#c0392b" font-family="sans-serif">Borne basse labo</text>
+      <!-- Niveau pré-infectieux -->
+      <line x1="60" y1="75" x2="150" y2="75" stroke="#2d6a4f" stroke-width="2"/>
+      <text x="80" y="68" font-size="11" fill="#2d6a4f" font-family="sans-serif">Niveau pré-infectieux</text>
+      <!-- Courbe lymphocytes -->
+      <polyline points="150,75 200,130 260,145 340,138 440,132 560,128 650,126"
+                fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- Zone critique -->
+      <rect x="200" y="126" width="450" height="24" fill="rgba(192,57,43,0.07)" rx="4"/>
+      <text x="430" y="142" text-anchor="middle" font-size="11" fill="#c0392b" font-family="sans-serif">Zone "dans les normes mais basse"</text>
+      <!-- Points clés -->
+      <circle cx="200" cy="130" r="5" fill="#2d6a4f"/>
+      <text x="200" y="122" text-anchor="middle" font-size="10" fill="#06172d" font-family="sans-serif">Phase aiguë</text>
+      <circle cx="560" cy="128" r="5" fill="#2d6a4f"/>
+      <text x="560" y="120" text-anchor="middle" font-size="10" fill="#06172d" font-family="sans-serif">Covid long</text>
+    </svg>
+    <p class="diagram-caption">Figure 1. Les lymphocytes peuvent rester au-dessus de la borne basse du laboratoire tout en étant significativement inférieurs au niveau pré-infectieux de la personne.</p>
+
+    <h3>Le ratio neutrophiles/lymphocytes (NLR) : un index à calculer, pas encore validé dans le Covid long</h3>
+
+    <p>Le rapport entre neutrophiles et lymphocytes est calculable à partir de toute NFS standard — sans examen supplémentaire. Ce ratio est bien documenté comme marqueur de sévérité en phase aiguë, mais son utilité spécifique dans le Covid long n'a pas encore été clairement quantifiée dans la littérature disponible. L'hypothèse d'un NLR persistant élevé, reflet d'une neutrophilie relative associée à la lymphopénie documentée, est biologiquement plausible — mais reste à confirmer par des études dédiées.</p>
+
+    <div class="expert-box">
+      <p class="expert-box-title">🔬 L'œil du Docteur en pharmacie</p>
+      <p>En l'absence de données de référence spécifiques au Covid long, le NLR doit être interprété avec prudence. Ce n'est pas un examen supplémentaire à prescrire : le calcul se fait à partir des données déjà présentes sur votre feuille de résultats. S'il est élevé de façon persistante, signalez-le à votre médecin pour qu'il l'interprète dans votre contexte clinique global.</p>
+    </div>
+
+    <!-- SECTION 2 : FERRITINE -->
+    <h2 id="ferritine">2. Ferritine : le marqueur à double tranchant</h2>
+
+    <p>La ferritine est une protéine de stockage du fer. Elle est souvent prescrite "pour vérifier les réserves en fer", mais dans le Covid long, son interprétation est nettement plus complexe.</p>
+
+    <h3>Ferritine haute dans les normes : signe possible d'inflammation de bas grade</h3>
+
+    <p>La ferritine est aussi un réactif de l'inflammation aiguë : son taux augmente sous l'effet de cytokines pro-inflammatoires, notamment l'IL-6.<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> Des données suggèrent qu'une hyperferritinémie persistante a été observée chez 38 % des personnes à 60 jours après l'infection,<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> associée à des perturbations du métabolisme du fer. Cependant, une méta-analyse de 23 études (Yong et al., 2023) n'a pas retrouvé de différence significative sur la ferritine seule entre les personnes avec et sans Covid long.<sup><a href="#source-11" aria-label="Source 11">[11]</a></sup> Ce signal est donc présent dans certaines cohortes mais pas systématique — ce qui renforce l'intérêt d'une interprétation contextuelle plutôt que d'une valeur seuil absolue.</p>
+
+    <p>Une ferritine à 180 µg/L est dans la norme des laboratoires (borne haute typique : 200 µg/L chez la femme), mais peut correspondre à un signal inflammatoire chronique de bas grade chez certaines personnes — à contextualiser avec le reste du bilan.</p>
+
+    <h3>Ferritine basse dans les normes : carence fonctionnelle masquée</h3>
+
+    <p>À l'autre extrême, une ferritine à 12 µg/L est "dans les normes" du laboratoire (borne basse : 10–13 µg/L selon les établissements), mais insuffisante pour un fonctionnement cellulaire optimal — en particulier pour la synthèse de neurotransmetteurs et la production d'énergie mitochondriale. Le Covid long étant associé à un dérèglement du métabolisme du fer,<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> cette situation mérite une attention particulière.</p>
+
+    <!-- SVG 2 -->
+    <svg role="img" aria-label="Schéma illustrant le double problème de la ferritine dans le Covid long : zone basse et zone haute toutes deux potentiellement problématiques"
+         viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin:20px 0 4px;">
+      <title>Interprétation de la ferritine dans le Covid long : la zone normale du laboratoire cache deux situations cliniques distinctes</title>
+      <rect width="700" height="180" fill="#f8f6f0" rx="12"/>
+      <!-- Barre horizontale de référence -->
+      <rect x="60" y="70" width="580" height="50" fill="rgba(45,106,79,0.08)" rx="6"/>
+      <text x="350" y="100" text-anchor="middle" font-size="13" fill="#2d6a4f" font-family="sans-serif" font-weight="700">Zone "normale" laboratoire (10–200 µg/L)</text>
+      <!-- Zone basse -->
+      <rect x="60" y="70" width="120" height="50" fill="rgba(192,57,43,0.12)" rx="6 0 0 6"/>
+      <text x="120" y="92" text-anchor="middle" font-size="11" fill="#c0392b" font-family="sans-serif" font-weight="700">Ferritine basse</text>
+      <text x="120" y="108" text-anchor="middle" font-size="10" fill="#c0392b" font-family="sans-serif">Carence fonctionnelle</text>
+      <!-- Zone haute -->
+      <rect x="520" y="70" width="120" height="50" fill="rgba(201,185,217,0.35)" rx="0 6 6 0"/>
+      <text x="580" y="92" text-anchor="middle" font-size="11" fill="#6b45a0" font-family="sans-serif" font-weight="700">Ferritine haute</text>
+      <text x="580" y="108" text-anchor="middle" font-size="10" fill="#6b45a0" font-family="sans-serif">Inflammation bas grade</text>
+      <!-- Labels extrêmes -->
+      <text x="60" y="155" font-size="11" fill="#6b7c93" font-family="sans-serif">10 µg/L</text>
+      <text x="630" y="155" text-anchor="end" font-size="11" fill="#6b7c93" font-family="sans-serif">200 µg/L</text>
+      <text x="20" y="100" font-size="12" fill="#06172d" font-family="sans-serif" font-weight="700" transform="rotate(-90,20,100)">Ferritine</text>
+    </svg>
+    <p class="diagram-caption">Figure 2. Dans le Covid long, les deux extrémités de la zone "normale" méritent une interprétation contextuelle, pas seulement une validation automatique.</p>
+
+    <div class="info-box">
+      <p>💡 <strong>À noter :</strong> La ferritine basse est très fréquente chez les femmes en âge de procréer (pertes menstruelles, alimentation). Dans le Covid long, elle peut aggraver la fatigue et les symptômes neurocognitifs — même en l'absence d'anémie franche au bilan.</p>
+    </div>
+
+    <!-- SECTION 3 : D-DIMÈRES -->
+    <h2 id="ddimeres">3. D-dimères : la coagulation silencieuse</h2>
+
+    <p>Les D-dimères sont des fragments produits lors de la dissolution des caillots sanguins. En dehors de la phase aiguë, ils ne sont pas systématiquement prescrits — et pourtant, leur persistance dans le Covid long est documentée.</p>
+
+    <h3>Ce que disent les données disponibles</h3>
+
+    <p>Des données issues de plusieurs études de suivi suggèrent qu'environ 15 % des personnes conservent des D-dimères élevés (≥ 500 ng/mL) jusqu'à 8 mois après l'infection.<sup><a href="#source-1" aria-label="Source 1">[1]</a></sup> La seule méta-analyse disponible à ce jour sur ce marqueur spécifique (Yong et al., 2023, 23 études) confirme des D-dimères significativement plus élevés dans le Covid long que dans les groupes contrôles, avec une taille d'effet modérée (différence moyenne standardisée SMD = 0,27 ; IC95% : 0,09–0,46).<sup><a href="#source-11" aria-label="Source 11">[11]</a></sup> Ce résultat est robuste — il reste significatif après analyse de sensibilité.</p>
+
+    <p>Le mécanisme proposé implique une thromboinflammation persistante, possiblement entretenue par des protéines virales (notamment la protéine Spike) détectables dans la circulation bien après la résolution de l'infection aiguë.<sup><a href="#source-2" aria-label="Source 2">[2]</a></sup> Ces phénomènes de microcoagulation restent actifs sans nécessairement dépasser les seuils cliniques d'embolie pulmonaire ou de thrombose.</p>
+
+    <!-- SVG 3 -->
+    <svg role="img" aria-label="Schéma de la thromboinflammation persistante dans le Covid long : protéine Spike, activation de la coagulation, D-dimères élevés"
+         viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin:20px 0 4px;">
+      <title>Mécanisme de thromboinflammation persistante dans le Covid long</title>
+      <rect width="700" height="200" fill="#f8f6f0" rx="12"/>
+      <!-- Étapes -->
+      <rect x="30" y="70" width="130" height="60" rx="10" fill="rgba(201,185,217,0.5)" stroke="rgba(107,69,160,0.3)" stroke-width="1.5"/>
+      <text x="95" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#06172d" font-family="sans-serif">Protéine Spike</text>
+      <text x="95" y="115" text-anchor="middle" font-size="11" fill="#6b7c93" font-family="sans-serif">persistante</text>
+
+      <line x1="165" y1="100" x2="205" y2="100" stroke="#06172d" stroke-width="1.5" marker-end="url(#arrow1)"/>
+      <defs><marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#06172d"/></marker></defs>
+
+      <rect x="210" y="70" width="140" height="60" rx="10" fill="rgba(232,183,200,0.4)" stroke="rgba(192,57,43,0.25)" stroke-width="1.5"/>
+      <text x="280" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#06172d" font-family="sans-serif">Activation</text>
+      <text x="280" y="115" text-anchor="middle" font-size="11" fill="#6b7c93" font-family="sans-serif">coagulation / endothélium</text>
+
+      <line x1="355" y1="100" x2="395" y2="100" stroke="#06172d" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+      <rect x="400" y="70" width="130" height="60" rx="10" fill="rgba(201,185,217,0.4)" stroke="rgba(107,69,160,0.25)" stroke-width="1.5"/>
+      <text x="465" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#06172d" font-family="sans-serif">Microthrombus</text>
+      <text x="465" y="115" text-anchor="middle" font-size="11" fill="#6b7c93" font-family="sans-serif">formation silencieuse</text>
+
+      <line x1="535" y1="100" x2="575" y2="100" stroke="#06172d" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+      <rect x="578" y="70" width="100" height="60" rx="10" fill="rgba(45,106,79,0.12)" stroke="rgba(45,106,79,0.3)" stroke-width="1.5"/>
+      <text x="628" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#06172d" font-family="sans-serif">↑ D-dimères</text>
+      <text x="628" y="115" text-anchor="middle" font-size="11" fill="#6b7c93" font-family="sans-serif">détectables</text>
+
+      <text x="350" y="170" text-anchor="middle" font-size="12" fill="#6b7c93" font-family="sans-serif">Signal possible même sous le seuil clinique d'embolie</text>
+    </svg>
+    <p class="diagram-caption">Figure 3. La thromboinflammation persistante peut produire des D-dimères élevés sans tableau clinique de thrombose franche.</p>
+
+    <h3>Pourquoi ce marqueur n'est pas toujours prescrit</h3>
+
+    <p>En dehors d'une suspicion de thrombose ou d'embolie pulmonaire, les D-dimères ne font pas partie du bilan de suivi standard proposé aux personnes souffrant de Covid long. Pourtant, ils sont remboursés par la Sécurité sociale lorsqu'ils sont prescrits. Si vous avez des symptômes évocateurs (essoufflement, oppression thoracique, fatigue profonde inexpliquée), c'est un élément à mentionner à votre professionnel de santé.</p>
+
+    <!-- CTA vers guide -->
+    <div class="cta-guide">
+      <p class="cta-guide-title">📘 Pour aller plus loin : le Guide bilan avancé</p>
+      <p>Microthrombus, fibrine amyloïde, D-dimères fonctionnels, génotypage de la coagulation, méthylation SAMe/SAH… Ces marqueurs de deuxième intention — non remboursés en routine mais scientifiquement documentés — sont détaillés dans notre guide premium.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">Laissez votre adresse e-mail pour être prévenu dès sa sortie :</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <input type="email" id="guide-email" placeholder="votre@email.fr"
+          style="flex:1;min-width:200px;padding:9px 14px;border-radius:8px;border:1px solid rgba(6,23,45,0.2);font-family:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none;"
+          aria-label="Votre adresse e-mail pour être prévenu de la sortie du guide">
+        <button onclick="submitGuideEmail()"
+          style="background:var(--navy);color:#fff;padding:9px 18px;border-radius:8px;border:none;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;"
+          id="guide-email-btn">Me prévenir →</button>
+      </div>
+      <p id="guide-email-confirm" style="font-size:13px;color:var(--forest);margin-top:8px;display:none;">✅ Merci ! Vous serez prévenu dès la sortie du guide.</p>
+    </div>
+
+    <!-- SECTION 4 : FOIE -->
+    <h2 id="foie">4. Bilan hépatique : l'organe oublié</h2>
+
+    <p>Le foie est rarement au centre des préoccupations dans le Covid long. Pourtant, il est au carrefour du métabolisme énergétique, de la détoxification et de la réponse inflammatoire — trois axes perturbés dans cette condition.</p>
+
+    <h3>ASAT, ALAT : les transaminases sous surveillance</h3>
+
+    <p>Des études récentes documentent une atteinte hépatique post-Covid allant des élévations asymptomatiques des transaminases jusqu'à des tableaux de cholangiopathie (atteinte des voies biliaires) dans les cas les plus sévères.<sup><a href="#source-4" aria-label="Source 4">[4]</a></sup> La physiopathologie est multifactorielle : action directe du virus sur les cellules hépatiques (les hépatocytes expriment des récepteurs ACE2), réponse inflammatoire systémique, et possible hépatotoxicité médicamenteuse liée aux traitements reçus pendant la phase aiguë.<sup><a href="#source-5" aria-label="Source 5">[5]</a></sup></p>
+
+    <p>Le suivi dans le temps révèle une persistance notable : dans une cohorte de 118 patients suivis jusqu'à un an après la sortie, 28,8 % présentaient encore au moins un paramètre hépatique anormal à 1 an — principalement GGT et bilirubine.<sup><a href="#source-12" aria-label="Source 12">[12]</a></sup> Une revue narrative de 2025 confirme que ces manifestations peuvent progresser des mois après la résolution de l'infection, avec un risque accru chez les personnes ayant des facteurs préexistants (syndrome métabolique, obésité, hépatite virale).<sup><a href="#source-5" aria-label="Source 5">[5]</a></sup></p>
+
+    <h3>Fatigue et foie : le lien énergétique</h3>
+
+    <p>Une cytolyse hépatique légère — même peu symptomatique — peut contribuer à la fatigue en perturbant la production de protéines plasmatiques, le métabolisme des acides aminés et la régulation glycémique. Ce mécanisme est souvent sous-estimé dans le tableau clinique du Covid long.</p>
+
+    <div class="expert-box">
+      <p class="expert-box-title">🔬 L'œil du Docteur en pharmacie</p>
+      <p>Un bilan hépatique complet inclut ASAT, ALAT, GGT, phosphatases alcalines et bilirubine. En consultation, le médecin peut se contenter de l'ALAT seule. Si vous ressentez une fatigue profonde, une sensation de lourdeur digestive ou un inconfort de l'hypocondre droit, il est pertinent de demander un bilan hépatique complet — remboursé et sans risque.</p>
+    </div>
+
+    <!-- SECTION 4bis : MARQUEURS SOUVENT OUBLIÉS -->
+    <h2 id="oublies">5. Cinq marqueurs du bilan HAS souvent oubliés</h2>
+
+    <p>La HAS (janvier 2023) recommande un bilan de première intention plus complet que ce qui est habituellement prescrit. Ces paramètres sont remboursés, accessibles en médecine de ville, et pourtant rarement interprétés dans leur intégralité.</p>
+
+    <h3>Ionogramme sanguin : l'hypokaliémie silencieuse</h3>
+
+    <p>L'ionogramme — sodium, potassium, chlorures, bicarbonates — est l'un des examens les plus prescrits et les moins interprétés dans ce contexte. L'hypokaliémie (déficit en potassium) est une perturbation documentée dans le Covid-19 et ses suites, avec des mécanismes multiples : utilisation du récepteur ACE2 par le virus dans les cellules tubulaires rénales, perturbations gastro-intestinales, et — point crucial — <strong>une carence en magnésium qui rend l'hypokaliémie réfractaire à la correction</strong>.<sup><a href="#source-7" aria-label="Source 7">[7]</a></sup></p>
+
+    <p>Le lien magnésium-potassium est pharmacologiquement fondamental : sans corriger le magnésium en parallèle, la supplémentation en potassium reste inefficace. Une hypokaliémie légère, dans les valeurs basses de la normale, peut contribuer à la fatigue musculaire, aux palpitations et à la faiblesse persistante du Covid long.</p>
+
+    <div class="expert-box">
+      <p class="expert-box-title">🔬 L'œil du Docteur en pharmacie</p>
+      <p>L'ionogramme ne mesure pas le magnésium — ce sont deux examens distincts. La magnésémie standard n'est pas totalement fiable (le magnésium est majoritairement intracellulaire). En pratique, si l'ionogramme révèle une hypokaliémie et/ou des symptômes évocateurs (crampes, fatigue musculaire, palpitations), l'association potassium-magnésium est à discuter avec votre médecin avant toute supplémentation isolée en potassium.</p>
+    </div>
+
+    <h3>Créatininémie et clairance (eGFR) : le rein post-Covid</h3>
+
+    <p>Le rein est un organe cible du SARS-CoV-2 au même titre que le foie — les cellules tubulaires rénales expriment fortement les récepteurs ACE2. Des données issues d'une cohorte canadienne de 2 212 personnes suivies en clinique post-Covid documentent un déclin significatif du débit de filtration glomérulaire estimé (eGFR) dans l'année suivant l'infection, de l'ordre de 3 % en moyenne — avec des baisses plus marquées chez les personnes hospitalisées ou diabétiques.<sup><a href="#source-8" aria-label="Source 8">[8]</a></sup> Plus de 40 % des personnes de cette cohorte étaient à risque de maladie rénale chronique.</p>
+
+    <p>Une étude publiée dans <em>Biomedicines</em> (2024) confirme des niveaux de créatinine sérique et d'urée significativement plus élevés dans le groupe Covid long par rapport aux témoins à 6 mois post-infection, avec un eGFR abaissé.<sup><a href="#source-9" aria-label="Source 9">[9]</a></sup> Ces anomalies restent souvent dans les valeurs de référence absolues — mais représentent un glissement fonctionnel mesurable.</p>
+
+    <div class="info-box">
+      <p>💡 La créatininémie seule ne suffit pas : c'est la <strong>clairance estimée (eGFR)</strong>, calculée à partir de la créatinine, de l'âge et du sexe, qui reflète réellement la fonction rénale. Elle figure sur tout compte rendu de biologie standard — vérifiez qu'elle est bien calculée et interprétée, pas seulement la créatinine brute.</p>
+    </div>
+
+    <div class="expert-box">
+      <p class="expert-box-title">🔬 L'œil du Docteur en pharmacie — créatine ≠ créatinine</p>
+      <p>Si vous prenez de la <strong>créatine</strong> (complément alimentaire fréquent dans le sport et la récupération musculaire), sachez qu'elle est partiellement convertie en créatinine lors de sa dégradation — ce qui peut faire <strong>monter la créatininémie sans aucune atteinte rénale réelle</strong>. Un essai contrôlé randomisé sur 2 ans a montré que malgré cette élévation de la créatinine, la cystatine C — marqueur filtré uniquement par le glomérule, non influencé par la masse musculaire ni la créatine — restait parfaitement normale, confirmant une fonction rénale préservée.<sup><a href="#source-10" aria-label="Source 10">[10]</a></sup> Si votre créatinine est légèrement élevée et que vous prenez de la créatine, signalez-le à votre médecin : il pourra demander une cystatine C pour trancher.</p>
+    </div>
+
+    <h3>Cortisolémie à 8h : le signal hormonal du Covid long</h3>
+
+    <p>Une étude publiée dans <em>Nature</em> en 2023, portant sur 275 personnes, a identifié un taux de cortisol plasmatique circulant abaissé parmi les caractéristiques biologiques les plus fortement associées au Covid long dans des modèles de machine learning.<sup><a href="#source-6" aria-label="Source 6">[6]</a></sup> La HAS 2023 recommande la mesure de la cortisolémie à 8h dans le bilan de la fatigue persistante — comme signal d'orientation, pas comme marqueur diagnostique.</p>
+
+    <p>Une étude plus récente (Camici et al., 2026, n=96) apporte une précision importante : le cortisol <strong>plasmatique</strong> n'était pas significativement différent entre les personnes avec et sans Covid long, mais le profil du cortisol <strong>salivaire</strong> sur 24h était altéré — pic matinal abaissé, élévation nocturne — avec un taux d'ACTH plus élevé chez les personnes avec Covid long. Ce découplage suggère une dysrégulation de l'axe hypothalamo-hypophyso-surrénalien plutôt qu'une insuffisance surrénalienne franche.</p>
+
+    <div class="info-box">
+      <p>⚠️ <strong>Point de vigilance :</strong> la cortisolémie plasmatique à 8h reste l'examen accessible en routine (remboursé). Une valeur basse-normale est un signal à contextualiser avec votre médecin — sans sur-interprétation ni sous-estimation. Le cortisol salivaire sur 24h, plus informatif, n'est pas encore dans le bilan HAS standard.</p>
+    </div>
+
+    <h3>TSH et anticorps anti-TPO : la thyroïde post-Covid</h3>
+
+    <p>La TSH (hormone thyréostimulante) est incluse dans le bilan HAS et permet d'éliminer une dysthyroïdie franche. Mais dans le Covid long, des thyroïdites auto-immunes (type Hashimoto) peuvent se manifester avec une TSH encore normale en phase précoce. Lorsque la fatigue est prédominante et que la TSH est dans la zone basse de la normale, les anticorps anti-TPO (anti-thyroperoxydase) peuvent apporter un complément d'information utile — prescriptibles et remboursables sur orientation médicale.</p>
+
+    <h3>CRP standard vs CRP ultrasensible : deux lectures différentes</h3>
+
+    <p>La CRP standard (seuil de détection habituel : 5–10 mg/L) ne capte pas l'<em>inflammaging</em> — l'inflammation chronique de bas grade caractéristique du Covid long. La CRP ultrasensible (CRPus), avec un seuil de détection autour de 0,5 mg/L, peut mettre en évidence une inflammation persistante invisible sur le bilan standard. Elle n'est pas systématiquement incluse dans les bilans de ville mais peut être demandée par le médecin dans un contexte clinique justifié.</p>
+
+    <div class="expert-box">
+      <p class="expert-box-title">🔬 L'œil du Docteur en pharmacie</p>
+      <p>Un quatrième marqueur mérite mention : l'<strong>homocystéine plasmatique</strong>. Non incluse dans le bilan HAS standard, mais prescriptible et remboursable, elle reflète l'efficacité du cycle méthionine-SAMe — une voie métabolique fréquemment perturbée en contexte post-infectieux, notamment chez les personnes prenant du paracétamol de façon prolongée. Sous-utilisée, souvent méconnue des médecins généralistes, elle constitue pourtant un signal pertinent dans le Covid long avec composante neurocognitive ou inflammatoire persistante.</p>
+    </div>
+
+    <!-- SECTION 5 : CE QU'ON PEUT DEMANDER -->
+    <h2 id="demander">6. Ce que vous pouvez demander à votre professionnel de santé</h2>
+
+    <p>Ce n'est pas à vous de prescrire votre bilan. Mais vous avez le droit de comprendre vos résultats et d'orienter la conversation. Voici quelques formulations utiles :</p>
+
+    <div class="table-wrapper">
+      <table class="bio-table">
+        <thead>
+          <tr>
+            <th>Marqueur</th>
+            <th>Ce que vous pouvez dire</th>
+            <th>Ce qui est remboursé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NFS complète</strong></td>
+            <td>« Pouvez-vous regarder le ratio neutrophiles/lymphocytes, et non seulement les valeurs absolues ? »</td>
+            <td class="tag-ok">✅ Oui</td>
+          </tr>
+          <tr>
+            <td><strong>Ionogramme complet</strong></td>
+            <td>« Mon ionogramme montre-t-il une hypokaliémie, même légère ? Si oui, le magnésium a-t-il été vérifié en parallèle ? »</td>
+            <td class="tag-ok">✅ Oui</td>
+          </tr>
+          <tr>
+            <td><strong>Créatinine + eGFR</strong></td>
+            <td>« Est-ce que la clairance rénale (eGFR) a été calculée, pas seulement la créatinine brute ? »</td>
+            <td class="tag-ok">✅ Oui</td>
+          </tr>
+          <tr>
+            <td><strong>Ferritine</strong></td>
+            <td>« J'aimerais comprendre si ma ferritine reflète une réserve en fer ou une inflammation — les deux interprétations sont possibles selon la valeur. »</td>
+            <td class="tag-ok">✅ Oui</td>
+          </tr>
+          <tr>
+            <td><strong>D-dimères</strong></td>
+            <td>« Étant donné mes symptômes (fatigue, essoufflement), peut-on vérifier les D-dimères pour éliminer une composante inflammatoire de la coagulation ? »</td>
+            <td class="tag-ok">✅ Oui, si indiqué</td>
+          </tr>
+          <tr>
+            <td><strong>Bilan hépatique complet</strong></td>
+            <td>« Peut-on faire un bilan hépatique complet (ASAT, ALAT, GGT, phosphatases alcalines, bilirubine) ? Je ressens une fatigue profonde et j'ai eu un Covid. »</td>
+            <td class="tag-ok">✅ Oui</td>
+          </tr>
+          <tr>
+            <td><strong>CRP ultrasensible</strong></td>
+            <td>« Une CRP ultrasensible serait-elle pertinente pour explorer une inflammation de bas grade — différente de la CRP standard ? »</td>
+            <td class="tag-warn">⚠️ Selon contexte</td>
+          </tr>
+          <tr>
+            <td><strong>Cortisolémie à 8h</strong></td>
+            <td>« La HAS recommande la cortisolémie à 8h dans le bilan de fatigue persistante. Peut-on l'inclure ? »</td>
+            <td class="tag-ok">✅ Oui (HAS 2023)</td>
+          </tr>
+          <tr>
+            <td><strong>TSH + anti-TPO</strong></td>
+            <td>« Ma TSH est normale mais ma fatigue est majeure. Les anticorps anti-TPO pourraient-ils apporter une information supplémentaire ? »</td>
+            <td class="tag-warn">⚠️ Selon contexte</td>
+          </tr>
+          <tr>
+            <td><strong>Homocystéine</strong></td>
+            <td>« L'homocystéine plasmatique est-elle pertinente dans mon cas ? Je lis qu'elle reflète le cycle méthionine, souvent perturbé post-infection. »</td>
+            <td class="tag-warn">⚠️ Selon contexte</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Ces formulations n'ont pas vocation à orienter la décision médicale à votre place — elles permettent d'ouvrir un dialogue éclairé avec votre professionnel de santé.</p>
+
+    <!-- BLOC ÉPISTÉMIQUE -->
+    <div class="article-epistemic">
+      <p class="epistemic-label">🧩 Ce que l'on sait — et ce que l'on ne sait pas encore</p>
+      <p><strong>Ce qui est documenté :</strong> des anomalies biologiques persistantes ont été observées dans de multiples cohortes de suivi post-Covid, portant sur la NFS (lymphopénie ~12 % à 2 mois), les D-dimères (SMD = 0,27 en méta-analyse de 23 études, prévalence ≈15 % à 8 mois), le bilan hépatique (28,8 % d'anomalie à 1 an dans une cohorte de suivi) et le cortisol (profil salivaire altéré, cortisol plasmatique abaissé dans une cohorte de 275 personnes). Ces données sont issues de revues, méta-analyses et études publiées entre 2022 et 2025 dans des journaux de référence.</p>
+      <p><strong>Ce qui reste incertain :</strong> la ferritine seule ne montre pas de différence significative en méta-analyse (Yong 2023), ce qui tempère son usage comme marqueur isolé. Le NLR n'a pas encore été quantifié spécifiquement dans le Covid long. Le cortisol plasmatique à 8h donne des résultats variables selon les études — c'est le profil salivaire sur 24h qui semble plus informatif. Les seuils fonctionnels distincts des normes de laboratoire ne font pas encore consensus. Aucun biomarqueur unique ne permet à ce stade de confirmer ou d'exclure le Covid long.</p>
+    </div>
+
+    <!-- SECTION FAQ -->
+    <div class="faq-block">
+      <h2 id="faq" class="faq-title">Questions fréquentes</h2>
+
+      <details class="faq-item">
+        <summary>Est-ce que le Covid long peut exister même si toutes mes analyses sont normales ?</summary>
+        <div class="faq-answer">
+          <p>Oui. Des études publiées entre 2022 et 2025 montrent que certaines anomalies biologiques du Covid long restent dans les valeurs de référence absolues des laboratoires, tout en représentant des déséquilibres fonctionnels significatifs. Un bilan standard ne suffit pas à explorer l'ensemble des mécanismes impliqués.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Quels examens sont pris en charge par la Sécurité sociale dans le Covid long ?</summary>
+        <div class="faq-answer">
+          <p>La NFS, la CRP, la ferritine, le bilan hépatique (ASAT, ALAT, GGT, phosphatases alcalines) et les D-dimères sont des examens remboursés lorsqu'ils sont prescrits par un médecin dans un contexte clinique justifié. Ce sont ces marqueurs qui sont détaillés dans cet article.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Pourquoi la ferritine peut-elle être « normale » et pourtant problématique ?</summary>
+        <div class="faq-answer">
+          <p>Les normes de laboratoire (habituellement 10–200 µg/L chez la femme adulte) ont été établies sur des populations généralistes, pas sur des personnes en phase de Covid long. Une ferritine à 15 µg/L est dans la norme mais peut témoigner d'une carence fonctionnelle en fer. À l'inverse, une ferritine à 190 µg/L dans la norme haute peut refléter une inflammation chronique de bas grade persistante — et non un excès de réserves en fer.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Les D-dimères sont-ils dangereux à mesurer ?</summary>
+        <div class="faq-answer">
+          <p>Non. La mesure des D-dimères est une simple prise de sang, sans risque. C'est son interprétation qui doit être contextuelle : un résultat élevé ne signifie pas nécessairement une thrombose. Votre médecin est le seul à pouvoir interpréter ce résultat dans le cadre de votre tableau clinique.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- CTA PRINCIPAL -->
+    <div class="cta-block">
+      <p class="cta-title">Suivez vos symptômes dans le temps</p>
+      <p>Boussole vous permet de noter chaque jour votre énergie, votre sommeil, votre confort physique et votre clarté mentale. En 30 jours, vous avez une vision objective de vos fluctuations — utile à partager avec votre professionnel de santé.</p>
+      <a href="https://app.myboussole.fr" class="cta-btn">Essayer Boussole gratuitement →</a>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources-section">
+      <p class="sources-title">Sources scientifiques</p>
+      <ol class="sources-list">
+        <li id="source-1">Lechuga GC, Morel CM, De-Simone SG. <em>Hematological alterations associated with long COVID-19.</em> Front Physiol. 2023;14:1203472. <a href="https://doi.org/10.3389/fphys.2023.1203472" target="_blank" rel="noopener noreferrer">Lechuga et al., 2023 — PubMed PMID 37565145</a></li>
+        <li id="source-2">Iba T, Connors JM, Levy JH. <em>What Role Does Microthrombosis Play in Long COVID?</em> Semin Thromb Hemost. 2023;50(4):527-536. <a href="https://doi.org/10.1055/s-0043-1774795" target="_blank" rel="noopener noreferrer">Iba et al., 2023 — PubMed PMID 37748518</a></li>
+        <li id="source-3">Ignatyev O, Panyita O, Prutiian T, Kostromin P. <em>Haematological changes in sailors who had COVID-19.</em> Int Marit Health. 2022;73(4):178-180. <a href="https://doi.org/10.5603/IMH.2022.0031" target="_blank" rel="noopener noreferrer">Ignatyev et al., 2022 — PubMed PMID 36583404</a></li>
+        <li id="source-4">Caballero-Alvarado J, Zavaleta Corvera C, et al. <em>Post-COVID cholangiopathy: A narrative review.</em> Gastroenterol Hepatol. 2022;46(6):474-482. <a href="https://doi.org/10.1016/j.gastrohep.2022.09.004" target="_blank" rel="noopener noreferrer">Caballero-Alvarado et al., 2022 — PubMed PMID 36174796</a></li>
+        <li id="source-5">Florea CE, Bălaș-Maftei B, et al. <em>Multiorgan Involvement and Particularly Liver Injury in Long COVID: A Narrative Review.</em> Life (Basel). 2025;15(8):1314. <a href="https://doi.org/10.3390/life15081314" target="_blank" rel="noopener noreferrer">Florea et al., 2025 — PubMed PMID 40868961</a></li>
+        <li id="source-6">Klein J, Wood J, Jaycox JR, Iwasaki A et al. <em>Distinguishing features of long COVID identified through immune profiling.</em> Nature. 2023;623(7985):139-148. <a href="https://doi.org/10.1038/s41586-023-06651-y" target="_blank" rel="noopener noreferrer">Klein et al., 2023 — PubMed PMID 37748514</a></li>
+        <li id="source-7">Noori M, Nejadghaderi SA, et al. <em>A Review on the Possible Pathophysiology of Potassium Abnormalities in COVID-19.</em> Iran J Kidney Dis. 2021;15(6):397-407. <a href="https://doi.org/10.52547/ijkd.6552" target="_blank" rel="noopener noreferrer">Noori et al., 2021 — PubMed PMID 34930851</a></li>
+        <li id="source-8">Atiquzzaman M, Thompson JR, et al. <em>Long-term effect of COVID-19 infection on kidney function among COVID-19 patients followed in post-COVID-19 recovery clinics.</em> Nephrol Dial Transplant. 2023;38(12):2816-2825. <a href="https://doi.org/10.1093/ndt/gfad121" target="_blank" rel="noopener noreferrer">Atiquzzaman et al., 2023 — PubMed PMID 37349962</a></li>
+        <li id="source-9">Boruga M, Septimiu-Radu S, et al. <em>Kidney Function Tests and Continuous eGFR Decrease at Six Months after SARS-CoV-2 Infection in Patients Clinically Diagnosed with Post-COVID Syndrome.</em> Biomedicines. 2024;12(5):950. <a href="https://doi.org/10.3390/biomedicines12050950" target="_blank" rel="noopener noreferrer">Boruga et al., 2024 — PubMed PMID 38790912</a></li>
+        <li id="source-10">Bender A, Samtleben W, Elstner M, Klopstock T. <em>Long-term creatine supplementation is safe in aged patients with Parkinson disease.</em> Nutr Res. 2008;28(3):172-178. <a href="https://doi.org/10.1016/j.nutres.2008.01.001" target="_blank" rel="noopener noreferrer">Bender et al., 2008 — PubMed PMID 19083405</a></li>
+        <li id="source-11">Yong SJ, Halim A, Halim M, et al. <em>Inflammatory and vascular biomarkers in post-COVID-19 syndrome: A systematic review and meta-analysis of over 20 biomarkers.</em> Rev Med Virol. 2023;33(2):e2424. <a href="https://doi.org/10.1002/rmv.2424" target="_blank" rel="noopener noreferrer">Yong et al., 2023 — PubMed PMID 36708022</a></li>
+        <li id="source-12">Zhu X, Wang J, Du J, et al. <em>Changes in Serum Liver Function for Patients with COVID-19: A 1-Year Follow-Up Study.</em> Infect Drug Resist. 2022;15:1857-1870. <a href="https://doi.org/10.2147/IDR.S356181" target="_blank" rel="noopener noreferrer">Zhu et al., 2022 — PubMed PMID 35450115</a></li>
+      </ol>
+    </div>
+
+    <!-- PARTAGE -->
+    <div class="share-block">
+      <span class="share-label">Partager :</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.myboussole.fr/articles/bilan-sanguin-covid-long/"
+         class="share-btn share-fb" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.myboussole.fr/articles/bilan-sanguin-covid-long/"
+         class="share-btn share-li" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="share-btn share-copy" id="copy-btn" onclick="copyArticleLink()" aria-label="Copier le lien de l'article">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+        <span id="copy-label">Copier le lien</span>
+      </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+      <p>© 2026 <a href="https://www.myboussole.fr">myBoussole</a> · Dr Rémy Honoré, Docteur en pharmacie et nutrithérapeute</p>
+      <p class="footer-disclaimer">Information à visée éducative, non substituable à un avis médical individualisé.</p>
+    </footer>
+
+  </div>
+</main>
+
+<script>
+  function copyArticleLink() {
+    const btn = document.getElementById('copy-btn');
+    const label = document.getElementById('copy-label');
+    const url = 'https://www.myboussole.fr/articles/bilan-sanguin-covid-long/';
+    navigator.clipboard.writeText(url).then(() => {
+      btn.classList.add('copied');
+      label.textContent = 'Lien copié !';
+      setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copier le lien'; }, 2000);
+    }).catch(() => {
+      const el = document.createElement('textarea');
+      el.value = url; el.style.position = 'fixed'; el.style.opacity = '0';
+      document.body.appendChild(el); el.select(); document.execCommand('copy');
+      document.body.removeChild(el);
+      btn.classList.add('copied'); label.textContent = 'Lien copié !';
+      setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copier le lien'; }, 2000);
+    });
+  }
+
+  function submitGuideEmail() {
+    const input = document.getElementById('guide-email');
+    const btn = document.getElementById('guide-email-btn');
+    const confirm = document.getElementById('guide-email-confirm');
+    const email = input.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      input.style.borderColor = '#c0392b';
+      input.focus();
+      return;
+    }
+    // Ici : appel API Brevo ou autre à brancher
+    // fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email, source: 'guide-bilan-avance' }) })
+    input.style.display = 'none';
+    btn.style.display = 'none';
+    confirm.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
