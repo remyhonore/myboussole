@@ -2071,6 +2071,12 @@ sup a { color:var(--accent); text-decoration:none; font-family:'DM Mono',monospa
 
 <!-- ==================== SCRIPTS ==================== -->
 <script>
+// ===== NAVIGATION =====
+function navScrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // ===== DONNÉES CORPS HUMAIN =====
 const bodyData = {
   neuro: {
@@ -2137,12 +2143,6 @@ function bodyClick(zone) {
   });
   document.getElementById('bz-' + zone).classList.remove('dimmed');
   document.getElementById('bz-' + zone).classList.add('active');
-}
-
-// ===== NAVIGATION =====
-function navScrollTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ===== TIMELINE =====
@@ -2225,12 +2225,6 @@ function triClick(entity) {
       el.classList.remove('active');
     }
   });
-}
-
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
 }
 
 // Mise à jour état actif nav — toutes sections y compris Partie 4
