@@ -64,6 +64,7 @@ description: "[120-155 caractères — reprend le lead]"
 slug: "[slug-kebab-case]"
 date: "AAAA-MM-JJ"
 readingTime: "X min"
+level: "[debutant|intermediaire|expert]"
 tags: ["Tag1", "Tag2"]
 author: "Dr Rémy Honoré"
 image: "/articles/[slug]/[nom-image-hero].jpg"
@@ -71,6 +72,21 @@ image: "/articles/[slug]/[nom-image-hero].jpg"
 ```
 
 > Format étendu supporté : `"AAAA-MM-JJTHH:MM"` — utiliser si deux articles sont publiés le même jour pour contrôler l'ordre d'affichage dans le listing (`generate_content.py` trie par datetime, commit 1ff5c38).
+
+### 2b. Vocabulaire contrôlé — tags autorisés
+
+**Niveaux de lecture — champ `level` obligatoire**
+
+Ajouter `level:` dans le front matter de chaque article, après `readingTime:`.
+
+| Valeur | Label affiché | Profil |
+|---|---|---|
+| `"debutant"` | Grand public | Pas de bagage scientifique, vulgarisation pure |
+| `"intermediaire"` | Public averti | Familier du sujet, comprend SNA/MPE/pacing |
+| `"expert"` | Public expert | Professionnel de santé, mécanismes moléculaires |
+
+Fallback si absent : `"intermediaire"` (géré par `generate_content.py`).
+Règle : tout article déployé sans `level` s'affiche automatiquement en "Public averti".
 
 ---
 
