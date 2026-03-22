@@ -20,6 +20,7 @@ TAG_TO_ANGLE = {
     "thyroide": "Mécanisme biologique", "système nerveux": "Mécanisme biologique",
     "axe hpa": "Mécanisme biologique", "orexine": "Mécanisme biologique",
     "mécanisme": "Mécanisme biologique", "biologie": "Mécanisme biologique",
+    "épigénétique": "Mécanisme biologique", "epigenetique": "Mécanisme biologique",
     "fibromyalgie": "Vécu patient", "covid long": "Vécu patient",
     "fatigue chronique": "Vécu patient", "réveil fatigué": "Vécu patient",
     "brouillard mental": "Vécu patient", "dysautonomie": "Vécu patient",
