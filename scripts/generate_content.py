@@ -202,6 +202,8 @@ def collect_articles():
             "tags": tags,
             "read_time": fm.get("read_time", ""),
             "image": extract_hero_image(html, slug, fm),
+            "level": fm.get("level", "intermediaire"),
+            "date_iso": (fm.get("date", "") or "")[:10],
         })
 
     # sort: date desc, then slug asc
@@ -237,6 +239,8 @@ def write_articles_index(items):
         read_time = item.get("read_time", "")
         image = item.get("image", "")
         tags = item.get("tags", [])
+        level = item.get("level", "intermediaire")
+        date_iso = item.get("date_iso", "")
         is_image = image and any(image.lower().endswith(ext) for ext in ('.jpg', '.jpeg', '.png', '.webp', '.gif'))
         if is_image:
             thumb_html = f'        <img class="article-thumb" src="{escape(image)}" alt="" loading="lazy" aria-hidden="true" />\n'
@@ -244,7 +248,7 @@ def write_articles_index(items):
             svg = get_fallback_svg(tags)
             thumb_html = f'        <div class="article-thumb article-thumb-svg" aria-hidden="true">{svg}</div>\n'
         cards.append(
-            f'      <a href="{SITE_URL}/articles/{escape(item["slug"])}/" class="article-item" data-tags="{tags_attr}">\n'
+            f'      <a href="{SITE_URL}/articles/{escape(item["slug"])}/" class="article-item" data-tags="{tags_attr}" data-level="{level}" data-date="{date_iso}">\n'
             f'        <div>\n'
             f'          <div class="article-tags-row">{tag_spans}</div>\n'
             f'          <div class="article-title">{escape(item["title"])}</div>\n'

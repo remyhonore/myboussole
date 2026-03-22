@@ -6,135 +6,158 @@
   <title>Articles — myBoussole</title>
   <meta name="description" content="Guides et articles scientifiques sur la fatigue chronique, le Covid long et la micronutrition. Par Dr Rémy Honoré, docteur en pharmacie." />
   <link rel="canonical" href="https://www.myboussole.fr/articles/" />
+  <meta property="og:url" content="https://www.myboussole.fr/articles/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#06172D" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
+      --forest: #2d6a4f; --forest-dark: #1e4d38;
+      --navy: #06172D; --ink: #1a2332; --muted: #6b7280;
+      --surface: #F8F6F0;
       --accent: #2d6a4f; --accent-light: #e8f5e9; --accent-2: #1b4332;
-      --text: #1a1a2e; --muted: #6c757d; --border: #e5e7eb;
+      --text: #1a1a2e; --border: #e5e7eb;
       --paper: #F3F0E8; --paper2: #F8F6F0; --radius: 14px;
+      --color-border: rgba(6,23,45,0.1);
     }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background:
-        radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.40), transparent 60%),
-        radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.35), transparent 62%),
-        radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.22), transparent 60%),
-        linear-gradient(180deg, var(--paper2), var(--paper));
-      color: var(--text); min-height: 100vh; line-height: 1.6;
-    }
-    .site-header {
-      background: rgba(248,246,240,0.82); backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(6,23,45,0.06);
-      position: sticky; top: 0; z-index: 100;
-    }
-    .topbar {
-      display: grid; grid-template-columns: 1fr auto 1fr;
-      align-items: center; max-width: 1100px;
-      margin: 0 auto; padding: 0 24px; height: 60px;
-    }
-    .topbar-logo { font-weight: 700; font-size: 17px; color: var(--accent); text-decoration: none; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: radial-gradient(950px 620px at 14% 0%, rgba(201,185,217,.45), transparent 60%), radial-gradient(920px 620px at 86% 8%, rgba(232,183,200,.40), transparent 62%), radial-gradient(1200px 700px at 55% 115%, rgba(110,135,125,.26), transparent 60%), linear-gradient(180deg, var(--paper2), var(--paper)); color: var(--text); min-height: 100vh; line-height: 1.6; }
+
+    /* ── Header ── */
+    .site-header { background: rgba(248,246,240,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(6,23,45,0.06); position: sticky; top: 0; z-index: 100; }
+    .topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; }
+    .topbar-logo { grid-column: 1; font-weight: 700; font-size: 18px; color: var(--forest); text-decoration: none; }
     .topbar-nav { grid-column: 2; display: flex; gap: 32px; }
-    .topbar-nav a { color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.75; transition: opacity .15s; }
+    .topbar-nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: opacity .15s; }
     .topbar-nav a:hover, .topbar-nav a[aria-current] { opacity: 1; }
     .topbar-cta { grid-column: 3; display: flex; justify-content: flex-end; }
-    .btn-primary { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .15s; }
-    .btn-primary:hover { background: var(--accent-2); }
-    .hero {
-      max-width: 1100px; margin: 0 auto;
-      padding: 36px 24px 20px;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 24px; flex-wrap: wrap;
-    }
+    .btn-primary { background: var(--forest); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
+    .btn-primary:hover { background: var(--forest-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    @media (max-width: 640px) { .topbar-nav, .topbar-cta { display: none; } .mobile-menu-btn { display: flex; grid-column: 3; justify-self: end; } }
+    .mobile-nav { display: none; flex-direction: column; background: rgba(248,246,240,0.98); border-bottom: 1px solid rgba(6,23,45,0.08); padding: 12px 24px 16px; gap: 12px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 6px 0; }
+
+    /* ── Hero ── */
+    .hero { max-width: 1100px; margin: 0 auto; padding: 36px 24px 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .hero-left { flex: 1; min-width: 220px; }
-    .hero-eyebrow {
-      display: inline-block; font-size: 10px; font-weight: 600;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-light);
-      padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
-    }
+    .hero-eyebrow { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--forest); background: var(--accent-light); padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
     .hero h1 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; line-height: 1.2; color: var(--text); letter-spacing: -.03em; }
     .hero-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-top: 6px; }
     .hero-right { flex: 1; min-width: 260px; max-width: 420px; }
     .search-wrap { max-width: 100%; position: relative; }
     .search-wrap svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-    #search-input {
-      width: 100%; padding: 13px 16px 13px 44px;
-      border: 1.5px solid var(--border); border-radius: 10px;
-      background: rgba(255,255,255,.85); font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 15px; color: var(--text); outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    #search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(45,106,79,.12); }
+    #search-input { width: 100%; padding: 13px 16px 13px 44px; border: 1.5px solid var(--border); border-radius: 10px; background: rgba(255,255,255,.85); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; color: var(--text); outline: none; transition: border-color .15s, box-shadow .15s; }
+    #search-input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(45,106,79,.12); }
     #search-input::placeholder { color: var(--muted); }
-    .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
-    .filter-btn {
-      padding: 4px 12px; border-radius: 20px;
-      border: 1.5px solid var(--border); background: rgba(255,255,255,.7);
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 500;
-      color: var(--muted); cursor: pointer; transition: all .15s;
-    }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+    /* ── Articles wrap ── */
     .articles-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 48px; }
-    .article-item {
-      display: grid; grid-template-columns: 1fr auto 80px;
-      align-items: center; gap: 12px 16px; padding: 16px 0;
-      border-top: 1px solid rgba(0,0,0,.07);
-      text-decoration: none; color: inherit; transition: opacity .15s;
-    }
+
+    /* ── Accordéon ── */
+    .parcours { border: 1px solid var(--color-border); border-radius: 14px; margin-bottom: 24px; overflow: hidden; }
+    .parcours-header { display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; cursor: pointer; background: rgba(45,106,79,0.04); user-select: none; }
+    .parcours-header:hover { background: rgba(45,106,79,0.07); }
+    .parcours-title { font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+    .parcours-chev { font-size: 14px; color: var(--muted); }
+    .parcours-body { display: none; padding: 16px 18px; }
+    .parcours-body.open { display: block; }
+    .path-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 1px solid rgba(6,23,45,0.09); border-radius: 10px; margin-bottom: 8px; cursor: pointer; text-decoration: none; color: inherit; transition: border-color .15s, background .15s; }
+    .path-item:last-child { margin-bottom: 0; }
+    .path-item:hover { border-color: rgba(6,23,45,0.2); background: rgba(255,255,255,.6); }
+    .pnum { min-width: 22px; height: 22px; border-radius: 50%; background: #e6f1fb; color: #185fa5; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .path-content { flex: 1; }
+    .path-title { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 4px; }
+    .path-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+    .path-badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; letter-spacing: .03em; }
+    .badge-fondamental { background: rgba(45,106,79,0.1); color: var(--forest); }
+    .badge-public { background: rgba(24,95,165,0.1); color: #185fa5; }
+    .badge-time { background: rgba(107,114,128,0.1); color: var(--muted); }
+
+    /* ── Onglets thématiques ── */
+    .tabs-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .tab-btn { padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: rgba(255,255,255,.7); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; }
+    .tab-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .tab-active { background: #1a2b3c !important; color: #fff !important; border-color: #1a2b3c !important; }
+
+    /* ── Filtre niveau ── */
+    .level-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .level-row-label { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+    .lvl-btn { padding: 4px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: rgba(255,255,255,.7); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; }
+    .lvl-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .lvl-btn[data-level="tous"].lvl-active { background: #1a2b3c; color: #fff; border-color: #1a2b3c; }
+    .lvl-btn[data-level="debutant"].lvl-active { background: #eaf3de; color: #3b6d11; border-color: #97c459; }
+    .lvl-btn[data-level="intermediaire"].lvl-active { background: #e6f1fb; color: #185fa5; border-color: #85b7eb; }
+    .lvl-btn[data-level="expert"].lvl-active { background: #faeeda; color: #854f0b; border-color: #ef9f27; }
+
+    /* ── Barre résultats ── */
+    .results-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; color: var(--muted); min-height: 28px; }
+    .results-count { font-weight: 600; color: var(--ink); }
+    .active-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 10px; background: rgba(26,43,60,0.08); font-size: 11px; font-weight: 500; color: var(--ink); }
+    .active-chip button { background: none; border: none; cursor: pointer; font-size: 13px; line-height: 1; color: var(--muted); padding: 0; margin-left: 2px; }
+
+    /* ── Article list ── */
+    .article-item { display: grid; grid-template-columns: 1fr auto 80px; align-items: center; gap: 12px 16px; padding: 16px 0; border-top: 1px solid rgba(0,0,0,.07); text-decoration: none; color: inherit; transition: opacity .15s; }
     .article-item:last-child { border-bottom: 1px solid rgba(0,0,0,.07); }
-    .article-item:hover .article-title { color: var(--accent); }
-    .article-tags-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 4px; }
-    .article-tag {
-      font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-light); padding: 1px 6px; border-radius: 4px;
-    }
+    .article-item:hover .article-title { color: var(--forest); }
+    .article-tags-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 4px; align-items: center; }
+    .article-tag { font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--forest); background: var(--accent-light); padding: 1px 6px; border-radius: 4px; }
     .article-title { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--text); transition: color .15s; }
     .article-meta { text-align: right; white-space: nowrap; flex-shrink: 0; }
     .article-date { font-size: 12px; color: var(--muted); display: block; margin-bottom: 2px; }
     .article-readtime { font-size: 11px; color: #b0b8c1; }
-    .article-thumb {
-      width: 80px; height: 80px; object-fit: cover; border-radius: 8px;
-      display: block; flex-shrink: 0;
-    }
+    .article-thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; display: block; flex-shrink: 0; }
     .article-thumb--empty { width: 80px; height: 80px; background: transparent; }
     .article-thumb-svg { flex-shrink: 0; border-radius: 8px; overflow: hidden; }
     .article-thumb-svg svg { display: block; width: 80px; height: 80px; }
+
+    /* ── Badges ── */
+    .badge-new { font-size: 10px; font-weight: 500; padding: 1px 7px; border-radius: 10px; background: #fbeaf0; color: #993556; border: 1px solid #ed93b1; margin-right: 4px; white-space: nowrap; display: inline-block; }
+    .badge-level { font-size: 10px; font-weight: 500; padding: 1px 7px; border-radius: 10px; white-space: nowrap; margin-right: 4px; display: inline-block; }
+    .badge-gp  { background: #eaf3de; color: #3b6d11; border: 1px solid #97c459; }
+    .badge-pa  { background: #e6f1fb; color: #185fa5; border: 1px solid #85b7eb; }
+    .badge-pe  { background: #faeeda; color: #854f0b; border: 1px solid #ef9f27; }
+
+    /* ── Pagination ── */
+    .pagination { display: flex; gap: 6px; justify-content: center; align-items: center; padding: 24px 0 8px; flex-wrap: wrap; }
+    .pg-btn { min-width: 36px; height: 36px; padding: 0 10px; border-radius: 8px; border: 1.5px solid var(--border); background: rgba(255,255,255,.7); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--text); cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; }
+    .pg-btn:hover:not(:disabled) { border-color: var(--ink); }
+    .pg-btn.pg-active { background: #1a2b3c; color: #fff; border-color: #1a2b3c; }
+    .pg-btn:disabled { opacity: 0.35; cursor: default; }
+
+    /* ── Section Derniers articles ── */
+    .section-recents { margin-top: 40px; }
+    .section-recents-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .section-recents-title::before { content: ''; display: inline-block; width: 3px; height: 18px; background: var(--forest); border-radius: 2px; }
+
     #empty-state { display: none; text-align: center; padding: 64px 24px; color: var(--muted); font-size: 15px; }
+
+    /* ── Email section ── */
     .email-section { max-width: 1100px; margin: 0 auto 48px; padding: 0 24px; }
-    .email-card {
-      background: rgba(255,255,255,.7); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px 28px;
-      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
-    }
+    .email-card { background: rgba(255,255,255,.7); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .email-card-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
     .email-card-text p { font-size: 13px; color: var(--muted); }
     .email-form { display: flex; gap: 8px; flex-wrap: wrap; min-width: 260px; }
-    .email-form input {
-      flex: 1; padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 8px;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; background: white; outline: none; transition: border-color .15s;
-    }
-    .email-form input:focus { border-color: var(--accent); }
-    .email-form button {
-      background: var(--accent); color: white; padding: 9px 18px; border-radius: 8px;
-      border: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600;
-      cursor: pointer; white-space: nowrap; transition: background .15s;
-    }
-    .email-form button:hover { background: var(--accent-2); }
+    .email-form input { flex: 1; padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; background: white; outline: none; transition: border-color .15s; }
+    .email-form input:focus { border-color: var(--forest); }
+    .email-form button { background: var(--forest); color: white; padding: 9px 18px; border-radius: 8px; border: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background .15s; }
+    .email-form button:hover { background: var(--forest-dark); }
+
+    /* ── Footer ── */
     .site-footer { border-top: 1px solid var(--border); padding: 20px 24px; text-align: center; font-size: 12px; color: var(--muted); }
-    .site-footer a { color: var(--accent); text-decoration: none; }
+    .site-footer a { color: var(--forest); text-decoration: none; }
+
+    /* ── Responsive ── */
     @media (max-width: 640px) {
-      .topbar-nav, .topbar-cta { display: none; }
       .hero { padding: 24px 20px 16px; flex-direction: column; gap: 16px; }
       .hero-right { max-width: 100%; }
       .article-item { grid-template-columns: 1fr auto 60px; gap: 8px 12px; }
       .article-thumb { width: 60px; height: 60px; }
       .article-thumb--empty { width: 60px; height: 60px; }
-      .article-meta { text-align: right; }
       .email-card { flex-direction: column; padding: 20px; }
     }
     @media (max-width: 420px) {
@@ -143,7 +166,6 @@
       .article-meta { text-align: left; display: flex; gap: 8px; align-items: center; }
     }
   </style>
-<meta property="og:url" content="https://www.myboussole.fr/articles/" />
 </head>
 <body>
 <header class="site-header">
@@ -156,6 +178,14 @@
     <div class="topbar-cta">
       <a href="https://app.myboussole.fr" class="btn-primary">Essayer Boussole</a>
     </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <nav class="mobile-nav">
+    <a href="https://www.myboussole.fr/articles/">Articles</a>
+    <a href="https://www.myboussole.fr/ecosysteme.html">Écosystème</a>
+    <a href="https://app.myboussole.fr">Essayer Boussole</a>
   </nav>
 </header>
 <main id="contenu">
@@ -164,24 +194,6 @@
       <span class="hero-eyebrow">Ressources scientifiques</span>
       <h1>Articles</h1>
       <p class="hero-sub">Fatigue chronique, Covid long, micronutrition</p>
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-tag="tous">Tous</button>
-        <button class="filter-btn" data-tag="Alimentation">Alimentation</button>
-        <button class="filter-btn" data-tag="Biologie">Biologie</button>
-        <button class="filter-btn" data-tag="Dysautonomie">Dysautonomie</button>
-        <button class="filter-btn" data-tag="Épigénétique">Épigénétique</button>
-        <button class="filter-btn" data-tag="Histamine">Histamine</button>
-        <button class="filter-btn" data-tag="Hormones">Hormones</button>
-        <button class="filter-btn" data-tag="Inflammation">Inflammation</button>
-        <button class="filter-btn" data-tag="Médicaments">Médicaments</button>
-        <button class="filter-btn" data-tag="Mitochondries">Mitochondries</button>
-        <button class="filter-btn" data-tag="Neuromédiateurs">Neuromédiateurs</button>
-        <button class="filter-btn" data-tag="Pacing">Pacing</button>
-        <button class="filter-btn" data-tag="Pharmacologie">Pharmacologie</button>
-        <button class="filter-btn" data-tag="SNA">SNA</button>
-        <button class="filter-btn" data-tag="Sommeil">Sommeil</button>
-        <button class="filter-btn" data-tag="Suppléments">Suppléments</button>
-      </div>
     </div>
     <div class="hero-right">
       <div class="search-wrap">
@@ -190,9 +202,79 @@
       </div>
     </div>
   </section>
+
   <div class="articles-wrap">
+    <!-- Accordéon Par où commencer -->
+    <div class="parcours">
+      <div class="parcours-header" onclick="toggleAcc()">
+        <span class="parcours-title">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          Par où commencer ?
+        </span>
+        <span class="parcours-chev" id="acc-chev">▾</span>
+      </div>
+      <div class="parcours-body" id="acc-body">
+        <a href="https://www.myboussole.fr/articles/covid-long-10-points-essentiels/" class="path-item">
+          <div class="pnum">1</div>
+          <div class="path-content">
+            <div class="path-title">Le Covid long en 10 points essentiels — comprendre ce qui se passe vraiment</div>
+            <div class="path-badges">
+              <span class="path-badge badge-fondamental">Fondamental</span>
+              <span class="path-badge badge-public">Grand public</span>
+              <span class="path-badge badge-time">12 min</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.myboussole.fr/articles/covid-long-que-faire/" class="path-item">
+          <div class="pnum">2</div>
+          <div class="path-content">
+            <div class="path-title">Covid long : que peut-on faire, concrètement ?</div>
+            <div class="path-badges">
+              <span class="path-badge badge-fondamental">Fondamental</span>
+              <span class="path-badge badge-public">Grand public</span>
+              <span class="path-badge badge-time">9 min</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" class="path-item">
+          <div class="pnum">3</div>
+          <div class="path-content">
+            <div class="path-title">Pacing : éviter le crash d'effort dans le Covid long et la fatigue chronique</div>
+            <div class="path-badges">
+              <span class="path-badge badge-fondamental">Fondamental</span>
+              <span class="path-badge badge-public">Grand public</span>
+              <span class="path-badge badge-time">8 min</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Onglets thématiques -->
+    <div class="tabs-row" id="tabs-row">
+      <button class="tab-btn tab-active" data-tab="tous">Tous</button>
+      <button class="tab-btn" data-tab="meca">Mécanismes biologiques</button>
+      <button class="tab-btn" data-tab="agir">Agir au quotidien</button>
+      <button class="tab-btn" data-tab="nut">Alimentation &amp; micronutrition</button>
+    </div>
+
+    <!-- Filtre niveau -->
+    <div class="level-row" id="level-row">
+      <span class="level-row-label">Niveau :</span>
+      <button class="lvl-btn lvl-active" data-level="tous">Tous</button>
+      <button class="lvl-btn" data-level="debutant">Grand public</button>
+      <button class="lvl-btn" data-level="intermediaire">Public averti</button>
+      <button class="lvl-btn" data-level="expert">Public expert</button>
+    </div>
+
+    <!-- Barre résultats -->
+    <div class="results-bar" id="results-bar">
+      <span class="results-count" id="results-count"></span>
+      <span id="active-chips"></span>
+    </div>
+
     <div id="articles-list">
-      <a href="https://www.myboussole.fr/articles/covid-long-10-points-essentiels/" class="article-item" data-tags="SNA,Pacing,Inflammation,Dysautonomie">
+      <a href="https://www.myboussole.fr/articles/covid-long-10-points-essentiels/" class="article-item" data-tags="SNA,Pacing,Inflammation,Dysautonomie" data-level="debutant" data-date="2026-03-22">
         <div>
           <div class="article-tags-row"><span class="article-tag">SNA</span><span class="article-tag">Pacing</span></div>
           <div class="article-title">Le Covid long en 10 points essentiels — comprendre ce qui se passe vraiment</div>
@@ -200,7 +282,7 @@
         <div class="article-meta"><span class="article-date">22 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/covid-long-10-points-essentiels/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/homocysteine-covid-long-fatigue-chronique-marqueur-biologique/" class="article-item" data-tags="Inflammation,Épigénétique,Neuromédiateurs">
+      <a href="https://www.myboussole.fr/articles/homocysteine-covid-long-fatigue-chronique-marqueur-biologique/" class="article-item" data-tags="Inflammation,Épigénétique,Neuromédiateurs" data-level="expert" data-date="2026-03-22">
         <div>
           <div class="article-tags-row"><span class="article-tag">Inflammation</span><span class="article-tag">Épigénétique</span></div>
           <div class="article-title">Homocystéine et Covid long : ce marqueur biologique que peu de médecins demandent</div>
@@ -208,7 +290,7 @@
         <div class="article-meta"><span class="article-date">22 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/homocysteine-covid-long-fatigue-chronique-marqueur-biologique/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/infections-virales-vieillissement-biologique-epigenetique/" class="article-item" data-tags="Épigénétique,Inflammation">
+      <a href="https://www.myboussole.fr/articles/infections-virales-vieillissement-biologique-epigenetique/" class="article-item" data-tags="Épigénétique,Inflammation" data-level="expert" data-date="2026-03-22">
         <div>
           <div class="article-tags-row"><span class="article-tag">Épigénétique</span><span class="article-tag">Inflammation</span></div>
           <div class="article-title">Les infections virales accélèrent-elles votre vieillissement biologique ?</div>
@@ -216,7 +298,7 @@
         <div class="article-meta"><span class="article-date">22 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/infections-virales-vieillissement-biologique-epigenetique/virus-epigenetique-vieillissement.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/" class="article-item" data-tags="Biologie">
+      <a href="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/" class="article-item" data-tags="Biologie" data-level="debutant" data-date="2026-03-21">
         <div>
           <div class="article-tags-row"><span class="article-tag">Biologie</span></div>
           <div class="article-title">Vos analyses sont revenues normales ? — Ce que votre bilan ne dit pas dans le Covid long</div>
@@ -224,7 +306,7 @@
         <div class="article-meta"><span class="article-date">21 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/bilan-sanguin-covid-long/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/microglie-primee-neuroinflammation-chronique-fatigue-covid-mecfs/" class="article-item" data-tags="SNA,Neuromédiateurs,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/microglie-primee-neuroinflammation-chronique-fatigue-covid-mecfs/" class="article-item" data-tags="SNA,Neuromédiateurs,Mitochondries" data-level="expert" data-date="2026-03-21">
         <div>
           <div class="article-tags-row"><span class="article-tag">SNA</span><span class="article-tag">Neuromédiateurs</span></div>
           <div class="article-title">Microglie primée : pourquoi ça ne passe pas dans le Covid long et la fatigue chronique</div>
@@ -232,7 +314,7 @@
         <div class="article-meta"><span class="article-date">21 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/microglie-primee-neuroinflammation-chronique-fatigue-covid-mecfs/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/oxyde-nitrique-covid-long-dysfonction-endotheliale-microcirculation/" class="article-item" data-tags="Mitochondries,SNA">
+      <a href="https://www.myboussole.fr/articles/oxyde-nitrique-covid-long-dysfonction-endotheliale-microcirculation/" class="article-item" data-tags="Mitochondries,SNA" data-level="expert" data-date="2026-03-21">
         <div>
           <div class="article-tags-row"><span class="article-tag">Mitochondries</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Oxyde nitrique et Covid long : pourquoi vos vaisseaux ne répondent plus</div>
@@ -240,7 +322,7 @@
         <div class="article-meta"><span class="article-date">21 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/oxyde-nitrique-covid-long-dysfonction-endotheliale-microcirculation/hero-oxyde-nitrique-covid-long.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/carences-dysautonomie-axes-nutritionnels/" class="article-item" data-tags="Dysautonomie,Suppléments">
+      <a href="https://www.myboussole.fr/articles/carences-dysautonomie-axes-nutritionnels/" class="article-item" data-tags="Dysautonomie,Suppléments" data-level="intermediaire" data-date="2026-03-20">
         <div>
           <div class="article-tags-row"><span class="article-tag">Dysautonomie</span><span class="article-tag">Suppléments</span></div>
           <div class="article-title">Carences et dysautonomie : les deux axes nutritionnels à connaître</div>
@@ -248,7 +330,7 @@
         <div class="article-meta"><span class="article-date">20 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/carences-dysautonomie-axes-nutritionnels/hero.jpeg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/" class="article-item" data-tags="Sommeil,Dysautonomie">
+      <a href="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/" class="article-item" data-tags="Sommeil,Dysautonomie" data-level="debutant" data-date="2026-03-20">
         <div>
           <div class="article-tags-row"><span class="article-tag">Sommeil</span><span class="article-tag">Dysautonomie</span></div>
           <div class="article-title">Pourquoi vous dormez 10h et vous réveillez épuisé : le sommeil brisé par la dysautonomie</div>
@@ -256,7 +338,7 @@
         <div class="article-meta"><span class="article-date">20 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/sommeil-covid-long-dysautonomie-architecture-stades-restaurateur/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/theorie-polyvagale-porges-systeme-nerveux-autonome/" class="article-item" data-tags="SNA,Neuromédiateurs">
+      <a href="https://www.myboussole.fr/articles/theorie-polyvagale-porges-systeme-nerveux-autonome/" class="article-item" data-tags="SNA,Neuromédiateurs" data-level="intermediaire" data-date="2026-03-19">
         <div>
           <div class="article-tags-row"><span class="article-tag">SNA</span><span class="article-tag">Neuromédiateurs</span></div>
           <div class="article-title">Théorie polyvagale : pourquoi votre corps se déconnecte sous stress</div>
@@ -264,7 +346,7 @@
         <div class="article-meta"><span class="article-date">19 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/theorie-polyvagale-porges-systeme-nerveux-autonome/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/choline-fatigue-chronique-covid-long/" class="article-item" data-tags="Alimentation,Suppléments">
+      <a href="https://www.myboussole.fr/articles/choline-fatigue-chronique-covid-long/" class="article-item" data-tags="Alimentation,Suppléments" data-level="intermediaire" data-date="2026-03-19">
         <div>
           <div class="article-tags-row"><span class="article-tag">Alimentation</span><span class="article-tag">Suppléments</span></div>
           <div class="article-title">Choline et fatigue chronique : le nutriment oublié qui conditionne tout le reste</div>
@@ -272,7 +354,7 @@
         <div class="article-meta"><span class="article-date">19 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/choline-fatigue-chronique-covid-long/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/" class="article-item" data-tags="SNA,Hormones,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/" class="article-item" data-tags="SNA,Hormones,Mitochondries" data-level="intermediaire" data-date="2026-03-19">
         <div>
           <div class="article-tags-row"><span class="article-tag">SNA</span><span class="article-tag">Hormones</span></div>
           <div class="article-title">Collagène et Covid long : le maillon oublié de la dysautonomie</div>
@@ -280,7 +362,7 @@
         <div class="article-meta"><span class="article-date">19 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/collagene-covid-long-dysautonomie/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/collagene-cicatrisation/" class="article-item" data-tags="Suppléments,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/collagene-cicatrisation/" class="article-item" data-tags="Suppléments,Mitochondries" data-level="intermediaire" data-date="2026-03-18">
         <div>
           <div class="article-tags-row"><span class="article-tag">Suppléments</span><span class="article-tag">Mitochondries</span></div>
           <div class="article-title">Collagène et cicatrisation : ce que dit vraiment la science</div>
@@ -288,7 +370,7 @@
         <div class="article-meta"><span class="article-date">18 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/collagene-cicatrisation/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/fatigue-mentale-symptomes-corporels-axe-hpa-cortisol/" class="article-item" data-tags="Neuromédiateurs,Hormones,SNA,Pharmacologie">
+      <a href="https://www.myboussole.fr/articles/fatigue-mentale-symptomes-corporels-axe-hpa-cortisol/" class="article-item" data-tags="Neuromédiateurs,Hormones,SNA,Pharmacologie" data-level="intermediaire" data-date="2026-03-16">
         <div>
           <div class="article-tags-row"><span class="article-tag">Neuromédiateurs</span><span class="article-tag">Hormones</span></div>
           <div class="article-title">Fatigue mentale : pourquoi votre corps souffre quand votre cerveau est épuisé</div>
@@ -296,7 +378,7 @@
         <div class="article-meta"><span class="article-date">16 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/fatigue-mentale-symptomes-corporels-axe-hpa-cortisol/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/phenotypage-cyp-metabolisme-medicaments/" class="article-item" data-tags="Pharmacologie,Médicaments">
+      <a href="https://www.myboussole.fr/articles/phenotypage-cyp-metabolisme-medicaments/" class="article-item" data-tags="Pharmacologie,Médicaments" data-level="expert" data-date="2026-03-16">
         <div>
           <div class="article-tags-row"><span class="article-tag">Pharmacologie</span><span class="article-tag">Médicaments</span></div>
           <div class="article-title">Phénotypage CYP : pourquoi votre foie métabolise les médicaments différemment</div>
@@ -304,7 +386,7 @@
         <div class="article-meta"><span class="article-date">16 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/phenotypage-cyp-metabolisme-medicaments/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/" class="article-item" data-tags="Biologie,Inflammation">
+      <a href="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/" class="article-item" data-tags="Biologie,Inflammation" data-level="expert" data-date="2026-03-15">
         <div>
           <div class="article-tags-row"><span class="article-tag">Biologie</span><span class="article-tag">Inflammation</span></div>
           <div class="article-title">Persistance antigénique SARS-CoV-2 : pourquoi votre corps garde une trace du virus après la guérison</div>
@@ -312,7 +394,7 @@
         <div class="article-meta"><span class="article-date">15 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/persistance-antigenique-sars-cov2-covid-long-pcr-negatif/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/" class="article-item" data-tags="Histamine,SNA">
+      <a href="https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/" class="article-item" data-tags="Histamine,SNA" data-level="intermediaire" data-date="2026-03-14">
         <div>
           <div class="article-tags-row"><span class="article-tag">Histamine</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Effets indésirables persistants après le vaccin COVID : quand un terrain fragile se décompense</div>
@@ -320,7 +402,7 @@
         <div class="article-meta"><span class="article-date">14 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/effets-indesirables-persistants-vaccin-covid-terrain-predispose/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/systeme-nerveux-autonome-covid-long/" class="article-item" data-tags="SNA">
+      <a href="https://www.myboussole.fr/articles/systeme-nerveux-autonome-covid-long/" class="article-item" data-tags="SNA" data-level="intermediaire" data-date="2026-03-14">
         <div>
           <div class="article-tags-row"><span class="article-tag">SNA</span></div>
           <div class="article-title">Système nerveux autonome et Covid long : quand le chef d&#x27;orchestre perd le tempo</div>
@@ -328,7 +410,7 @@
         <div class="article-meta"><span class="article-date">14 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/systeme-nerveux-autonome-covid-long/illustration-sna-covid-long.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/histamine-mastocytes-mcas-covid-long/" class="article-item" data-tags="Histamine,SNA">
+      <a href="https://www.myboussole.fr/articles/histamine-mastocytes-mcas-covid-long/" class="article-item" data-tags="Histamine,SNA" data-level="intermediaire" data-date="2026-03-13">
         <div>
           <div class="article-tags-row"><span class="article-tag">Histamine</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Histamine, mastocytes et Covid long : pourquoi votre corps s&#x27;emballe sans raison apparente</div>
@@ -336,7 +418,7 @@
         <div class="article-meta"><span class="article-date">13 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/histamine-mastocytes-mcas-covid-long/illustration-histamine.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/" class="article-item" data-tags="Sommeil,Neuromédiateurs,Médicaments">
+      <a href="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/" class="article-item" data-tags="Sommeil,Neuromédiateurs,Médicaments" data-level="intermediaire" data-date="2026-03-13">
         <div>
           <div class="article-tags-row"><span class="article-tag">Sommeil</span><span class="article-tag">Neuromédiateurs</span></div>
           <div class="article-title">Réveil à 4h du matin sans pouvoir se rendormir : et si c&#x27;est votre cerveau qui reste en mode « alerte » ?</div>
@@ -344,7 +426,7 @@
         <div class="article-meta"><span class="article-date">13 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/quviviq-orexine-insomnie-maintien/illustration-reveil-5h.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/" class="article-item" data-tags="Hormones,SNA">
+      <a href="https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/" class="article-item" data-tags="Hormones,SNA" data-level="intermediaire" data-date="2026-03-13">
         <div>
           <div class="article-tags-row"><span class="article-tag">Hormones</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Surrénales et fatigue chronique : et si votre cortisol n&#x27;était pas là où il devrait être ?</div>
@@ -352,7 +434,7 @@
         <div class="article-meta"><span class="article-date">13 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/surrenales-cortisol-fatigue-chronique/hero.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/" class="article-item" data-tags="Épigénétique,Neuromédiateurs,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/" class="article-item" data-tags="Épigénétique,Neuromédiateurs,Mitochondries" data-level="expert" data-date="2026-03-11">
         <div>
           <div class="article-tags-row"><span class="article-tag">Épigénétique</span><span class="article-tag">Neuromédiateurs</span></div>
           <div class="article-title">Méthylation et cerveau : quand un déficit invisible dérègle tout</div>
@@ -360,7 +442,7 @@
         <div class="article-meta"><span class="article-date">11 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/methylation-cerveau-deficit-sam-cofacteurs/methylation-neurotransmetteurs.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/" class="article-item" data-tags="Hormones,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/" class="article-item" data-tags="Hormones,Mitochondries" data-level="intermediaire" data-date="2026-03-10">
         <div>
           <div class="article-tags-row"><span class="article-tag">Hormones</span><span class="article-tag">Mitochondries</span></div>
           <div class="article-title">Thyroïde et fatigue : quand les examens sont normaux mais que le corps dit non</div>
@@ -368,7 +450,7 @@
         <div class="article-meta"><span class="article-date">10 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/thyroide-fatigue-examens-normaux/illustration-thyroide-bilan.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/covid-long-que-faire/" class="article-item" data-tags="Pacing,SNA">
+      <a href="https://www.myboussole.fr/articles/covid-long-que-faire/" class="article-item" data-tags="Pacing,SNA" data-level="debutant" data-date="2026-03-08">
         <div>
           <div class="article-tags-row"><span class="article-tag">Pacing</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Covid long : que peut-on faire, concrètement ?</div>
@@ -376,7 +458,7 @@
         <div class="article-meta"><span class="article-date">8 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/covid-long-que-faire/illustration-aube-fenetre.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/reveil-deja-fatigue/" class="article-item" data-tags="Sommeil,SNA">
+      <a href="https://www.myboussole.fr/articles/reveil-deja-fatigue/" class="article-item" data-tags="Sommeil,SNA" data-level="debutant" data-date="2026-03-07">
         <div>
           <div class="article-tags-row"><span class="article-tag">Sommeil</span><span class="article-tag">SNA</span></div>
           <div class="article-title">Réveil déjà fatigué : ce qui se passe vraiment</div>
@@ -384,7 +466,7 @@
         <div class="article-meta"><span class="article-date">7 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/reveil-deja-fatigue/desynchronisation-matinale-cortisol-sympathique.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/brouillard-mental/" class="article-item" data-tags="Neuromédiateurs,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/brouillard-mental/" class="article-item" data-tags="Neuromédiateurs,Mitochondries" data-level="debutant" data-date="2026-03-06">
         <div>
           <div class="article-tags-row"><span class="article-tag">Neuromédiateurs</span><span class="article-tag">Mitochondries</span></div>
           <div class="article-title">Brouillard mental : ce qui se passe vraiment dans votre cerveau</div>
@@ -392,7 +474,7 @@
         <div class="article-meta"><span class="article-date">6 mars 2026</span></div>
         <img class="article-thumb" src="https://www.myboussole.fr/articles/brouillard-mental/cascade-eveil-neurotransmetteurs.jpg" alt="" loading="lazy" aria-hidden="true" />
       </a>
-      <a href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" class="article-item" data-tags="Pacing,Mitochondries">
+      <a href="https://www.myboussole.fr/articles/pacing-eviter-le-crash/" class="article-item" data-tags="Pacing,Mitochondries" data-level="debutant" data-date="2026-03-04">
         <div>
           <div class="article-tags-row"><span class="article-tag">Pacing</span><span class="article-tag">Mitochondries</span></div>
           <div class="article-title">Pacing : éviter le crash d&#x27;effort dans le Covid long et la fatigue chronique</div>
@@ -402,7 +484,17 @@
       </a>
     </div>
     <div id="empty-state">Aucun article ne correspond à ta recherche.</div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+
+    <!-- Section Derniers articles (14 jours) -->
+    <div class="section-recents" id="section-recents" style="display:none">
+      <div class="section-recents-title">Derniers articles — 14 jours</div>
+      <div id="recents-list"></div>
+    </div>
   </div>
+
   <div class="email-section">
     <div class="email-card">
       <div class="email-card-text">
@@ -422,32 +514,227 @@
   <a href="https://www.myboussole.fr/#confiance">Confidentialité</a>
 </footer>
 <script>
-  const searchInput = document.getElementById('search-input');
-  const filterBtns  = document.querySelectorAll('.filter-btn');
-  const items       = document.querySelectorAll('.article-item');
-  const emptyState  = document.getElementById('empty-state');
-  let activeTag = 'tous';
-  function filterArticles() {
-    const q = searchInput.value.toLowerCase().trim();
-    let visible = 0;
-    items.forEach(item => {
-      const title = item.querySelector('.article-title').textContent.toLowerCase();
-      const tags  = item.dataset.tags || '';
-      const show  = (!q || title.includes(q)) && (activeTag === 'tous' || tags.includes(activeTag));
-      item.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    emptyState.style.display = visible === 0 ? 'block' : 'none';
+  /* ── Accordéon ── */
+  function toggleAcc() {
+    const b = document.getElementById('acc-body');
+    b.classList.toggle('open');
+    document.getElementById('acc-chev').textContent = b.classList.contains('open') ? '▾' : '▸';
   }
-  searchInput.addEventListener('input', filterArticles);
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeTag = btn.dataset.tag;
-      filterArticles();
+  document.getElementById('acc-body').classList.add('open');
+
+  /* ── Mapping slug → onglet thématique ── */
+  const TAB_MAP = {
+    'covid-long-10-points-essentiels': 'meca',
+    'covid-long-que-faire': 'meca',
+    'bilan-sanguin-covid-long': 'meca',
+    'homocysteine-covid-long-fatigue-chronique-marqueur-biologique': 'meca',
+    'infections-virales-vieillissement-biologique-epigenetique': 'meca',
+    'microglie-primee-neuroinflammation-chronique-fatigue-covid-mecfs': 'meca',
+    'histamine-mastocytes-mcas-covid-long': 'meca',
+    'methylation-cerveau-deficit-sam-cofacteurs': 'meca',
+    'systeme-nerveux-autonome-covid-long': 'meca',
+    'theorie-polyvagale-porges-systeme-nerveux-autonome': 'meca',
+    'persistance-antigenique-sars-cov2-covid-long-pcr-negatif': 'meca',
+    'fatigue-mentale-symptomes-corporels-axe-hpa-cortisol': 'meca',
+    'oxyde-nitrique-covid-long-dysfonction-endotheliale-microcirculation': 'meca',
+    'reveil-deja-fatigue': 'meca',
+    'phenotypage-cyp-metabolisme-medicaments': 'meca',
+    'effets-indesirables-persistants-vaccin-covid-terrain-predispose': 'meca',
+    'covid-long-enfant-pediatrique': 'meca',
+    'pacing-eviter-le-crash': 'agir',
+    'brouillard-mental': 'agir',
+    'sommeil-covid-long-dysautonomie-architecture-stades-restaurateur': 'agir',
+    'quviviq-orexine-insomnie-maintien': 'agir',
+    'collagene-covid-long-dysautonomie': 'agir',
+    'collagene-cicatrisation': 'agir',
+    'choline-fatigue-chronique-covid-long': 'nut',
+    'carences-dysautonomie-axes-nutritionnels': 'nut',
+    'surrenales-cortisol-fatigue-chronique': 'nut',
+    'thyroide-fatigue-examens-normaux': 'nut',
+  };
+
+  const LVL_MAP = { debutant: 'Grand public', intermediaire: 'Public averti', expert: 'Public expert' };
+  const LVL_CLS = { debutant: 'badge-gp', intermediaire: 'badge-pa', expert: 'badge-pe' };
+  const TAB_LABELS = { tous: 'Tous', meca: 'Mécanismes biologiques', agir: 'Agir au quotidien', nut: 'Alimentation & micronutrition' };
+
+  const NOW = Date.now();
+  const DAY_MS = 86400000;
+  const PER_PAGE = 10;
+
+  let activeTab = 'tous';
+  let activeLevel = 'tous';
+  let searchQ = '';
+  let currentPage = 1;
+
+  /* ── Décorer les cartes (badges niveau + Nouveau) ── */
+  function decorateCards() {
+    document.querySelectorAll('.article-item').forEach(item => {
+      const href = item.getAttribute('href') || '';
+      const m = href.match(/\/articles\/([^/]+)\//);
+      const slug = m ? m[1] : '';
+      if (slug) item.dataset.slug = slug;
+
+      const tagsRow = item.querySelector('.article-tags-row');
+      if (!tagsRow) return;
+
+      /* Badge Nouveau (< 14 jours) */
+      const dateStr = item.dataset.date || '';
+      if (dateStr && !tagsRow.querySelector('.badge-new')) {
+        const d = new Date(dateStr);
+        if (!isNaN(d) && (NOW - d.getTime()) < 14 * DAY_MS) {
+          const badge = document.createElement('span');
+          badge.className = 'badge-new';
+          badge.textContent = 'Nouveau';
+          tagsRow.insertAdjacentElement('afterbegin', badge);
+        }
+      }
+
+      /* Badge niveau */
+      const lvl = item.dataset.level || 'intermediaire';
+      if (!tagsRow.querySelector('.badge-level')) {
+        const badge = document.createElement('span');
+        badge.className = 'badge-level ' + (LVL_CLS[lvl] || 'badge-pa');
+        badge.textContent = LVL_MAP[lvl] || 'Public averti';
+        tagsRow.appendChild(badge);
+      }
     });
+  }
+
+  /* ── Render principal ── */
+  function render() {
+    const allItems = Array.from(document.querySelectorAll('#articles-list .article-item'));
+
+    /* Filtrage */
+    const filtered = allItems.filter(item => {
+      const slug = item.dataset.slug || '';
+      const tab = TAB_MAP[slug] || 'meca';
+      const lvl = item.dataset.level || 'intermediaire';
+      const title = (item.querySelector('.article-title') || {}).textContent || '';
+      const tabOk = activeTab === 'tous' || tab === activeTab;
+      const lvlOk = activeLevel === 'tous' || lvl === activeLevel;
+      const searchOk = !searchQ || title.toLowerCase().includes(searchQ);
+      return tabOk && lvlOk && searchOk;
+    });
+
+    /* Pagination */
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const start = (currentPage - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
+
+    allItems.forEach(item => { item.style.display = 'none'; });
+    filtered.forEach((item, i) => {
+      item.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
+    /* Empty state */
+    document.getElementById('empty-state').style.display = total === 0 ? 'block' : 'none';
+
+    /* Barre résultats */
+    document.getElementById('results-count').textContent =
+      total === 0 ? '' : total + ' article' + (total > 1 ? 's' : '');
+
+    const chipsEl = document.getElementById('active-chips');
+    chipsEl.innerHTML = '';
+    if (activeTab !== 'tous') chipsEl.appendChild(makeChip(TAB_LABELS[activeTab] || activeTab, () => { setTab('tous'); }));
+    if (activeLevel !== 'tous') chipsEl.appendChild(makeChip(LVL_MAP[activeLevel] || activeLevel, () => { setLevel('tous'); }));
+    if (searchQ) chipsEl.appendChild(makeChip('« ' + searchQ + ' »', () => { document.getElementById('search-input').value = ''; searchQ = ''; currentPage = 1; render(); }));
+
+    /* Pagination */
+    renderPagination(totalPages);
+
+    /* Section Derniers articles */
+    renderRecents();
+  }
+
+  function makeChip(label, onRemove) {
+    const span = document.createElement('span');
+    span.className = 'active-chip';
+    span.textContent = label;
+    const btn = document.createElement('button');
+    btn.textContent = '×';
+    btn.onclick = onRemove;
+    span.appendChild(btn);
+    return span;
+  }
+
+  function renderPagination(totalPages) {
+    const el = document.getElementById('pagination');
+    el.innerHTML = '';
+    if (totalPages <= 1) return;
+
+    const mkBtn = (label, page, disabled, active) => {
+      const b = document.createElement('button');
+      b.className = 'pg-btn' + (active ? ' pg-active' : '');
+      b.textContent = label;
+      b.disabled = disabled;
+      b.onclick = () => { currentPage = page; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+      return b;
+    };
+
+    el.appendChild(mkBtn('‹', currentPage - 1, currentPage === 1, false));
+    for (let i = 1; i <= totalPages; i++) {
+      el.appendChild(mkBtn(String(i), i, false, i === currentPage));
+    }
+    el.appendChild(mkBtn('›', currentPage + 1, currentPage === totalPages, false));
+  }
+
+  function renderRecents() {
+    const sect = document.getElementById('section-recents');
+    const list = document.getElementById('recents-list');
+    const noFilter = activeTab === 'tous' && activeLevel === 'tous' && !searchQ;
+    if (!noFilter) { sect.style.display = 'none'; return; }
+
+    const recents = Array.from(document.querySelectorAll('#articles-list .article-item')).filter(item => {
+      const d = item.dataset.date;
+      if (!d) return false;
+      const dt = new Date(d);
+      return !isNaN(dt) && (NOW - dt.getTime()) < 14 * DAY_MS;
+    });
+
+    if (recents.length === 0) { sect.style.display = 'none'; return; }
+    sect.style.display = 'block';
+    list.innerHTML = '';
+    recents.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.style.display = '';
+      list.appendChild(clone);
+    });
+  }
+
+  /* ── Setters état ── */
+  function setTab(val) {
+    activeTab = val;
+    currentPage = 1;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('tab-active', b.dataset.tab === val));
+    render();
+  }
+  function setLevel(val) {
+    activeLevel = val;
+    currentPage = 1;
+    document.querySelectorAll('.lvl-btn').forEach(b => b.classList.toggle('lvl-active', b.dataset.level === val));
+    render();
+  }
+
+  /* ── Event listeners ── */
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => setTab(btn.dataset.tab));
   });
+  document.querySelectorAll('.lvl-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLevel(btn.dataset.level));
+  });
+  document.getElementById('search-input').addEventListener('input', e => {
+    searchQ = e.target.value.toLowerCase().trim();
+    currentPage = 1;
+    render();
+  });
+
+  /* ── Init ── */
+  decorateCards();
+  render();
+
+  /* ── Email form ── */
   document.getElementById('email-form').addEventListener('submit', e => {
     e.preventDefault();
     const btn = e.target.querySelector('button');
