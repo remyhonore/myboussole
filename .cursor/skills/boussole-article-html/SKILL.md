@@ -505,7 +505,7 @@ Chaque `[N]` dans le texte → entrée `id="source-N"` dans la liste. Sources HA
 
 ## 9. Règles terminologiques
 
-**Encadrés expertise :** titre obligatoire `🔬 L'œil du Docteur en pharmacie` pour tout point pharmacologique ou clinique.
+**Encadrés expertise :** titre obligatoire `👁️ L'œil du Docteur en pharmacie` pour tout point pharmacologique ou clinique.
 
 **Glossaire bilingue :** voir §6a pour la position et le template complet (accordéon après le sommaire).
 Corps du texte = terme français seul. Jamais le sigle anglophone seul.
