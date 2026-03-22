@@ -39,5 +39,11 @@ Rapport tableau : Slug | Local | Listing | Sitemap | Live| HTML | Images | Notes
 6. Pas de placeholder dans le texte fetché
 7. OG tags présents et non vides
 
-## Taxonomie tags officielle
-Histamine | Neuromédiateurs | Hormones | Sommeil | Pacing | Microbiote | Mitochondries | SNA | Pharmacologie | Alimentation | Médicaments | Suppléments
+## Règles de conformité
+
+### Taxonomie tags (16 tags — source de vérité : listing live)
+```
+Alimentation | Biologie | Dysautonomie | Épigénétique | Histamine | Hormones | Inflammation | Médicaments | Microbiote | Mitochondries | Neuromédiateurs | Pacing | Pharmacologie | SNA | Sommeil | Suppléments
+```
+
+**Règle absolue** : ne jamais inventer un tag. Si le contenu d'un article ne correspond à aucun tag de cette liste → choisir le plus proche parmi les 16. Si vraiment aucun ne convient → signaler à Rémy pour décision d'ajout de tag, mais ne pas en créer un nouveau sans validation explicite.
