@@ -41,9 +41,52 @@ Rapport tableau : Slug | Local | Listing | Sitemap | Live| HTML | Images | Notes
 
 ## Règles de conformité
 
-### Taxonomie tags (16 tags — source de vérité : listing live)
+### Taxonomie tags (17 tags — source de vérité : listing live)
 ```
-Alimentation | Biologie | Dysautonomie | Épigénétique | Histamine | Hormones | Inflammation | Médicaments | Microbiote | Mitochondries | Neuromédiateurs | Pacing | Pharmacologie | SNA | Sommeil | Suppléments
+Alimentation | Biologie | Dysautonomie | Enfant | Épigénétique | Histamine | Hormones | Inflammation | Médicaments | Microbiote | Mitochondries | Neuromédiateurs | Pacing | Pharmacologie | SNA | Sommeil | Suppléments
 ```
 
-**Règle absolue** : ne jamais inventer un tag. Si le contenu d'un article ne correspond à aucun tag de cette liste → choisir le plus proche parmi les 16. Si vraiment aucun ne convient → signaler à Rémy pour décision d'ajout de tag, mais ne pas en créer un nouveau sans validation explicite.
+**Règle absolue** : ne jamais inventer un tag. Si le contenu d'un article ne correspond à aucun tag de cette liste → choisir le plus proche parmi les 17. Si vraiment aucun ne convient → signaler à Rémy pour décision d'ajout de tag, mais ne pas en créer un nouveau sans validation explicite.
+
+Tout `data-tags` hors liste dans `articles/index.html` = anomalie 🟠.
+
+Vérification systématique : avant tout commit → `grep -o 'data-tags="[^"]*"' articles/index.html | sort -u` → comparer avec la liste ci-dessus.
+
+### Architecture listing articles/index.html (depuis 22/03/2026)
+Structure :
+
+- Accordéon "Par où commencer" — ouvert par défaut (`id="acc-body"`), chevron `id="acc-chev"`
+- Onglets thématiques `.tab-btn` (`data-tab`) : `tous` | `meca` | `agir` | `nut`
+- Filtre niveau `.lvl-btn` (`data-level`) : `tous` | `debutant` | `intermediaire` | `expert`
+- Barre résultats : `#results-count` + `#active-chips` (chips supprimables)
+- Liste `#articles-list` générée par CI `generate_content.py`
+- Pagination `#pagination` (10/page, `PER_PAGE = 10`)
+- Section `#section-recents` (visible si `tab=tous`, `level=tous`, `search` vide)
+
+Attributs sur chaque `.article-item` générés par CI :
+
+- `data-tags="{Tag1},{Tag2}"` — tags taxonomie
+- `data-level="{debutant|intermediaire|expert}"` — fallback `"intermediaire"` si absent
+- `data-date="{YYYY-MM-DD}"` — extrait du front matter
+
+Mapping slug→onglet : `const TAB_MAP` dans `articles/index.html`
+
+- `meca` : mécanismes biologiques (pathophysiologie, biomarqueurs, mécanismes)
+- `agir` : agir au quotidien (stratégies pratiques, symptômes)
+- `nut`  : alimentation & micronutrition (nutriments, suppléments alimentaires)
+- Tout slug absent du TAB_MAP → fallback `'meca'`
+
+Niveaux de lecture :
+
+- `debutant` → "Grand public" (badge vert `#eaf3de` / `#3b6d11`)
+- `intermediaire` → "Public averti" (badge bleu `#e6f1fb` / `#185fa5`) — fallback
+- `expert` → "Public expert" (badge orange `#faeeda` / `#854f0b`)
+
+Badge "Nouveau" : calculé JS côté client, < 14 jours depuis `data-date`, rose `#fbeaf0` / `#993556`
+
+Checks audit spécifiques à cette architecture :
+
+- Tout nouvel article doit figurer dans `TAB_MAP` (sinon fallback `'meca'` silencieux)
+- `data-level` doit être l'un des 3 valeurs valides
+- `data-date` doit être au format `YYYY-MM-DD` (premier 10 chars du champ `date` front matter)
+- `draft: true` dans front matter = exclusion CI → invisible listing jusqu'à suppression
