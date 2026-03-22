@@ -90,6 +90,32 @@ Ajouter `level:` dans le front matter de chaque article, après `readingTime:`.
 Fallback si absent : `"intermediaire"` (géré par `generate_content.py`).
 Règle : tout article déployé sans `level` s'affiche automatiquement en "Public averti".
 
+### Vocabulaire par niveau de lecture — règle obligatoire
+
+Le niveau déclaré dans le front matter conditionne le vocabulaire autorisé dans tout l'article, y compris l'encadré PharmD.
+
+**Grand public (`debutant`) — termes interdits sans reformulation :**
+- Noms de cytokines bruts : RANTES, TNF-α, IL-6, IFN-γ → reformuler : "molécules pro-inflammatoires (protéines de signalisation du système immunitaire)"
+- Dysfonction mitochondriale → "perturbation de la production d'énergie cellulaire"
+- Activation immunitaire de faible grade → "inflammation de faible intensité"
+- Dysautonomie → expliquer à la 1ère occurrence : "dérèglement du système nerveux autonome"
+- Acronymes non définis dès la 1ère occurrence (PEM, POTS, HRV, SAM, RMSSD…)
+- Maximum 1 mécanisme moléculaire par section — le reste en langage courant
+
+**Public averti (`intermediaire`) :**
+- Termes courants du domaine acceptés sans définition (SNA, PEM, HRV, pacing, dysautonomie)
+- Cytokines majeures acceptées une fois si clés pour le propos ("TNF-α, une cytokine pro-inflammatoire")
+- Mécanismes scientifiques si la phrase reste lisible — cascades complexes résumées
+
+**Public expert (`expert`) :**
+- Vocabulaire scientifique complet sans restriction
+- Mécanismes moléculaires détaillés attendus
+- Sources : niveau élevé obligatoire (méta-analyses, RCT, cohortes contrôlées)
+
+**Règle encadré PharmD :** l'encadré peut dépasser d'un niveau le reste de l'article — jamais de 2 niveaux d'écart. Article `debutant` → encadré accessible. Article `intermediaire` → vocabulaire scientifique standard. Article `expert` → moléculaire autorisé.
+
+**Check obligatoire avant déploiement :** relire l'encadré PharmD avec le `level` du front matter en tête. Si un passage dépasse le niveau déclaré → simplifier OU changer le `level`.
+
 ---
 
 ## 3. `<head>` — balises obligatoires
