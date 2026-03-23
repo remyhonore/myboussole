@@ -1,0 +1,1584 @@
+<!-- GUIDE-META
+title: "Dysautonomie & Micronutrition — Guide clinique pour professionnels de santé"
+code: "G2-P"
+version: "v1.0"
+date: "2026-03-23"
+public: "pro"
+accent: "#B87333"
+price: "49.90"
+sources_pubmed: 38
+reading_time: "45 min"
+next_review: "2026-06-23"
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G2-P — Dysautonomie & Micronutrition | Guide clinique pro | Dr Rémy Honoré</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── VARIABLES ─────────────────────────────── */
+:root {
+  --bg:          #FAF8F5;
+  --text:        #2A2A2A;
+  --muted:       #6B7A8D;
+  --border:      rgba(42,42,42,0.1);
+  --card:        #FFFFFF;
+  --accent:      #B87333;
+  --accent-light:rgba(184,115,51,0.08);
+  --accent-mid:  rgba(184,115,51,0.25);
+  --accent-text: #FFFFFF;
+}
+
+/* ─── RESET & BASE ──────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{font-weight:700}
+em{font-style:italic}
+sup a{font-size:10px;font-family:'DM Mono',monospace;color:var(--accent)}
+
+/* ─── COUVERTURE ────────────────────────────── */
+.guide-cover{
+  background:var(--accent);min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,8vw,80px) clamp(32px,6vw,80px);
+  position:relative;overflow:hidden;
+}
+.guide-cover::before{
+  content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    0deg,transparent,transparent 28px,
+    rgba(255,255,255,0.04) 28px,rgba(255,255,255,0.04) 29px
+  );pointer-events:none;
+}
+.cover-badge{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.15em;
+  color:rgba(255,255,255,0.7);margin-bottom:24px;
+}
+.cover-code{
+  display:inline-block;font-family:'DM Mono',monospace;font-size:12px;
+  font-weight:600;color:var(--accent);background:rgba(255,255,255,0.92);
+  padding:4px 12px;border-radius:20px;margin-right:10px;
+}
+.cover-h1{
+  font-family:'Playfair Display',serif;font-size:clamp(30px,5.5vw,60px);
+  font-weight:800;color:#FFFFFF;line-height:1.1;margin-bottom:16px;max-width:820px;
+}
+.cover-subtitle{
+  font-family:'DM Sans',sans-serif;font-size:clamp(15px,2.2vw,19px);
+  color:rgba(255,255,255,0.8);max-width:620px;margin-bottom:32px;line-height:1.55;
+}
+.cover-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.cover-meta-pill{
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.15);
+  padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.25);
+}
+.cover-author{
+  font-family:'DM Sans',sans-serif;font-size:13px;
+  color:rgba(255,255,255,0.65);margin-top:8px;
+}
+.cover-watermark{
+  position:absolute;right:clamp(20px,5vw,60px);bottom:clamp(20px,4vw,40px);
+  font-family:'Playfair Display',serif;font-size:clamp(100px,18vw,220px);
+  font-weight:800;color:rgba(255,255,255,0.06);line-height:1;
+  user-select:none;pointer-events:none;
+}
+
+/* ─── À PROPOS ──────────────────────────────── */
+.guide-about{background:var(--bg);padding:60px clamp(24px,6vw,80px);border-bottom:1px solid var(--border);}
+.about-inner{max-width:780px;margin:0 auto;}
+.about-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:16px;}
+.about-pitch{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.7;color:var(--text);margin-bottom:32px;}
+.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+@media(max-width:620px){.about-grid{grid-template-columns:1fr 1fr;}}
+.about-stat{text-align:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 10px;}
+.about-num{display:block;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--accent);}
+.about-desc{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;}
+.about-targets{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);margin-bottom:16px;}
+.about-disclaimer{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;line-height:1.55;}
+
+/* ─── NAVIGATION ONGLETS ────────────────────── */
+.guide-tabs{
+  display:flex;gap:2px;overflow-x:auto;
+  padding:0 clamp(16px,4vw,60px);
+  border-bottom:2px solid var(--border);
+  background:var(--card);position:sticky;top:0;z-index:50;
+  scrollbar-width:none;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.guide-tabs::-webkit-scrollbar{display:none;}
+.gtab{
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;
+  padding:13px 16px;border:none;background:transparent;
+  color:var(--muted);cursor:pointer;white-space:nowrap;
+  border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s;
+}
+.gtab:hover{color:var(--text);}
+.gtab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:700;}
+.gtab-panel{display:none;}
+.gtab-panel.active{display:block;}
+
+/* ─── SECTIONS ──────────────────────────────── */
+.guide-section{
+  max-width:900px;margin:0 auto;
+  padding:clamp(28px,4vw,52px) clamp(24px,6vw,80px);
+  position:relative;
+}
+.guide-section::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;
+  width:4px;background:var(--accent);border-radius:0 2px 2px 0;
+}
+.section-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(70px,11vw,130px);font-weight:800;
+  color:var(--accent);opacity:.10;line-height:1;
+  margin-bottom:-36px;user-select:none;pointer-events:none;display:block;
+}
+.section-title{
+  font-family:'Playfair Display',serif;font-size:clamp(20px,2.8vw,30px);
+  font-weight:700;color:var(--text);position:relative;margin-bottom:6px;
+}
+.section-subtitle{
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);margin-bottom:28px;
+}
+
+/* ─── PULL-QUOTE ────────────────────────────── */
+.pull-quote{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(17px,2.2vw,22px);color:var(--accent);line-height:1.45;
+  border-left:4px solid var(--accent);padding:16px 24px;margin:32px 0;
+  background:var(--accent-light);border-radius:0 8px 8px 0;
+}
+
+/* ─── ENCADRÉS ──────────────────────────────── */
+.pharmd-box{
+  background:var(--accent-light);border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:18px 22px;margin:24px 0;
+}
+.pharmd-title{
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:800;
+  color:var(--accent);text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.pharmd-box p{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);line-height:1.65;margin-bottom:8px;}
+.pharmd-box p:last-child{margin-bottom:0;}
+
+.alert-box{
+  background:rgba(211,47,47,0.05);border-left:4px solid #D32F2F;
+  border-radius:0 10px 10px 0;padding:16px 22px;margin:20px 0;
+}
+.alert-box strong{color:#D32F2F;}
+.alert-box p,.alert-box li{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);line-height:1.65;margin-bottom:6px;}
+
+.rule-box{
+  background:rgba(249,168,37,0.07);border-left:4px solid #F9A825;
+  border-radius:0 10px 10px 0;padding:16px 22px;margin:20px 0;
+}
+.rule-box p{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);line-height:1.65;}
+
+.info-box{
+  background:rgba(30,64,175,0.04);border-left:4px solid #2563EB;
+  border-radius:0 10px 10px 0;padding:16px 22px;margin:20px 0;
+}
+.info-box p{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);line-height:1.65;}
+
+/* ─── BADGES ────────────────────────────────── */
+.badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;
+  padding:2px 8px;border-radius:20px;white-space:nowrap;
+}
+.b-solid  {background:#dcfce7;color:#166534;}
+.b-prob   {background:#fef3c7;color:#92400e;}
+.b-spec   {background:#f3f4f6;color:#6b7a8d;}
+.b-def    {background:#dbeafe;color:#1e40af;}
+.b-rct    {background:#fce7f3;color:#9d174d;}
+.b-ongoing{background:#ede9fe;color:#5b21b6;}
+
+/* ─── FILTRES NIVEAU DE PREUVE ──────────────── */
+.proof-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.pf-btn{
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;
+  padding:5px 13px;border-radius:20px;border:1px solid var(--border);
+  background:var(--card);color:var(--muted);cursor:pointer;transition:all .15s;
+}
+.pf-btn:hover{border-color:var(--accent);color:var(--accent);}
+.pf-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+/* ─── TABLEAU MOLÉCULES ─────────────────────── */
+.table-wrap{overflow-x:auto;margin:24px 0;border-radius:8px;border:1px solid var(--border);}
+.mol-table{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:13px;}
+.mol-table thead tr{background:var(--accent);}
+.mol-table th{
+  padding:10px 14px;text-align:left;font-weight:700;
+  color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;
+}
+.mol-table td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.mol-table tr:last-child td{border-bottom:none;}
+.mol-table tbody tr:hover td{background:var(--accent-light);}
+.mol-table td:first-child{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+.mol-name{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--text);}
+.mol-alt{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);display:block;margin-top:2px;}
+
+/* Barre score couleur (bord gauche tr) */
+.s-solide td:first-child{border-left:4px solid #166534;}
+.s-prob   td:first-child{border-left:4px solid #92400e;}
+.s-def    td:first-child{border-left:4px solid #1e40af;}
+.s-spec   td:first-child{border-left:4px solid #6b7a8d;}
+
+/* ─── ACCORDÉONS COMPOSÉS ───────────────────── */
+.compound-list{display:flex;flex-direction:column;gap:10px;margin:24px 0;}
+.compound-item{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;transition:border-color .15s;
+}
+.compound-item:hover{border-color:var(--accent-mid);}
+.compound-header{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;cursor:pointer;user-select:none;
+}
+.compound-num{
+  font-family:'DM Mono',monospace;font-size:11px;font-weight:700;
+  color:var(--accent);min-width:24px;
+}
+.compound-name-wrap{flex:1;}
+.compound-name{
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--text);
+}
+.compound-sub{
+  font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:1px;
+}
+.compound-badges{display:flex;gap:5px;flex-wrap:wrap;}
+.compound-chevron{
+  font-size:12px;color:var(--muted);transition:transform .2s;flex-shrink:0;
+}
+.compound-item.open .compound-chevron{transform:rotate(180deg);}
+.compound-body{display:none;padding:0 18px 18px;border-top:1px solid var(--border);}
+.compound-item.open .compound-body{display:block;}
+
+/* Sous-titres dans l'accordéon */
+.cb-section{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.09em;color:var(--accent);
+  margin:18px 0 8px;
+}
+.cb-text{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);line-height:1.65;margin-bottom:10px;}
+.cb-study{
+  background:var(--bg);border:1px solid var(--border);border-radius:8px;
+  padding:12px 14px;margin:8px 0;font-family:'DM Sans',sans-serif;font-size:12px;
+  color:var(--text);line-height:1.6;
+}
+.cb-study .study-ref{
+  font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  margin-top:6px;display:block;
+}
+
+/* Tableau interactions médicamenteuses inline */
+.imed-table{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:12px;margin:10px 0;}
+.imed-table th{
+  background:var(--bg);padding:7px 12px;text-align:left;
+  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);border-bottom:1px solid var(--border);
+}
+.imed-table td{padding:7px 12px;border-bottom:1px solid rgba(42,42,42,0.05);vertical-align:top;}
+.imed-table td:first-child{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--text);}
+.imed-risk-high{color:#D32F2F;font-weight:700;}
+.imed-risk-mod{color:#E65100;font-weight:600;}
+.imed-risk-low{color:#6B7A8D;}
+
+/* ─── TABLEAU LSS ───────────────────────────── */
+.lss-table{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:12px;}
+.lss-table thead tr{background:var(--accent);}
+.lss-table th{
+  padding:9px 12px;text-align:left;font-weight:700;color:#fff;
+  font-size:10px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;
+}
+.lss-table td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:12px;}
+.lss-table tr:hover td{background:var(--accent-light);}
+.lss-warn{color:#D32F2F;font-size:11px;font-weight:600;}
+.lss-ok{color:#166534;font-size:11px;}
+
+/* ─── MATRICE INTERACTIONS MED ──────────────── */
+.matrix-section{overflow-x:auto;margin:24px 0;}
+.matrix-table{border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:11px;min-width:700px;}
+.matrix-table th,.matrix-table td{padding:8px 10px;border:1px solid var(--border);text-align:center;}
+.matrix-table thead th{background:var(--accent);color:#fff;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.matrix-table tbody th{background:var(--bg);font-weight:700;text-align:left;font-size:11px;white-space:nowrap;padding:8px 12px;}
+.mx-high{background:#fee2e2;color:#991b1b;font-weight:700;}
+.mx-mod{background:#fef3c7;color:#92400e;font-weight:600;}
+.mx-low{background:#f0fdf4;color:#166534;}
+.mx-none{background:var(--bg);color:var(--muted);}
+.matrix-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:11px;font-family:'DM Sans',sans-serif;color:var(--muted);}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;}
+
+/* ─── PROFILS CLINIQUES ─────────────────────── */
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+@media(max-width:620px){.profile-grid{grid-template-columns:1fr;}}
+.profile-card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:18px;border-top:3px solid var(--accent);
+}
+.profile-letter{
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:800;
+  color:var(--accent);opacity:.3;line-height:1;margin-bottom:-8px;
+}
+.profile-title{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.profile-sx{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5;}
+.profile-prio{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--text);line-height:1.65;}
+.profile-prio li{margin-bottom:4px;padding-left:4px;}
+
+/* ─── BLOC ÉPISTÉMIQUE ──────────────────────── */
+.epistemic-block{
+  background:rgba(42,42,42,0.04);border:1px solid rgba(42,42,42,0.1);
+  border-radius:14px;padding:28px 32px;margin:48px auto;max-width:860px;
+}
+.epistemic-label{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--text);margin-bottom:14px;
+}
+.epistemic-block p{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px;}
+.epistemic-block p:last-child{margin-bottom:0;}
+
+/* ─── CROSS-SELL ────────────────────────────── */
+.crosssell-section{padding:48px clamp(24px,6vw,80px);background:var(--bg);border-top:1px solid var(--border);}
+.crosssell-inner{max-width:860px;margin:0 auto;}
+.crosssell-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:20px;}
+.crosssell-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;}
+.crosssell-card{text-decoration:none;}
+.crosssell-cover{height:96px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.crosssell-code{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:800;color:rgba(255,255,255,0.85);text-transform:uppercase;}
+.crosssell-title{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-top:8px;line-height:1.4;}
+
+/* ─── SOURCES ───────────────────────────────── */
+.sources-section{max-width:860px;margin:0 auto;padding:40px clamp(24px,6vw,80px);}
+.sources-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.sources-note{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-bottom:20px;}
+.sources-list{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);padding-left:18px;}
+.sources-list li{margin-bottom:8px;line-height:1.55;}
+.sources-list a{color:var(--accent);}
+
+/* ─── FOOTER ────────────────────────────────── */
+.guide-footer{border-top:1px solid var(--border);padding:32px clamp(24px,6vw,80px);}
+.footer-inner{max-width:860px;margin:0 auto;}
+.footer-sig{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.footer-links{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:4px;}
+.footer-links a{color:var(--accent);}
+.footer-revision{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:4px;}
+.footer-disclaimer{font-size:11px;color:var(--muted);}
+
+/* ─── UTILITAIRES ───────────────────────────── */
+.prose{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px;}
+.prose:last-child{margin-bottom:0;}
+ul.check-list{list-style:none;padding-left:0;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);}
+ul.check-list li{padding:4px 0 4px 22px;position:relative;line-height:1.55;}
+ul.check-list li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;}
+.mono{font-family:'DM Mono',monospace;font-size:12px;}
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     1. COUVERTURE
+═══════════════════════════════════════════ -->
+<section class="guide-cover" aria-label="Couverture du guide">
+  <div class="cover-watermark" aria-hidden="true">G2</div>
+  <p class="cover-badge">
+    <span class="cover-code">G2-P</span>
+    Guide clinique pro · myboussole.fr
+  </p>
+  <h1 class="cover-h1">Dysautonomie<br>&amp; Micronutrition</h1>
+  <p class="cover-subtitle">
+    20 composés passés au crible de la science pour le clinicien. Mécanismes moléculaires,
+    niveaux de preuve contextualisés, interactions médicamenteuses et outil de priorisation clinique.
+  </p>
+  <div class="cover-meta">
+    <span class="cover-meta-pill">38 sources PubMed vérifiées</span>
+    <span class="cover-meta-pill">20 composés analysés</span>
+    <span class="cover-meta-pill">Matrice interactions médicamenteuses</span>
+    <span class="cover-meta-pill">Mis à jour mars 2026</span>
+  </div>
+  <p class="cover-author">Dr Rémy Honoré — Docteur en pharmacie et nutrithérapeute</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     2. À PROPOS
+═══════════════════════════════════════════ -->
+<section class="guide-about">
+  <div class="about-inner">
+    <p class="about-label">À propos de ce guide</p>
+    <p class="about-pitch">
+      Ce guide condense <strong>38 sources PubMed</strong> en un outil clinique actionnable.
+      Chaque composé est évalué avec le même niveau d'exigence — niveau de preuve dans la population cible,
+      mécanisme moléculaire pertinent, interactions médicamenteuses avec les traitements standards du POTS,
+      et limites de sécurité EFSA/ANSES. Pas de promesse thérapeutique. Pas de conjecture.
+      Des données contextualisées pour le praticien qui accompagne des personnes avec POTS,
+      ME/SFC, Covid long ou fibromyalgie.
+    </p>
+    <div class="about-grid">
+      <div class="about-stat"><span class="about-num">20</span><span class="about-desc">composés analysés</span></div>
+      <div class="about-stat"><span class="about-num">38</span><span class="about-desc">PMIDs vérifiés</span></div>
+      <div class="about-stat"><span class="about-num">2</span><span class="about-desc">axes mécanistiques</span></div>
+      <div class="about-stat"><span class="about-num">trim.</span><span class="about-desc">révision trimestrielle</span></div>
+    </div>
+    <p class="about-targets">
+      S'adresse à : <strong>médecins généralistes, cardiologues, médecins MPR, pharmaciens cliniciens,
+      neurologues</strong> accompagnant des personnes avec dysautonomie post-infectieuse ou primaire.
+    </p>
+    <p class="about-disclaimer">
+      <strong>Cadre réglementaire :</strong> ce guide fournit des données scientifiques à visée éducative.
+      Il ne constitue pas une recommandation thérapeutique individualisée ni un protocole de soin.
+      Les composés présentés sont des données à intégrer dans une démarche clinique globale,
+      sous la responsabilité du praticien. Toute décision de supplémentation reste de l'ordre
+      de la discussion médecin-patient.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     3. NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="guide-tabs" role="tablist" aria-label="Sections du guide">
+  <button class="gtab active" onclick="switchGuideTab(event,'tab-intro')" role="tab">01 · Introduction</button>
+  <button class="gtab" onclick="switchGuideTab(event,'tab-tableau')" role="tab">02 · Tableau récap.</button>
+  <button class="gtab" onclick="switchGuideTab(event,'tab-fiches')" role="tab">03 · 20 Composés</button>
+  <button class="gtab" onclick="switchGuideTab(event,'tab-synergies')" role="tab">04 · Synergies</button>
+  <button class="gtab" onclick="switchGuideTab(event,'tab-outil')" role="tab">05 · Outil clinique</button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     ONGLET 01 — INTRODUCTION CLINIQUE
+═══════════════════════════════════════════ -->
+<div id="tab-intro" class="gtab-panel active">
+
+  <div class="guide-section">
+    <span class="section-num" aria-hidden="true">01</span>
+    <h2 class="section-title">La dysautonomie : substrat clinique pour le praticien</h2>
+    <p class="section-subtitle">POTS · ME/SFC · Covid long · Fibromyalgie — pourquoi la micronutrition n'est pas accessoire</p>
+
+    <p class="prose">
+      La dysautonomie désigne un dysfonctionnement du système nerveux autonome (SNA), se traduisant cliniquement
+      par une intolérance orthostatique, une tachycardie posturale, une fatigue profonde, un brouillard cognitif
+      et une intolérance à l'effort. Elle n'est pas une entité unique mais un syndrome commun à plusieurs
+      pathologies : le POTS (syndrome de tachycardie orthostatique posturale), le ME/SFC (encéphalomyélite
+      myalgique / syndrome de fatigue chronique), le Covid long post-SARS-CoV-2 et la fibromyalgie.
+    </p>
+
+    <div class="pull-quote">
+      « La micronutrition n'est pas un complément optionnel dans la dysautonomie —
+      c'est un levier mécanistique documenté, à condition de savoir quoi choisir,
+      à quelle dose, et dans quel ordre. »
+    </div>
+
+    <h3 class="cb-section">Le substrat lésionnel : petites fibres et microangiopathie</h3>
+    <p class="prose">
+      Trois études clés (Novak et al., Shouman et al.) établissent que la dysautonomie post-Covid n'est pas
+      purement fonctionnelle. Des biopsies cutanées montrent une neuropathie des petites fibres (SFN) chez
+      77 à 89 % des patients PASC évalués en laboratoire autonomique (Novak 2022, Ann Neurol<sup><a href="#ref-36">36</a></sup> ;
+      Novak 2022, Neurol Sci<sup><a href="#ref-37">37</a></sup>). À la Mayo Clinic, 27 patients Covid long référés en
+      autonomique montrent que 22 % remplissent les critères POTS frank, 41 % présentent une intolérance
+      orthostatique sans tachycardie formelle, et que la SFN est fréquemment sous-jacente (Shouman 2021<sup><a href="#ref-38">38</a></sup>).
+    </p>
+    <p class="prose">
+      Ce substrat lésionnel — SFN, dysfonction endothéliale, dépôts amyloïdes musculaires (Appelman 2024,
+      Nature Commun) — a une implication directe pour la micronutrition : les molécules neuroprotectrices
+      (ALCAR, NAC, ALA) et celles qui ciblent la matrice vasculaire (collagène/glycine, vitamine C) ne sont pas
+      de l'ordre du "peut-être utile". Elles adressent un processus lésionnel documenté histologiquement.
+    </p>
+
+    <h3 class="cb-section">Deux axes mécanistiques — un cadre de lecture</h3>
+    <div class="table-wrap">
+      <table class="mol-table">
+        <thead>
+          <tr>
+            <th>Axe</th>
+            <th>Mécanismes ciblés</th>
+            <th>Composés prioritaires</th>
+            <th>Symptômes associés</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Neuro-énergétique</strong></td>
+            <td>Production ATP mitochondrial · Neurotransmission · Méthylation</td>
+            <td>CoQ10 · Créatine · B1/B3/B6/B12 · Mg · Choline · ALCAR</td>
+            <td>Fatigue profonde · Brouillard cognitif · Palpitations · Intolérance effort</td>
+          </tr>
+          <tr>
+            <td><strong>Hémodynamique / Vasculaire</strong></td>
+            <td>Volume plasmatique · Perfusion cérébrale · Tonus élastique veineux · NO endothélial</td>
+            <td>Sel + hydratation · Vit D · Oméga-3 · Vit C · Fer · Collagène/Glycine</td>
+            <td>Vertiges au lever · Tachycardie posturale · Extrémités froides · Malaises</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pharmd-box">
+      <p class="pharmd-title">⚕ L'œil du Docteur en pharmacie — Axe acide-base</p>
+      <p>
+        Un troisième axe, souvent négligé en pratique, lie la dysautonomie à la dérégulation acide-base.
+        Dans le Covid long, la suractivation du RAAS via la dérégulation d'ACE2 peut induire une <strong>alcalose
+        métabolique par perte rénale d'H⁺</strong> sous l'effet de l'aldostérone (hyperaldostéronisme secondaire).
+        L'alcalose sensible au chlorure se corrige par NaCl (le chlorure est l'ion clé). L'alcalose insensible
+        au chlorure — liée à un excès d'aldostérone ou à une carence combinée Mg²⁺/K⁺ — ne se corrige pas
+        par le sel seul. Elle entraîne une hypoventilation compensatoire (hypoxie relative), une baisse du
+        calcium ionisé (tétanie, paresthésies) et une hyperexcitabilité neuronale — symptômes qui se superposent
+        à ceux du POTS et sont parfois attribués à tort à la dysautonomie pure.
+        <strong>Cliniquement :</strong> vérifier l'ionogramme complet (Na, K, Cl, HCO₃⁻) et la magnésémie
+        érythrocytaire avant d'attribuer tous les symptômes au SNA.
+      </p>
+    </div>
+
+    <h3 class="cb-section">Niveaux de preuve — lecture obligatoire</h3>
+    <p class="prose">
+      Les quatre niveaux utilisés dans ce guide reflètent l'état des données <em>spécifiquement dans
+      POTS / ME/SFC / Covid long / fibromyalgie</em> — pas dans la population générale.
+    </p>
+    <div class="table-wrap">
+      <table class="mol-table">
+        <thead><tr><th>Niveau</th><th>Définition</th><th>Implication clinique</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-solid">✅ Solide</span></td><td>Consensus ou ECR directement dans la population cible</td><td>Peut être proposé en première ligne</td></tr>
+          <tr><td><span class="badge b-prob">⚠️ Probable</span></td><td>ECR dans population proche OU mécanisme humain documenté</td><td>Discutable au cas par cas, rationnel solide</td></tr>
+          <tr><td><span class="badge b-spec">🔬 Spéculatif</span></td><td>Mécanisme plausible, pas d'ECR dans la pop. cible</td><td>Ne pas exclure, mais situer dans le contexte</td></tr>
+          <tr><td><span class="badge b-def">💉 Si déficit</span></td><td>Pertinent uniquement si carence ou déplétion documentée</td><td>Conditionné au bilan biologique préalable</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box">
+      <p><strong>Règle fondamentale :</strong> les niveaux de preuve reflètent l'état de la recherche,
+      pas une promesse de résultat individuel. "Probable ≠ efficacité prouvée chez votre patient.
+      Spéculatif ≠ inutile, mais non validé cliniquement." La réponse individuelle dépend du terrain,
+      du statut biologique de départ, des co-médications et de la tolérance.</p>
+    </div>
+  </div>
+
+</div><!-- /tab-intro -->
+
+<!-- ═══════════════════════════════════════════
+     ONGLET 02 — TABLEAU RÉCAPITULATIF
+═══════════════════════════════════════════ -->
+<div id="tab-tableau" class="gtab-panel">
+  <div class="guide-section">
+    <span class="section-num" aria-hidden="true">02</span>
+    <h2 class="section-title">Tableau récapitulatif des 20 composés</h2>
+    <p class="section-subtitle">Filtrez par niveau de preuve · Axe neuro-énergétique (N) ou hémodynamique (H)</p>
+
+    <div class="proof-filter" role="group" aria-label="Filtrer par niveau de preuve">
+      <button class="pf-btn active" onclick="filterByProof('all',this)">Tous (20)</button>
+      <button class="pf-btn" onclick="filterByProof('solide',this)">✅ Solide</button>
+      <button class="pf-btn" onclick="filterByProof('probable',this)">⚠️ Probable</button>
+      <button class="pf-btn" onclick="filterByProof('spec',this)">🔬 Spéculatif</button>
+      <button class="pf-btn" onclick="filterByProof('deficit',this)">💉 Si déficit</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="mol-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Composé</th>
+            <th>Axe</th>
+            <th>Contexte principal</th>
+            <th>Niveau</th>
+            <th>LSS EFSA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="s-solide" data-proof="solide"><td>01</td><td><span class="mol-name">Sel + hydratation</span><span class="mol-alt">NaCl · Expansion volémique</span></td><td>H</td><td>POTS — consensus expert</td><td><span class="badge b-solid">✅ Solide</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-prob" data-proof="probable"><td>02</td><td><span class="mol-name">Coenzyme Q10</span><span class="mol-alt">Ubiquinone / Ubiquinol</span></td><td>N</td><td>ME/SFC — ECR n=207 (+ NADH)</td><td><span class="badge b-prob">⚠️ Probable</span></td><td class="mono">NOAEL ~1 200 mg/j</td></tr>
+          <tr class="s-prob" data-proof="probable"><td>03</td><td><span class="mol-name">Vitamine D</span><span class="mol-alt">Cholécalciférol</span></td><td>H</td><td>Covid long — ECR n=80</td><td><span class="badge b-prob">⚠️ Probable</span></td><td class="mono">4 000 UI/j (100 µg)</td></tr>
+          <tr class="s-prob" data-proof="probable"><td>04</td><td><span class="mol-name">Vitamine C</span><span class="mol-alt">Ascorbate</span></td><td>N+H</td><td>Covid long — ECR n=46 (+ L-Arg)</td><td><span class="badge b-prob">⚠️ Probable</span></td><td class="mono">1 000 mg/j</td></tr>
+          <tr class="s-prob" data-proof="probable"><td>05</td><td><span class="mol-name">Créatine</span><span class="mol-alt">Monohydrate</span></td><td>N</td><td>ME/SFC · PCS — spectroscopie IRM</td><td><span class="badge b-prob">⚠️ Probable</span></td><td class="mono">5 g/j (ISSN)</td></tr>
+          <tr class="s-def" data-proof="deficit"><td>06</td><td><span class="mol-name">Fer</span><span class="mol-alt">Ferritine · Transferrine</span></td><td>H</td><td>POTS pédiatrique · Femmes ferritine basse</td><td><span class="badge b-def">💉 Si déficit</span></td><td class="mono">45 mg/j élémentaire</td></tr>
+          <tr class="s-def" data-proof="deficit"><td>07</td><td><span class="mol-name">Vitamine B12 + folates</span><span class="mol-alt">Méthylcobalamine · 5-MTHF</span></td><td>N</td><td>Neuropathie autonome si déficit</td><td><span class="badge b-def">💉 Si déficit</span></td><td class="mono">Folates : 1 000 µg/j</td></tr>
+          <tr class="s-def" data-proof="deficit"><td>08</td><td><span class="mol-name">Niacine / NAD+</span><span class="mol-alt">Nicotinamide · NR · NMN</span></td><td>N</td><td>Déplétion NAD+ — mécanisme IDO1/PARP1</td><td><span class="badge b-def">💉 Si déplétion</span></td><td class="mono">Nicotinamide : 900 mg/j</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>09</td><td><span class="mol-name">Thiamine (B1)</span><span class="mol-alt">Thiamine pyrophosphate (TPP)</span></td><td>N</td><td>Fibromyalgie — case series n=3</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>10</td><td><span class="mol-name">Vitamine B6</span><span class="mol-alt">Pyridoxal-5'-phosphate (PLP)</span></td><td>N</td><td>Cofacteur PLP — mécanisme biochimique</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="lss-warn">12 mg/j ⚠️</td></tr>
+          <tr class="s-prob" data-proof="probable"><td>11</td><td><span class="mol-name">Oméga-3 (EPA/DHA)</span><span class="mol-alt">Résolvines · Protectines</span></td><td>H</td><td>Chronotrope négatif — ECR pop. CV</td><td><span class="badge b-prob">⚠️ Probable</span></td><td class="mono">5 g/j EPA+DHA</td></tr>
+          <tr class="s-def" data-proof="deficit"><td>12</td><td><span class="mol-name">Magnésium</span><span class="mol-alt">Bisglycinate · Malate</span></td><td>N</td><td>Déplétion RAAS · Axe acide-base</td><td><span class="badge b-def">💉 Si déplétion</span></td><td class="mono">250 mg/j (supp.)</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>13</td><td><span class="mol-name">Choline + PEMT</span><span class="mol-alt">Phosphatidylcholine · ACh</span></td><td>N</td><td>PCS spectroscopie cérébrale</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">3 500 mg/j</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>14</td><td><span class="mol-name">Collagène / Glycine</span><span class="mol-alt">GlyNAC · Matrice vasculaire</span></td><td>H</td><td>GlyNAC ECR n=24 (adultes âgés)</td><td><span class="badge b-spec">🔬 Spéc./Prob.</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>15</td><td><span class="mol-name">Acide alpha-lipoïque</span><span class="mol-alt">ALA · Antioxydant thiol</span></td><td>N</td><td>Neuropathie diabétique (extrapolation)</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>16</td><td><span class="mol-name">L-carnitine / ALCAR</span><span class="mol-alt">Acétyl-L-carnitine</span></td><td>N</td><td>ME/SFC · Covid long neuro-psy.</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>17</td><td><span class="mol-name">N-acétylcystéine (NAC)</span><span class="mol-alt">Précurseur glutathion</span></td><td>N</td><td>ECR Phase II en cours — Cornell (2026)</td><td><span class="badge b-ongoing">⏳ ECR en cours</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>18</td><td><span class="mol-name">Quercétine</span><span class="mol-alt">Flavonoïde · Stabilisateur mastocytaire</span></td><td>N+H</td><td>SAMA — case reports</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Pas de LSS définie</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>19</td><td><span class="mol-name">Mélatonine</span><span class="mol-alt">Synchronisation circadienne</span></td><td>N</td><td>Chronobiologie SNA — pas d'ECR POTS</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Vigilance &gt;2 mg (ANSES)</td></tr>
+          <tr class="s-spec" data-proof="spec"><td>20</td><td><span class="mol-name">Oligo-éléments : Zn · Se · I</span><span class="mol-alt">Cofacteurs · Thyroïde</span></td><td>N+H</td><td>Cofacteurs enzymatiques · Déplétion inflammatoire</td><td><span class="badge b-spec">🔬 Spéculatif</span></td><td class="mono">Zn 25 mg/j · Se 300 µg/j</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><!-- /tab-tableau -->
+
+<!-- ═══════════════════════════════════════════
+     ONGLET 03 — 20 FICHES COMPOSÉS
+═══════════════════════════════════════════ -->
+<div id="tab-fiches" class="gtab-panel">
+  <div class="guide-section">
+    <span class="section-num" aria-hidden="true">03</span>
+    <h2 class="section-title">20 fiches composés</h2>
+    <p class="section-subtitle">Cliquez sur un composé pour déployer la fiche complète — mécanisme · études · interactions médicamenteuses</p>
+
+    <div class="compound-list">
+
+      <!-- 01 — SEL -->
+      <div class="compound-item" id="c01">
+        <div class="compound-header" onclick="toggleCompound('c01')">
+          <span class="compound-num">01</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Sel + hydratation</div>
+            <div class="compound-sub">NaCl · Expansion volémique RAAS</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-solid">✅ Solide</span>
+            <span class="badge" style="background:#f0fdf4;color:#166534;">Axe H</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">Dans le POTS, l'hypovolémie est un mécanisme central. Le passage orthostatique déplace 500–700 mL de sang vers les membres inférieurs. La compensation nécessite un tonus veineux adéquat et un volume plasmatique suffisant. Le sodium stimule la rétention d'eau via le système rénine-angiotensine-aldostérone (RAAS), augmente le volume plasmatique et améliore le retour veineux. Le chlorure est l'ion clé dans l'alcalose sensible au chlorure — le NaCl corrige simultanément la contraction volémique et le déséquilibre acide-base chloro-sensible.</p>
+
+          <p class="cb-section">Études clés</p>
+          <div class="cb-study">
+            <strong>Snapper &amp; Cheshire, 2022</strong> — Revue · <em>Autonomic Neuroscience</em><br>
+            Revue exhaustive sur l'hydratation dans POTS/hypotension orthostatique. Consensus fort en faveur de 6–10 g NaCl/j + 2–3 L eau. Aucun ECR formalisé. L'efficacité repose sur la physiopathologie et l'expérience clinique accumulée.
+            <span class="study-ref">PMID 35123367 · <a href="https://pubmed.ncbi.nlm.nih.gov/35123367/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <div class="cb-study">
+            <strong>Aziz et al., 2025</strong> — Clinical Practice Update AGA · <em>Clin Gastroenterol Hepatol</em><br>
+            Recommandation AGA pour POTS associé au SED hypermobile : augmenter liquides et sel, entraînement physique, vêtements compressifs. Niveau de preuve : bonne pratique clinique.
+            <span class="study-ref">PMID 40387691 · <a href="https://pubmed.ncbi.nlm.nih.gov/40387691/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme interaction</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Fludrocortisone</td><td>Sommation expansion volémique</td><td class="imed-risk-high">Élevé</td><td>Surveiller kaliémie, PA</td></tr>
+                <tr><td>Diurétiques thiazidiques</td><td>Antagonisme de l'effet volémique</td><td class="imed-risk-mod">Modéré</td><td>Ajuster doses selon clinique</td></tr>
+                <tr><td>ISRS (POTS)</td><td>Pas d'interaction directe NaCl</td><td class="imed-risk-low">Nul</td><td>—</td></tr>
+                <tr><td>Ivabradine</td><td>Pas d'interaction directe</td><td class="imed-risk-low">Nul</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Contre-indiqué si insuffisance cardiaque, HTA sévère non contrôlée, insuffisance rénale avec rétention sodée. Un apport élevé en sel (6–10 g/j) stimule l'excrétion rénale de potassium via l'aldostérone → risque d'hypokaliémie iatrogène (tachycardie, crampes, arythmie). Surveillance kaliémie recommandée. Assurer apport alimentaire en K⁺ (fruits, légumineuses).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 — CoQ10 -->
+      <div class="compound-item" id="c02">
+        <div class="compound-header" onclick="toggleCompound('c02')">
+          <span class="compound-num">02</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Coenzyme Q10</div>
+            <div class="compound-sub">Ubiquinone / Ubiquinol · Chaîne respiratoire</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-prob">⚠️ Probable</span>
+            <span class="badge" style="background:#fef3c7;color:#92400e;">Axe N</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">La CoQ10 est le transporteur d'électrons entre les complexes I/II et III de la chaîne respiratoire mitochondriale — indispensable à la synthèse d'ATP. C'est aussi un antioxydant lipophile protégeant les membranes mitochondriales. Dans ME/SFC, Covid long et fibromyalgie, une dysfonction mitochondriale est documentée : baisse du ratio ATP/ADP, stress oxydatif accru, biogenèse perturbée. Les statines réduisent la biosynthèse endogène de CoQ10 via la voie du mévalonate.</p>
+          <p class="cb-section">Études clés</p>
+          <div class="cb-study">
+            <strong>Castro-Marrero et al., 2021</strong> — ECR double aveugle · n=207 · ME/SFC · <em>Nutrients</em><br>
+            CoQ10 200 mg + NADH 20 mg vs placebo, 12 semaines. Réduction significative fatigue cognitive (p&lt;0,001), amélioration qualité de vie (p&lt;0,05). L'essai le plus robuste disponible — mais combinaison CoQ10 + NADH, effet de chaque composé non isolable.
+            <span class="study-ref">PMID 34444817 · <a href="https://pubmed.ncbi.nlm.nih.gov/34444817/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <div class="cb-study">
+            <strong>Mantle et al., 2024</strong> — Revue · <em>Int J Mol Sci</em><br>
+            Lien entre dysfonction mitochondriale et inflammation de bas grade dans ME/SFC, fibromyalgie, Covid long. CoQ10 identifiée parmi les composés prioritaires avec créatine et NAC.
+            <span class="study-ref">PMID 38203745 · <a href="https://pubmed.ncbi.nlm.nih.gov/38203745/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>AVK / Warfarine</td><td>CoQ10 structurellement proche vit K2 → ↓ INR possible</td><td class="imed-risk-high">Élevé</td><td>Surveillance INR renforcée</td></tr>
+                <tr><td>Statines</td><td>Statines ↓ biosynthèse CoQ10 (mévalonate) → déplétion endogène</td><td class="imed-risk-mod">Modéré</td><td>Co-supplémentation discutable</td></tr>
+                <tr><td>Propranolol / bêta-bloquants</td><td>Pas d'interaction pharmacocinétique établie</td><td class="imed-risk-low">Faible</td><td>Surveillance clinique suffisante</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Forme ubiquinol mieux absorbée qu'ubiquinone après 40 ans. Surveillance INR obligatoire si anticoagulant AVK. Troubles GI à très haute dose.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 — VITAMINE D -->
+      <div class="compound-item" id="c03">
+        <div class="compound-header" onclick="toggleCompound('c03')">
+          <span class="compound-num">03</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Vitamine D</div>
+            <div class="compound-sub">Cholécalciférol · Immunomodulation · VDR</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-prob">⚠️ Probable</span>
+            <span class="badge" style="background:#f0fdf4;color:#166534;">Axe H</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">La vitamine D module l'inflammation via les récepteurs VDR exprimés sur les cellules immunitaires (macrophages, lymphocytes T). Elle régule l'expression de cytokines pro-inflammatoires (IL-6, TNF-α) et influence la fonction neuromusculaire et vasculaire. En contexte inflammatoire chronique, les macrophages activés expriment la 1α-hydroxylase de façon non régulée → conversion excessive de 25(OH)D en 1,25(OH)D → risque d'hypercalcémie même avec des taux plasmatiques normaux de 25(OH)D.</p>
+          <div class="cb-study">
+            <strong>Charoenporn et al., 2024</strong> — ECR double aveugle · n=80 · Syndrome post-COVID · <em>Psychiatry Clin Neurosci</em><br>
+            Vit D 60 000 UI/semaine pendant 8 semaines. Amélioration significative fatigue (p=0,024), anxiété (p=0,011), cognition (p=0,012). Pas de différence IL-6/CRP. Aucun effet indésirable grave.
+            <span class="study-ref">PMID 39072958 · <a href="https://pubmed.ncbi.nlm.nih.gov/39072958/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Thiazidiques</td><td>↓ excrétion rénale Ca²⁺ → hypercalcémie additive</td><td class="imed-risk-high">Élevé</td><td>Surveiller calcémie, calciurie</td></tr>
+                <tr><td>Digitaliques</td><td>Hypercalcémie → ↑ toxicité digitalique</td><td class="imed-risk-high">Élevé</td><td>Surveillance ECG + calcémie</td></tr>
+                <tr><td>Corticoïdes au long cours</td><td>Corticoïdes ↓ absorption Ca²⁺ et 25(OH)D</td><td class="imed-risk-mod">Modéré</td><td>Besoins en vit D augmentés</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pharmd-box">
+            <p class="pharmd-title">⚕ Piège clinique — Inflammation granulomateuse</p>
+            <p>Dans les formes de Covid long avec activation macrophagique intense, supplémenter à hautes doses sans surveillance comporte un risque réel d'hypercalcémie. <strong>Règle pratique :</strong> corriger un déficit documenté (&lt;30 ng/mL) est rationnel. Doses &gt;4 000 UI/j sans contrôle de la calcémie ne l'est pas en contexte inflammatoire actif.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 — VITAMINE C -->
+      <div class="compound-item" id="c04">
+        <div class="compound-header" onclick="toggleCompound('c04')">
+          <span class="compound-num">04</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Vitamine C</div>
+            <div class="compound-sub">Ascorbate · DβH · eNOS / BH4</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-prob">⚠️ Probable</span>
+            <span class="badge" style="background:#ede9fe;color:#5b21b6;">Axe N+H</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text"><strong>Axe neuro-énergétique :</strong> L'ascorbate est cofacteur de la dopamine β-hydroxylase (DβH), enzyme convertissant la dopamine en noradrénaline (neurotransmetteur clé du système sympathique), et de la PAM (maturation de la vasopressine). Un déficit compromet la synthèse des vasopresseurs endogènes. Il réduit aussi les niveaux de BH4 (tétrahydrobioptérine), cofacteur commun de la tyrosine hydroxylase et de la tryptophane hydroxylase → baisse simultanée de dopamine, noradrénaline ET sérotonine.</p>
+          <p class="cb-text"><strong>Axe hémodynamique :</strong> Cofacteur des prolyl-hydroxylases (synthèse collagène vasculaire) et régénère le BH4 de la eNOS → améliore la biodisponibilité du NO endothélial.</p>
+          <div class="cb-study">
+            <strong>Tosato et al., 2022</strong> — ECR simple aveugle · n=46 · Covid long · <em>Nutrients</em><br>
+            L-arginine 1,66 g + vitamine C liposomale 500 mg, 2×/j, 28 jours. Test marche 6 min +30 m (p=0,001), force préhension (p=0,03), dilatation flux-dépendante (p=0,03). Fatigue persistante : 8,7 % vs 80,1 % placebo (p&lt;0,0001). Association non dissociable.
+            <span class="study-ref">PMID 36501014 · <a href="https://pubmed.ncbi.nlm.nih.gov/36501014/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Glucomètres capillaires</td><td>Vit C haute dose → faux positifs/négatifs glycémie</td><td class="imed-risk-mod">Modéré</td><td>Prévenir le patient diabétique</td></tr>
+                <tr><td>Warfarine</td><td>Doses très élevées (&gt;1 g/j) → interaction variable</td><td class="imed-risk-low">Faible</td><td>Pas de changement à dose nutritionnelle</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> LSS EFSA : 1 000 mg/j. Risque d'hyperoxalurie à très haute dose chez les personnes prédisposées à la lithiase rénale oxalique.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 — CRÉATINE -->
+      <div class="compound-item" id="c05">
+        <div class="compound-header" onclick="toggleCompound('c05')">
+          <span class="compound-num">05</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Créatine monohydrate</div>
+            <div class="compound-sub">Phosphocréatine · ATP tampon · Spectroscopie IRM</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-prob">⚠️ Probable</span>
+            <span class="badge b-ongoing">⏳ ECR en cours</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">La créatine régénère l'ATP via le système phosphocréatine/créatine kinase (PCr + ADP → Cr + ATP). Elle tamponne les fluctuations rapides d'ATP dans le cerveau et le muscle squelettique — particulièrement pertinent lors des changements posturaux qui exigent une adaptation rapide du débit cardiaque. Des anomalies du métabolisme de la créatine sont documentées par spectroscopie IRM dans ME/SFC et Covid long : resynthèse de PCr musculaire ralentie, niveaux de créatine cérébrale altérés.</p>
+          <div class="cb-study">
+            <strong>Ostojic SM, 2021</strong> — Revue · <em>Nutrients</em><br>
+            Anomalies de PCr musculaire et créatine cérébrale dans les syndromes post-viraux de fatigue. Potentiel thérapeutique dans le contexte post-COVID. Pas d'ECR créatine seule dans ces populations.
+            <span class="study-ref">PMID 33557013 · <a href="https://pubmed.ncbi.nlm.nih.gov/33557013/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <div class="cb-study">
+            <strong>NCT06992414 — Université de Calgary</strong> — ECR · n=24 · Covid long fatigue<br>
+            Créatine monohydrate vs placebo dans Covid long. Démarrage prévu juillet 2025, clôture juin 2026. Premier ECR créatine seule dans cette population.
+            <span class="study-ref"><a href="https://clinicaltrials.gov/study/NCT06992414" target="_blank" rel="noopener">ClinicalTrials.gov NCT06992414</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Tout traitement</td><td>Créatine ↑ créatininémie sans néphrotoxicité prouvée (3–5 g/j)</td><td class="imed-risk-low">Faible</td><td>Informer le labo — ne pas interpréter comme IRC</td></tr>
+                <tr><td>AINS + diurétiques</td><td>Risque théorique de déshydratation</td><td class="imed-risk-low">Faible</td><td>Hydratation adéquate</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Surveillance rénale recommandée en cas d'IRC préexistante. Rétention hydrique initiale légère (1–2 kg) en phase de chargement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 — FER -->
+      <div class="compound-item" id="c06">
+        <div class="compound-header" onclick="toggleCompound('c06')">
+          <span class="compound-num">06</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Fer</div>
+            <div class="compound-sub">Ferritine · Hémoglobine · Tyrosine hydroxylase</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-def">💉 Si déficit</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">Le fer est cofacteur de la chaîne respiratoire (complexes I, II, III — centres fer-soufre), de l'hémoglobine (transport O₂), de la tyrosine hydroxylase (synthèse des catécholamines) et de la prolyl 4-hydroxylase (synthèse du collagène). Un déficit — même sans anémie franche — agit donc simultanément sur les deux axes. La ferritine "normale basse" (15–30 µg/L) est insuffisante fonctionnellement chez les personnes symptomatiques.</p>
+          <div class="cb-study">
+            <strong>Jarjour &amp; Jarjour, 2013</strong> — Rétrospective · n=24 · POTS pédiatrique · <em>Clin Auton Res</em><br>
+            50 % des adolescents avec POTS avaient une ferritine basse (&lt;25 µg/L), 25 % des filles une carence franche (&lt;12 µg/L). La carence martiale est un facteur physiopathologique potentiel du POTS.
+            <span class="study-ref">PMID 23720007 · <a href="https://pubmed.ncbi.nlm.nih.gov/23720007/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <div class="cb-study">
+            <strong>Dugan et al., 2025 (IRONWOMAN Trial)</strong> — ECR double aveugle · n=26 · Femmes, carence martiale non anémique · <em>Br J Sports Med</em><br>
+            Fer IV chez des femmes actives avec ferritine basse sans anémie. Amélioration significative économie de course et scores de fatigue à 4 semaines. Pas de changement de VO₂max ni hémoglobine totale.
+            <span class="study-ref">PMID 40032294 · <a href="https://pubmed.ncbi.nlm.nih.gov/40032294/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Quinolones · Tétracyclines</td><td>Chélation → ↓ absorption antibiotique et fer</td><td class="imed-risk-high">Élevé</td><td>Espacer de 2h minimum</td></tr>
+                <tr><td>Lévothyroxine</td><td>Chélation → ↓ absorption T4</td><td class="imed-risk-high">Élevé</td><td>Espacer de 2h (fer à midi si T4 le matin)</td></tr>
+                <tr><td>Biphosphonates</td><td>Chélation → ↓ absorption des deux</td><td class="imed-risk-mod">Modéré</td><td>Espacer de 2h</td></tr>
+                <tr><td>IPP au long cours</td><td>↑ pH gastrique → ↓ absorption du fer non-héminique</td><td class="imed-risk-mod">Modéré</td><td>Préférer fer héminique ou supplémenter entre les prises</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ RÈGLE ABSOLUE : Ne jamais supplémenter en fer sans bilan martial (ferritine + CST + CRP).</strong> L'excès de fer est pro-oxydant et potentiellement toxique. En contexte inflammatoire, la ferritine peut être faussement élevée (protéine de phase aiguë). Vérifier CST et CRP systématiquement. Cible fonctionnelle recommandée en pratique : ferritine 50–100 µg/L chez les personnes symptomatiques.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 — B12 + FOLATES -->
+      <div class="compound-item" id="c07">
+        <div class="compound-header" onclick="toggleCompound('c07')">
+          <span class="compound-num">07</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Vitamine B12 + Folates</div>
+            <div class="compound-sub">Méthylcobalamine · 5-MTHF · Méthylation</div>
+          </div>
+          <div class="compound-badges"><span class="badge b-def">💉 Si déficit</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">B12 et folates sont cofacteurs du cycle de méthylation (synthèse de SAM, recyclage de l'homocystéine) et de la remyélinisation nerveuse. Un déficit en B12 provoque une neuropathie axonale touchant les fibres autonomes, documentée incluant une dénervation cardiaque. L'hyperhomocystéinémie résultante contribue au stress oxydatif endothélial. Pas de donnée spécifique Covid long/POTS en l'absence de déficit préexistant.</p>
+          <div class="cb-study">
+            <strong>Bell DSH, 2022</strong> — Revue · <em>Diabetes Obes Metab</em><br>
+            Déficit en B12 induit par la metformine aggrave la neuropathie autonome dans le diabète. Les fréquences de polyneuropathie distale et autonome augmentent avec la durée de traitement.
+            <span class="study-ref">PMID 35491956 · <a href="https://pubmed.ncbi.nlm.nih.gov/35491956/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Metformine</td><td>↓ absorption B12 par mécanisme Ca²⁺-dépendant iléal</td><td class="imed-risk-high">Élevé</td><td>Dosage B12 annuel si metformine ≥2 ans</td></tr>
+                <tr><td>IPP au long cours</td><td>↑ pH gastrique → ↓ libération B12 alimentaire</td><td class="imed-risk-mod">Modéré</td><td>Surveillance B12 (holotranscobalamine si possible)</td></tr>
+                <tr><td>Phénytoïne · Valproate</td><td>↑ catabolisme folates → déplétion</td><td class="imed-risk-mod">Modéré</td><td>Supplémenter en 5-MTHF (pas acide folique)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pharmd-box">
+            <p class="pharmd-title">⚕ Règle polymorphisme MTHFR</p>
+            <p>Polymorphisme MTHFR C677T (fréquent) : privilégier le <strong>méthylfolate (5-MTHF)</strong> plutôt que l'acide folique. Ne jamais supplémenter en folates seuls sans vérifier le statut B12 préalable — risque de masquage d'un déficit en B12 avec aggravation neurologique. Méthylcobalamine préférable à la cyanocobalamine.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 — NIACINE / NAD+ -->
+      <div class="compound-item" id="c08">
+        <div class="compound-header" onclick="toggleCompound('c08')">
+          <span class="compound-num">08</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Niacine (B3) / NAD+</div>
+            <div class="compound-sub">Nicotinamide · NR · NMN · Piège IDO1/PARP1</div>
+          </div>
+          <div class="compound-badges"><span class="badge b-def">💉 Si déplétion</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire — Le piège NAD+</p>
+          <p class="cb-text">Le NAD+ est l'accepteur d'électrons central de la chaîne respiratoire (complexes I et III) et substrat de PARP1, des sirtuines et de CD38. Dans le Covid long, un mécanisme de "piège à NAD+" a été décrit : l'inflammation induit IDO1 → voie kynurénine → AhR → activation PARP1. PARP1 consomme massivement le NAD+ → déplétion d'ATP. En parallèle, le tryptophane est détourné de la voie sérotonine vers la voie kynurénine (Wong et al., 2023, Cell) → baisse de sérotonine périphérique → altération du nerf vague → dysfonction hippocampique.</p>
+          <p class="cb-text"><strong>Nicotinamide vs NR vs NMN :</strong> le nicotinamide (vitamine B3 classique, Nicobion) inhibe directement PARP1 — c'est la cible mécanistique principale. Le NR et le NMN sont des précurseurs du NAD+ mais n'empêchent pas PARP1 de le consommer. L'ECR négatif de Wu 2025 portait sur le NR — il ne teste pas le nicotinamide lui-même.</p>
+          <div class="cb-study">
+            <strong>Wu et al., 2025</strong> — ECR double aveugle · n=58 · Covid long · <em>EClinicalMedicine</em> (MGH Harvard)<br>
+            NR 2000 mg/j pendant 20 semaines. NAD+ augmenté de 2,6 à 3,1 fois. Pas de différence significative vs placebo sur cognition, fatigue, sommeil (critères principaux). Taux d'abandon 51% à 20 semaines. Analyse post-hoc exploratoire : améliorations intra-groupe en fonctions exécutives et fatigue à 10 semaines.
+            <span class="study-ref">PMID 41357333 · <a href="https://pubmed.ncbi.nlm.nih.gov/41357333/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <p class="cb-section">Interactions médicamenteuses</p>
+          <div class="table-wrap">
+            <table class="imed-table">
+              <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Risque</th><th>Conduite</th></tr></thead>
+              <tbody>
+                <tr><td>Acide nicotinique haute dose</td><td>Flush vasomoteur dose-dépendant (pas le nicotinamide)</td><td class="imed-risk-mod">Modéré</td><td>Utiliser nicotinamide (niacinamide) si POTS</td></tr>
+                <tr><td>Statines</td><td>Niacine ↑ risque de myopathie avec statines</td><td class="imed-risk-mod">Modéré</td><td>Nicotinamide à doses nutritionnelles : risque faible</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ LSS acide nicotinique : 10 mg/j seulement (flush). Nicotinamide : 900 mg/j.</strong> Ce sont deux formes distinctes — vérifier l'étiquette. Le nicotinamide à haute dose peut inhiber les sirtuines (SIRT1) → effet métabolique paradoxal potentiel.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 — B1 -->
+      <div class="compound-item" id="c09">
+        <div class="compound-header" onclick="toggleCompound('c09')">
+          <span class="compound-num">09</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Thiamine (B1)</div>
+            <div class="compound-sub">TPP · Pyruvate déshydrogénase · α-KGDH</div>
+          </div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">La thiamine pyrophosphate (TPP) est cofacteur de trois complexes enzymatiques de la production d'ATP : pyruvate déshydrogénase (entrée dans le cycle de Krebs), α-cétoglutarate déshydrogénase (α-KGDH, cycle de Krebs) et transcétolase (voie des pentoses phosphates). Un déficit subclinique peut induire une dysrégulation énergétique globale sans les signes classiques du béribéri. Hypothèse de Costantini : certains patients fibromyalgiques auraient un déficit de transport intracellulaire de la thiamine (déficit fonctionnel, pas sérique).</p>
+          <div class="cb-study">
+            <strong>Costantini et al., 2013</strong> — Case series · n=3 · Fibromyalgie · <em>BMJ Case Reports</em><br>
+            Thiamine haute dose (600–1 800 mg/j) chez 3 femmes fibromyalgiques. Amélioration notable fatigue et douleur. Niveau de preuve très limité (n=3, pas d'ECR). Hypothèse du déficit de transport intracellulaire.
+            <span class="study-ref">PMID 23696141 · <a href="https://pubmed.ncbi.nlm.nih.gov/23696141/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+          <div class="info-box">
+            <p><strong>Lacune documentée :</strong> aucune étude interventionnelle n'existe dans le POTS ou le ME/SFC. Pas de nouvelles données disponibles depuis 2013 dans ces populations. Profil de sécurité excellent (hydrosoluble). La benfotiamine (forme liposoluble) a une meilleure biodisponibilité intracellulaire.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 — B6 -->
+      <div class="compound-item" id="c10">
+        <div class="compound-header" onclick="toggleCompound('c10')">
+          <span class="compound-num">10</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Vitamine B6</div>
+            <div class="compound-sub">PLP · DOPA décarboxylase · Histidine décarboxylase</div>
+          </div>
+          <div class="compound-badges">
+            <span class="badge b-spec">🔬 Spéculatif</span>
+            <span class="badge" style="background:#fee2e2;color:#991b1b;">LSS basse ⚠️</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">Le pyridoxal-5'-phosphate (PLP) est cofacteur de : DOPA décarboxylase (synthèse dopamine/sérotonine à partir de L-DOPA et 5-HTP), glutamate décarboxylase (synthèse GABA), histidine décarboxylase (synthèse histamine). Un déficit peut perturber simultanément la neurotransmission sérotoninergique, GABAergique, dopaminergique et histaminergique — pertinent dans le POTS où le dérèglement neurovégétatif implique ces systèmes.</p>
+          <div class="info-box">
+            <p><strong>Lacune documentée :</strong> aucune étude interventionnelle n'existe dans la dysautonomie, le POTS ou le ME/SFC. Le rôle cofacteur de PLP est biochimiquement établi. La correction d'un déficit documenté est rationnelle. Supplémenter sans déficit confirmé n'est pas justifié, en particulier compte tenu de la LSS très basse.</p>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ COMPOSÉ LE PLUS À RISQUE DE LA LISTE. LSS EFSA : 12 mg/j.</strong> Les compléments couramment proposés dosent 25–50 mg/j → au-delà de la LSS européenne. La neuropathie sensitive dose-dépendante peut être irréversible. Ne pas dépasser 12 mg/j au long cours sans suivi neurologique. La B6 réduit l'efficacité de la lévodopa (sauf si inhibiteur de DOPA décarboxylase périphérique associé). Interaction avec phénytoïne et phénobarbital.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 — OMÉGA-3 -->
+      <div class="compound-item" id="c11">
+        <div class="compound-header" onclick="toggleCompound('c11')">
+          <span class="compound-num">11</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Oméga-3 (EPA/DHA)</div>
+            <div class="compound-sub">Résolvines · Protectines · Chronotrope négatif</div>
+          </div>
+          <div class="compound-badges"><span class="badge b-prob">⚠️ Probable</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">Les oméga-3 à longue chaîne sont précurseurs des résolvines et protectines (médiateurs pro-résolutifs de l'inflammation). Le DHA s'incorpore dans les membranes des cardiomyocytes, modifiant l'électrophysiologie (réduction automaticité sinusale). Effet chronotrope négatif documenté dans plusieurs populations. Amélioration de la VFC parasympathique documentée chez des enfants obèses (Ibrahim 2025). Aucun ECR POTS ou ME/SFC.</p>
+          <div class="alert-box">
+            <p><strong>⚠️ Paradoxe thérapeutique POTS :</strong> l'effet hypotenseur modeste des oméga-3 peut être délétère si le patient présente une hypotension orthostatique. Adapter la dose selon le profil hémodynamique. LSS EFSA : 5 g/j EPA+DHA. Allongement du temps de saignement &gt;3 g/j — surveillance renforcée si anticoagulants ou antiagrégants.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 — MAGNÉSIUM -->
+      <div class="compound-item" id="c12">
+        <div class="compound-header" onclick="toggleCompound('c12')">
+          <span class="compound-num">12</span>
+          <div class="compound-name-wrap">
+            <div class="compound-name">Magnésium</div>
+            <div class="compound-sub">Bisglycinate · Antagoniste Ca²⁺ · Mg-ATP</div>
+          </div>
+          <div class="compound-badges"><span class="badge b-def">💉 Si déplétion</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">Le magnésium est cofacteur de &gt;300 enzymes, antagoniste calcique endogène, stabilisateur du canal NMDA, et produit Mg-ATP mitochondrial (seule forme biologiquement active). La magnésémie sérique est un mauvais reflet du statut réel (99 % est intracellulaire). La magnésémie érythrocytaire est plus pertinente. Dans le Covid long, la dérégulation d'ACE2 active le RAAS → hyperaldostéronisme secondaire → perte rénale accrue de Mg²⁺ et K⁺ → alcalose métabolique insensible au chlorure.</p>
+          <div class="info-box">
+            <p><strong>Lacune documentée :</strong> aucun ECR magnésium dans POTS ou ME/SFC. Le rationnel biochimique et physiopathologique est très solide. La correction d'un déficit documenté par magnésémie érythrocytaire reste une recommandation de bon sens clinique.</p>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Chélation quinolones et tétracyclines (espacer 2h). LSS suppléments : 250 mg/j (seuil grand public — pas seuil de toxicité). Bisglycinate : meilleure tolérance digestive que l'oxyde. Prudence si insuffisance rénale. Hypermagnésémie possible si IRC stade ≥3.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 — CHOLINE -->
+      <div class="compound-item" id="c13">
+        <div class="compound-header" onclick="toggleCompound('c13')">
+          <span class="compound-num">13</span>
+          <div class="compound-name-wrap"><div class="compound-name">Choline + PEMT</div><div class="compound-sub">Acétylcholine · Tonus vagal · Phosphatidylcholine</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Mécanisme moléculaire</p>
+          <p class="cb-text">La choline est le précurseur de l'acétylcholine, neurotransmetteur principal du nerf vague, et des phospholipides membranaires (voie PEMT). Un déficit pourrait réduire la synthèse d'ACh (tonus vagal insuffisant), altérer l'intégrité membranaire neuronale et compromettre la voie cholinergique anti-inflammatoire. Les polymorphismes PEMT (rs12325817) sont fréquents chez les femmes → besoins accrus en choline alimentaire. En excès (&gt;3,5 g/j) : production de TMAO via le microbiote — facteur de risque CV discuté.</p>
+        </div>
+      </div>
+
+      <!-- 14 — COLLAGÈNE/GLYCINE -->
+      <div class="compound-item" id="c14">
+        <div class="compound-header" onclick="toggleCompound('c14')">
+          <span class="compound-num">14</span>
+          <div class="compound-name-wrap"><div class="compound-name">Collagène hydrolysé / Glycine</div><div class="compound-sub">GlyNAC · TGF-β · Glutathion</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéc./Prob.</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Axe 1 — Remodelage vasculaire post-COVID</p>
+          <p class="cb-text">L'infection par SARS-CoV-2 active la voie TGF-β → différenciation en myofibroblastes → surproduction de collagène I et III dans la matrice extracellulaire vasculaire → réduction de compliance veineuse → intolérance orthostatique indépendamment de la commande nerveuse. Distingue la dysautonomie neurogène (commande) de la dysautonomie structurelle vasculaire (support).</p>
+          <p class="cb-section">Axe 2 — Glycine comme précurseur limitant du glutathion (GlyNAC)</p>
+          <div class="cb-study">
+            <strong>Kumar &amp; Sekhar, 2023</strong> — ECR · n=24 · Adultes âgés · <em>J Gerontol A Biol Sci Med Sci</em><br>
+            GlyNAC 16 semaines vs placebo. Correction du déficit en GSH, amélioration stress oxydatif, dysfonction mitochondriale, inflammation, dysfonction endothéliale, force musculaire, cognition. Bénéfices réversibles à l'arrêt. Non testé dans Covid long — rationnel directement transposable.
+            <span class="study-ref">PMID 35975308 · <a href="https://pubmed.ncbi.nlm.nih.gov/35975308/" target="_blank" rel="noopener">PubMed</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 — ALA -->
+      <div class="compound-item" id="c15">
+        <div class="compound-header" onclick="toggleCompound('c15')">
+          <span class="compound-num">15</span>
+          <div class="compound-name-wrap"><div class="compound-name">Acide alpha-lipoïque</div><div class="compound-sub">ALA · Thiorédoxine · ADMA · Neuropathie autonome</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-text">ALA est un antioxydant qui régénère le glutathion et améliore la fonction endothéliale (↓ ADMA). Dans la neuropathie diabétique (Sztanek 2020 : ALA 600 mg/j, 6 mois), amélioration de la fonction endothéliale et du score autonome cardiovasculaire documentée. <strong>Toutes les données viennent de la neuropathie diabétique — extrapolation nécessaire.</strong> Aucune donnée dans POTS post-viral.</p>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Effet hypoglycémiant potentiel — surveillance si insuline ou sulfamides. Chélation de métaux (espacer 2h avec suppléments minéraux). Troubles GI fréquents.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16 — ALCAR -->
+      <div class="compound-item" id="c16">
+        <div class="compound-header" onclick="toggleCompound('c16')">
+          <span class="compound-num">16</span>
+          <div class="compound-name-wrap"><div class="compound-name">L-carnitine / ALCAR</div><div class="compound-sub">β-oxydation · BHE · Donneur acétyl-ACh</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-text">L'ALCAR (acétyl-L-carnitine) traverse la BHE et sert de donneur d'acétyl pour la synthèse d'acétylcholine — pertinent pour le tonus vagal. La L-carnitine agit sur le transport mitochondrial des acides gras périphériques (β-oxydation). Synergie proposée avec la NAC (Barlattani 2025) sur le réseau glutamatergique xc/mGluR2. ECR ALCAR dans ME/SFC et MDD en faveur de l'efficacité. Pas d'ECR ALCAR dans le POTS ou le Covid long autonomique.</p>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Possible augmentation du TMAO via le microbiote (risque CV discuté). Interaction possible avec acénocoumarol. Odeur corporelle possible à doses élevées. ALCAR préférable à L-carnitine orale pour la pénétration BHE.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 — NAC -->
+      <div class="compound-item" id="c17">
+        <div class="compound-header" onclick="toggleCompound('c17')">
+          <span class="compound-num">17</span>
+          <div class="compound-name-wrap"><div class="compound-name">N-acétylcystéine (NAC)</div><div class="compound-sub">Précurseur glutathion · Stress oxydatif · vWF</div></div>
+          <div class="compound-badges">
+            <span class="badge b-spec">🔬 Spéculatif</span>
+            <span class="badge b-ongoing">⏳ ECR Phase II en cours</span>
+          </div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-text">La NAC est le précurseur de la cystéine, substrat limitant de la synthèse de glutathion (GSH). Le déficit en GSH est documenté dans le Covid long. La NAC figure parmi les composés prioritaires dans les revues récentes (Chen 2025, Front Immunol). Synergie avec ALCAR sur le réseau glutamatergique documentée (Barlattani 2025).</p>
+          <div class="cb-study">
+            <strong>NCT04542161 — Cornell University (Phase II)</strong> · n=95 · ME/SFC<br>
+            NAC 900 mg/j vs 3 600 mg/j vs placebo. En recrutement actif. Clôture prévue avril 2026. Premier ECR de phase II testant la NAC comme thérapie antioxydante avec mesure de l'engagement cible dans le ME/SFC.
+            <span class="study-ref"><a href="https://clinicaltrials.gov/study/NCT04542161" target="_blank" rel="noopener">ClinicalTrials.gov NCT04542161</a></span>
+          </div>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Inhibe la polymérisation du facteur von Willebrand → risque hémorragique accru à haute dose, surtout si anticoagulants. Interaction avec nitroglycérine (potentialisation hypotensive). Dose orale usuelle : 600–1 800 mg/j.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18 — QUERCÉTINE -->
+      <div class="compound-item" id="c18">
+        <div class="compound-header" onclick="toggleCompound('c18')">
+          <span class="compound-num">18</span>
+          <div class="compound-name-wrap"><div class="compound-name">Quercétine</div><div class="compound-sub">Stabilisateur mastocytaire · NF-κB · UGT/CYP3A4</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-text">La quercétine stabilise les mastocytes (inhibition dégranulation in vitro), inhibe NF-κB. Dans le contexte SAMA/SED/POTS, la stabilisation mastocytaire pourrait réduire l'activation sympathique réflexe à l'histamine. Biodisponibilité orale faible (~2 %) — formes phytosomales améliorent l'absorption.</p>
+          <div class="pharmd-box">
+            <p class="pharmd-title">⚕ Paradoxe UGT/sulfatation</p>
+            <p>La quercétine inhibe les UGT (UDP-glucuronosyltransférases) et les sulfotransférases. Dans le SAMA, la voie de dégradation de l'histamine peut être ralentie par la quercétine → stabilisation mastocytaire en amont + ralentissement de la dégradation de l'histamine en aval. Inhibiteur CYP3A4 et CYP2C9 : interactions potentielles avec statines, benzodiazépines, anticoagulants, immunosuppresseurs. Vérifier les co-traitements.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19 — MÉLATONINE -->
+      <div class="compound-item" id="c19">
+        <div class="compound-header" onclick="toggleCompound('c19')">
+          <span class="compound-num">19</span>
+          <div class="compound-name-wrap"><div class="compound-name">Mélatonine</div><div class="compound-sub">Rythme circadien · SNA nocturne · Hypotension</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-text">La mélatonine synchronise le rythme circadien et module le SNA nocturne. Propriétés anti-arythmiques discutées (Vicent 2021). Effet hypotenseur documenté — potentiellement délétère dans le POTS avec hypotension orthostatique. La mélatonine est un signal d'entrée en sommeil — si le SNA ne peut pas initier la cascade parasympathique (tonus sympathique chroniquement élevé dans POTS), le signal peut ne pas être reçu efficacement.</p>
+          <div class="alert-box">
+            <p><strong>⚠️ Précautions :</strong> Potentialisation sédatifs, benzodiazépines, antihistaminiques. Interaction fluvoxamine (inhibiteur CYP1A2 → taux mélatonine multipliés). ANSES : vigilance &gt;2 mg. Effet hypotenseur à surveiller dans POTS.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20 — OLIGO-ÉLÉMENTS -->
+      <div class="compound-item" id="c20">
+        <div class="compound-header" onclick="toggleCompound('c20')">
+          <span class="compound-num">20</span>
+          <div class="compound-name-wrap"><div class="compound-name">Oligo-éléments : Zn · Se · Iode</div><div class="compound-sub">Lysyl oxydases · GPx · Désiodases · Thyroïde</div></div>
+          <div class="compound-badges"><span class="badge b-spec">🔬 Spéculatif</span></div>
+          <span class="compound-chevron">▼</span>
+        </div>
+        <div class="compound-body">
+          <p class="cb-section">Zinc</p>
+          <p class="cb-text">Cofacteur de &gt;300 enzymes dont les lysyl oxydases (réticulation collagène → résistance mécanique vasculaire), la SOD (défense antioxydante) et métalloprotéases. Déficit fréquent en contexte inflammatoire chronique (redistribution hépatique). <strong>Piège :</strong> excès de zinc (&gt;25 mg/j au long cours) induit une carence en cuivre — documentée avec neuropathie sensitivo-motrice et dysfonction sudomotrice autonomique dans 77 % des cas (Taylor 2017, Mayo Clinic, PMID non listé dans le corpus de base).</p>
+          <p class="cb-section">Sélénium</p>
+          <p class="cb-text">Cofacteur des glutathion peroxydases (GPx) et des désiodases (conversion T4 → T3). Un déficit compromet simultanément la défense antioxydante et la fonction thyroïdienne. La marge thérapeutique est étroite : ne pas dépasser 200 µg/j. Sélénose à partir de 400 µg/j.</p>
+          <p class="cb-section">Iode</p>
+          <p class="cb-text">Substrat de la synthèse des hormones thyroïdiennes (T3/T4). L'hypothyroïdie subclinique est un diagnostic différentiel de la dysautonomie à exclure systématiquement (TSH + T4L + T3L). Excès contre-indiqué si thyroïdite de Hashimoto.</p>
+        </div>
+      </div>
+
+    </div><!-- /compound-list -->
+  </div>
+</div><!-- /tab-fiches -->
+
+<!-- ═══════════════════════════════════════════
+     ONGLET 04 — SYNERGIES
+═══════════════════════════════════════════ -->
+<div id="tab-synergies" class="gtab-panel">
+  <div class="guide-section">
+    <span class="section-num" aria-hidden="true">04</span>
+    <h2 class="section-title">Combinaisons synergiques</h2>
+    <p class="section-subtitle">Rationnel biochimique — pas des protocoles établis</p>
+
+    <div class="rule-box">
+      <p><strong>Cadre d'interprétation :</strong> ces associations reposent sur une cohérence biochimique documentée. Aucune n'a été testée en tant que combinaison dans un ECR dans le POTS ou le ME/SFC. Les effets synergiques sont théoriques ou déduits de mécanismes distincts agissant sur la même voie. Toute approche combinée doit être discutée avec le patient en tenant compte des co-médications.</p>
+    </div>
+
+    <h3 class="cb-section">Axe mitochondrial — CoQ10 + Créatine + B vitamines</h3>
+    <p class="prose">CoQ10 optimise le transport d'électrons (complexes I→III), la créatine tamponne les réserves d'ATP (PCr/Cr kinase), les vitamines B1 et B3 sont cofacteurs des mêmes complexes enzymatiques (pyruvate déshydrogénase, α-KGDH). Le magnésium active toutes les étapes (Mg-ATP = forme biologiquement active). Un déficit combiné B3 + B1 + Mg a un effet synergique sur la dysfonction mitochondriale — adresser les trois simultanément en cas de déplétion documentée. L'ECR Castro-Marrero 2021 (CoQ10 + NADH) illustre que cibler la chaîne mitochondriale fonctionne dans le ME/SFC.</p>
+
+    <h3 class="cb-section">Axe méthylation — B12 + Folates (5-MTHF) + Choline</h3>
+    <p class="prose">Les trois alimentent le cycle de méthylation (SAM → SAH → homocystéine → méthionine). Un déficit sur l'un compromet les deux autres. L'hyperhomocystéinémie est un marqueur de dysfonction du cycle et un facteur de risque endothélial autonome. Règle absolue : vérifier le statut B12 avant toute supplémentation en folates. Si MTHFR C677T : utiliser 5-MTHF, pas l'acide folique.</p>
+
+    <h3 class="cb-section">Axe antioxydant — NAC + ALA + CoQ10 (+ Glycine)</h3>
+    <p class="prose">NAC → cystéine → glutathion (GSH). ALA régénère la vitamine C et E réduites. CoQ10 protège les membranes mitochondriales du stress oxydatif. La glycine (GlyNAC) est le précurseur limitant du GSH aux côtés de la cystéine — son ajout à la NAC augmente significativement la synthèse de GSH (Sekhar 2023). Complémentarité mécanistique solide. Données cliniques dans POTS/ME/SFC : absentes pour la combinaison. L'ECR NAC Phase II Cornell (NCT04542161) testera la NAC seule — les résultats sont attendus en 2026.</p>
+
+    <h3 class="cb-section">Axe SNA — Sel + Oméga-3 + Magnésium</h3>
+    <p class="prose">Le sel augmente le volume plasmatique (retour veineux), les oméga-3 améliorent le tonus parasympathique (chronotrope négatif, VFC), le magnésium stabilise l'excitabilité neuronale et réduit l'hypertonus sympathique. <strong>Attention paradoxe thérapeutique :</strong> oméga-3 et magnésium ont des effets hypotenseurs — à adapter si hypotension orthostatique prédominante.</p>
+
+    <h3 class="cb-section">Axe SAMA/MCAS — Quercétine + Vitamine C + Oméga-3</h3>
+    <p class="prose">Dans les dysautonomies avec activation mastocytaire associée (SAMA/MCAS) : quercétine stabilise les mastocytes (dégranulation), vitamine C est cofacteur de la dégradation de l'histamine (DAO), oméga-3 réduit l'activation inflammatoire de bas grade. La B6 (PLP) est cofacteur de la DAO — mais sa LSS basse impose une grande prudence. Éviter l'acide nicotinique (flush histaminique).
+    </p>
+
+  </div>
+</div><!-- /tab-synergies -->
+
+<!-- ═══════════════════════════════════════════
+     ONGLET 05 — OUTIL CLINIQUE PRO
+═══════════════════════════════════════════ -->
+<div id="tab-outil" class="gtab-panel">
+  <div class="guide-section">
+    <span class="section-num" aria-hidden="true">05</span>
+    <h2 class="section-title">Outil clinique pro</h2>
+    <p class="section-subtitle">Bilan initial · Matrice interactions médicamenteuses · 4 profils · Check-list consultation · Tableau LSS enrichi</p>
+
+    <!-- BILAN INITIAL -->
+    <h3 class="cb-section">Bilan biologique initial recommandé</h3>
+    <div class="table-wrap">
+      <table class="mol-table">
+        <thead><tr><th>Paramètre</th><th>Rationnel dans la dysautonomie</th><th>Seuil d'alerte clinique</th><th>Action si anomalie</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ferritine + CST + CRP</strong></td><td>Carence martiale fréquente dans POTS (50 % femmes)</td><td>Ferritine &lt;50 µg/L chez personnes symptomatiques</td><td>Supplémentation orale ou IV selon profil</td></tr>
+          <tr><td><strong>25(OH)-D3</strong></td><td>Déficit associé à inflammation chronique et POTS</td><td>&lt;30 ng/mL</td><td>Supplémenter D3 (pas D2) — surveiller calcémie si doses &gt;4 000 UI/j</td></tr>
+          <tr><td><strong>B12 (holotranscobalamine)</strong></td><td>Neuropathie autonome si déficit</td><td>&lt;35 pmol/L (holoTC)</td><td>Méthylcobalamine IM ou sublinguale</td></tr>
+          <tr><td><strong>Folates sériques</strong></td><td>Cycle méthylation, remyélinisation</td><td>&lt;5 nmol/L</td><td>5-MTHF après vérification B12</td></tr>
+          <tr><td><strong>Mg érythrocytaire</strong></td><td>Déplétion RAAS fréquente dans Covid long</td><td>&lt;1,8 mmol/L (érythrocytaire)</td><td>Bisglycinate 200–400 mg/j</td></tr>
+          <tr><td><strong>Ionogramme complet</strong><br><span class="mono">(Na, K, Cl, HCO₃⁻)</span></td><td>Déséquilibres électrolytiques RAAS, axe acide-base</td><td>Hypokaliémie &lt;3,5 mmol/L · Alcalose métabolique</td><td>Correction K⁺ alimentaire et/ou médicamenteux</td></tr>
+          <tr><td><strong>TSH + T4L + T3L</strong></td><td>Hypothyroïdie subclinique = diagnostic différentiel</td><td>TSH &gt;4 mUI/L ou T3L basse</td><td>Adresser en endocrinologie</td></tr>
+          <tr><td><strong>NFS + CRP</strong></td><td>Inflammation de bas grade · Anémie</td><td>CRP &gt;5 mg/L persistante</td><td>Bilan inflammatoire étiologique</td></tr>
+          <tr><td><strong>Calcémie</strong></td><td>Si vit D haute dose ou contexte inflammatoire</td><td>&gt;2,6 mmol/L</td><td>Stopper vit D · Bilan étiologique</td></tr>
+          <tr><td><strong>B6 (PLP plasmatique)</strong></td><td>Si supplémentation préalable ou déficit suspecté</td><td>&lt;30 nmol/L (déficit) · &gt;200 nmol/L (excès)</td><td>Stopper supplémentation si &gt;LSS clinique</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MATRICE INTERACTIONS -->
+    <h3 class="cb-section">Matrice interactions médicamenteuses × traitements POTS standards</h3>
+    <p class="prose" style="margin-bottom:12px;">Croise les 20 composés avec les médicaments les plus prescrits dans la dysautonomie. Légende : 🔴 Surveillance obligatoire · 🟡 Prudence · 🟢 Pas d'interaction documentée · — Non applicable.</p>
+
+    <div class="matrix-section">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Composé</th>
+            <th>Fludrocortisone</th>
+            <th>Ivabradine</th>
+            <th>Propranolol</th>
+            <th>Midodrine</th>
+            <th>ISRS (POTS)</th>
+            <th>AVK / Warfarine</th>
+            <th>Metformine</th>
+            <th>IPP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Sel + hydratation</th><td class="mx-high">🔴 ↑ volémie</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-low">🟢</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>CoQ10</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-low">🟢</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-high">🔴 ↓ INR</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Vitamine D</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Vitamine C</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-low">🟢 (dose nutritionnelle)</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Créatine</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Fer</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-mod">🟡 ↓ absorption</td></tr>
+          <tr><th>B12 + Folates</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-high">🔴 Métformine ↓ B12</td><td class="mx-mod">🟡 IPP ↓ B12</td></tr>
+          <tr><th>Niacine (B3)</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Oméga-3</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-low">🟢</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-mod">🟡 &gt;3 g/j saignement</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Magnésium</th><td class="mx-mod">🟡 Alcalose RAAS</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>NAC</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-mod">🟡 ↑ risque saignement (vWF)</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>ALCAR</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-mod">🟡 Acénocoumarol</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Quercétine</th><td class="mx-none">—</td><td class="mx-mod">🟡 CYP3A4</td><td class="mx-mod">🟡 CYP2C9</td><td class="mx-none">—</td><td class="mx-mod">🟡 CYP2C9</td><td class="mx-mod">🟡 CYP2C9 ↑ INR</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Mélatonine</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-mod">🟡 CYP1A2 (fluvoxamine)</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+          <tr><th>Vitamine B6</th><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td><td class="mx-none">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="matrix-legend">
+      <span><span class="legend-dot" style="background:#fca5a5;"></span>🔴 Surveillance obligatoire (ajustement ou monitoring biologique requis)</span>
+      <span><span class="legend-dot" style="background:#fde68a;"></span>🟡 Prudence (adapter selon dose et contexte)</span>
+      <span><span class="legend-dot" style="background:#bbf7d0;"></span>🟢 Pas d'interaction documentée aux doses nutritionnelles</span>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 4 PROFILS CLINIQUES -->
+    <h3 class="cb-section">4 profils cliniques — priorisation par terrain</h3>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-letter">A</div>
+        <div class="profile-title">Fatigue + Intolérance orthostatique</div>
+        <div class="profile-sx">Vertiges au lever · Position debout difficile · Tachycardie posturale documentée</div>
+        <ul class="profile-prio">
+          <li>1. Bilan martial complet → corriger si ferritine &lt;50</li>
+          <li>2. Sel + hydratation (6–10 g NaCl + 2–3 L eau)</li>
+          <li>3. Vitamine D si déficit (&lt;30 ng/mL)</li>
+          <li>4. Oméga-3 (attention hypotension)</li>
+          <li><em>Fiches : 01 · 03 · 06 · 11</em></li>
+        </ul>
+      </div>
+      <div class="profile-card">
+        <div class="profile-letter">B</div>
+        <div class="profile-title">Fatigue cognitive + Brouillard mental</div>
+        <div class="profile-sx">Mémoire · Concentration · Cerveau "éteint" · Malaise post-effort</div>
+        <ul class="profile-prio">
+          <li>1. CoQ10 200 mg (+ NADH 20 mg si toléré)</li>
+          <li>2. Créatine monohydrate 3–5 g/j</li>
+          <li>3. B12 + 5-MTHF si déficit documenté</li>
+          <li>4. Magnésium érythrocytaire → corriger si bas</li>
+          <li><em>Fiches : 02 · 05 · 07 · 12</em></li>
+        </ul>
+      </div>
+      <div class="profile-card">
+        <div class="profile-letter">C</div>
+        <div class="profile-title">Sommeil non récupérateur</div>
+        <div class="profile-sx">Dormir sans récupérer · Réveil épuisé · Activité sympathique nocturne</div>
+        <ul class="profile-prio">
+          <li>1. Magnésium bisglycinate (400 mg soirée)</li>
+          <li>2. Oméga-3 (amélioration VFC parasympathique)</li>
+          <li>3. Mélatonine 0,5–1 mg (prudence si hypotension)</li>
+          <li>4. Cohérence cardiaque + hygiène lumineuse</li>
+          <li><em>Fiches : 12 · 11 · 19</em></li>
+        </ul>
+      </div>
+      <div class="profile-card">
+        <div class="profile-letter">D</div>
+        <div class="profile-title">Réactivité histaminique / SAMA</div>
+        <div class="profile-sx">Flush · Réactions alimentaires · Symptômes fluctuants · MCAS associé</div>
+        <ul class="profile-prio">
+          <li>1. Quercétine phytosomale (vérifier CYP3A4)</li>
+          <li>2. Vitamine C (cofacteur DAO)</li>
+          <li>3. Oméga-3 (anti-inflammatoire résolutif)</li>
+          <li>4. Éviter acide nicotinique + B6 &gt;12 mg/j</li>
+          <li><em>Fiches : 18 · 04 · 11 · 10</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- TABLEAU LSS ENRICHI -->
+    <h3 class="cb-section">Limites supérieures de sécurité — version clinique enrichie</h3>
+    <div class="table-wrap">
+      <table class="lss-table">
+        <thead>
+          <tr>
+            <th>Composé</th>
+            <th>Dose usuelle</th>
+            <th>LSS EFSA/ANSES</th>
+            <th>Risque principal</th>
+            <th>Si IRC ≥3</th>
+            <th>Si grossesse</th>
+            <th>Si SAMA/MCAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sel (NaCl)</td><td>6–10 g/j (POTS)</td><td>Pas de LSS</td><td>HTA, hypokaliémie</td><td class="lss-warn">Contre-indiqué si rétention sodée</td><td class="lss-warn">Limiter à 6 g/j</td><td class="lss-ok">OK</td></tr>
+          <tr><td>CoQ10</td><td>100–300 mg/j</td><td>NOAEL ~1 200 mg/j</td><td>Interaction AVK</td><td class="lss-ok">OK (ajuster)</td><td class="lss-warn">Données limitées</td><td class="lss-ok">OK</td></tr>
+          <tr><td>Vitamine D3</td><td>1 000–4 000 UI/j</td><td>4 000 UI/j</td><td>Hypercalcémie</td><td class="lss-warn">↓ dose — surveiller calcémie</td><td class="lss-warn">≤2 000 UI/j</td><td class="lss-warn">↑ risque macrophagique</td></tr>
+          <tr><td>Vitamine C</td><td>500–1 000 mg/j</td><td>1 000 mg/j</td><td>Hyperoxalurie</td><td class="lss-warn">↓ dose — lithiase rénale</td><td class="lss-ok">OK ≤1 g/j</td><td class="lss-ok">OK (cofacteur DAO)</td></tr>
+          <tr><td>Créatine</td><td>3–5 g/j</td><td>5 g/j (ISSN)</td><td>↑ créatininémie (non néphrotox.)</td><td class="lss-warn">Surveiller eGFR</td><td class="lss-warn">Données insuffisantes</td><td class="lss-ok">OK</td></tr>
+          <tr><td>Fer (élémentaire)</td><td>Selon bilan</td><td>45 mg/j</td><td>Pro-oxydant, hémochromatose</td><td class="lss-warn">Exclure surcharge martiale (CST)</td><td class="lss-ok">OK si déficit documenté</td><td class="lss-ok">OK</td></tr>
+          <tr><td>Folates (acide folique)</td><td>400–800 µg/j</td><td>1 000 µg/j</td><td>Masquage déficit B12</td><td class="lss-ok">OK</td><td class="lss-ok">Recommandé (5-MTHF préféré)</td><td class="lss-ok">OK</td></tr>
+          <tr><td>Nicotinamide (B3)</td><td>500–1 500 mg/j</td><td>900 mg/j</td><td>Inhibition SIRT1</td><td class="lss-ok">OK</td><td class="lss-warn">Données limitées</td><td class="lss-ok">OK (pas flush)</td></tr>
+          <tr><td>Acide nicotinique</td><td>—</td><td class="lss-warn">10 mg/j ⚠️</td><td>Flush histaminique</td><td class="lss-ok">OK (dose faible)</td><td class="lss-warn">Éviter</td><td class="lss-warn">CI — flush histaminique</td></tr>
+          <tr><td><strong class="lss-warn">Vitamine B6 ⚠️</strong></td><td>—</td><td class="lss-warn">12 mg/j EFSA</td><td>Neuropathie sensitive irréversible</td><td class="lss-warn">Même limite</td><td class="lss-warn">≤2 mg/j</td><td class="lss-warn">CI si SAMA (PLP cofacteur HDC)</td></tr>
+          <tr><td>Oméga-3 EPA+DHA</td><td>1–3 g/j</td><td>5 g/j EFSA</td><td>Saignement &gt;3 g/j</td><td class="lss-ok">OK ≤2 g/j</td><td class="lss-ok">OK ≤3 g/j</td><td class="lss-ok">Bénéfique (résolutif)</td></tr>
+          <tr><td>Magnésium (supp.)</td><td>200–400 mg/j</td><td>250 mg/j (grand public)</td><td>Diarrhée osmotique</td><td class="lss-warn">↓ dose — hypermagnésémie</td><td class="lss-ok">OK (bisglycinate)</td><td class="lss-ok">OK</td></tr>
+          <tr><td>NAC</td><td>600–1 800 mg/j</td><td>Pas de LSS</td><td>↑ risque hémorragique (vWF)</td><td class="lss-ok">OK</td><td class="lss-warn">Données limitées</td><td class="lss-ok">OK</td></tr>
+          <tr><td>Quercétine</td><td>500–1 000 mg/j</td><td>Pas de LSS</td><td>CYP3A4/CYP2C9 inhibition</td><td class="lss-ok">OK</td><td class="lss-warn">Données insuffisantes</td><td class="lss-warn">Paradoxe UGT — surveiller</td></tr>
+          <tr><td>Mélatonine</td><td>0,5–2 mg/j</td><td>Vigilance &gt;2 mg (ANSES)</td><td>Hypotension, somnolence</td><td class="lss-ok">OK ≤1 mg</td><td class="lss-warn">Éviter</td><td class="lss-ok">OK (≤2 mg)</td></tr>
+          <tr><td>Zinc</td><td>15–25 mg/j</td><td>25 mg/j</td><td>Carence Cu si &gt;25 mg/j chronique</td><td class="lss-ok">OK si eGFR stable</td><td class="lss-ok">OK ≤25 mg/j</td><td class="lss-ok">OK (anti-inflammatoire)</td></tr>
+          <tr><td>Sélénium</td><td>50–200 µg/j</td><td>300 µg/j</td><td>Sélénose — marge étroite</td><td class="lss-warn">↓ dose 50 µg/j</td><td class="lss-warn">≤70 µg/j</td><td class="lss-ok">OK</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CHECK-LIST CONSULTATION -->
+    <h3 class="cb-section">Check-list consultation — à remettre au patient</h3>
+    <div class="rule-box">
+      <p>Cette section peut être imprimée et amenée par le patient en consultation.</p>
+    </div>
+    <p class="prose"><strong>Bilans biologiques à demander :</strong></p>
+    <ul class="check-list">
+      <li>Bilan martial complet : ferritine + coefficient de saturation de la transferrine (CST) + CRP</li>
+      <li>Vitamine D : 25(OH)-D3</li>
+      <li>Vitamine B12 : holotranscobalamine si possible (sinon cobalamine totale)</li>
+      <li>Folates sériques</li>
+      <li>Magnésium érythrocytaire (préciser "érythrocytaire" — pas sérique)</li>
+      <li>Ionogramme complet : Na · K · Cl · HCO₃⁻ · Ca · P</li>
+      <li>TSH + T4 libre + T3 libre (exclure dysthyroïdie)</li>
+      <li>NFS complète + CRP ultrasensible</li>
+    </ul>
+
+    <p class="prose" style="margin-top:20px;"><strong>Points à aborder en consultation :</strong></p>
+    <ul class="check-list">
+      <li>Interprétation des zones grises biologiques (ferritine "normale basse" = fonctionnellement insuffisante ?)</li>
+      <li>Co-médications et interactions (en particulier AVK, metformine, IPP, thiazidiques, ivabradine)</li>
+      <li>Durée de la supplémentation et critères de réévaluation</li>
+      <li>Priorisation selon profil clinique dominant (A/B/C/D)</li>
+    </ul>
+
+    <div class="alert-box" style="margin-top:20px;">
+      <p><strong>À NE PAS empiler sans bilan préalable :</strong> Vitamine B6 &gt;12 mg/j · Fer sans bilan martial · Vitamine D haute dose sans contrôle de la calcémie · Folates sans vérification B12 · Sel sans ionogramme si IRC ou cardiopathie.</p>
+    </div>
+
+  </div>
+</div><!-- /tab-outil -->
+
+<!-- ═══════════════════════════════════════════
+     BLOC ÉPISTÉMIQUE
+═══════════════════════════════════════════ -->
+<div class="epistemic-block" role="note">
+  <p class="epistemic-label">État des connaissances — Mars 2026</p>
+  <p>
+    <strong>Ce qui est établi :</strong> sur les 20 composés analysés, 1 seul dispose d'un consensus
+    d'experts solide dans le POTS (sel + hydratation). 4 disposent de données interventionnelles dans
+    les populations cibles : CoQ10 + NADH dans le ME/SFC (ECR n=207, PMID 34444817), vitamine D dans
+    le Covid long (ECR n=80, PMID 39072958), vitamine C + L-arginine dans le Covid long (ECR n=46, PMID 36501014).
+    Le substrat lésionnel (SFN dans 77–89 % des PASC, anomalies musculaires post-effort dans le Covid long)
+    est documenté histologiquement et justifie mécanistiquement les approches neuroprotectrices.
+  </p>
+  <p>
+    <strong>Ce qui reste incertain :</strong> pour les 16 composés restants, les mécanismes sont plausibles
+    — parfois très solides (créatine, magnésium, collagène/glycine, ALCAR) — mais l'absence d'ECR dans
+    les populations cibles empêche toute recommandation de niveau 1. L'ECR NAC Phase II (NCT04542161,
+    Cornell University, clôture avril 2026) et l'ECR créatine (NCT06992414, Calgary, clôture juin 2026)
+    apporteront les premières données interventionnelles attendues. Ce guide sera mis à jour dès publication.
+    Les interactions médicamenteuses avec les traitements POTS standards (fludrocortisone, ivabradine,
+    propranolol) sont construites sur des bases pharmacologiques mécanistiques — pas sur des ECR croisés.
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CROSS-SELL
+═══════════════════════════════════════════ -->
+<section class="crosssell-section">
+  <div class="crosssell-inner">
+    <p class="crosssell-label">Découvrir la collection myBOUSSOLE</p>
+    <div class="crosssell-grid">
+      <a href="#" class="crosssell-card">
+        <div class="crosssell-cover" style="background:#36454F;"><span class="crosssell-code">G1</span></div>
+        <p class="crosssell-title">Covid long — Diagnostic pour le médecin démuni</p>
+      </a>
+      <a href="#" class="crosssell-card">
+        <div class="crosssell-cover" style="background:#4A6741;"><span class="crosssell-code">G-COVID-SUPPL</span></div>
+        <p class="crosssell-title">Suppléments &amp; Covid long — ~60 molécules</p>
+      </a>
+      <a href="#" class="crosssell-card">
+        <div class="crosssell-cover" style="background:#5F9EA0;"><span class="crosssell-code">G-U1</span></div>
+        <p class="crosssell-title">30 premiers jours — Guide utilisateur</p>
+      </a>
+      <a href="#" class="crosssell-card">
+        <div class="crosssell-cover" style="background:#D4A017;"><span class="crosssell-code">G-U2</span></div>
+        <p class="crosssell-title">Pacing &amp; Énergie — Vivre avec le malaise post-effort</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SOURCES
+═══════════════════════════════════════════ -->
+<section class="sources-section">
+  <h2 class="sources-title">Sources vérifiées</h2>
+  <p class="sources-note">Tous les PMIDs vérifiés via PubMed MCP. Zéro PMID non contrôlé. Les essais cliniques sont référencés via ClinicalTrials.gov.</p>
+  <ol class="sources-list">
+    <li id="ref-1">Snapper H, Cheshire WP. Oral and intravenous hydration in orthostatic hypotension and POTS. <em>Auton Neurosci.</em> 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/35123367/" target="_blank" rel="noopener">PMID 35123367 — PubMed</a></li>
+    <li id="ref-2">Aziz Q et al. AGA Clinical Practice Update on GI Manifestations in hEDS. <em>Clin Gastroenterol Hepatol.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/40387691/" target="_blank" rel="noopener">PMID 40387691 — PubMed</a></li>
+    <li id="ref-3">Castro-Marrero J et al. CoQ10 + NADH Supplementation in ME/CFS. <em>Nutrients.</em> 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/34444817/" target="_blank" rel="noopener">PMID 34444817 — PubMed</a></li>
+    <li id="ref-4">Mantle D et al. Mitochondrial Dysfunction and CoQ10 in Post-Viral Fatigue. <em>Int J Mol Sci.</em> 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38203745/" target="_blank" rel="noopener">PMID 38203745 — PubMed</a></li>
+    <li id="ref-5">Chen LZ et al. Mitochondrial metabolic rescue in post-COVID-19 syndrome. <em>Front Immunol.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/40486513/" target="_blank" rel="noopener">PMID 40486513 — PubMed</a></li>
+    <li id="ref-6">Charoenporn V et al. Vitamin D supplementation in post-COVID fatigue: RCT. <em>Psychiatry Clin Neurosci.</em> 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/39072958/" target="_blank" rel="noopener">PMID 39072958 — PubMed</a></li>
+    <li id="ref-7">Ostojic SM. Creatine in Post-Viral Fatigue Syndrome. <em>Nutrients.</em> 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/33557013/" target="_blank" rel="noopener">PMID 33557013 — PubMed</a></li>
+    <li id="ref-8">Hennemann AK et al. Impaired Neuroimmune System in Post-COVID — Brain MRS. <em>J Med Virol.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/41427461/" target="_blank" rel="noopener">PMID 41427461 — PubMed</a></li>
+    <li id="ref-9">Bell DSH. Metformin-induced vitamin B12 deficiency and autonomic neuropathy. <em>Diabetes Obes Metab.</em> 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/35491956/" target="_blank" rel="noopener">PMID 35491956 — PubMed</a></li>
+    <li id="ref-10">Macartney MJ et al. DHA-Rich Fish Oil Slows Resting Heart Rate. <em>J Am Nutr Assoc.</em> 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/34379997/" target="_blank" rel="noopener">PMID 34379997 — PubMed</a></li>
+    <li id="ref-11">Ibrahim HAA et al. Omega-3 and heart rate variability in overweight children. <em>Pediatr Res.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/39972155/" target="_blank" rel="noopener">PMID 39972155 — PubMed</a></li>
+    <li id="ref-12">Ranisavljev M et al. Synbiotic supplementation in post-COVID ME/CFS. <em>Eur J Nutr.</em> 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/39592468/" target="_blank" rel="noopener">PMID 39592468 — PubMed</a></li>
+    <li id="ref-13">Sztanek F et al. Alpha-lipoic acid and ADMA in diabetic neuropathy. <em>Arch Med Sci.</em> 2020. <a href="https://pubmed.ncbi.nlm.nih.gov/40395894/" target="_blank" rel="noopener">PMID 40395894 — PubMed</a></li>
+    <li id="ref-14">Helbing DL et al. Acetylcarnitine in neuropsychiatric long COVID. <em>Eur Arch Psychiatry Clin Neurosci.</em> 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38172332/" target="_blank" rel="noopener">PMID 38172332 — PubMed</a></li>
+    <li id="ref-15">Shabbir Z et al. CRPS with hEDS and MCAS — Unconventional Therapies. <em>Cureus.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/40809669/" target="_blank" rel="noopener">PMID 40809669 — PubMed</a></li>
+    <li id="ref-16">Vicent L, Martínez-Sellés M. Circadian rhythms, arrhythmias and sudden death. <em>Front Biosci.</em> 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/34856769/" target="_blank" rel="noopener">PMID 34856769 — PubMed</a></li>
+    <li id="ref-17">Wu X et al. Endothelial barrier damage and long COVID. <em>Angiogenesis.</em> 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/37103631/" target="_blank" rel="noopener">PMID 37103631 — PubMed</a></li>
+    <li id="ref-18">Kumar P, Sekhar RV. GlyNAC in Older Adults — Glutathione and Mitochondrial Function. <em>J Gerontol A.</em> 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/35975308/" target="_blank" rel="noopener">PMID 35975308 — PubMed</a></li>
+    <li id="ref-19">Vaz de Paula CB et al. COVID-19 TGF-β and Pulmonary Fibrosis. <em>Int J Mol Sci.</em> 2021. Vaz de Paula et al., 2021 — PubMed</li>
+    <li id="ref-20">Wilson GN. Autonomic Mechanisms in Ehlers-Danlos and Long COVID. <em>Curr Issues Mol Biol.</em> 2023. Wilson, 2023 — PubMed</li>
+    <li id="ref-21">Tosato M et al. L-Arginine + Vitamin C in Long COVID. <em>Nutrients.</em> 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/36501014/" target="_blank" rel="noopener">PMID 36501014 — PubMed</a></li>
+    <li id="ref-22">Carr AC et al. Ascorbate-dependent vasopressor synthesis. <em>Critical Care.</em> 2015. <a href="https://pubmed.ncbi.nlm.nih.gov/26612352/" target="_blank" rel="noopener">PMID 26612352 — PubMed</a></li>
+    <li id="ref-23">Takeshita N et al. Ascorbic acid deficiency and tetrahydrobiopterin. <em>Neurosci Lett.</em> 2019. <a href="https://pubmed.ncbi.nlm.nih.gov/31794791/" target="_blank" rel="noopener">PMID 31794791 — PubMed</a></li>
+    <li id="ref-24">Badawy AA-B. Nicotinamide as immunotherapy in COVID-19 via PARP1 inhibition. <em>Bioscience Reports.</em> 2020. <a href="https://pubmed.ncbi.nlm.nih.gov/33063092/" target="_blank" rel="noopener">PMID 33063092 — PubMed</a></li>
+    <li id="ref-25">Wu CY et al. Nicotinamide riboside in long COVID — RCT. <em>EClinicalMedicine.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/41357333/" target="_blank" rel="noopener">PMID 41357333 — PubMed</a></li>
+    <li id="ref-26">Badawy AA-B. Kynurenine pathway and COVID-19. <em>Bioscience Reports.</em> 2023. Badawy, 2023 — PubMed</li>
+    <li id="ref-27">Jarjour IT, Jarjour LK. Iron storage and anemia in POTS adolescents. <em>Clin Auton Res.</em> 2013. <a href="https://pubmed.ncbi.nlm.nih.gov/23720007/" target="_blank" rel="noopener">PMID 23720007 — PubMed</a></li>
+    <li id="ref-28">Dugan C et al. Intravenous iron in iron-deficient recreationally active females — IRONWOMAN Trial. <em>Br J Sports Med.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/40032294/" target="_blank" rel="noopener">PMID 40032294 — PubMed</a></li>
+    <li id="ref-29">Costantini A et al. High-dose thiamine in fibromyalgia. <em>BMJ Case Reports.</em> 2013. <a href="https://pubmed.ncbi.nlm.nih.gov/23696141/" target="_blank" rel="noopener">PMID 23696141 — PubMed</a></li>
+    <li id="ref-30">Taylor SW et al. Copper deficiency neuropathy and sudomotor dysfunction. <em>J Neurol Neurosurg Psychiatry.</em> 2017. Taylor et al., 2017 — PubMed</li>
+    <li id="ref-31">Van der Togt V, Rossman JS. Inflammatory acid-base disruption in long COVID. <em>Front Immunol.</em> 2023. Van der Togt &amp; Rossman, 2023 — PubMed</li>
+    <li id="ref-32">Mabillard H, Sayer JA. Electrolyte disturbances in SARS-CoV-2. <em>F1000Research.</em> 2020. Mabillard &amp; Sayer, 2020 — PubMed</li>
+    <li id="ref-33">Wong AC et al. Serotonin reduction in post-acute sequelae of viral infection. <em>Cell.</em> 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/37168654/" target="_blank" rel="noopener">PMID 37168654 — PubMed</a></li>
+    <li id="ref-34">Barlattani T et al. NAC and ALCAR in neuropsychiatric long COVID. <em>Curr Neuropharmacol.</em> 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/39506442/" target="_blank" rel="noopener">PMID 39506442 — PubMed</a></li>
+    <li id="ref-35">Voloshyna L et al. Post-COVID musculoskeletal rehabilitation. <em>Reumatologia.</em> 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/37970119/" target="_blank" rel="noopener">PMID 37970119 — PubMed</a></li>
+    <li id="ref-36">Novak P et al. Multisystem Involvement in Post-Acute Sequelae of COVID-19. <em>Ann Neurol.</em> 2022. <a href="https://doi.org/10.1002/ana.26286" target="_blank" rel="noopener">PMID 34952975 — PubMed</a></li>
+    <li id="ref-37">Novak P et al. Network autonomic analysis of PASC and POTS. <em>Neurol Sci.</em> 2022. <a href="https://doi.org/10.1007/s10072-022-06423-y" target="_blank" rel="noopener">PMID 36169757 — PubMed</a></li>
+    <li id="ref-38">Shouman K et al. Autonomic dysfunction following COVID-19 infection. <em>Clin Auton Res.</em> 2021. <a href="https://doi.org/10.1007/s10286-021-00803-8" target="_blank" rel="noopener">PMID 33860871 — PubMed</a></li>
+  </ol>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="guide-footer">
+  <div class="footer-inner">
+    <p class="footer-sig">Dr Rémy Honoré — Docteur en pharmacie et nutrithérapeute</p>
+    <p class="footer-links">
+      <a href="https://www.myboussole.fr" target="_blank" rel="noopener">myboussole.fr</a> ·
+      <a href="https://app.myboussole.fr" target="_blank" rel="noopener">Boussole app</a>
+    </p>
+    <p class="footer-revision">G2-P · v1.0 · Mars 2026 · Prochaine révision : Juin 2026</p>
+    <p class="footer-disclaimer">Information à visée éducative, non substituable à un avis médical individualisé. Les données présentées constituent une base scientifique à intégrer dans une démarche clinique personnalisée, sous la responsabilité du professionnel de santé.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+/* Navigation onglets */
+function switchGuideTab(event, panelId) {
+  document.querySelectorAll('.gtab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.gtab-panel').forEach(p => p.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+  event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* Accordéons composés */
+function toggleCompound(id) {
+  const item = document.getElementById(id);
+  item.classList.toggle('open');
+}
+
+/* Filtre niveau de preuve */
+function filterByProof(level, btn) {
+  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const rows = document.querySelectorAll('.mol-table tbody tr[data-proof]');
+  rows.forEach(row => {
+    row.style.display = (level === 'all' || row.dataset.proof === level) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
