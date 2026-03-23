@@ -446,8 +446,8 @@ ul.check-list li::before{content:"✓";position:absolute;left:0;color:var(--acce
      3. NAVIGATION
 ═══════════════════════════════════════════ -->
 <nav class="guide-tabs" role="tablist" aria-label="Sections du guide">
-  <button class="gtab active" onclick="switchGuideTab(event,'tab-intro')" role="tab">01 · Introduction</button>
-  <button class="gtab" onclick="switchGuideTab(event,'tab-tableau')" role="tab">02 · Tableau récap.</button>
+  <button class="gtab" onclick="switchGuideTab(event,'tab-intro')" role="tab">01 · Introduction</button>
+  <button class="gtab active" onclick="switchGuideTab(event,'tab-tableau')" role="tab">02 · Tableau récap.</button>
   <button class="gtab" onclick="switchGuideTab(event,'tab-fiches')" role="tab">03 · 20 Composés</button>
   <button class="gtab" onclick="switchGuideTab(event,'tab-synergies')" role="tab">04 · Synergies</button>
   <button class="gtab" onclick="switchGuideTab(event,'tab-outil')" role="tab">05 · Outil clinique</button>
@@ -456,7 +456,7 @@ ul.check-list li::before{content:"✓";position:absolute;left:0;color:var(--acce
 <!-- ═══════════════════════════════════════════
      ONGLET 01 — INTRODUCTION CLINIQUE
 ═══════════════════════════════════════════ -->
-<div id="tab-intro" class="gtab-panel active">
+<div id="tab-intro" class="gtab-panel">
 
   <div class="guide-section">
     <span class="section-num" aria-hidden="true">01</span>
@@ -567,7 +567,7 @@ ul.check-list li::before{content:"✓";position:absolute;left:0;color:var(--acce
 <!-- ═══════════════════════════════════════════
      ONGLET 02 — TABLEAU RÉCAPITULATIF
 ═══════════════════════════════════════════ -->
-<div id="tab-tableau" class="gtab-panel">
+<div id="tab-tableau" class="gtab-panel active">
   <div class="guide-section">
     <span class="section-num" aria-hidden="true">02</span>
     <h2 class="section-title">Tableau récapitulatif des 20 composés</h2>
@@ -1569,6 +1569,13 @@ function toggleCompound(id) {
   const item = document.getElementById(id);
   item.classList.toggle('open');
 }
+
+/* Ouvrir tous les accordéons au chargement */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.compound-item').forEach(item => {
+    item.classList.add('open');
+  });
+});
 
 /* Filtre niveau de preuve */
 function filterByProof(level, btn) {
