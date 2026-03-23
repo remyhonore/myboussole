@@ -1,7 +1,7 @@
 <!-- GUIDE-META
 title: "Covid long : Guide complet pour le médecin démuni"
-code: "G1"
-version: "v2.3"
+code: "G1-V2"
+version: "v2.2"
 date: "2026-03-22"
 public: "pro"
 accent: "#36454F"
@@ -490,13 +490,119 @@ sup a { color:var(--accent); text-decoration:none; font-family:'DM Mono',monospa
   .body-map-wrapper { flex-direction:column; }
   .body-map-svg-wrap { flex:0 0 auto; width:100%; max-width:300px; margin:0 auto; }
 }
+
+/* ===== RÉPONSE RAPIDE ===== */
+.rr-section {
+  background: linear-gradient(135deg, #36454F 0%, #2a3740 100%);
+  padding: 40px clamp(24px,6vw,80px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.rr-inner { max-width: 960px; margin: 0 auto; }
+.rr-label {
+  font-family:'DM Sans',sans-serif; font-size:10px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.18em;
+  color:rgba(255,255,255,0.5); margin-bottom:6px; display:block;
+}
+.rr-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,3vw,28px); font-weight:700;
+  color:#fff; margin-bottom:6px; line-height:1.2;
+}
+.rr-subtitle {
+  font-family:'DM Sans',sans-serif; font-size:13px;
+  color:rgba(255,255,255,0.55); margin-bottom:28px;
+}
+.rr-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:14px; margin-bottom:24px;
+}
+@media(max-width:700px) { .rr-grid { grid-template-columns:1fr; } }
+.rr-card {
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:12px; padding:20px; position:relative;
+  transition:background .2s;
+}
+.rr-card:hover { background:rgba(255,255,255,0.11); }
+.rr-card-num {
+  font-family:'Playfair Display',serif; font-size:42px; font-weight:800;
+  color:rgba(255,255,255,0.07); position:absolute;
+  top:10px; right:16px; line-height:1; user-select:none;
+}
+.rr-card-icon { font-size:22px; margin-bottom:10px; display:block; }
+.rr-card-head {
+  font-family:'DM Sans',sans-serif; font-size:11px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; margin-bottom:8px;
+}
+.rr-card-head.green { color:#4ade80; }
+.rr-card-head.amber { color:#fbbf24; }
+.rr-card-head.red   { color:#f87171; }
+.rr-card-body { font-family:'DM Sans',sans-serif; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.6; }
+.rr-card-body li { margin-bottom:5px; list-style:none; padding-left:2px; }
+.rr-card-body li::before { content:"→ "; color:rgba(255,255,255,0.35); font-size:11px; }
+.rr-card.no-before .rr-card-body li::before { content:"✗ "; color:#f87171; }
+.rr-anchors { display:flex; flex-wrap:wrap; gap:8px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.1); }
+.rr-anchor-label { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,0.3); align-self:center; }
+.rr-anchor {
+  font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600;
+  color:rgba(255,255,255,0.6); background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12); border-radius:20px;
+  padding:5px 14px; cursor:pointer; text-decoration:none;
+  transition:all .15s; white-space:nowrap;
+}
+.rr-anchor:hover { background:rgba(255,255,255,0.14); color:#fff; }
+
+/* ===== ARBRE DÉCISIONNEL ===== */
+.decision-section {
+  background:var(--card); padding:40px clamp(24px,6vw,80px);
+  border-bottom:2px solid var(--border);
+}
+.decision-inner { max-width:960px; margin:0 auto; }
+.decision-label {
+  font-family:'DM Sans',sans-serif; font-size:10px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.18em;
+  color:var(--accent); margin-bottom:6px; display:block;
+}
+.decision-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,2.5vw,24px); font-weight:700;
+  color:var(--text); margin-bottom:4px;
+}
+.decision-sub { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--muted); margin-bottom:24px; }
+.dt-wrap { overflow-x:auto; padding-bottom:8px; }
+.dt-tree { display:flex; flex-direction:column; align-items:center; gap:0; min-width:680px; }
+.dt-connector { width:2px; height:24px; background:var(--accent); opacity:.3; margin:0 auto; }
+.dt-row { display:flex; align-items:flex-start; width:100%; justify-content:center; }
+.dt-col { display:flex; flex-direction:column; align-items:center; flex:1; }
+.dt-node {
+  border-radius:10px; padding:12px 18px;
+  font-family:'DM Sans',sans-serif; text-align:center;
+  position:relative; max-width:260px; width:100%;
+}
+.dt-node.question { background:var(--accent); color:#fff; font-size:13px; font-weight:600; box-shadow:0 2px 12px rgba(54,69,79,.18); }
+.dt-node.oui      { background:#dcfce7; border:1.5px solid #4ade80; color:#14532d; font-size:12px; font-weight:600; }
+.dt-node.non      { background:#fef3c7; border:1.5px solid #fbbf24; color:#78350f; font-size:12px; font-weight:600; }
+.dt-node.action-vert   { background:#dcfce7; border:2px solid #16a34a; color:#14532d; font-size:12px; font-weight:700; }
+.dt-node.action-orange { background:#ffedd5; border:2px solid #f97316; color:#7c2d12; font-size:12px; font-weight:700; }
+.dt-node.action-rouge  { background:rgba(220,38,38,.08); border:2px solid #dc2626; color:#7f1d1d; font-size:12px; font-weight:700; }
+.dt-node.action-bleu   { background:rgba(2,136,209,.07); border:2px solid #0288D1; color:#01579B; font-size:12px; font-weight:700; }
+.dt-node-label { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; opacity:.6; margin-bottom:4px; display:block; }
+.dt-branch-label {
+  font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700;
+  padding:1px 8px; border-radius:10px; margin:4px auto; display:block; text-align:center;
+}
+.dt-branch-label.oui { background:#dcfce7; color:#166534; }
+.dt-branch-label.non { background:#fef3c7; color:#78350f; }
+.dt-sep { width:2px; background:var(--accent); opacity:.2; margin-top:28px; }
+.dt-link { font-size:10px; margin-top:6px; display:block; color:var(--accent); text-decoration:none; font-weight:600; opacity:.7; }
+.dt-link:hover { opacity:1; }
 </style>
 </head>
 <body>
 
 <!-- ==================== COUVERTURE ==================== -->
 <section class="guide-cover" id="top">
-  <span class="cover-badge">Guide Clinique · Médecin Généraliste · G1-V2</span>
+  <span class="cover-badge">Guide Clinique · Médecin Généraliste · G1</span>
   <h1 class="cover-h1">Covid long :<br><em>Guide complet pour le médecin démuni</em></h1>
   <p class="cover-subtitle">Identifier, reconnaître et orienter — sans bilan standard, sans biomarqueur fiable, avec les outils de la consultation ordinaire.</p>
   <div class="cover-meta">
@@ -512,6 +618,8 @@ sup a { color:var(--accent); text-decoration:none; font-family:'DM Mono',monospa
 <nav class="guide-nav" aria-label="Navigation du guide">
   <div class="guide-nav-inner">
     <button class="gnav-btn active" onclick="scrollTo('about')">À propos</button>
+    <button class="gnav-btn" onclick="scrollTo('reponse-rapide')" style="color:#16a34a;font-weight:700;">⚡ Réponse rapide</button>
+    <button class="gnav-btn" onclick="scrollTo('arbre-decision')">🗺 Arbre décisionnel</button>
     <button class="gnav-btn" onclick="scrollTo('p1-epi')">Épidémiologie</button>
     <button class="gnav-btn" onclick="scrollTo('p1-biais')">Biais de reconnaissance</button>
     <button class="gnav-btn" onclick="scrollTo('p1-bio')">Paradoxe biomarqueur</button>
@@ -547,6 +655,186 @@ sup a { color:var(--accent); text-decoration:none; font-family:'DM Mono',monospa
       <div class="about-stat"><span class="about-num">trimestr.</span><span class="about-desc">révision planifiée</span></div>
     </div>
     <p class="about-targets">S'adresse à : <strong>médecins généralistes, internes de médecine générale, médecins coordinateurs en soins primaires</strong></p>
+  </div>
+</section>
+
+<!-- ==================== RÉPONSE RAPIDE ==================== -->
+<section class="rr-section" id="reponse-rapide">
+  <div class="rr-inner">
+    <span class="rr-label">Réponse rapide — Ce guide en 3 actions</span>
+    <h2 class="rr-title">Ce que vous pouvez faire aujourd'hui</h2>
+    <p class="rr-subtitle">Avant 45 min de lecture — les points d'action immédiats pour votre prochaine consultation</p>
+    <div class="rr-grid">
+      <div class="rr-card">
+        <span class="rr-card-num">1</span>
+        <span class="rr-card-icon">🎯</span>
+        <p class="rr-card-head green">Reconnaître</p>
+        <ul class="rr-card-body">
+          <li>Infection Covid probable ou confirmée (même légère)</li>
+          <li>Symptômes ≥ 4 semaines, non expliqués autrement</li>
+          <li>Fatigue + brouillard mental + MPE décalé (J+1/J+2)</li>
+          <li><strong style="color:#fff;">Bilan normal ≠ absence de pathologie</strong></li>
+        </ul>
+      </div>
+      <div class="rr-card">
+        <span class="rr-card-num">2</span>
+        <span class="rr-card-icon">🗺️</span>
+        <p class="rr-card-head amber">Orienter sans attendre</p>
+        <ul class="rr-card-body">
+          <li>MPE ou retentissement fonctionnel → agir</li>
+          <li>Niv. 1 : suivi MG renforcé + pacing</li>
+          <li>Niv. 2 : DAC / cellule post-Covid (≥ 2 mois)</li>
+          <li>Niv. 3 : centre référent (formes sévères)</li>
+          <li><strong style="color:#fff;">Code U09.9 à poser dans le dossier</strong></li>
+        </ul>
+      </div>
+      <div class="rr-card no-before">
+        <span class="rr-card-num">3</span>
+        <span class="rr-card-icon">⛔</span>
+        <p class="rr-card-head red">À ne pas faire</p>
+        <ul class="rr-card-body">
+          <li>Exercice gradué (GET) si MPE présent</li>
+          <li>Conditionner l'orientation à un bilan positif</li>
+          <li>Réattribuer à l'anxiété faute de biomarqueur</li>
+          <li>Reporter l'orientation si formes sévères</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rr-anchors">
+      <span class="rr-anchor-label">Accès direct →</span>
+      <a class="rr-anchor" href="#p2-questions">10 questions consultation</a>
+      <a class="rr-anchor" href="#p2-redflags">Red flags</a>
+      <a class="rr-anchor" href="#p3-qui">Qui orienter ?</a>
+      <a class="rr-anchor" href="#p4-bilan">Bilan HAS</a>
+      <a class="rr-anchor" href="#p4-scores">Scores cliniques</a>
+      <a class="rr-anchor" href="#epistemic">Certitudes / Limites</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ARBRE DÉCISIONNEL ==================== -->
+<section class="decision-section" id="arbre-decision">
+  <div class="decision-inner">
+    <span class="decision-label">Arbre décisionnel — Consultation Covid long</span>
+    <h2 class="decision-title">Du symptôme à l'action — en moins de 5 minutes</h2>
+    <p class="decision-sub">Cliquez sur un nœud pour accéder à la section correspondante du guide</p>
+    <div class="dt-wrap">
+      <div class="dt-tree">
+
+        <!-- N0 : Entrée -->
+        <div class="dt-node question" style="max-width:440px;">
+          <span class="dt-node-label">Point d'entrée</span>
+          Symptômes persistants ≥ 4 semaines après infection Covid probable ou confirmée ?
+        </div>
+        <div class="dt-connector"></div>
+
+        <!-- N1 : OUI / NON -->
+        <div class="dt-row" style="max-width:780px;gap:0;">
+          <div class="dt-col" style="align-items:flex-end;padding-right:20px;">
+            <span class="dt-branch-label non">NON</span>
+            <div class="dt-node non" style="max-width:210px;">
+              Chercher autre diagnostic<br>
+              <small style="opacity:.7;">Thyroïde · Anémie · Dépression · Auto-immun</small>
+            </div>
+          </div>
+          <div class="dt-sep"></div>
+          <div class="dt-col" style="align-items:flex-start;padding-left:20px;">
+            <span class="dt-branch-label oui">OUI</span>
+            <div class="dt-node oui" style="max-width:210px;">
+              Poursuivre l'évaluation Covid long<br>
+              <small style="opacity:.7;">Bilan HAS de 1ère intention</small>
+              <a class="dt-link" href="#p4-bilan">→ Bilan HAS</a>
+            </div>
+          </div>
+        </div>
+        <div class="dt-connector" style="margin-top:4px;"></div>
+
+        <!-- N2 : MPE ? -->
+        <div class="dt-node question" style="max-width:460px;">
+          <span class="dt-node-label">Question clé ★</span>
+          Malaise post-effort (MPE) ? — "Vous sentez-vous plus mal le lendemain d'un effort, même léger ?"
+          <a class="dt-link" style="color:rgba(255,255,255,.6);" href="#p2-questions">→ 10 questions en consultation</a>
+        </div>
+        <div class="dt-connector"></div>
+
+        <!-- N3 : Branches MPE -->
+        <div class="dt-row" style="max-width:840px;gap:0;">
+          <div class="dt-col" style="align-items:flex-end;padding-right:16px;">
+            <span class="dt-branch-label oui">OUI — MPE présent</span>
+            <div class="dt-node action-rouge" style="max-width:250px;">
+              <span class="dt-node-label">Action immédiate</span>
+              ⛔ Contre-indiquer l'exercice gradué (GET)<br>
+              Prescrire le <strong>pacing</strong><br>
+              <a class="dt-link" href="#p2-redflags">→ Red flags · Conduite à tenir</a>
+            </div>
+          </div>
+          <div class="dt-sep"></div>
+          <div class="dt-col" style="align-items:flex-start;padding-left:16px;">
+            <span class="dt-branch-label non">NON / incertain</span>
+            <div class="dt-node action-bleu" style="max-width:250px;">
+              <span class="dt-node-label">Évaluer</span>
+              Évaluer le retentissement fonctionnel<br>
+              Scores : <strong>Chalder · LC-SSS · HAD</strong><br>
+              <a class="dt-link" href="#p4-scores">→ Scores cliniques</a>
+            </div>
+          </div>
+        </div>
+        <div class="dt-connector" style="margin-top:4px;"></div>
+
+        <!-- N4 : Sévérité -->
+        <div class="dt-node question" style="max-width:460px;">
+          <span class="dt-node-label">Décision d'orientation</span>
+          Retentissement fonctionnel significatif ?<br>
+          <small style="opacity:.75;">(arrêt travail · réduction activités &gt; 50 % · dépendance)</small>
+          <a class="dt-link" style="color:rgba(255,255,255,.6);" href="#p3-qui">→ Critères d'orientation complets</a>
+        </div>
+        <div class="dt-connector"></div>
+
+        <!-- N5 : 3 niveaux -->
+        <div class="dt-row" style="max-width:920px;gap:8px;align-items:flex-start;">
+          <div class="dt-col">
+            <span class="dt-branch-label oui">Léger</span>
+            <div class="dt-node action-vert">
+              <span class="dt-node-label">Niveau 1</span>
+              <strong>Suivi MG renforcé</strong><br>
+              Éducation pacing<br>
+              Hygiène sommeil<br>
+              Code <strong>U09.9</strong>
+              <a class="dt-link" href="#p3-qui">→ Détail niveau 1</a>
+            </div>
+          </div>
+          <div class="dt-col">
+            <span class="dt-branch-label" style="background:#ffedd5;color:#9a3412;">Modéré</span>
+            <div class="dt-node action-orange">
+              <span class="dt-node-label">Niveau 2</span>
+              <strong>DAC / Cellule post-Covid</strong><br>
+              Si non-amélioration ≥ 2 mois<br>
+              POTS · MPE documenté
+              <a class="dt-link" href="#p3-qui">→ Détail niveau 2</a>
+            </div>
+          </div>
+          <div class="dt-col">
+            <span class="dt-branch-label" style="background:rgba(220,38,38,.08);color:#7f1d1d;">Sévère</span>
+            <div class="dt-node action-rouge">
+              <span class="dt-node-label">Niveau 3</span>
+              <strong>Centre référent</strong><br>
+              Alitement · Dépendance<br>
+              Formes très invalidantes
+              <a class="dt-link" href="#p3-centres">→ Centres référents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note -->
+        <div style="margin-top:20px;padding:12px 20px;background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;max-width:680px;width:100%;">
+          <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin:0;">
+            <strong style="color:var(--accent);">Règle transversale :</strong> le bilan HAS sera normal dans la majorité des cas — ce n'est pas une raison de clore la démarche. Orienter si retentissement, même sans marqueur biologique positif.
+            <a href="#p1-bio" style="color:var(--accent);font-weight:600;">→ Paradoxe biomarqueur</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
